@@ -73,6 +73,21 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Logica\AsignacionVisita.cs" />
+    <Compile Include="Logica\CambioEstado.cs" />
+    <Compile Include="Logica\Cargo.cs" />
+    <Compile Include="Logica\DetalleExposicion.cs" />
+    <Compile Include="Logica\Empleado.cs" />
+    <Compile Include="Logica\Escuela.cs" />
+    <Compile Include="Logica\Estado.cs" />
+    <Compile Include="Logica\Exposicion.cs" />
+    <Compile Include="Logica\HorarioEmpleado.cs" />
+    <Compile Include="Logica\Obra.cs" />
+    <Compile Include="Logica\PublicoDestino.cs" />
+    <Compile Include="Logica\ReservaVisita.cs" />
+    <Compile Include="Logica\Sede.cs" />
+    <Compile Include="Logica\TipoExposicion.cs" />
+    <Compile Include="Logica\TipoVisita.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ucReservaVisitaGuiada.cs">
