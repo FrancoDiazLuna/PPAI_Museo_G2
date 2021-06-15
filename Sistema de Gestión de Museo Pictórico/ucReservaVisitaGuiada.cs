@@ -33,6 +33,14 @@ namespace Sistema_de_Gestión_de_Museo_Pictórico
 
             tabPane1.Controls.Add(control);
         }
+
+        private void btn_cancelar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Esta seguro desea descartar la reserva de la visita guiada?", "Importante", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                this.Dispose();
+            }
+        }
     }
     
 }

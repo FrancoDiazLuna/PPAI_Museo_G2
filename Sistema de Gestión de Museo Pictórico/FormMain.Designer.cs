@@ -36,10 +36,10 @@ namespace Sistema_de_Gestión_de_Museo_Pictórico
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_BuscarEscuela = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_RegistrarEscuela = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_BuscarReserva = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_RegistrarReserva = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.datetime = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -49,9 +49,9 @@ namespace Sistema_de_Gestión_de_Museo_Pictórico
             this.navButton2 = new DevExpress.XtraBars.Navigation.NavButton();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.toolStripFormMain = new System.Windows.Forms.ToolStrip();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
@@ -93,10 +93,10 @@ namespace Sistema_de_Gestión_de_Museo_Pictórico
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelControl2.Controls.Add(this.panelControl5);
             this.panelControl2.Controls.Add(this.panelControl4);
-            this.panelControl2.Controls.Add(this.simpleButton4);
-            this.panelControl2.Controls.Add(this.simpleButton3);
-            this.panelControl2.Controls.Add(this.simpleButton2);
-            this.panelControl2.Controls.Add(this.simpleButton1);
+            this.panelControl2.Controls.Add(this.btn_BuscarEscuela);
+            this.panelControl2.Controls.Add(this.btn_RegistrarEscuela);
+            this.panelControl2.Controls.Add(this.btn_BuscarReserva);
+            this.panelControl2.Controls.Add(this.btn_RegistrarReserva);
             this.panelControl2.Location = new System.Drawing.Point(0, 30);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(282, 566);
@@ -124,38 +124,38 @@ namespace Sistema_de_Gestión_de_Museo_Pictórico
             this.panelControl4.TabIndex = 0;
             this.panelControl4.Click += new System.EventHandler(this.panelControl4_Click);
             // 
-            // simpleButton4
+            // btn_BuscarEscuela
             // 
-            this.simpleButton4.Location = new System.Drawing.Point(12, 329);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(263, 54);
-            this.simpleButton4.TabIndex = 3;
-            this.simpleButton4.Text = "Buscar Escuela";
+            this.btn_BuscarEscuela.Location = new System.Drawing.Point(12, 329);
+            this.btn_BuscarEscuela.Name = "btn_BuscarEscuela";
+            this.btn_BuscarEscuela.Size = new System.Drawing.Size(263, 54);
+            this.btn_BuscarEscuela.TabIndex = 3;
+            this.btn_BuscarEscuela.Text = "Buscar Escuela";
             // 
-            // simpleButton3
+            // btn_RegistrarEscuela
             // 
-            this.simpleButton3.Location = new System.Drawing.Point(12, 243);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(263, 54);
-            this.simpleButton3.TabIndex = 2;
-            this.simpleButton3.Text = "Registrar Escuela";
+            this.btn_RegistrarEscuela.Location = new System.Drawing.Point(12, 243);
+            this.btn_RegistrarEscuela.Name = "btn_RegistrarEscuela";
+            this.btn_RegistrarEscuela.Size = new System.Drawing.Size(263, 54);
+            this.btn_RegistrarEscuela.TabIndex = 2;
+            this.btn_RegistrarEscuela.Text = "Registrar Escuela";
             // 
-            // simpleButton2
+            // btn_BuscarReserva
             // 
-            this.simpleButton2.Location = new System.Drawing.Point(12, 159);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(263, 54);
-            this.simpleButton2.TabIndex = 1;
-            this.simpleButton2.Text = "Buscar Reservas";
+            this.btn_BuscarReserva.Location = new System.Drawing.Point(12, 159);
+            this.btn_BuscarReserva.Name = "btn_BuscarReserva";
+            this.btn_BuscarReserva.Size = new System.Drawing.Size(263, 54);
+            this.btn_BuscarReserva.TabIndex = 1;
+            this.btn_BuscarReserva.Text = "Buscar Reservas";
             // 
-            // simpleButton1
+            // btn_RegistrarReserva
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(12, 76);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(263, 54);
-            this.simpleButton1.TabIndex = 0;
-            this.simpleButton1.Text = "Registrar Reserva de Visita Guiada";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            this.btn_RegistrarReserva.Location = new System.Drawing.Point(12, 76);
+            this.btn_RegistrarReserva.Name = "btn_RegistrarReserva";
+            this.btn_RegistrarReserva.Size = new System.Drawing.Size(263, 54);
+            this.btn_RegistrarReserva.TabIndex = 0;
+            this.btn_RegistrarReserva.Text = "Registrar Reserva de Visita Guiada";
+            this.btn_RegistrarReserva.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // panelControl3
             // 
@@ -238,13 +238,6 @@ namespace Sistema_de_Gestión_de_Museo_Pictórico
             this.toolStripFormMain.TabIndex = 3;
             this.toolStripFormMain.Text = "toolStripFormMain";
             // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(41, 22);
-            this.toolStripLabel1.Text = "Ayuda";
-            // 
             // toolStripDropDownButton1
             // 
             this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
@@ -261,6 +254,14 @@ namespace Sistema_de_Gestión_de_Museo_Pictórico
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
             this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(41, 22);
+            this.toolStripLabel1.Text = "Ayuda";
             // 
             // FormMain
             // 
@@ -296,10 +297,10 @@ namespace Sistema_de_Gestión_de_Museo_Pictórico
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private DevExpress.XtraEditors.PanelControl panelControl5;
         private DevExpress.XtraEditors.PanelControl panelControl4;
-        private DevExpress.XtraEditors.SimpleButton simpleButton4;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton btn_BuscarEscuela;
+        private DevExpress.XtraEditors.SimpleButton btn_RegistrarEscuela;
+        private DevExpress.XtraEditors.SimpleButton btn_BuscarReserva;
+        private DevExpress.XtraEditors.SimpleButton btn_RegistrarReserva;
         private DevExpress.XtraEditors.PanelControl panelControl3;
         private DevExpress.XtraEditors.LabelControl datetime;
         private DevExpress.XtraEditors.LabelControl labelControl1;
