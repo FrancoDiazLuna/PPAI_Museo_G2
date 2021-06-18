@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using CapaNegocio;
+
 namespace Sistema_de_Gestión_de_Museo_Pictórico
 {
     public partial class ucReservaVisitaGuiada : UserControl
@@ -40,6 +42,11 @@ namespace Sistema_de_Gestión_de_Museo_Pictórico
             {
                 this.Dispose();
             }
+        }
+
+        public void mostrar()
+        {
+            this.dgvEscuelas.DataSource = NEscuela.mostrar();
         }
     }
     

@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31402.337
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sistema de Gestión de Museo Pictórico", "Sistema de Gestión de Museo Pictórico\Sistema de Gestión de Museo Pictórico.csproj", "{6C1BCA87-015E-4A1B-9776-BDDA924604DE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaPresentacion", "Sistema de Gestión de Museo Pictórico\CapaPresentacion.csproj", "{6C1BCA87-015E-4A1B-9776-BDDA924604DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaDatos", "CapaDatos\CapaDatos.csproj", "{8779F00E-E46D-4C9A-B617-18524200BE79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaNegocio", "CapaNegocio\CapaNegocio.csproj", "{0471BACB-FFC9-42E8-8267-0CF06BC329B3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{6C1BCA87-015E-4A1B-9776-BDDA924604DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C1BCA87-015E-4A1B-9776-BDDA924604DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C1BCA87-015E-4A1B-9776-BDDA924604DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8779F00E-E46D-4C9A-B617-18524200BE79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8779F00E-E46D-4C9A-B617-18524200BE79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8779F00E-E46D-4C9A-B617-18524200BE79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8779F00E-E46D-4C9A-B617-18524200BE79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0471BACB-FFC9-42E8-8267-0CF06BC329B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0471BACB-FFC9-42E8-8267-0CF06BC329B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0471BACB-FFC9-42E8-8267-0CF06BC329B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0471BACB-FFC9-42E8-8267-0CF06BC329B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

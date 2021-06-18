@@ -39,39 +39,39 @@ namespace Sistema_de_Gestión_de_Museo_Pictórico
             this.spinEdit1 = new DevExpress.XtraEditors.SpinEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.dgvEscuelas = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.tabNav2_Sedes = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.tabNav3_Visita_Exposiciones = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.gridControl3 = new DevExpress.XtraGrid.GridControl();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.checkedComboBoxEdit1 = new DevExpress.XtraEditors.CheckedComboBoxEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.tabNav4_DiaVisita = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.checkedComboBoxEdit2 = new DevExpress.XtraEditors.CheckedComboBoxEdit();
             this.calendarControl1 = new DevExpress.XtraEditors.Controls.CalendarControl();
             this.tabNav5_Guia = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.btn_Quitar = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_QuitarTodos = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_AgregarTodos = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_Agregar = new DevExpress.XtraEditors.SimpleButton();
+            this.txt_CantGuias = new System.Windows.Forms.TextBox();
+            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.gridControl5 = new DevExpress.XtraGrid.GridControl();
             this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridControl4 = new DevExpress.XtraGrid.GridControl();
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.tabNav6_DetalleReserva = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
-            this.txt_CantGuias = new System.Windows.Forms.TextBox();
-            this.btn_Agregar = new DevExpress.XtraEditors.SimpleButton();
-            this.btn_AgregarTodos = new DevExpress.XtraEditors.SimpleButton();
-            this.btn_QuitarTodos = new DevExpress.XtraEditors.SimpleButton();
-            this.btn_Quitar = new DevExpress.XtraEditors.SimpleButton();
-            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
@@ -80,7 +80,7 @@ namespace Sistema_de_Gestión_de_Museo_Pictórico
             this.tabPane1.SuspendLayout();
             this.tabNav1_Escuelas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spinEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEscuelas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.tabNav2_Sedes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
@@ -178,7 +178,7 @@ namespace Sistema_de_Gestión_de_Museo_Pictórico
             this.tabNav1_Escuelas.Controls.Add(this.spinEdit1);
             this.tabNav1_Escuelas.Controls.Add(this.labelControl2);
             this.tabNav1_Escuelas.Controls.Add(this.labelControl1);
-            this.tabNav1_Escuelas.Controls.Add(this.gridControl1);
+            this.tabNav1_Escuelas.Controls.Add(this.dgvEscuelas);
             this.tabNav1_Escuelas.Name = "tabNav1_Escuelas";
             this.tabNav1_Escuelas.Size = new System.Drawing.Size(1174, 544);
             this.tabNav1_Escuelas.Paint += new System.Windows.Forms.PaintEventHandler(this.tabNavigationPage1_Paint);
@@ -215,19 +215,19 @@ namespace Sistema_de_Gestión_de_Museo_Pictórico
             this.labelControl1.TabIndex = 1;
             this.labelControl1.Text = "Listado de Escuelas Disponibles";
             // 
-            // gridControl1
+            // dgvEscuelas
             // 
-            this.gridControl1.Location = new System.Drawing.Point(34, 60);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1072, 411);
-            this.gridControl1.TabIndex = 0;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.dgvEscuelas.Location = new System.Drawing.Point(34, 60);
+            this.dgvEscuelas.MainView = this.gridView1;
+            this.dgvEscuelas.Name = "dgvEscuelas";
+            this.dgvEscuelas.Size = new System.Drawing.Size(1100, 411);
+            this.dgvEscuelas.TabIndex = 0;
+            this.dgvEscuelas.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // gridView1
             // 
-            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.GridControl = this.dgvEscuelas;
             this.gridView1.Name = "gridView1";
             // 
             // tabNav2_Sedes
@@ -273,6 +273,14 @@ namespace Sistema_de_Gestión_de_Museo_Pictórico
             this.tabNav3_Visita_Exposiciones.Controls.Add(this.labelControl4);
             this.tabNav3_Visita_Exposiciones.Name = "tabNav3_Visita_Exposiciones";
             this.tabNav3_Visita_Exposiciones.Size = new System.Drawing.Size(1174, 544);
+            // 
+            // labelControl11
+            // 
+            this.labelControl11.Location = new System.Drawing.Point(63, 59);
+            this.labelControl11.Name = "labelControl11";
+            this.labelControl11.Size = new System.Drawing.Size(88, 13);
+            this.labelControl11.TabIndex = 6;
+            this.labelControl11.Text = "Tipo de exposicion";
             // 
             // labelControl5
             // 
@@ -327,6 +335,36 @@ namespace Sistema_de_Gestión_de_Museo_Pictórico
             this.tabNav4_DiaVisita.Name = "tabNav4_DiaVisita";
             this.tabNav4_DiaVisita.Size = new System.Drawing.Size(1174, 544);
             // 
+            // labelControl8
+            // 
+            this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.labelControl8.Appearance.Options.UseFont = true;
+            this.labelControl8.Location = new System.Drawing.Point(59, 446);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(30, 13);
+            this.labelControl8.TabIndex = 4;
+            this.labelControl8.Text = "Hora:";
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.labelControl7.Appearance.Options.UseFont = true;
+            this.labelControl7.Location = new System.Drawing.Point(54, 70);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(21, 13);
+            this.labelControl7.TabIndex = 3;
+            this.labelControl7.Text = "Dia:";
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.labelControl6.Appearance.Options.UseFont = true;
+            this.labelControl6.Location = new System.Drawing.Point(34, 22);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(167, 16);
+            this.labelControl6.TabIndex = 2;
+            this.labelControl6.Text = "Seleccione el dia y la hora";
+            // 
             // checkedComboBoxEdit2
             // 
             this.checkedComboBoxEdit2.Location = new System.Drawing.Point(59, 480);
@@ -342,7 +380,7 @@ namespace Sistema_de_Gestión_de_Museo_Pictórico
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.calendarControl1.Location = new System.Drawing.Point(59, 109);
             this.calendarControl1.Name = "calendarControl1";
-            this.calendarControl1.Size = new System.Drawing.Size(232, 235);
+            this.calendarControl1.Size = new System.Drawing.Size(247, 235);
             this.calendarControl1.TabIndex = 0;
             // 
             // tabNav5_Guia
@@ -359,6 +397,63 @@ namespace Sistema_de_Gestión_de_Museo_Pictórico
             this.tabNav5_Guia.Controls.Add(this.gridControl4);
             this.tabNav5_Guia.Name = "tabNav5_Guia";
             this.tabNav5_Guia.Size = new System.Drawing.Size(1174, 544);
+            // 
+            // btn_Quitar
+            // 
+            this.btn_Quitar.Location = new System.Drawing.Point(550, 233);
+            this.btn_Quitar.Name = "btn_Quitar";
+            this.btn_Quitar.Size = new System.Drawing.Size(75, 23);
+            this.btn_Quitar.TabIndex = 8;
+            this.btn_Quitar.Text = "< Quitar";
+            // 
+            // btn_QuitarTodos
+            // 
+            this.btn_QuitarTodos.Location = new System.Drawing.Point(535, 441);
+            this.btn_QuitarTodos.Name = "btn_QuitarTodos";
+            this.btn_QuitarTodos.Size = new System.Drawing.Size(109, 23);
+            this.btn_QuitarTodos.TabIndex = 7;
+            this.btn_QuitarTodos.Text = "<< Quitar Todos";
+            // 
+            // btn_AgregarTodos
+            // 
+            this.btn_AgregarTodos.Location = new System.Drawing.Point(535, 398);
+            this.btn_AgregarTodos.Name = "btn_AgregarTodos";
+            this.btn_AgregarTodos.Size = new System.Drawing.Size(109, 23);
+            this.btn_AgregarTodos.TabIndex = 6;
+            this.btn_AgregarTodos.Text = "Agregar Todos >>";
+            // 
+            // btn_Agregar
+            // 
+            this.btn_Agregar.Location = new System.Drawing.Point(550, 193);
+            this.btn_Agregar.Name = "btn_Agregar";
+            this.btn_Agregar.Size = new System.Drawing.Size(75, 23);
+            this.btn_Agregar.TabIndex = 3;
+            this.btn_Agregar.Text = "Agregar >";
+            // 
+            // txt_CantGuias
+            // 
+            this.txt_CantGuias.Location = new System.Drawing.Point(224, 62);
+            this.txt_CantGuias.Name = "txt_CantGuias";
+            this.txt_CantGuias.Size = new System.Drawing.Size(32, 21);
+            this.txt_CantGuias.TabIndex = 5;
+            // 
+            // labelControl10
+            // 
+            this.labelControl10.Location = new System.Drawing.Point(43, 65);
+            this.labelControl10.Name = "labelControl10";
+            this.labelControl10.Size = new System.Drawing.Size(159, 13);
+            this.labelControl10.TabIndex = 4;
+            this.labelControl10.Text = "Cantidad de guias recomendados";
+            // 
+            // labelControl9
+            // 
+            this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.labelControl9.Appearance.Options.UseFont = true;
+            this.labelControl9.Location = new System.Drawing.Point(34, 22);
+            this.labelControl9.Name = "labelControl9";
+            this.labelControl9.Size = new System.Drawing.Size(128, 16);
+            this.labelControl9.TabIndex = 3;
+            this.labelControl9.Text = "Seleccione los guias";
             // 
             // gridControl5
             // 
@@ -405,101 +500,6 @@ namespace Sistema_de_Gestión_de_Museo_Pictórico
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Detalle de la Reserva";
             // 
-            // labelControl6
-            // 
-            this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(34, 22);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(167, 16);
-            this.labelControl6.TabIndex = 2;
-            this.labelControl6.Text = "Seleccione el dia y la hora";
-            // 
-            // labelControl7
-            // 
-            this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.Location = new System.Drawing.Point(54, 70);
-            this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(21, 13);
-            this.labelControl7.TabIndex = 3;
-            this.labelControl7.Text = "Dia:";
-            // 
-            // labelControl8
-            // 
-            this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.labelControl8.Appearance.Options.UseFont = true;
-            this.labelControl8.Location = new System.Drawing.Point(59, 446);
-            this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(30, 13);
-            this.labelControl8.TabIndex = 4;
-            this.labelControl8.Text = "Hora:";
-            // 
-            // labelControl9
-            // 
-            this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.labelControl9.Appearance.Options.UseFont = true;
-            this.labelControl9.Location = new System.Drawing.Point(34, 22);
-            this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(128, 16);
-            this.labelControl9.TabIndex = 3;
-            this.labelControl9.Text = "Seleccione los guias";
-            // 
-            // labelControl10
-            // 
-            this.labelControl10.Location = new System.Drawing.Point(43, 65);
-            this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(159, 13);
-            this.labelControl10.TabIndex = 4;
-            this.labelControl10.Text = "Cantidad de guias recomendados";
-            // 
-            // txt_CantGuias
-            // 
-            this.txt_CantGuias.Location = new System.Drawing.Point(224, 62);
-            this.txt_CantGuias.Name = "txt_CantGuias";
-            this.txt_CantGuias.Size = new System.Drawing.Size(32, 21);
-            this.txt_CantGuias.TabIndex = 5;
-            // 
-            // btn_Agregar
-            // 
-            this.btn_Agregar.Location = new System.Drawing.Point(550, 193);
-            this.btn_Agregar.Name = "btn_Agregar";
-            this.btn_Agregar.Size = new System.Drawing.Size(75, 23);
-            this.btn_Agregar.TabIndex = 3;
-            this.btn_Agregar.Text = "Agregar >";
-            // 
-            // btn_AgregarTodos
-            // 
-            this.btn_AgregarTodos.Location = new System.Drawing.Point(535, 398);
-            this.btn_AgregarTodos.Name = "btn_AgregarTodos";
-            this.btn_AgregarTodos.Size = new System.Drawing.Size(109, 23);
-            this.btn_AgregarTodos.TabIndex = 6;
-            this.btn_AgregarTodos.Text = "Agregar Todos >>";
-            // 
-            // btn_QuitarTodos
-            // 
-            this.btn_QuitarTodos.Location = new System.Drawing.Point(535, 441);
-            this.btn_QuitarTodos.Name = "btn_QuitarTodos";
-            this.btn_QuitarTodos.Size = new System.Drawing.Size(109, 23);
-            this.btn_QuitarTodos.TabIndex = 7;
-            this.btn_QuitarTodos.Text = "<< Quitar Todos";
-            // 
-            // btn_Quitar
-            // 
-            this.btn_Quitar.Location = new System.Drawing.Point(550, 233);
-            this.btn_Quitar.Name = "btn_Quitar";
-            this.btn_Quitar.Size = new System.Drawing.Size(75, 23);
-            this.btn_Quitar.TabIndex = 8;
-            this.btn_Quitar.Text = "< Quitar";
-            // 
-            // labelControl11
-            // 
-            this.labelControl11.Location = new System.Drawing.Point(63, 59);
-            this.labelControl11.Name = "labelControl11";
-            this.labelControl11.Size = new System.Drawing.Size(88, 13);
-            this.labelControl11.TabIndex = 6;
-            this.labelControl11.Text = "Tipo de exposicion";
-            // 
             // ucReservaVisitaGuiada
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -516,7 +516,7 @@ namespace Sistema_de_Gestión_de_Museo_Pictórico
             this.tabNav1_Escuelas.ResumeLayout(false);
             this.tabNav1_Escuelas.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spinEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEscuelas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.tabNav2_Sedes.ResumeLayout(false);
             this.tabNav2_Sedes.PerformLayout();
@@ -560,7 +560,7 @@ namespace Sistema_de_Gestión_de_Museo_Pictórico
         private DevExpress.XtraEditors.SpinEdit spinEdit1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.GridControl dgvEscuelas;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraGrid.GridControl gridControl2;

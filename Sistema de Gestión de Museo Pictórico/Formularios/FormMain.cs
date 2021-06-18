@@ -17,10 +17,11 @@ namespace Sistema_de_Gestión_de_Museo_Pictórico
             InitializeComponent();
         }
 
-        private void simpleButton1_Click(object sender, EventArgs e)
+        private void btnRegistrarReserva_Click(object sender, EventArgs e)
         {
             ucReservaVisitaGuiada uc = new ucReservaVisitaGuiada();
             showControl(uc);
+            uc.mostrar();
         }
 
         public void showControl(Control control)
@@ -48,5 +49,7 @@ namespace Sistema_de_Gestión_de_Museo_Pictórico
         {
             this.Close();
         }
+
+       
     }
 }
