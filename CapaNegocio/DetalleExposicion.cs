@@ -12,5 +12,13 @@ namespace Sistema_de_Gestión_de_Museo_Pictórico.Logica
         public int lugarAsignado { get; set; }
         public int idPared { get; set; }
         public int idObra { get; set; }
+
+        public DetalleExposicion(int idDetalleExposicion, int lugarAsignado, int idPared, int idObra)
+        {
+            this.idDetalleExposicion = idDetalleExposicion;
+            this.lugarAsignado = lugarAsignado;
+            this.idPared = idPared;
+            this.idObra = idObra;
+        }
     }
 }

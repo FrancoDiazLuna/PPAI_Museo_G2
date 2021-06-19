@@ -12,5 +12,15 @@ namespace Sistema_de_Gestión_de_Museo_Pictórico.Logica
         public string horaIngreso { get; set; }
         public string horaSalida { get; set; }
         public int idDiaSemana { get; set; }
+
+        public HorarioEmpleado(int idHorarioEmpleado, string horaIngreso, string horaSalida, int idDiaSemana)
+        {
+            this.idHorarioEmpleado = idHorarioEmpleado;
+            this.horaIngreso = horaIngreso;
+            this.horaSalida = horaSalida;
+            this.idDiaSemana = idDiaSemana;
+        }
+
+
     }
 }

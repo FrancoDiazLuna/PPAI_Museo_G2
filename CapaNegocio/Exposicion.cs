@@ -20,5 +20,21 @@ namespace Sistema_de_Gestión_de_Museo_Pictórico.Logica
         public int idPublicoDestino { get; set; }
         public int idEmpleadoCreo { get; set; }
 
+        public Exposicion(int idExposicion, DateTime fechaFin, DateTime fechaFinReplanificada, DateTime fechaInicio, 
+            DateTime fechaInicioReplanificada, string horaApertura, string horaCierre, string nombre, int idTipoExposicion, 
+            int idPublicoDestino, int idEmpleadoCreo)
+        {
+            this.idExposicion = idExposicion;
+            this.fechaFin = fechaFin;
+            this.fechaFinReplanificada = fechaFinReplanificada;
+            this.fechaInicio = fechaInicio;
+            this.fechaInicioReplanificada = fechaInicioReplanificada;
+            this.horaApertura = horaApertura;
+            this.horaCierre = horaCierre;
+            this.nombre = nombre;
+            this.idTipoExposicion = idTipoExposicion;
+            this.idPublicoDestino = idPublicoDestino;
+            this.idEmpleadoCreo = idEmpleadoCreo;
+        }
     }
 }

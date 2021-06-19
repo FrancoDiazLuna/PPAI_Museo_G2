@@ -12,5 +12,7 @@ namespace Sistema_de_Gestión_de_Museo_Pictórico.Logica
         public DateTime fechaHoraFin { get; set; }
         public DateTime fechaHoraInicio { get; set; }
         public int idGuiaAsignado { get; set; }
+
+
     }
 }

@@ -12,6 +12,13 @@ namespace Sistema_de_Gestión_de_Museo_Pictórico.Logica
         public string ambito { get; set; }
         public string descripcion { get; set; }
         public string nombre { get; set; }
-      
+
+        public Estado(int idEstado, string ambito, string descripcion, string nombre)
+        {
+            this.idEstado = idEstado;
+            this.ambito = ambito;
+            this.descripcion = descripcion;
+            this.nombre = nombre;
+        }
     }
 }

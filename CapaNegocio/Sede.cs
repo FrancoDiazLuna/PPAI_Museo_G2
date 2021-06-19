@@ -16,5 +16,20 @@ namespace Sistema_de_Gestión_de_Museo_Pictórico.Logica
         public int idColeccion { get; set; }
         public int idExposicion { get; set; }
         public int idTarifa { get; set; }
+
+
+        public Sede(int idSede, int cantidadMaximaVisitantes, int cantidadMaximaPorGuia, string nombre, int idDeposito, int idColeccion,
+            int idExposicion, int idTarifa)
+        {
+            this.idSede = idSede;
+            this.cantidadMaximaVisitantes = cantidadMaximaVisitantes;
+            this.cantidadMaxPorGuia = cantidadMaximaPorGuia;
+            this.nombre = nombre;
+            this.idDeposito = idDeposito;
+            this.idColeccion = idColeccion;
+            this.idExposicion = idExposicion;
+            this.idTarifa = idTarifa;
+
+        }
     }
 }

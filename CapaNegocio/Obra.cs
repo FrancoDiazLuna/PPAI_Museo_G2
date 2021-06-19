@@ -33,5 +33,37 @@ namespace Sistema_de_Gestión_de_Museo_Pictórico.Logica
         public int idEstilo { get; set; }
         public int idTipoIngreso { get; set; }
         public int idTematica { get; set; }
+
+        public Obra(int idObra, int alto, int ancho, int codigoSensor, string descripcion, int duracionExtendida, int duracionResumida, 
+            DateTime fechaCreacion, DateTime fechaPrimerIngreso, string nombraObra, int peso, int valuacion, int idDonacion, int idPrestamoMuseo, 
+            int idSectorDeposito, int idArchivo, int idCambioEstado, int idEmpleadoCreo, int idArtistaQuePinto, int idCompra, int idRestauracionRealizada, 
+            int idTecnica, int idEstilo, int idTipoIngreso, int idTematica)
+        {
+            this.idObra = idObra;
+            this.alto = alto;
+            this.ancho = ancho;
+            this.codigoSensor = codigoSensor;
+            this.descripcion = descripcion;
+            this.duracionExtendida = duracionExtendida;
+            this.duracionResumida = duracionResumida;
+            this.fechaCreacion = fechaCreacion;
+            this.fechaPrimerIngreso = fechaPrimerIngreso;
+            this.nombraObra = nombraObra;
+            this.peso = peso;
+            this.valuacion = valuacion;
+            this.idDonacion = idDonacion;
+            this.idPrestamoMuseo = idPrestamoMuseo;
+            this.idSectorDeposito = idSectorDeposito;
+            this.idArchivo = idArchivo;
+            this.idCambioEstado = idCambioEstado;
+            this.idEmpleadoCreo = idEmpleadoCreo;
+            this.idArtistaQuePinto = idArtistaQuePinto;
+            this.idCompra = idCompra;
+            this.idRestauracionRealizada = idRestauracionRealizada;
+            this.idTecnica = idTecnica;
+            this.idEstilo = idEstilo;
+            this.idTipoIngreso = idTipoIngreso;
+            this.idTematica = idTematica;
+        }
     }
 }
