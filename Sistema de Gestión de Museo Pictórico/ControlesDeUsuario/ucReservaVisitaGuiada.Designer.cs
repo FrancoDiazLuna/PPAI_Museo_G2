@@ -31,6 +31,7 @@ namespace Sistema_de_Gestión_de_Museo_Pictórico
         {
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.btn_confirmarReserva = new DevExpress.XtraEditors.SimpleButton();
             this.btn_anterior = new DevExpress.XtraEditors.SimpleButton();
             this.btn_siguiente = new DevExpress.XtraEditors.SimpleButton();
             this.btn_cancelar = new DevExpress.XtraEditors.SimpleButton();
@@ -39,17 +40,11 @@ namespace Sistema_de_Gestión_de_Museo_Pictórico
             this.spinEdit1 = new DevExpress.XtraEditors.SpinEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.dgvEscuelas = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.tabNav2_Sedes = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.gridControl2 = new DevExpress.XtraGrid.GridControl();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.tabNav3_Visita_Exposiciones = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.gridControl3 = new DevExpress.XtraGrid.GridControl();
-            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.checkedComboBoxEdit1 = new DevExpress.XtraEditors.CheckedComboBoxEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.tabNav4_DiaVisita = new DevExpress.XtraBars.Navigation.TabNavigationPage();
@@ -72,7 +67,12 @@ namespace Sistema_de_Gestión_de_Museo_Pictórico
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.tabNav6_DetalleReserva = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.btn_confirmarReserva = new DevExpress.XtraEditors.SimpleButton();
+            this.gridControl2 = new DevExpress.XtraGrid.GridControl();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.dgvEscuelas = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridControl3 = new DevExpress.XtraGrid.GridControl();
+            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
@@ -81,14 +81,8 @@ namespace Sistema_de_Gestión_de_Museo_Pictórico
             this.tabPane1.SuspendLayout();
             this.tabNav1_Escuelas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spinEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEscuelas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.tabNav2_Sedes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.tabNav3_Visita_Exposiciones.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkedComboBoxEdit1.Properties)).BeginInit();
             this.tabNav4_DiaVisita.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkedComboBoxEdit2.Properties)).BeginInit();
@@ -100,6 +94,12 @@ namespace Sistema_de_Gestión_de_Museo_Pictórico
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             this.tabNav6_DetalleReserva.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEscuelas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -122,6 +122,15 @@ namespace Sistema_de_Gestión_de_Museo_Pictórico
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Size = new System.Drawing.Size(1203, 77);
             this.panelControl3.TabIndex = 1;
+            // 
+            // btn_confirmarReserva
+            // 
+            this.btn_confirmarReserva.Location = new System.Drawing.Point(1051, 29);
+            this.btn_confirmarReserva.Name = "btn_confirmarReserva";
+            this.btn_confirmarReserva.Size = new System.Drawing.Size(115, 23);
+            this.btn_confirmarReserva.TabIndex = 3;
+            this.btn_confirmarReserva.Text = "Confirmar Reserva";
+            this.btn_confirmarReserva.Visible = false;
             // 
             // btn_anterior
             // 
@@ -181,10 +190,10 @@ namespace Sistema_de_Gestión_de_Museo_Pictórico
             // tabNav1_Escuelas
             // 
             this.tabNav1_Escuelas.Caption = "Escuelas";
+            this.tabNav1_Escuelas.Controls.Add(this.dgvEscuelas);
             this.tabNav1_Escuelas.Controls.Add(this.spinEdit1);
             this.tabNav1_Escuelas.Controls.Add(this.labelControl2);
             this.tabNav1_Escuelas.Controls.Add(this.labelControl1);
-            this.tabNav1_Escuelas.Controls.Add(this.dgvEscuelas);
             this.tabNav1_Escuelas.Name = "tabNav1_Escuelas";
             this.tabNav1_Escuelas.Size = new System.Drawing.Size(1174, 544);
             this.tabNav1_Escuelas.Paint += new System.Windows.Forms.PaintEventHandler(this.tabNavigationPage1_Paint);
@@ -221,26 +230,11 @@ namespace Sistema_de_Gestión_de_Museo_Pictórico
             this.labelControl1.TabIndex = 1;
             this.labelControl1.Text = "Listado de Escuelas Disponibles";
             // 
-            // dgvEscuelas
-            // 
-            this.dgvEscuelas.Location = new System.Drawing.Point(34, 60);
-            this.dgvEscuelas.MainView = this.gridView1;
-            this.dgvEscuelas.Name = "dgvEscuelas";
-            this.dgvEscuelas.Size = new System.Drawing.Size(1100, 411);
-            this.dgvEscuelas.TabIndex = 0;
-            this.dgvEscuelas.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            // 
-            // gridView1
-            // 
-            this.gridView1.GridControl = this.dgvEscuelas;
-            this.gridView1.Name = "gridView1";
-            // 
             // tabNav2_Sedes
             // 
             this.tabNav2_Sedes.Caption = "Sede";
-            this.tabNav2_Sedes.Controls.Add(this.labelControl3);
             this.tabNav2_Sedes.Controls.Add(this.gridControl2);
+            this.tabNav2_Sedes.Controls.Add(this.labelControl3);
             this.tabNav2_Sedes.Name = "tabNav2_Sedes";
             this.tabNav2_Sedes.Size = new System.Drawing.Size(1174, 544);
             // 
@@ -254,27 +248,12 @@ namespace Sistema_de_Gestión_de_Museo_Pictórico
             this.labelControl3.TabIndex = 2;
             this.labelControl3.Text = "Listado de Sedes Disponibles";
             // 
-            // gridControl2
-            // 
-            this.gridControl2.Location = new System.Drawing.Point(34, 60);
-            this.gridControl2.MainView = this.gridView2;
-            this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(1117, 477);
-            this.gridControl2.TabIndex = 1;
-            this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView2});
-            // 
-            // gridView2
-            // 
-            this.gridView2.GridControl = this.gridControl2;
-            this.gridView2.Name = "gridView2";
-            // 
             // tabNav3_Visita_Exposiciones
             // 
             this.tabNav3_Visita_Exposiciones.Caption = "Visita y Exposiciones";
+            this.tabNav3_Visita_Exposiciones.Controls.Add(this.gridControl3);
             this.tabNav3_Visita_Exposiciones.Controls.Add(this.labelControl11);
             this.tabNav3_Visita_Exposiciones.Controls.Add(this.labelControl5);
-            this.tabNav3_Visita_Exposiciones.Controls.Add(this.gridControl3);
             this.tabNav3_Visita_Exposiciones.Controls.Add(this.checkedComboBoxEdit1);
             this.tabNav3_Visita_Exposiciones.Controls.Add(this.labelControl4);
             this.tabNav3_Visita_Exposiciones.Name = "tabNav3_Visita_Exposiciones";
@@ -290,26 +269,11 @@ namespace Sistema_de_Gestión_de_Museo_Pictórico
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(26, 94);
+            this.labelControl5.Location = new System.Drawing.Point(27, 97);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(116, 13);
             this.labelControl5.TabIndex = 5;
             this.labelControl5.Text = "Exposiciones disponibles";
-            // 
-            // gridControl3
-            // 
-            this.gridControl3.Location = new System.Drawing.Point(26, 113);
-            this.gridControl3.MainView = this.gridView3;
-            this.gridControl3.Name = "gridControl3";
-            this.gridControl3.Size = new System.Drawing.Size(1122, 424);
-            this.gridControl3.TabIndex = 4;
-            this.gridControl3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView3});
-            // 
-            // gridView3
-            // 
-            this.gridView3.GridControl = this.gridControl3;
-            this.gridView3.Name = "gridView3";
             // 
             // checkedComboBoxEdit1
             // 
@@ -463,10 +427,10 @@ namespace Sistema_de_Gestión_de_Museo_Pictórico
             // 
             // gridControl5
             // 
-            this.gridControl5.Location = new System.Drawing.Point(779, 136);
+            this.gridControl5.Location = new System.Drawing.Point(790, 116);
             this.gridControl5.MainView = this.gridView5;
             this.gridControl5.Name = "gridControl5";
-            this.gridControl5.Size = new System.Drawing.Size(357, 369);
+            this.gridControl5.Size = new System.Drawing.Size(357, 406);
             this.gridControl5.TabIndex = 1;
             this.gridControl5.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView5});
@@ -478,10 +442,10 @@ namespace Sistema_de_Gestión_de_Museo_Pictórico
             // 
             // gridControl4
             // 
-            this.gridControl4.Location = new System.Drawing.Point(43, 136);
+            this.gridControl4.Location = new System.Drawing.Point(27, 116);
             this.gridControl4.MainView = this.gridView4;
             this.gridControl4.Name = "gridControl4";
-            this.gridControl4.Size = new System.Drawing.Size(357, 369);
+            this.gridControl4.Size = new System.Drawing.Size(357, 406);
             this.gridControl4.TabIndex = 0;
             this.gridControl4.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView4});
@@ -506,14 +470,50 @@ namespace Sistema_de_Gestión_de_Museo_Pictórico
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Detalle de la Reserva";
             // 
-            // btn_confirmarReserva
+            // gridControl2
             // 
-            this.btn_confirmarReserva.Location = new System.Drawing.Point(1051, 29);
-            this.btn_confirmarReserva.Name = "btn_confirmarReserva";
-            this.btn_confirmarReserva.Size = new System.Drawing.Size(115, 23);
-            this.btn_confirmarReserva.TabIndex = 3;
-            this.btn_confirmarReserva.Text = "Confirmar Reserva";
-            this.btn_confirmarReserva.Visible = false;
+            this.gridControl2.Location = new System.Drawing.Point(27, 67);
+            this.gridControl2.MainView = this.gridView2;
+            this.gridControl2.Name = "gridControl2";
+            this.gridControl2.Size = new System.Drawing.Size(1120, 447);
+            this.gridControl2.TabIndex = 4;
+            this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView2});
+            // 
+            // gridView2
+            // 
+            this.gridView2.GridControl = this.gridControl2;
+            this.gridView2.Name = "gridView2";
+            // 
+            // dgvEscuelas
+            // 
+            this.dgvEscuelas.Location = new System.Drawing.Point(27, 67);
+            this.dgvEscuelas.MainView = this.gridView1;
+            this.dgvEscuelas.Name = "dgvEscuelas";
+            this.dgvEscuelas.Size = new System.Drawing.Size(1120, 411);
+            this.dgvEscuelas.TabIndex = 5;
+            this.dgvEscuelas.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.dgvEscuelas;
+            this.gridView1.Name = "gridView1";
+            // 
+            // gridControl3
+            // 
+            this.gridControl3.Location = new System.Drawing.Point(27, 116);
+            this.gridControl3.MainView = this.gridView3;
+            this.gridControl3.Name = "gridControl3";
+            this.gridControl3.Size = new System.Drawing.Size(1120, 406);
+            this.gridControl3.TabIndex = 7;
+            this.gridControl3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView3});
+            // 
+            // gridView3
+            // 
+            this.gridView3.GridControl = this.gridControl3;
+            this.gridView3.Name = "gridView3";
             // 
             // ucReservaVisitaGuiada
             // 
@@ -531,16 +531,10 @@ namespace Sistema_de_Gestión_de_Museo_Pictórico
             this.tabNav1_Escuelas.ResumeLayout(false);
             this.tabNav1_Escuelas.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spinEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEscuelas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.tabNav2_Sedes.ResumeLayout(false);
             this.tabNav2_Sedes.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.tabNav3_Visita_Exposiciones.ResumeLayout(false);
             this.tabNav3_Visita_Exposiciones.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkedComboBoxEdit1.Properties)).EndInit();
             this.tabNav4_DiaVisita.ResumeLayout(false);
             this.tabNav4_DiaVisita.PerformLayout();
@@ -554,6 +548,12 @@ namespace Sistema_de_Gestión_de_Museo_Pictórico
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             this.tabNav6_DetalleReserva.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEscuelas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -575,14 +575,8 @@ namespace Sistema_de_Gestión_de_Museo_Pictórico
         private DevExpress.XtraEditors.SpinEdit spinEdit1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraGrid.GridControl dgvEscuelas;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraGrid.GridControl gridControl2;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.XtraEditors.LabelControl labelControl5;
-        private DevExpress.XtraGrid.GridControl gridControl3;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
         private DevExpress.XtraEditors.CheckedComboBoxEdit checkedComboBoxEdit1;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.CheckedComboBoxEdit checkedComboBoxEdit2;
@@ -604,5 +598,11 @@ namespace Sistema_de_Gestión_de_Museo_Pictórico
         private DevExpress.XtraEditors.LabelControl labelControl10;
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.SimpleButton btn_confirmarReserva;
+        private DevExpress.XtraGrid.GridControl dgvEscuelas;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.GridControl gridControl2;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraGrid.GridControl gridControl3;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
     }
 }
