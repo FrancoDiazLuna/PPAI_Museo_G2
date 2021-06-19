@@ -135,140 +135,140 @@ C:\Users\diazl\Desktop\Sistema de Gestión de Museo Pictórico\Sistema de Gesti�
 C:\Users\diazl\Desktop\Sistema de Gestión de Museo Pictórico\Sistema de Gestión de Museo Pictórico\obj\Debug\Sistema de Gestión de Museo Pictórico.exe
 C:\Users\diazl\Desktop\Sistema de Gestión de Museo Pictórico\Sistema de Gestión de Museo Pictórico\obj\Debug\Sistema de Gestión de Museo Pictórico.pdb
 C:\Users\diazl\Desktop\Sistema de Gestión de Museo Pictórico\Sistema de Gestión de Museo Pictórico\obj\Debug\CapaPresentacion.Properties.Resources.resources
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\Sistema de Gestión de Museo Pictórico.exe.config
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\Sistema de Gestión de Museo Pictórico.exe
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\Sistema de Gestión de Museo Pictórico.pdb
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\CapaNegocio.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.CodeParser.v20.1.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.Data.Desktop.v20.1.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.Data.v20.1.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.DataAccess.v20.1.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.Printing.v20.1.Core.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.Utils.v20.1.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.Xpo.v20.1.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.XtraBars.v20.1.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.XtraEditors.v20.1.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.XtraGrid.v20.1.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.XtraLayout.v20.1.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.XtraNavBar.v20.1.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.XtraPrinting.v20.1.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.XtraScheduler.v20.1.Core.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.XtraScheduler.v20.1.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.XtraVerticalGrid.v20.1.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\CapaDatos.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.RichEdit.v20.1.Core.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.Office.v20.1.Core.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.Pdf.v20.1.Core.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.Pdf.v20.1.Drawing.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.Sparkline.v20.1.Core.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.XtraTreeList.v20.1.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.Images.v20.1.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\CapaNegocio.pdb
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.Data.Desktop.v20.1.xml
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.Data.v20.1.xml
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.DataAccess.v20.1.xml
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.Printing.v20.1.Core.xml
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.Utils.v20.1.xml
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.Xpo.v20.1.xml
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.XtraBars.v20.1.xml
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.XtraEditors.v20.1.xml
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.XtraGrid.v20.1.xml
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.XtraLayout.v20.1.xml
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.XtraNavBar.v20.1.xml
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.XtraPrinting.v20.1.xml
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.XtraScheduler.v20.1.xml
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.XtraScheduler.v20.1.Core.xml
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.XtraVerticalGrid.v20.1.xml
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\CapaDatos.pdb
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.RichEdit.v20.1.Core.xml
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.Office.v20.1.Core.xml
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.Pdf.v20.1.Core.xml
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.Pdf.v20.1.Drawing.xml
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.Sparkline.v20.1.Core.xml
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.XtraTreeList.v20.1.xml
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\de\DevExpress.Data.v20.1.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\es\DevExpress.Data.v20.1.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\ja\DevExpress.Data.v20.1.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\ru\DevExpress.Data.v20.1.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\de\DevExpress.DataAccess.v20.1.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\es\DevExpress.DataAccess.v20.1.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\ja\DevExpress.DataAccess.v20.1.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\ru\DevExpress.DataAccess.v20.1.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\de\DevExpress.Printing.v20.1.Core.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\es\DevExpress.Printing.v20.1.Core.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\ja\DevExpress.Printing.v20.1.Core.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\ru\DevExpress.Printing.v20.1.Core.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\de\DevExpress.Utils.v20.1.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\es\DevExpress.Utils.v20.1.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\ja\DevExpress.Utils.v20.1.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\ru\DevExpress.Utils.v20.1.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\de\DevExpress.Xpo.v20.1.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\es\DevExpress.Xpo.v20.1.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\ja\DevExpress.Xpo.v20.1.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\ru\DevExpress.Xpo.v20.1.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\de\DevExpress.XtraBars.v20.1.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\es\DevExpress.XtraBars.v20.1.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\ja\DevExpress.XtraBars.v20.1.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\ru\DevExpress.XtraBars.v20.1.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\de\DevExpress.XtraEditors.v20.1.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\es\DevExpress.XtraEditors.v20.1.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\ja\DevExpress.XtraEditors.v20.1.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\ru\DevExpress.XtraEditors.v20.1.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\de\DevExpress.XtraGrid.v20.1.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\es\DevExpress.XtraGrid.v20.1.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\ja\DevExpress.XtraGrid.v20.1.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\ru\DevExpress.XtraGrid.v20.1.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\de\DevExpress.XtraLayout.v20.1.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\es\DevExpress.XtraLayout.v20.1.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\ja\DevExpress.XtraLayout.v20.1.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\ru\DevExpress.XtraLayout.v20.1.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\de\DevExpress.XtraNavBar.v20.1.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\es\DevExpress.XtraNavBar.v20.1.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\ja\DevExpress.XtraNavBar.v20.1.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\ru\DevExpress.XtraNavBar.v20.1.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\de\DevExpress.XtraPrinting.v20.1.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\es\DevExpress.XtraPrinting.v20.1.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\ja\DevExpress.XtraPrinting.v20.1.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\ru\DevExpress.XtraPrinting.v20.1.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\de\DevExpress.XtraScheduler.v20.1.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\es\DevExpress.XtraScheduler.v20.1.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\ja\DevExpress.XtraScheduler.v20.1.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\ru\DevExpress.XtraScheduler.v20.1.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\de\DevExpress.XtraScheduler.v20.1.Core.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\es\DevExpress.XtraScheduler.v20.1.Core.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\ja\DevExpress.XtraScheduler.v20.1.Core.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\ru\DevExpress.XtraScheduler.v20.1.Core.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\de\DevExpress.XtraVerticalGrid.v20.1.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\es\DevExpress.XtraVerticalGrid.v20.1.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\ja\DevExpress.XtraVerticalGrid.v20.1.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\ru\DevExpress.XtraVerticalGrid.v20.1.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\de\DevExpress.RichEdit.v20.1.Core.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\es\DevExpress.RichEdit.v20.1.Core.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\ja\DevExpress.RichEdit.v20.1.Core.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\ru\DevExpress.RichEdit.v20.1.Core.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\de\DevExpress.Office.v20.1.Core.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\es\DevExpress.Office.v20.1.Core.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\ja\DevExpress.Office.v20.1.Core.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\ru\DevExpress.Office.v20.1.Core.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\de\DevExpress.Pdf.v20.1.Core.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\es\DevExpress.Pdf.v20.1.Core.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\ja\DevExpress.Pdf.v20.1.Core.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\ru\DevExpress.Pdf.v20.1.Core.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\de\DevExpress.Sparkline.v20.1.Core.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\es\DevExpress.Sparkline.v20.1.Core.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\ja\DevExpress.Sparkline.v20.1.Core.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\ru\DevExpress.Sparkline.v20.1.Core.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\de\DevExpress.XtraTreeList.v20.1.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\es\DevExpress.XtraTreeList.v20.1.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\ja\DevExpress.XtraTreeList.v20.1.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\bin\Debug\ru\DevExpress.XtraTreeList.v20.1.resources.dll
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\obj\Debug\CapaPresentacion.csproj.AssemblyReference.cache
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\obj\Debug\Sistema_de_Gestión_de_Museo_Pictórico.FormMain.resources
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\obj\Debug\CapaPresentacion.Properties.Resources.resources
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\obj\Debug\Sistema_de_Gestión_de_Museo_Pictórico.ucReservaVisitaGuiada.resources
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\obj\Debug\CapaPresentacion.csproj.GenerateResource.cache
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\obj\Debug\Sistema de Gestión de Museo Pictórico.exe.licenses
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\obj\Debug\CapaPresentacion.csproj.CoreCompileInputs.cache
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\obj\Debug\CapaPresentacion.csproj.CopyComplete
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\obj\Debug\Sistema de Gestión de Museo Pictórico.exe
-D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\Sistema de Gestión de Museo Pictórico\obj\Debug\Sistema de Gestión de Museo Pictórico.pdb
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\Sistema de Gestión de Museo Pictórico.exe.config
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\Sistema de Gestión de Museo Pictórico.exe
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\Sistema de Gestión de Museo Pictórico.pdb
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\CapaNegocio.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.CodeParser.v20.1.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.Data.Desktop.v20.1.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.Data.v20.1.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.DataAccess.v20.1.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.Printing.v20.1.Core.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.Utils.v20.1.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.Xpo.v20.1.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.XtraBars.v20.1.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.XtraEditors.v20.1.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.XtraGrid.v20.1.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.XtraLayout.v20.1.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.XtraNavBar.v20.1.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.XtraPrinting.v20.1.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.XtraScheduler.v20.1.Core.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.XtraScheduler.v20.1.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.XtraVerticalGrid.v20.1.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\CapaDatos.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.RichEdit.v20.1.Core.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.Office.v20.1.Core.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.Pdf.v20.1.Core.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.Pdf.v20.1.Drawing.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.Sparkline.v20.1.Core.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.XtraTreeList.v20.1.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.Images.v20.1.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\CapaNegocio.pdb
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.Data.Desktop.v20.1.xml
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.Data.v20.1.xml
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.DataAccess.v20.1.xml
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.Printing.v20.1.Core.xml
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.Utils.v20.1.xml
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.Xpo.v20.1.xml
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.XtraBars.v20.1.xml
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.XtraEditors.v20.1.xml
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.XtraGrid.v20.1.xml
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.XtraLayout.v20.1.xml
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.XtraNavBar.v20.1.xml
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.XtraPrinting.v20.1.xml
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.XtraScheduler.v20.1.xml
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.XtraScheduler.v20.1.Core.xml
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.XtraVerticalGrid.v20.1.xml
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\CapaDatos.pdb
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.RichEdit.v20.1.Core.xml
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.Office.v20.1.Core.xml
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.Pdf.v20.1.Core.xml
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.Pdf.v20.1.Drawing.xml
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.Sparkline.v20.1.Core.xml
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.XtraTreeList.v20.1.xml
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\de\DevExpress.Data.v20.1.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\es\DevExpress.Data.v20.1.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\ja\DevExpress.Data.v20.1.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\ru\DevExpress.Data.v20.1.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\de\DevExpress.DataAccess.v20.1.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\es\DevExpress.DataAccess.v20.1.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\ja\DevExpress.DataAccess.v20.1.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\ru\DevExpress.DataAccess.v20.1.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\de\DevExpress.Printing.v20.1.Core.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\es\DevExpress.Printing.v20.1.Core.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\ja\DevExpress.Printing.v20.1.Core.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\ru\DevExpress.Printing.v20.1.Core.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\de\DevExpress.Utils.v20.1.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\es\DevExpress.Utils.v20.1.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\ja\DevExpress.Utils.v20.1.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\ru\DevExpress.Utils.v20.1.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\de\DevExpress.Xpo.v20.1.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\es\DevExpress.Xpo.v20.1.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\ja\DevExpress.Xpo.v20.1.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\ru\DevExpress.Xpo.v20.1.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\de\DevExpress.XtraBars.v20.1.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\es\DevExpress.XtraBars.v20.1.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\ja\DevExpress.XtraBars.v20.1.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\ru\DevExpress.XtraBars.v20.1.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\de\DevExpress.XtraEditors.v20.1.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\es\DevExpress.XtraEditors.v20.1.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\ja\DevExpress.XtraEditors.v20.1.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\ru\DevExpress.XtraEditors.v20.1.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\de\DevExpress.XtraGrid.v20.1.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\es\DevExpress.XtraGrid.v20.1.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\ja\DevExpress.XtraGrid.v20.1.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\ru\DevExpress.XtraGrid.v20.1.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\de\DevExpress.XtraLayout.v20.1.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\es\DevExpress.XtraLayout.v20.1.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\ja\DevExpress.XtraLayout.v20.1.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\ru\DevExpress.XtraLayout.v20.1.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\de\DevExpress.XtraNavBar.v20.1.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\es\DevExpress.XtraNavBar.v20.1.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\ja\DevExpress.XtraNavBar.v20.1.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\ru\DevExpress.XtraNavBar.v20.1.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\de\DevExpress.XtraPrinting.v20.1.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\es\DevExpress.XtraPrinting.v20.1.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\ja\DevExpress.XtraPrinting.v20.1.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\ru\DevExpress.XtraPrinting.v20.1.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\de\DevExpress.XtraScheduler.v20.1.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\es\DevExpress.XtraScheduler.v20.1.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\ja\DevExpress.XtraScheduler.v20.1.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\ru\DevExpress.XtraScheduler.v20.1.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\de\DevExpress.XtraScheduler.v20.1.Core.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\es\DevExpress.XtraScheduler.v20.1.Core.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\ja\DevExpress.XtraScheduler.v20.1.Core.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\ru\DevExpress.XtraScheduler.v20.1.Core.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\de\DevExpress.XtraVerticalGrid.v20.1.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\es\DevExpress.XtraVerticalGrid.v20.1.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\ja\DevExpress.XtraVerticalGrid.v20.1.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\ru\DevExpress.XtraVerticalGrid.v20.1.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\de\DevExpress.RichEdit.v20.1.Core.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\es\DevExpress.RichEdit.v20.1.Core.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\ja\DevExpress.RichEdit.v20.1.Core.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\ru\DevExpress.RichEdit.v20.1.Core.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\de\DevExpress.Office.v20.1.Core.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\es\DevExpress.Office.v20.1.Core.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\ja\DevExpress.Office.v20.1.Core.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\ru\DevExpress.Office.v20.1.Core.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\de\DevExpress.Pdf.v20.1.Core.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\es\DevExpress.Pdf.v20.1.Core.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\ja\DevExpress.Pdf.v20.1.Core.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\ru\DevExpress.Pdf.v20.1.Core.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\de\DevExpress.Sparkline.v20.1.Core.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\es\DevExpress.Sparkline.v20.1.Core.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\ja\DevExpress.Sparkline.v20.1.Core.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\ru\DevExpress.Sparkline.v20.1.Core.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\de\DevExpress.XtraTreeList.v20.1.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\es\DevExpress.XtraTreeList.v20.1.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\ja\DevExpress.XtraTreeList.v20.1.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\ru\DevExpress.XtraTreeList.v20.1.resources.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\obj\Debug\CapaPresentacion.csprojAssemblyReference.cache
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\obj\Debug\Sistema_de_Gestión_de_Museo_Pictórico.FormMain.resources
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\obj\Debug\CapaPresentacion.Properties.Resources.resources
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\obj\Debug\Sistema_de_Gestión_de_Museo_Pictórico.ucReservaVisitaGuiada.resources
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\obj\Debug\CapaPresentacion.csproj.GenerateResource.cache
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\obj\Debug\Sistema de Gestión de Museo Pictórico.exe.licenses
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\obj\Debug\CapaPresentacion.csproj.CoreCompileInputs.cache
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\obj\Debug\CapaPresentacion.csproj.CopyComplete
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\obj\Debug\Sistema de Gestión de Museo Pictórico.exe
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\obj\Debug\Sistema de Gestión de Museo Pictórico.pdb
