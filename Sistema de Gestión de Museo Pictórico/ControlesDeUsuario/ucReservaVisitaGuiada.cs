@@ -21,6 +21,7 @@ namespace Sistema_de_Gestión_de_Museo_Pictórico
 
         private void tabNavigationPage1_Paint(object sender, PaintEventArgs e)
         {
+            
             ucReservaVisitaGuiada uc = new ucReservaVisitaGuiada();
             showControl(uc);
         }
@@ -38,7 +39,7 @@ namespace Sistema_de_Gestión_de_Museo_Pictórico
 
         private void btn_cancelar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Esta seguro desea descartar la reserva de la visita guiada?", "Importante", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            if (MessageBox.Show("¿Está seguro desea descartar la reserva de la visita guiada?", "Importante", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
                 this.Dispose();
             }
@@ -47,6 +48,46 @@ namespace Sistema_de_Gestión_de_Museo_Pictórico
         public void mostrar()
         {
             this.dgvEscuelas.DataSource = NEscuela.mostrar();
+        }
+
+        private void btn_anterior_Click(object sender, EventArgs e)
+        {
+            tabPane1.SelectPrevPage() ;
+            
+        }
+
+        private void tabPane1_SelectedPageChanged(object sender, DevExpress.XtraBars.Navigation.SelectedPageChangedEventArgs e)
+        {
+            var pag = tabPane1.SelectedPage;
+            if (pag == tabNav1_Escuelas)
+            {
+                btn_anterior.Visible = false;
+            }
+            else
+            {
+                btn_anterior.Visible = true;
+            }
+                
+
+            if (pag == tabNav6_DetalleReserva)
+            {
+                //btn_siguiente.Text = "Confirmar Reserva";
+                //btn_siguiente.Size = new Size(150, 23);
+                btn_siguiente.Visible = false;
+                btn_confirmarReserva.Visible = true;
+            }
+            else{
+                //btn_siguiente.Text = "Siguiente";
+                //btn_siguiente.Width = 75;
+                btn_siguiente.Visible = true;
+                btn_confirmarReserva.Visible = false;
+            }
+                
+        }
+
+        private void btn_siguiente_Click(object sender, EventArgs e)
+        {
+            tabPane1.SelectNextPage();
         }
     }
     

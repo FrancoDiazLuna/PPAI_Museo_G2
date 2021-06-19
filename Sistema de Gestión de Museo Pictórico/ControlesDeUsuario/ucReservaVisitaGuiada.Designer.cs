@@ -72,6 +72,7 @@ namespace Sistema_de_Gestión_de_Museo_Pictórico
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.tabNav6_DetalleReserva = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.btn_confirmarReserva = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
@@ -113,6 +114,7 @@ namespace Sistema_de_Gestión_de_Museo_Pictórico
             // 
             // panelControl3
             // 
+            this.panelControl3.Controls.Add(this.btn_confirmarReserva);
             this.panelControl3.Controls.Add(this.btn_anterior);
             this.panelControl3.Controls.Add(this.btn_siguiente);
             this.panelControl3.Controls.Add(this.btn_cancelar);
@@ -123,23 +125,26 @@ namespace Sistema_de_Gestión_de_Museo_Pictórico
             // 
             // btn_anterior
             // 
-            this.btn_anterior.Location = new System.Drawing.Point(993, 29);
+            this.btn_anterior.Location = new System.Drawing.Point(944, 29);
             this.btn_anterior.Name = "btn_anterior";
             this.btn_anterior.Size = new System.Drawing.Size(75, 23);
             this.btn_anterior.TabIndex = 2;
             this.btn_anterior.Text = "Anterior";
+            this.btn_anterior.Visible = false;
+            this.btn_anterior.Click += new System.EventHandler(this.btn_anterior_Click);
             // 
             // btn_siguiente
             // 
-            this.btn_siguiente.Location = new System.Drawing.Point(1113, 29);
+            this.btn_siguiente.Location = new System.Drawing.Point(1091, 29);
             this.btn_siguiente.Name = "btn_siguiente";
             this.btn_siguiente.Size = new System.Drawing.Size(75, 23);
             this.btn_siguiente.TabIndex = 1;
             this.btn_siguiente.Text = "Siguiente";
+            this.btn_siguiente.Click += new System.EventHandler(this.btn_siguiente_Click);
             // 
             // btn_cancelar
             // 
-            this.btn_cancelar.Location = new System.Drawing.Point(14, 29);
+            this.btn_cancelar.Location = new System.Drawing.Point(40, 29);
             this.btn_cancelar.Name = "btn_cancelar";
             this.btn_cancelar.Size = new System.Drawing.Size(75, 23);
             this.btn_cancelar.TabIndex = 0;
@@ -171,6 +176,7 @@ namespace Sistema_de_Gestión_de_Museo_Pictórico
             this.tabPane1.Size = new System.Drawing.Size(1174, 573);
             this.tabPane1.TabIndex = 0;
             this.tabPane1.Text = "tabPane1";
+            this.tabPane1.SelectedPageChanged += new DevExpress.XtraBars.Navigation.SelectedPageChangedEventHandler(this.tabPane1_SelectedPageChanged);
             // 
             // tabNav1_Escuelas
             // 
@@ -380,7 +386,7 @@ namespace Sistema_de_Gestión_de_Museo_Pictórico
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.calendarControl1.Location = new System.Drawing.Point(59, 109);
             this.calendarControl1.Name = "calendarControl1";
-            this.calendarControl1.Size = new System.Drawing.Size(247, 235);
+            this.calendarControl1.Size = new System.Drawing.Size(250, 235);
             this.calendarControl1.TabIndex = 0;
             // 
             // tabNav5_Guia
@@ -500,6 +506,15 @@ namespace Sistema_de_Gestión_de_Museo_Pictórico
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Detalle de la Reserva";
             // 
+            // btn_confirmarReserva
+            // 
+            this.btn_confirmarReserva.Location = new System.Drawing.Point(1051, 29);
+            this.btn_confirmarReserva.Name = "btn_confirmarReserva";
+            this.btn_confirmarReserva.Size = new System.Drawing.Size(115, 23);
+            this.btn_confirmarReserva.TabIndex = 3;
+            this.btn_confirmarReserva.Text = "Confirmar Reserva";
+            this.btn_confirmarReserva.Visible = false;
+            // 
             // ucReservaVisitaGuiada
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -588,5 +603,6 @@ namespace Sistema_de_Gestión_de_Museo_Pictórico
         private System.Windows.Forms.TextBox txt_CantGuias;
         private DevExpress.XtraEditors.LabelControl labelControl10;
         private DevExpress.XtraEditors.LabelControl labelControl9;
+        private DevExpress.XtraEditors.SimpleButton btn_confirmarReserva;
     }
 }

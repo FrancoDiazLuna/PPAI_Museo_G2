@@ -3,3 +3,9 @@ C:\Users\diazl\Desktop\Sistema de Gestión de Museo Pictórico\CapaDatos\bin\Deb
 C:\Users\diazl\Desktop\Sistema de Gestión de Museo Pictórico\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
 C:\Users\diazl\Desktop\Sistema de Gestión de Museo Pictórico\CapaDatos\obj\Debug\CapaDatos.dll
 C:\Users\diazl\Desktop\Sistema de Gestión de Museo Pictórico\CapaDatos\obj\Debug\CapaDatos.pdb
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\CapaDatos\bin\Debug\CapaDatos.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\CapaDatos\bin\Debug\CapaDatos.pdb
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\CapaDatos\obj\Debug\CapaDatos.csprojAssemblyReference.cache
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\CapaDatos\obj\Debug\CapaDatos.dll
+C:\Users\Axel\Desktop\DISEÑO\VSPPAI\CapaDatos\obj\Debug\CapaDatos.pdb
