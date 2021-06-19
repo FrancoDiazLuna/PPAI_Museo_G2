@@ -7,3 +7,12 @@ C:\Users\diazl\Desktop\Sistema de Gestión de Museo Pictórico\CapaNegocio\bin\D
 C:\Users\diazl\Desktop\Sistema de Gestión de Museo Pictórico\CapaNegocio\obj\Debug\CapaNegocio.csproj.CopyComplete
 C:\Users\diazl\Desktop\Sistema de Gestión de Museo Pictórico\CapaNegocio\obj\Debug\CapaNegocio.dll
 C:\Users\diazl\Desktop\Sistema de Gestión de Museo Pictórico\CapaNegocio\obj\Debug\CapaNegocio.pdb
+D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\CapaNegocio\bin\Debug\CapaNegocio.dll
+D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\CapaNegocio\bin\Debug\CapaNegocio.pdb
+D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\CapaNegocio\bin\Debug\CapaDatos.dll
+D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\CapaNegocio\bin\Debug\CapaDatos.pdb
+D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\CapaNegocio\obj\Debug\CapaNegocio.csproj.AssemblyReference.cache
+D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\CapaNegocio\obj\Debug\CapaNegocio.csproj.CoreCompileInputs.cache
+D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\CapaNegocio\obj\Debug\CapaNegocio.csproj.CopyComplete
+D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\CapaNegocio\obj\Debug\CapaNegocio.dll
+D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\CapaNegocio\obj\Debug\CapaNegocio.pdb
