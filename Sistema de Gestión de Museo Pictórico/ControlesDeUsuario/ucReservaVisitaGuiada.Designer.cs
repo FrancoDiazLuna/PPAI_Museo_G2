@@ -74,7 +74,12 @@ namespace CapaNegocio
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.tabNav6_DetalleReserva = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.tipoVisitaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.escuelaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.colnombre = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldomicilio = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colmail = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coltelefFijo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coltelefCelular = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
@@ -101,7 +106,7 @@ namespace CapaNegocio
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             this.tabNav6_DetalleReserva.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tipoVisitaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.escuelaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -202,6 +207,7 @@ namespace CapaNegocio
             // 
             // dgvEscuelas
             // 
+            this.dgvEscuelas.DataSource = this.escuelaBindingSource;
             this.dgvEscuelas.Location = new System.Drawing.Point(27, 67);
             this.dgvEscuelas.MainView = this.gridView1;
             this.dgvEscuelas.Name = "dgvEscuelas";
@@ -212,6 +218,12 @@ namespace CapaNegocio
             // 
             // gridView1
             // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colnombre,
+            this.coldomicilio,
+            this.colmail,
+            this.coltelefFijo,
+            this.coltelefCelular});
             this.gridView1.GridControl = this.dgvEscuelas;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
@@ -301,8 +313,6 @@ namespace CapaNegocio
             // 
             // comboBox1
             // 
-            this.comboBox1.DataSource = this.tipoVisitaBindingSource;
-            this.comboBox1.DisplayMember = "nombre";
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(213, 56);
             this.comboBox1.Name = "comboBox1";
@@ -528,9 +538,54 @@ namespace CapaNegocio
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Detalle de la Reserva";
             // 
-            // tipoVisitaBindingSource
+            // escuelaBindingSource
             // 
-            this.tipoVisitaBindingSource.DataSource = typeof(CapaNegocio.TipoVisita);
+            this.escuelaBindingSource.DataSource = typeof(CapaNegocio.Escuela);
+            // 
+            // colnombre
+            // 
+            this.colnombre.Caption = "Nombre";
+            this.colnombre.FieldName = "nombre";
+            this.colnombre.Name = "colnombre";
+            this.colnombre.OptionsColumn.AllowEdit = false;
+            this.colnombre.Visible = true;
+            this.colnombre.VisibleIndex = 0;
+            // 
+            // coldomicilio
+            // 
+            this.coldomicilio.Caption = "Domicilio";
+            this.coldomicilio.FieldName = "domicilio";
+            this.coldomicilio.Name = "coldomicilio";
+            this.coldomicilio.OptionsColumn.AllowEdit = false;
+            this.coldomicilio.Visible = true;
+            this.coldomicilio.VisibleIndex = 1;
+            // 
+            // colmail
+            // 
+            this.colmail.Caption = "Mail";
+            this.colmail.FieldName = "mail";
+            this.colmail.Name = "colmail";
+            this.colmail.OptionsColumn.AllowEdit = false;
+            this.colmail.Visible = true;
+            this.colmail.VisibleIndex = 2;
+            // 
+            // coltelefFijo
+            // 
+            this.coltelefFijo.Caption = "Telefono";
+            this.coltelefFijo.FieldName = "telefFijo";
+            this.coltelefFijo.Name = "coltelefFijo";
+            this.coltelefFijo.OptionsColumn.AllowEdit = false;
+            this.coltelefFijo.Visible = true;
+            this.coltelefFijo.VisibleIndex = 3;
+            // 
+            // coltelefCelular
+            // 
+            this.coltelefCelular.Caption = "Celular";
+            this.coltelefCelular.FieldName = "telefCelular";
+            this.coltelefCelular.Name = "coltelefCelular";
+            this.coltelefCelular.OptionsColumn.AllowEdit = false;
+            this.coltelefCelular.Visible = true;
+            this.coltelefCelular.VisibleIndex = 4;
             // 
             // ucReservaVisitaGuiada
             // 
@@ -570,7 +625,7 @@ namespace CapaNegocio
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             this.tabNav6_DetalleReserva.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tipoVisitaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.escuelaBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -621,6 +676,11 @@ namespace CapaNegocio
         private DevExpress.XtraGrid.GridControl gridControl3;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.BindingSource tipoVisitaBindingSource;
+        private System.Windows.Forms.BindingSource escuelaBindingSource;
+        private DevExpress.XtraGrid.Columns.GridColumn colnombre;
+        private DevExpress.XtraGrid.Columns.GridColumn coldomicilio;
+        private DevExpress.XtraGrid.Columns.GridColumn colmail;
+        private DevExpress.XtraGrid.Columns.GridColumn coltelefFijo;
+        private DevExpress.XtraGrid.Columns.GridColumn coltelefCelular;
     }
 }

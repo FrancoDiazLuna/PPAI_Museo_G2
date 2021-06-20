@@ -47,10 +47,9 @@ namespace CapaNegocio
         
         public void mostrar()
         {
-            List<TipoVisita> vi = GestorDeReserva.buscarVisitas(); 
-            //this.dgvEscuelas.DataSource = Escuela.mostrar();
-            this.dgvEscuelas.DataSource = GestorDeReserva.buscarEscuelas();
+            escuelaBindingSource.DataSource = GestorDeReserva.buscarEscuelas();
             this.dgvSede.DataSource = GestorDeReserva.buscarSedes();
+            List<TipoVisita> vi = GestorDeReserva.buscarVisitas();
             foreach (TipoVisita item in vi)
             {
                 this.comboBox1.Items.Add(item.nombre);
