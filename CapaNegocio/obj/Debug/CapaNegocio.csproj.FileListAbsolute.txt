@@ -24,3 +24,4 @@ D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEnt
 D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\CapaNegocio\obj\Debug\CapaNegocio.csproj.CopyComplete
 D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\CapaNegocio\obj\Debug\CapaNegocio.dll
 D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\CapaNegocio\obj\Debug\CapaNegocio.pdb
+D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\CapaNegocio\bin\Debug\CapaNegocio.pdb
