@@ -48,7 +48,7 @@ namespace CapaNegocio
         public void mostrar()
         {
             escuelaBindingSource.DataSource = GestorDeReserva.buscarEscuelas();
-            this.dgvSede.DataSource = GestorDeReserva.buscarSedes();
+            sedeBindingSource.DataSource = GestorDeReserva.buscarSedes();
             List<TipoVisita> vi = GestorDeReserva.buscarVisitas();
             foreach (TipoVisita item in vi)
             {

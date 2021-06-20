@@ -99,6 +99,8 @@
       <DependentUpon>ucReservaVisitaGuiada.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\CapaNegocio.Escuela2.datasource" />
+    <None Include="Properties\DataSources\CapaNegocio.Exposicion.datasource" />
+    <None Include="Properties\DataSources\CapaNegocio.Sede1.datasource" />
     <None Include="Properties\DataSources\CapaNegocio.TipoVisita.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

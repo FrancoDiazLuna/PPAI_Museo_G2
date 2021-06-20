@@ -39,18 +39,35 @@ namespace CapaNegocio
             this.tabPane1 = new DevExpress.XtraBars.Navigation.TabPane();
             this.tabNav1_Escuelas = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.dgvEscuelas = new DevExpress.XtraGrid.GridControl();
+            this.escuelaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.spinEdit1 = new DevExpress.XtraEditors.SpinEdit();
+            this.colnombre = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldomicilio = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colmail = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coltelefFijo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coltelefCelular = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.tabNav2_Sedes = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.dgvSede = new DevExpress.XtraGrid.GridControl();
+            this.sedeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colnombre1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcantidadMaximaVisitantes = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcantidadMaxPorGuia = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.tabNav3_Visita_Exposiciones = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.gridControl3 = new DevExpress.XtraGrid.GridControl();
+            this.exposicionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colnombre2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfechaInicio = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfechaFin = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colhoraApertura = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colhoraCierre = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfechaInicioReplanificada = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfechaFinReplanificada = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
@@ -74,12 +91,7 @@ namespace CapaNegocio
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.tabNav6_DetalleReserva = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.escuelaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.colnombre = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.coldomicilio = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colmail = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.coltelefFijo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.coltelefCelular = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.spinEdit1 = new DevExpress.XtraEditors.SpinEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
@@ -88,13 +100,15 @@ namespace CapaNegocio
             this.tabPane1.SuspendLayout();
             this.tabNav1_Escuelas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEscuelas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.escuelaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinEdit1.Properties)).BeginInit();
             this.tabNav2_Sedes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSede)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sedeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.tabNav3_Visita_Exposiciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.exposicionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             this.tabNav4_DiaVisita.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkedComboBoxEdit2.Properties)).BeginInit();
@@ -106,7 +120,7 @@ namespace CapaNegocio
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             this.tabNav6_DetalleReserva.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.escuelaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -197,8 +211,8 @@ namespace CapaNegocio
             // tabNav1_Escuelas
             // 
             this.tabNav1_Escuelas.Caption = "Escuelas";
-            this.tabNav1_Escuelas.Controls.Add(this.dgvEscuelas);
             this.tabNav1_Escuelas.Controls.Add(this.spinEdit1);
+            this.tabNav1_Escuelas.Controls.Add(this.dgvEscuelas);
             this.tabNav1_Escuelas.Controls.Add(this.labelControl2);
             this.tabNav1_Escuelas.Controls.Add(this.labelControl1);
             this.tabNav1_Escuelas.Name = "tabNav1_Escuelas";
@@ -216,6 +230,10 @@ namespace CapaNegocio
             this.dgvEscuelas.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
+            // escuelaBindingSource
+            // 
+            this.escuelaBindingSource.DataSource = typeof(CapaNegocio.Escuela);
+            // 
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -232,22 +250,50 @@ namespace CapaNegocio
             this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView1.OptionsSelection.ShowCheckBoxSelectorInColumnHeader = DevExpress.Utils.DefaultBoolean.False;
             // 
-            // spinEdit1
+            // colnombre
             // 
-            this.spinEdit1.EditValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.spinEdit1.Location = new System.Drawing.Point(224, 499);
-            this.spinEdit1.Name = "spinEdit1";
-            this.spinEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.spinEdit1.Properties.IsFloatValue = false;
-            this.spinEdit1.Properties.Mask.EditMask = "N00";
-            this.spinEdit1.Size = new System.Drawing.Size(100, 20);
-            this.spinEdit1.TabIndex = 3;
-            this.spinEdit1.EditValueChanged += new System.EventHandler(this.spinEdit1_EditValueChanged);
+            this.colnombre.Caption = "Nombre";
+            this.colnombre.FieldName = "nombre";
+            this.colnombre.Name = "colnombre";
+            this.colnombre.OptionsColumn.AllowEdit = false;
+            this.colnombre.Visible = true;
+            this.colnombre.VisibleIndex = 0;
+            // 
+            // coldomicilio
+            // 
+            this.coldomicilio.Caption = "Domicilio";
+            this.coldomicilio.FieldName = "domicilio";
+            this.coldomicilio.Name = "coldomicilio";
+            this.coldomicilio.OptionsColumn.AllowEdit = false;
+            this.coldomicilio.Visible = true;
+            this.coldomicilio.VisibleIndex = 1;
+            // 
+            // colmail
+            // 
+            this.colmail.Caption = "Mail";
+            this.colmail.FieldName = "mail";
+            this.colmail.Name = "colmail";
+            this.colmail.OptionsColumn.AllowEdit = false;
+            this.colmail.Visible = true;
+            this.colmail.VisibleIndex = 2;
+            // 
+            // coltelefFijo
+            // 
+            this.coltelefFijo.Caption = "Telefono";
+            this.coltelefFijo.FieldName = "telefFijo";
+            this.coltelefFijo.Name = "coltelefFijo";
+            this.coltelefFijo.OptionsColumn.AllowEdit = false;
+            this.coltelefFijo.Visible = true;
+            this.coltelefFijo.VisibleIndex = 3;
+            // 
+            // coltelefCelular
+            // 
+            this.coltelefCelular.Caption = "Celular";
+            this.coltelefCelular.FieldName = "telefCelular";
+            this.coltelefCelular.Name = "coltelefCelular";
+            this.coltelefCelular.OptionsColumn.AllowEdit = false;
+            this.coltelefCelular.Visible = true;
+            this.coltelefCelular.VisibleIndex = 4;
             // 
             // labelControl2
             // 
@@ -277,6 +323,7 @@ namespace CapaNegocio
             // 
             // dgvSede
             // 
+            this.dgvSede.DataSource = this.sedeBindingSource;
             this.dgvSede.Location = new System.Drawing.Point(27, 67);
             this.dgvSede.MainView = this.gridView2;
             this.dgvSede.Name = "dgvSede";
@@ -285,10 +332,45 @@ namespace CapaNegocio
             this.dgvSede.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
             // 
+            // sedeBindingSource
+            // 
+            this.sedeBindingSource.DataSource = typeof(CapaNegocio.Sede);
+            // 
             // gridView2
             // 
+            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colnombre1,
+            this.colcantidadMaximaVisitantes,
+            this.colcantidadMaxPorGuia});
             this.gridView2.GridControl = this.dgvSede;
             this.gridView2.Name = "gridView2";
+            // 
+            // colnombre1
+            // 
+            this.colnombre1.Caption = "Nombre";
+            this.colnombre1.FieldName = "nombre";
+            this.colnombre1.Name = "colnombre1";
+            this.colnombre1.OptionsColumn.AllowEdit = false;
+            this.colnombre1.Visible = true;
+            this.colnombre1.VisibleIndex = 0;
+            // 
+            // colcantidadMaximaVisitantes
+            // 
+            this.colcantidadMaximaVisitantes.Caption = "Cant. max. visitantes";
+            this.colcantidadMaximaVisitantes.FieldName = "cantidadMaximaVisitantes";
+            this.colcantidadMaximaVisitantes.Name = "colcantidadMaximaVisitantes";
+            this.colcantidadMaximaVisitantes.OptionsColumn.AllowEdit = false;
+            this.colcantidadMaximaVisitantes.Visible = true;
+            this.colcantidadMaximaVisitantes.VisibleIndex = 1;
+            // 
+            // colcantidadMaxPorGuia
+            // 
+            this.colcantidadMaxPorGuia.Caption = "Cant. max. por guia";
+            this.colcantidadMaxPorGuia.FieldName = "cantidadMaxPorGuia";
+            this.colcantidadMaxPorGuia.Name = "colcantidadMaxPorGuia";
+            this.colcantidadMaxPorGuia.OptionsColumn.AllowEdit = false;
+            this.colcantidadMaxPorGuia.Visible = true;
+            this.colcantidadMaxPorGuia.VisibleIndex = 2;
             // 
             // labelControl3
             // 
@@ -313,6 +395,7 @@ namespace CapaNegocio
             // 
             // comboBox1
             // 
+            this.comboBox1.DisplayMember = "idTipoVisita";
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(213, 56);
             this.comboBox1.Name = "comboBox1";
@@ -322,6 +405,7 @@ namespace CapaNegocio
             // 
             // gridControl3
             // 
+            this.gridControl3.DataSource = this.exposicionBindingSource;
             this.gridControl3.Location = new System.Drawing.Point(27, 116);
             this.gridControl3.MainView = this.gridView3;
             this.gridControl3.Name = "gridControl3";
@@ -330,10 +414,87 @@ namespace CapaNegocio
             this.gridControl3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
             // 
+            // exposicionBindingSource
+            // 
+            this.exposicionBindingSource.DataSource = typeof(CapaNegocio.Exposicion);
+            // 
             // gridView3
             // 
+            this.gridView3.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colnombre2,
+            this.colfechaInicio,
+            this.colfechaFin,
+            this.colhoraApertura,
+            this.colhoraCierre,
+            this.colfechaInicioReplanificada,
+            this.colfechaFinReplanificada});
             this.gridView3.GridControl = this.gridControl3;
             this.gridView3.Name = "gridView3";
+            this.gridView3.OptionsSelection.MultiSelect = true;
+            this.gridView3.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
+            // 
+            // colnombre2
+            // 
+            this.colnombre2.Caption = "Nombre";
+            this.colnombre2.FieldName = "nombre";
+            this.colnombre2.Name = "colnombre2";
+            this.colnombre2.OptionsColumn.AllowEdit = false;
+            this.colnombre2.Visible = true;
+            this.colnombre2.VisibleIndex = 1;
+            // 
+            // colfechaInicio
+            // 
+            this.colfechaInicio.Caption = "Fecha inicio";
+            this.colfechaInicio.FieldName = "fechaInicio";
+            this.colfechaInicio.Name = "colfechaInicio";
+            this.colfechaInicio.OptionsColumn.AllowEdit = false;
+            this.colfechaInicio.Visible = true;
+            this.colfechaInicio.VisibleIndex = 2;
+            // 
+            // colfechaFin
+            // 
+            this.colfechaFin.Caption = "Fecha fin";
+            this.colfechaFin.FieldName = "fechaFin";
+            this.colfechaFin.Name = "colfechaFin";
+            this.colfechaFin.OptionsColumn.AllowEdit = false;
+            this.colfechaFin.Visible = true;
+            this.colfechaFin.VisibleIndex = 3;
+            // 
+            // colhoraApertura
+            // 
+            this.colhoraApertura.Caption = "Hora cpertura";
+            this.colhoraApertura.FieldName = "horaApertura";
+            this.colhoraApertura.Name = "colhoraApertura";
+            this.colhoraApertura.OptionsColumn.AllowEdit = false;
+            this.colhoraApertura.Visible = true;
+            this.colhoraApertura.VisibleIndex = 4;
+            // 
+            // colhoraCierre
+            // 
+            this.colhoraCierre.Caption = "Hora cierre";
+            this.colhoraCierre.FieldName = "horaCierre";
+            this.colhoraCierre.Name = "colhoraCierre";
+            this.colhoraCierre.OptionsColumn.AllowEdit = false;
+            this.colhoraCierre.Visible = true;
+            this.colhoraCierre.VisibleIndex = 5;
+            // 
+            // colfechaInicioReplanificada
+            // 
+            this.colfechaInicioReplanificada.Caption = "Fecha inicio replanificada";
+            this.colfechaInicioReplanificada.FieldName = "fechaInicioReplanificada";
+            this.colfechaInicioReplanificada.Name = "colfechaInicioReplanificada";
+            this.colfechaInicioReplanificada.OptionsColumn.AllowEdit = false;
+            this.colfechaInicioReplanificada.Visible = true;
+            this.colfechaInicioReplanificada.VisibleIndex = 6;
+            // 
+            // colfechaFinReplanificada
+            // 
+            this.colfechaFinReplanificada.Caption = "Fecha fin replanificada";
+            this.colfechaFinReplanificada.FieldName = "fechaFinReplanificada";
+            this.colfechaFinReplanificada.Name = "colfechaFinReplanificada";
+            this.colfechaFinReplanificada.OptionsColumn.AllowEdit = false;
+            this.colfechaFinReplanificada.Visible = true;
+            this.colfechaFinReplanificada.VisibleIndex = 7;
             // 
             // labelControl11
             // 
@@ -538,54 +699,29 @@ namespace CapaNegocio
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Detalle de la Reserva";
             // 
-            // escuelaBindingSource
+            // spinEdit1
             // 
-            this.escuelaBindingSource.DataSource = typeof(CapaNegocio.Escuela);
-            // 
-            // colnombre
-            // 
-            this.colnombre.Caption = "Nombre";
-            this.colnombre.FieldName = "nombre";
-            this.colnombre.Name = "colnombre";
-            this.colnombre.OptionsColumn.AllowEdit = false;
-            this.colnombre.Visible = true;
-            this.colnombre.VisibleIndex = 0;
-            // 
-            // coldomicilio
-            // 
-            this.coldomicilio.Caption = "Domicilio";
-            this.coldomicilio.FieldName = "domicilio";
-            this.coldomicilio.Name = "coldomicilio";
-            this.coldomicilio.OptionsColumn.AllowEdit = false;
-            this.coldomicilio.Visible = true;
-            this.coldomicilio.VisibleIndex = 1;
-            // 
-            // colmail
-            // 
-            this.colmail.Caption = "Mail";
-            this.colmail.FieldName = "mail";
-            this.colmail.Name = "colmail";
-            this.colmail.OptionsColumn.AllowEdit = false;
-            this.colmail.Visible = true;
-            this.colmail.VisibleIndex = 2;
-            // 
-            // coltelefFijo
-            // 
-            this.coltelefFijo.Caption = "Telefono";
-            this.coltelefFijo.FieldName = "telefFijo";
-            this.coltelefFijo.Name = "coltelefFijo";
-            this.coltelefFijo.OptionsColumn.AllowEdit = false;
-            this.coltelefFijo.Visible = true;
-            this.coltelefFijo.VisibleIndex = 3;
-            // 
-            // coltelefCelular
-            // 
-            this.coltelefCelular.Caption = "Celular";
-            this.coltelefCelular.FieldName = "telefCelular";
-            this.coltelefCelular.Name = "coltelefCelular";
-            this.coltelefCelular.OptionsColumn.AllowEdit = false;
-            this.coltelefCelular.Visible = true;
-            this.coltelefCelular.VisibleIndex = 4;
+            this.spinEdit1.EditValue = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.spinEdit1.Location = new System.Drawing.Point(207, 502);
+            this.spinEdit1.Name = "spinEdit1";
+            this.spinEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.spinEdit1.Properties.MaxValue = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.spinEdit1.Properties.MinValue = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.spinEdit1.Size = new System.Drawing.Size(100, 20);
+            this.spinEdit1.TabIndex = 6;
             // 
             // ucReservaVisitaGuiada
             // 
@@ -603,15 +739,17 @@ namespace CapaNegocio
             this.tabNav1_Escuelas.ResumeLayout(false);
             this.tabNav1_Escuelas.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEscuelas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.escuelaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinEdit1.Properties)).EndInit();
             this.tabNav2_Sedes.ResumeLayout(false);
             this.tabNav2_Sedes.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSede)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sedeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.tabNav3_Visita_Exposiciones.ResumeLayout(false);
             this.tabNav3_Visita_Exposiciones.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.exposicionBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
             this.tabNav4_DiaVisita.ResumeLayout(false);
             this.tabNav4_DiaVisita.PerformLayout();
@@ -625,7 +763,7 @@ namespace CapaNegocio
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             this.tabNav6_DetalleReserva.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.escuelaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -644,7 +782,6 @@ namespace CapaNegocio
         private DevExpress.XtraEditors.SimpleButton btn_anterior;
         private DevExpress.XtraEditors.SimpleButton btn_siguiente;
         private DevExpress.XtraEditors.SimpleButton btn_cancelar;
-        private DevExpress.XtraEditors.SpinEdit spinEdit1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl3;
@@ -682,5 +819,18 @@ namespace CapaNegocio
         private DevExpress.XtraGrid.Columns.GridColumn colmail;
         private DevExpress.XtraGrid.Columns.GridColumn coltelefFijo;
         private DevExpress.XtraGrid.Columns.GridColumn coltelefCelular;
+        private System.Windows.Forms.BindingSource sedeBindingSource;
+        private DevExpress.XtraGrid.Columns.GridColumn colnombre1;
+        private DevExpress.XtraGrid.Columns.GridColumn colcantidadMaximaVisitantes;
+        private DevExpress.XtraGrid.Columns.GridColumn colcantidadMaxPorGuia;
+        private System.Windows.Forms.BindingSource exposicionBindingSource;
+        private DevExpress.XtraGrid.Columns.GridColumn colnombre2;
+        private DevExpress.XtraGrid.Columns.GridColumn colfechaInicio;
+        private DevExpress.XtraGrid.Columns.GridColumn colfechaFin;
+        private DevExpress.XtraGrid.Columns.GridColumn colhoraApertura;
+        private DevExpress.XtraGrid.Columns.GridColumn colhoraCierre;
+        private DevExpress.XtraGrid.Columns.GridColumn colfechaInicioReplanificada;
+        private DevExpress.XtraGrid.Columns.GridColumn colfechaFinReplanificada;
+        private DevExpress.XtraEditors.SpinEdit spinEdit1;
     }
 }
