@@ -44,10 +44,12 @@ namespace CapaNegocio
                 this.Dispose();
             }
         }
-
+        
         public void mostrar()
         {
-            this.dgvEscuelas.DataSource = Escuela.mostrar();
+
+            //this.dgvEscuelas.DataSource = Escuela.mostrar();
+            this.dgvEscuelas.DataSource = GestorDeReserva.buscarEscuelas();
         }
 
         private void btn_anterior_Click(object sender, EventArgs e)

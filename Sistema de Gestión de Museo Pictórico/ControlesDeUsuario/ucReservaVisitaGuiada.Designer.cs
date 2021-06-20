@@ -212,6 +212,11 @@ namespace CapaNegocio
             // 
             this.gridView1.GridControl = this.dgvEscuelas;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
+            this.gridView1.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
+            this.gridView1.OptionsBehavior.Editable = false;
+            this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView1.OptionsSelection.ShowCheckBoxSelectorInColumnHeader = DevExpress.Utils.DefaultBoolean.False;
             // 
             // spinEdit1
             // 
@@ -397,7 +402,7 @@ namespace CapaNegocio
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.calendarControl1.Location = new System.Drawing.Point(59, 109);
             this.calendarControl1.Name = "calendarControl1";
-            this.calendarControl1.Size = new System.Drawing.Size(250, 235);
+            this.calendarControl1.Size = new System.Drawing.Size(255, 235);
             this.calendarControl1.TabIndex = 0;
             // 
             // tabNav5_Guia
