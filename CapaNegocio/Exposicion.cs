@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using System.Data;
+using CapaDatos;
+
 namespace CapaNegocio
 {
     public class Exposicion
@@ -13,28 +16,56 @@ namespace CapaNegocio
         public DateTime fechaFinReplanificada { get; set; }
         public DateTime fechaInicio { get; set; }
         public DateTime fechaInicioReplanificada { get; set; }
-        public string horaApertura { get; set; }
-        public string horaCierre { get; set; }
+        public DateTime horaApertura { get; set; }
+        public DateTime horaCierre { get; set; }
         public string nombre { get; set; }
         public int idTipoExposicion { get; set; }
         public int idPublicoDestino { get; set; }
         public int idEmpleadoCreo { get; set; }
 
-        public Exposicion(int idExposicion, DateTime fechaFin, DateTime fechaFinReplanificada, DateTime fechaInicio, 
-            DateTime fechaInicioReplanificada, string horaApertura, string horaCierre, string nombre, int idTipoExposicion, 
-            int idPublicoDestino, int idEmpleadoCreo)
+
+
+
+
+
+        public static List<Exposicion> buscarExposicionesTemporalesVigentes(List<int> idExposiciones)
         {
-            this.idExposicion = idExposicion;
-            this.fechaFin = fechaFin;
-            this.fechaFinReplanificada = fechaFinReplanificada;
-            this.fechaInicio = fechaInicio;
-            this.fechaInicioReplanificada = fechaInicioReplanificada;
-            this.horaApertura = horaApertura;
-            this.horaCierre = horaCierre;
-            this.nombre = nombre;
-            this.idTipoExposicion = idTipoExposicion;
-            this.idPublicoDestino = idPublicoDestino;
-            this.idEmpleadoCreo = idEmpleadoCreo;
+            DataTable exposicionesTodas = new DExposicion().buscar();
+
+            List<Exposicion> exposicionesTodasList = new List<Exposicion>();
+
+            List<Exposicion> expoFiltradaSede = new List<Exposicion>();
+
+            exposicionesTodasList = (from DataRow dr in exposicionesTodas.Rows
+                                 select new Exposicion()
+                                 {
+                                     idExposicion = Convert.ToInt32(dr["idExposicion"]),
+                                     fechaFin = Convert.ToDateTime(dr["fechaFin"]),
+                                     fechaFinReplanificada = Convert.ToDateTime(dr["fechaFinReplanificada"]),
+                                     fechaInicio = Convert.ToDateTime(dr["fechaInicio"]),
+                                     fechaInicioReplanificada = Convert.ToDateTime(dr["fechaInicioReplanificada"]),
+                                     horaApertura = Convert.ToDateTime(dr["horaApertura"]),
+                                     horaCierre = Convert.ToDateTime(dr["horaCierre"]),
+                                     nombre = dr["nombre"].ToString(),
+                                     idTipoExposicion = Convert.ToInt32(dr["idTipoExposicion"]),
+                                     idPublicoDestino = Convert.ToInt32(dr["idPublicoDestino"]),
+                                     idEmpleadoCreo = Convert.ToInt32(dr["idEmpleadoCreo"])
+                                 }
+                                    ).ToList();
+
+
+            foreach (int idE in idExposiciones)
+            {
+                
+
+            }
+
+            
+
+
+
+            return expoFiltradaSede;
         }
+
     }
 }

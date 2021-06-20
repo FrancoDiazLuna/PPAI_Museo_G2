@@ -15,7 +15,6 @@ namespace CapaNegocio
         public int idDeposito { get; set; }
         public int idHorario { get; set; }
         public int idColeccion { get; set; }
-        public int idExposicion { get; set; }
         public int idTarifa { get; set; }
 
 

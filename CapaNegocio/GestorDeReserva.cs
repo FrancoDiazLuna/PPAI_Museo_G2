@@ -23,6 +23,8 @@ namespace CapaNegocio
         public static TipoVisita tipoDeVisitaSeleccionada { get; set; }
 
         public static List<Exposicion> exposicionesTodasList { get; set; }
+
+        public static List<Exposicion> exposicionesSedeList { get; set; }
         public static List<Exposicion> exposicionSeleccionada { get; set; }
 
         public static DateTime fechaHoraReserva { get; set; }
@@ -84,7 +86,6 @@ namespace CapaNegocio
                                   idDeposito = Convert.ToInt32(dr["idDeposito"]),
                                   idHorario = Convert.ToInt32(dr["idHorario"]),
                                   idColeccion = Convert.ToInt32(dr["idColeccion"]),
-                                  idExposicion = Convert.ToInt32(dr["idExposicion"]),
                                   idTarifa = Convert.ToInt32(dr["idTarifa"]),
                               }                              
             ).ToList();
@@ -107,6 +108,13 @@ namespace CapaNegocio
             return tiposDeVisitaTodasList;
         }
 
+        public static List<Exposicion> buscarExposicionesPorSede()
+        {
+
+
+
+            return exposicionesSedeList;
+        }
 
 
     }
