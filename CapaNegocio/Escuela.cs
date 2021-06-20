@@ -9,11 +9,13 @@ using System.Data;
 
 namespace CapaNegocio
 {
-    public class NEscuela
+    public class Escuela
     {
         public static DataTable mostrar()
         {
             return new DEscuela().mostrar();
         }
+
+
     }
 }

@@ -1,6 +1,3 @@
-C:\Users\diazl\Desktop\Sistema de Gestión de Museo Pictórico\Sistema de Gestión de Museo Pictórico\bin\Debug\Sistema de Gestión de Museo Pictórico.exe.config
-C:\Users\diazl\Desktop\Sistema de Gestión de Museo Pictórico\Sistema de Gestión de Museo Pictórico\bin\Debug\Sistema de Gestión de Museo Pictórico.exe
-C:\Users\diazl\Desktop\Sistema de Gestión de Museo Pictórico\Sistema de Gestión de Museo Pictórico\bin\Debug\Sistema de Gestión de Museo Pictórico.pdb
 C:\Users\diazl\Desktop\Sistema de Gestión de Museo Pictórico\Sistema de Gestión de Museo Pictórico\bin\Debug\CapaNegocio.dll
 C:\Users\diazl\Desktop\Sistema de Gestión de Museo Pictórico\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.CodeParser.v20.1.dll
 C:\Users\diazl\Desktop\Sistema de Gestión de Museo Pictórico\Sistema de Gestión de Museo Pictórico\bin\Debug\DevExpress.Data.Desktop.v20.1.dll
@@ -126,14 +123,9 @@ C:\Users\diazl\Desktop\Sistema de Gestión de Museo Pictórico\Sistema de Gesti�
 C:\Users\diazl\Desktop\Sistema de Gestión de Museo Pictórico\Sistema de Gestión de Museo Pictórico\bin\Debug\ja\DevExpress.XtraTreeList.v20.1.resources.dll
 C:\Users\diazl\Desktop\Sistema de Gestión de Museo Pictórico\Sistema de Gestión de Museo Pictórico\bin\Debug\ru\DevExpress.XtraTreeList.v20.1.resources.dll
 C:\Users\diazl\Desktop\Sistema de Gestión de Museo Pictórico\Sistema de Gestión de Museo Pictórico\obj\Debug\CapaPresentacion.csproj.AssemblyReference.cache
-C:\Users\diazl\Desktop\Sistema de Gestión de Museo Pictórico\Sistema de Gestión de Museo Pictórico\obj\Debug\Sistema_de_Gestión_de_Museo_Pictórico.FormMain.resources
-C:\Users\diazl\Desktop\Sistema de Gestión de Museo Pictórico\Sistema de Gestión de Museo Pictórico\obj\Debug\Sistema_de_Gestión_de_Museo_Pictórico.ucReservaVisitaGuiada.resources
 C:\Users\diazl\Desktop\Sistema de Gestión de Museo Pictórico\Sistema de Gestión de Museo Pictórico\obj\Debug\CapaPresentacion.csproj.GenerateResource.cache
-C:\Users\diazl\Desktop\Sistema de Gestión de Museo Pictórico\Sistema de Gestión de Museo Pictórico\obj\Debug\Sistema de Gestión de Museo Pictórico.exe.licenses
 C:\Users\diazl\Desktop\Sistema de Gestión de Museo Pictórico\Sistema de Gestión de Museo Pictórico\obj\Debug\CapaPresentacion.csproj.CoreCompileInputs.cache
 C:\Users\diazl\Desktop\Sistema de Gestión de Museo Pictórico\Sistema de Gestión de Museo Pictórico\obj\Debug\CapaPresentacion.csproj.CopyComplete
-C:\Users\diazl\Desktop\Sistema de Gestión de Museo Pictórico\Sistema de Gestión de Museo Pictórico\obj\Debug\Sistema de Gestión de Museo Pictórico.exe
-C:\Users\diazl\Desktop\Sistema de Gestión de Museo Pictórico\Sistema de Gestión de Museo Pictórico\obj\Debug\Sistema de Gestión de Museo Pictórico.pdb
 C:\Users\diazl\Desktop\Sistema de Gestión de Museo Pictórico\Sistema de Gestión de Museo Pictórico\obj\Debug\CapaPresentacion.Properties.Resources.resources
 C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\Sistema de Gestión de Museo Pictórico.exe.config
 C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\bin\Debug\Sistema de Gestión de Museo Pictórico.exe
@@ -272,3 +264,11 @@ C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\obj
 C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\obj\Debug\CapaPresentacion.csproj.CopyComplete
 C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\obj\Debug\Sistema de Gestión de Museo Pictórico.exe
 C:\Users\Axel\Desktop\DISEÑO\VSPPAI\Sistema de Gestión de Museo Pictórico\obj\Debug\Sistema de Gestión de Museo Pictórico.pdb
+C:\Users\diazl\Desktop\Sistema de Gestión de Museo Pictórico\Sistema de Gestión de Museo Pictórico\obj\Debug\CapaPresentacion.exe.licenses
+C:\Users\diazl\Desktop\Sistema de Gestión de Museo Pictórico\Sistema de Gestión de Museo Pictórico\obj\Debug\CapaNegocio.FormMain.resources
+C:\Users\diazl\Desktop\Sistema de Gestión de Museo Pictórico\Sistema de Gestión de Museo Pictórico\obj\Debug\CapaNegocio.ucReservaVisitaGuiada.resources
+C:\Users\diazl\Desktop\Sistema de Gestión de Museo Pictórico\Sistema de Gestión de Museo Pictórico\bin\Debug\CapaPresentacion.exe.config
+C:\Users\diazl\Desktop\Sistema de Gestión de Museo Pictórico\Sistema de Gestión de Museo Pictórico\bin\Debug\CapaPresentacion.exe
+C:\Users\diazl\Desktop\Sistema de Gestión de Museo Pictórico\Sistema de Gestión de Museo Pictórico\bin\Debug\CapaPresentacion.pdb
+C:\Users\diazl\Desktop\Sistema de Gestión de Museo Pictórico\Sistema de Gestión de Museo Pictórico\obj\Debug\CapaPresentacion.exe
+C:\Users\diazl\Desktop\Sistema de Gestión de Museo Pictórico\Sistema de Gestión de Museo Pictórico\obj\Debug\CapaPresentacion.pdb
