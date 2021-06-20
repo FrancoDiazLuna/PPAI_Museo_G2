@@ -103,9 +103,11 @@ namespace CapaNegocio
             GestorDeReserva.obtenerCantidadAlumnos(valor);
         }
 
-        private void labelControl11_Click(object sender, EventArgs e)
+        private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
-
+            Escuela esc = (Escuela)gridEscuelas.GetFocusedRow();
+            lblEscSel.Text = esc.nombre;
+            GestorDeReserva.obtenerEscuelaSeleccionada(esc);
         }
     }
     

@@ -50,6 +50,10 @@ namespace CapaNegocio
             this.Close();
         }
 
-       
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            lblDate.Text = DateTime.Now.ToShortDateString();
+            lblTime.Text = DateTime.Now.ToLongTimeString();
+        }
     }
 }

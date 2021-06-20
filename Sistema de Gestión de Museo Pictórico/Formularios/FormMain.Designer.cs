@@ -29,18 +29,20 @@ namespace CapaNegocio
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.btnRegistrarReserva = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.btn_BuscarEscuela = new DevExpress.XtraEditors.SimpleButton();
             this.btn_RegistrarEscuela = new DevExpress.XtraEditors.SimpleButton();
             this.btn_BuscarReserva = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
-            this.datetime = new DevExpress.XtraEditors.LabelControl();
+            this.lblDate = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.svgImageBox1 = new DevExpress.XtraEditors.SvgImageBox();
             this.panelControlMain = new DevExpress.XtraEditors.PanelControl();
@@ -51,7 +53,8 @@ namespace CapaNegocio
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.btnRegistrarReserva = new DevExpress.XtraEditors.SimpleButton();
+            this.timer = new System.Windows.Forms.Timer(this.components);
+            this.lblTime = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
@@ -102,6 +105,15 @@ namespace CapaNegocio
             this.panelControl2.Size = new System.Drawing.Size(282, 566);
             this.panelControl2.TabIndex = 0;
             // 
+            // btnRegistrarReserva
+            // 
+            this.btnRegistrarReserva.Location = new System.Drawing.Point(7, 76);
+            this.btnRegistrarReserva.Name = "btnRegistrarReserva";
+            this.btnRegistrarReserva.Size = new System.Drawing.Size(263, 54);
+            this.btnRegistrarReserva.TabIndex = 4;
+            this.btnRegistrarReserva.Text = "Registrar Reserva de Visita Guiada";
+            this.btnRegistrarReserva.Click += new System.EventHandler(this.btnRegistrarReserva_Click);
+            // 
             // panelControl5
             // 
             this.panelControl5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -150,7 +162,8 @@ namespace CapaNegocio
             // 
             // panelControl3
             // 
-            this.panelControl3.Controls.Add(this.datetime);
+            this.panelControl3.Controls.Add(this.lblTime);
+            this.panelControl3.Controls.Add(this.lblDate);
             this.panelControl3.Controls.Add(this.labelControl1);
             this.panelControl3.Controls.Add(this.svgImageBox1);
             this.panelControl3.Location = new System.Drawing.Point(2, 597);
@@ -158,13 +171,13 @@ namespace CapaNegocio
             this.panelControl3.Size = new System.Drawing.Size(280, 114);
             this.panelControl3.TabIndex = 1;
             // 
-            // datetime
+            // lblDate
             // 
-            this.datetime.Location = new System.Drawing.Point(137, 49);
-            this.datetime.Name = "datetime";
-            this.datetime.Size = new System.Drawing.Size(42, 13);
-            this.datetime.TabIndex = 2;
-            this.datetime.Text = "datetime";
+            this.lblDate.Location = new System.Drawing.Point(137, 49);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(22, 13);
+            this.lblDate.TabIndex = 2;
+            this.lblDate.Text = "date";
             // 
             // labelControl1
             // 
@@ -254,14 +267,18 @@ namespace CapaNegocio
             this.toolStripLabel1.Size = new System.Drawing.Size(41, 22);
             this.toolStripLabel1.Text = "Ayuda";
             // 
-            // btnRegistrarReserva
+            // timer
             // 
-            this.btnRegistrarReserva.Location = new System.Drawing.Point(7, 76);
-            this.btnRegistrarReserva.Name = "btnRegistrarReserva";
-            this.btnRegistrarReserva.Size = new System.Drawing.Size(263, 54);
-            this.btnRegistrarReserva.TabIndex = 4;
-            this.btnRegistrarReserva.Text = "Registrar Reserva de Visita Guiada";
-            this.btnRegistrarReserva.Click += new System.EventHandler(this.btnRegistrarReserva_Click);
+            this.timer.Enabled = true;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
+            // lblTime
+            // 
+            this.lblTime.Location = new System.Drawing.Point(137, 68);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(20, 13);
+            this.lblTime.TabIndex = 3;
+            this.lblTime.Text = "time";
             // 
             // FormMain
             // 
@@ -301,7 +318,7 @@ namespace CapaNegocio
         private DevExpress.XtraEditors.SimpleButton btn_RegistrarEscuela;
         private DevExpress.XtraEditors.SimpleButton btn_BuscarReserva;
         private DevExpress.XtraEditors.PanelControl panelControl3;
-        private DevExpress.XtraEditors.LabelControl datetime;
+        private DevExpress.XtraEditors.LabelControl lblDate;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.SvgImageBox svgImageBox1;
         private DevExpress.XtraEditors.PanelControl panelControlMain;
@@ -313,5 +330,7 @@ namespace CapaNegocio
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private DevExpress.XtraEditors.SimpleButton btnRegistrarReserva;
+        private DevExpress.XtraEditors.LabelControl lblTime;
+        private System.Windows.Forms.Timer timer;
     }
 }

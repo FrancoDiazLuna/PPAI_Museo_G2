@@ -62,7 +62,10 @@ namespace CapaNegocio
             return escuelasTodasList;
         }
 
-
+        public static void obtenerEscuelaSeleccionada(Escuela escuela)
+        {
+            escuelaSeleccionada = escuela;
+        }
 
         public static void obtenerCantidadAlumnos(int valor)
         {
