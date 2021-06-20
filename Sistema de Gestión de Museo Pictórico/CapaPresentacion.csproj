@@ -7,7 +7,7 @@
     <ProjectGuid>{6C1BCA87-015E-4A1B-9776-BDDA924604DE}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>CapaPresentacion</RootNamespace>
-    <AssemblyName>Sistema de Gestión de Museo Pictórico</AssemblyName>
+    <AssemblyName>CapaPresentacion</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

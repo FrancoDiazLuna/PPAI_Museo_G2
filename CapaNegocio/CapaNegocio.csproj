@@ -54,9 +54,10 @@
     <Compile Include="PublicoDestino.cs" />
     <Compile Include="ReservaVisita.cs" />
     <Compile Include="Sede.cs" />
+    <Compile Include="Sesion.cs" />
     <Compile Include="TipoExposicion.cs" />
     <Compile Include="TipoVisita.cs" />
-    <Compile Include="NEscuela.cs" />
+    <Compile Include="Escuela.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

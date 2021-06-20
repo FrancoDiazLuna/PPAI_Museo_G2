@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Sistema_de_Gestión_de_Museo_Pictórico
+namespace CapaNegocio
 {
     public partial class FormMain : Form
     {

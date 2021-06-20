@@ -1,5 +1,5 @@
 ﻿
-namespace Sistema_de_Gestión_de_Museo_Pictórico
+namespace CapaNegocio
 {
     partial class ucReservaVisitaGuiada
     {

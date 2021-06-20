@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Sistema_de_Gestión_de_Museo_Pictórico
+namespace CapaNegocio
 {
     static class Program
     {
