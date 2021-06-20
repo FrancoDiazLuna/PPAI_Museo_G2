@@ -39,7 +39,7 @@ namespace CapaDatos
             this.TelefFijo = telefFijo;
         }
 
-        public DataTable mostrar()
+        public DataTable buscar()
         {
             DataTable dataTable = new DataTable("Escuela");
             SqlConnection sqlConnection = new SqlConnection();

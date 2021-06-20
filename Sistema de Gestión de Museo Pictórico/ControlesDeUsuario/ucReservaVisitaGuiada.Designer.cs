@@ -29,6 +29,7 @@ namespace CapaNegocio
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.btn_confirmarReserva = new DevExpress.XtraEditors.SimpleButton();
@@ -43,15 +44,15 @@ namespace CapaNegocio
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.tabNav2_Sedes = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.gridControl2 = new DevExpress.XtraGrid.GridControl();
+            this.dgvSede = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.tabNav3_Visita_Exposiciones = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.gridControl3 = new DevExpress.XtraGrid.GridControl();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.checkedComboBoxEdit1 = new DevExpress.XtraEditors.CheckedComboBoxEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.tabNav4_DiaVisita = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
@@ -73,6 +74,7 @@ namespace CapaNegocio
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.tabNav6_DetalleReserva = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.tipoVisitaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
@@ -84,12 +86,11 @@ namespace CapaNegocio
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinEdit1.Properties)).BeginInit();
             this.tabNav2_Sedes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSede)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.tabNav3_Visita_Exposiciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkedComboBoxEdit1.Properties)).BeginInit();
             this.tabNav4_DiaVisita.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkedComboBoxEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.calendarControl1.CalendarTimeProperties)).BeginInit();
@@ -100,6 +101,7 @@ namespace CapaNegocio
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             this.tabNav6_DetalleReserva.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipoVisitaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -233,6 +235,7 @@ namespace CapaNegocio
             this.spinEdit1.Properties.Mask.EditMask = "N00";
             this.spinEdit1.Size = new System.Drawing.Size(100, 20);
             this.spinEdit1.TabIndex = 3;
+            this.spinEdit1.EditValueChanged += new System.EventHandler(this.spinEdit1_EditValueChanged);
             // 
             // labelControl2
             // 
@@ -255,24 +258,24 @@ namespace CapaNegocio
             // tabNav2_Sedes
             // 
             this.tabNav2_Sedes.Caption = "Sede";
-            this.tabNav2_Sedes.Controls.Add(this.gridControl2);
+            this.tabNav2_Sedes.Controls.Add(this.dgvSede);
             this.tabNav2_Sedes.Controls.Add(this.labelControl3);
             this.tabNav2_Sedes.Name = "tabNav2_Sedes";
             this.tabNav2_Sedes.Size = new System.Drawing.Size(1174, 544);
             // 
-            // gridControl2
+            // dgvSede
             // 
-            this.gridControl2.Location = new System.Drawing.Point(27, 67);
-            this.gridControl2.MainView = this.gridView2;
-            this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(1120, 447);
-            this.gridControl2.TabIndex = 4;
-            this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.dgvSede.Location = new System.Drawing.Point(27, 67);
+            this.dgvSede.MainView = this.gridView2;
+            this.dgvSede.Name = "dgvSede";
+            this.dgvSede.Size = new System.Drawing.Size(1120, 452);
+            this.dgvSede.TabIndex = 4;
+            this.dgvSede.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
             // 
             // gridView2
             // 
-            this.gridView2.GridControl = this.gridControl2;
+            this.gridView2.GridControl = this.dgvSede;
             this.gridView2.Name = "gridView2";
             // 
             // labelControl3
@@ -288,20 +291,31 @@ namespace CapaNegocio
             // tabNav3_Visita_Exposiciones
             // 
             this.tabNav3_Visita_Exposiciones.Caption = "Visita y Exposiciones";
+            this.tabNav3_Visita_Exposiciones.Controls.Add(this.comboBox1);
             this.tabNav3_Visita_Exposiciones.Controls.Add(this.gridControl3);
             this.tabNav3_Visita_Exposiciones.Controls.Add(this.labelControl11);
             this.tabNav3_Visita_Exposiciones.Controls.Add(this.labelControl5);
-            this.tabNav3_Visita_Exposiciones.Controls.Add(this.checkedComboBoxEdit1);
             this.tabNav3_Visita_Exposiciones.Controls.Add(this.labelControl4);
             this.tabNav3_Visita_Exposiciones.Name = "tabNav3_Visita_Exposiciones";
             this.tabNav3_Visita_Exposiciones.Size = new System.Drawing.Size(1174, 544);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DataSource = this.tipoVisitaBindingSource;
+            this.comboBox1.DisplayMember = "nombre";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(213, 56);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 8;
+            this.comboBox1.ValueMember = "idTipoVisita";
             // 
             // gridControl3
             // 
             this.gridControl3.Location = new System.Drawing.Point(27, 116);
             this.gridControl3.MainView = this.gridView3;
             this.gridControl3.Name = "gridControl3";
-            this.gridControl3.Size = new System.Drawing.Size(1120, 406);
+            this.gridControl3.Size = new System.Drawing.Size(1120, 403);
             this.gridControl3.TabIndex = 7;
             this.gridControl3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
@@ -315,9 +329,10 @@ namespace CapaNegocio
             // 
             this.labelControl11.Location = new System.Drawing.Point(63, 59);
             this.labelControl11.Name = "labelControl11";
-            this.labelControl11.Size = new System.Drawing.Size(88, 13);
+            this.labelControl11.Size = new System.Drawing.Size(63, 13);
             this.labelControl11.TabIndex = 6;
-            this.labelControl11.Text = "Tipo de exposicion";
+            this.labelControl11.Text = "Tipo de visita";
+            this.labelControl11.Click += new System.EventHandler(this.labelControl11_Click);
             // 
             // labelControl5
             // 
@@ -326,15 +341,6 @@ namespace CapaNegocio
             this.labelControl5.Size = new System.Drawing.Size(116, 13);
             this.labelControl5.TabIndex = 5;
             this.labelControl5.Text = "Exposiciones disponibles";
-            // 
-            // checkedComboBoxEdit1
-            // 
-            this.checkedComboBoxEdit1.Location = new System.Drawing.Point(168, 56);
-            this.checkedComboBoxEdit1.Name = "checkedComboBoxEdit1";
-            this.checkedComboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.checkedComboBoxEdit1.Size = new System.Drawing.Size(115, 20);
-            this.checkedComboBoxEdit1.TabIndex = 3;
             // 
             // labelControl4
             // 
@@ -400,7 +406,7 @@ namespace CapaNegocio
             // 
             this.calendarControl1.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.calendarControl1.Location = new System.Drawing.Point(59, 109);
+            this.calendarControl1.Location = new System.Drawing.Point(59, 144);
             this.calendarControl1.Name = "calendarControl1";
             this.calendarControl1.Size = new System.Drawing.Size(255, 235);
             this.calendarControl1.TabIndex = 0;
@@ -522,6 +528,10 @@ namespace CapaNegocio
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Detalle de la Reserva";
             // 
+            // tipoVisitaBindingSource
+            // 
+            this.tipoVisitaBindingSource.DataSource = typeof(CapaNegocio.TipoVisita);
+            // 
             // ucReservaVisitaGuiada
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -542,13 +552,12 @@ namespace CapaNegocio
             ((System.ComponentModel.ISupportInitialize)(this.spinEdit1.Properties)).EndInit();
             this.tabNav2_Sedes.ResumeLayout(false);
             this.tabNav2_Sedes.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSede)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.tabNav3_Visita_Exposiciones.ResumeLayout(false);
             this.tabNav3_Visita_Exposiciones.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkedComboBoxEdit1.Properties)).EndInit();
             this.tabNav4_DiaVisita.ResumeLayout(false);
             this.tabNav4_DiaVisita.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkedComboBoxEdit2.Properties)).EndInit();
@@ -561,6 +570,7 @@ namespace CapaNegocio
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             this.tabNav6_DetalleReserva.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipoVisitaBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -584,7 +594,6 @@ namespace CapaNegocio
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl5;
-        private DevExpress.XtraEditors.CheckedComboBoxEdit checkedComboBoxEdit1;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.CheckedComboBoxEdit checkedComboBoxEdit2;
         private DevExpress.XtraEditors.Controls.CalendarControl calendarControl1;
@@ -607,9 +616,11 @@ namespace CapaNegocio
         private DevExpress.XtraEditors.SimpleButton btn_confirmarReserva;
         private DevExpress.XtraGrid.GridControl dgvEscuelas;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.GridControl gridControl2;
+        private DevExpress.XtraGrid.GridControl dgvSede;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.XtraGrid.GridControl gridControl3;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.BindingSource tipoVisitaBindingSource;
     }
 }

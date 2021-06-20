@@ -47,9 +47,15 @@ namespace CapaNegocio
         
         public void mostrar()
         {
-
+            List<TipoVisita> vi = GestorDeReserva.buscarVisitas(); 
             //this.dgvEscuelas.DataSource = Escuela.mostrar();
             this.dgvEscuelas.DataSource = GestorDeReserva.buscarEscuelas();
+            this.dgvSede.DataSource = GestorDeReserva.buscarSedes();
+            foreach (TipoVisita item in vi)
+            {
+                this.comboBox1.Items.Add(item.nombre);
+            }
+            
         }
 
         private void btn_anterior_Click(object sender, EventArgs e)
@@ -90,6 +96,17 @@ namespace CapaNegocio
         private void btn_siguiente_Click(object sender, EventArgs e)
         {
             tabPane1.SelectNextPage();
+        }
+
+        private void spinEdit1_EditValueChanged(object sender, EventArgs e)
+        {
+            int valor = int.Parse(spinEdit1.Text);
+            GestorDeReserva.obtenerCantidadAlumnos(valor);
+        }
+
+        private void labelControl11_Click(object sender, EventArgs e)
+        {
+
         }
     }
     

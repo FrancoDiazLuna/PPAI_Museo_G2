@@ -11,10 +11,6 @@ namespace CapaNegocio
         public int idTipoVisita { get; set; }
         public string nombre { get; set; }
 
-        public TipoVisita(int idTipoVisita, string nombre)
-        {
-            this.idTipoVisita = idTipoVisita;
-            this.nombre = nombre;
-        }
+
     }
 }

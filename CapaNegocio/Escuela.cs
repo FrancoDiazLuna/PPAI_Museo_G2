@@ -18,10 +18,10 @@ namespace CapaNegocio
         public int telefCelular { get; set; }
         public int telefFijo { get; set; }
 
-        public static DataTable mostrar()
-        {
-            return new DEscuela().mostrar();
-        }
+
+
+
+
 
 
     }
