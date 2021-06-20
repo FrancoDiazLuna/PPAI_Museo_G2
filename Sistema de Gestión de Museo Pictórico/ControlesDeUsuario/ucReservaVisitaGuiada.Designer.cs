@@ -37,12 +37,18 @@ namespace CapaNegocio
             this.btn_cancelar = new DevExpress.XtraEditors.SimpleButton();
             this.tabPane1 = new DevExpress.XtraBars.Navigation.TabPane();
             this.tabNav1_Escuelas = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.dgvEscuelas = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.spinEdit1 = new DevExpress.XtraEditors.SpinEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.tabNav2_Sedes = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.gridControl2 = new DevExpress.XtraGrid.GridControl();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.tabNav3_Visita_Exposiciones = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.gridControl3 = new DevExpress.XtraGrid.GridControl();
+            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.checkedComboBoxEdit1 = new DevExpress.XtraEditors.CheckedComboBoxEdit();
@@ -67,12 +73,6 @@ namespace CapaNegocio
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.tabNav6_DetalleReserva = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.gridControl2 = new DevExpress.XtraGrid.GridControl();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.dgvEscuelas = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridControl3 = new DevExpress.XtraGrid.GridControl();
-            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
@@ -80,9 +80,15 @@ namespace CapaNegocio
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
             this.tabPane1.SuspendLayout();
             this.tabNav1_Escuelas.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEscuelas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinEdit1.Properties)).BeginInit();
             this.tabNav2_Sedes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.tabNav3_Visita_Exposiciones.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkedComboBoxEdit1.Properties)).BeginInit();
             this.tabNav4_DiaVisita.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkedComboBoxEdit2.Properties)).BeginInit();
@@ -94,12 +100,6 @@ namespace CapaNegocio
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             this.tabNav6_DetalleReserva.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEscuelas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -198,6 +198,21 @@ namespace CapaNegocio
             this.tabNav1_Escuelas.Size = new System.Drawing.Size(1174, 544);
             this.tabNav1_Escuelas.Paint += new System.Windows.Forms.PaintEventHandler(this.tabNavigationPage1_Paint);
             // 
+            // dgvEscuelas
+            // 
+            this.dgvEscuelas.Location = new System.Drawing.Point(27, 67);
+            this.dgvEscuelas.MainView = this.gridView1;
+            this.dgvEscuelas.Name = "dgvEscuelas";
+            this.dgvEscuelas.Size = new System.Drawing.Size(1120, 411);
+            this.dgvEscuelas.TabIndex = 5;
+            this.dgvEscuelas.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.dgvEscuelas;
+            this.gridView1.Name = "gridView1";
+            // 
             // spinEdit1
             // 
             this.spinEdit1.EditValue = new decimal(new int[] {
@@ -209,6 +224,8 @@ namespace CapaNegocio
             this.spinEdit1.Name = "spinEdit1";
             this.spinEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.spinEdit1.Properties.IsFloatValue = false;
+            this.spinEdit1.Properties.Mask.EditMask = "N00";
             this.spinEdit1.Size = new System.Drawing.Size(100, 20);
             this.spinEdit1.TabIndex = 3;
             // 
@@ -238,6 +255,21 @@ namespace CapaNegocio
             this.tabNav2_Sedes.Name = "tabNav2_Sedes";
             this.tabNav2_Sedes.Size = new System.Drawing.Size(1174, 544);
             // 
+            // gridControl2
+            // 
+            this.gridControl2.Location = new System.Drawing.Point(27, 67);
+            this.gridControl2.MainView = this.gridView2;
+            this.gridControl2.Name = "gridControl2";
+            this.gridControl2.Size = new System.Drawing.Size(1120, 447);
+            this.gridControl2.TabIndex = 4;
+            this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView2});
+            // 
+            // gridView2
+            // 
+            this.gridView2.GridControl = this.gridControl2;
+            this.gridView2.Name = "gridView2";
+            // 
             // labelControl3
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
@@ -258,6 +290,21 @@ namespace CapaNegocio
             this.tabNav3_Visita_Exposiciones.Controls.Add(this.labelControl4);
             this.tabNav3_Visita_Exposiciones.Name = "tabNav3_Visita_Exposiciones";
             this.tabNav3_Visita_Exposiciones.Size = new System.Drawing.Size(1174, 544);
+            // 
+            // gridControl3
+            // 
+            this.gridControl3.Location = new System.Drawing.Point(27, 116);
+            this.gridControl3.MainView = this.gridView3;
+            this.gridControl3.Name = "gridControl3";
+            this.gridControl3.Size = new System.Drawing.Size(1120, 406);
+            this.gridControl3.TabIndex = 7;
+            this.gridControl3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView3});
+            // 
+            // gridView3
+            // 
+            this.gridView3.GridControl = this.gridControl3;
+            this.gridView3.Name = "gridView3";
             // 
             // labelControl11
             // 
@@ -470,51 +517,6 @@ namespace CapaNegocio
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Detalle de la Reserva";
             // 
-            // gridControl2
-            // 
-            this.gridControl2.Location = new System.Drawing.Point(27, 67);
-            this.gridControl2.MainView = this.gridView2;
-            this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(1120, 447);
-            this.gridControl2.TabIndex = 4;
-            this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView2});
-            // 
-            // gridView2
-            // 
-            this.gridView2.GridControl = this.gridControl2;
-            this.gridView2.Name = "gridView2";
-            // 
-            // dgvEscuelas
-            // 
-            this.dgvEscuelas.Location = new System.Drawing.Point(27, 67);
-            this.dgvEscuelas.MainView = this.gridView1;
-            this.dgvEscuelas.Name = "dgvEscuelas";
-            this.dgvEscuelas.Size = new System.Drawing.Size(1120, 411);
-            this.dgvEscuelas.TabIndex = 5;
-            this.dgvEscuelas.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            // 
-            // gridView1
-            // 
-            this.gridView1.GridControl = this.dgvEscuelas;
-            this.gridView1.Name = "gridView1";
-            // 
-            // gridControl3
-            // 
-            this.gridControl3.Location = new System.Drawing.Point(27, 116);
-            this.gridControl3.MainView = this.gridView3;
-            this.gridControl3.Name = "gridControl3";
-            this.gridControl3.Size = new System.Drawing.Size(1120, 406);
-            this.gridControl3.TabIndex = 7;
-            this.gridControl3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView3});
-            // 
-            // gridView3
-            // 
-            this.gridView3.GridControl = this.gridControl3;
-            this.gridView3.Name = "gridView3";
-            // 
             // ucReservaVisitaGuiada
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -530,11 +532,17 @@ namespace CapaNegocio
             this.tabPane1.ResumeLayout(false);
             this.tabNav1_Escuelas.ResumeLayout(false);
             this.tabNav1_Escuelas.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEscuelas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinEdit1.Properties)).EndInit();
             this.tabNav2_Sedes.ResumeLayout(false);
             this.tabNav2_Sedes.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.tabNav3_Visita_Exposiciones.ResumeLayout(false);
             this.tabNav3_Visita_Exposiciones.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkedComboBoxEdit1.Properties)).EndInit();
             this.tabNav4_DiaVisita.ResumeLayout(false);
             this.tabNav4_DiaVisita.PerformLayout();
@@ -548,12 +556,6 @@ namespace CapaNegocio
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             this.tabNav6_DetalleReserva.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEscuelas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
             this.ResumeLayout(false);
 
         }
