@@ -99,6 +99,7 @@ namespace CapaNegocio
             this.tabNav6_DetalleReserva = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.colidPublicoDestino = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
@@ -507,7 +508,8 @@ namespace CapaNegocio
             this.colhoraApertura,
             this.colhoraCierre,
             this.colfechaInicioReplanificada,
-            this.colfechaFinReplanificada});
+            this.colfechaFinReplanificada,
+            this.colidPublicoDestino});
             this.gridExposiciones.GridControl = this.gridControl3;
             this.gridExposiciones.Name = "gridExposiciones";
             this.gridExposiciones.OptionsSelection.MultiSelect = true;
@@ -529,7 +531,7 @@ namespace CapaNegocio
             this.colfechaInicio.Name = "colfechaInicio";
             this.colfechaInicio.OptionsColumn.AllowEdit = false;
             this.colfechaInicio.Visible = true;
-            this.colfechaInicio.VisibleIndex = 4;
+            this.colfechaInicio.VisibleIndex = 5;
             // 
             // colfechaFin
             // 
@@ -538,7 +540,7 @@ namespace CapaNegocio
             this.colfechaFin.Name = "colfechaFin";
             this.colfechaFin.OptionsColumn.AllowEdit = false;
             this.colfechaFin.Visible = true;
-            this.colfechaFin.VisibleIndex = 5;
+            this.colfechaFin.VisibleIndex = 6;
             // 
             // colhoraApertura
             // 
@@ -569,7 +571,7 @@ namespace CapaNegocio
             this.colfechaInicioReplanificada.Name = "colfechaInicioReplanificada";
             this.colfechaInicioReplanificada.OptionsColumn.AllowEdit = false;
             this.colfechaInicioReplanificada.Visible = true;
-            this.colfechaInicioReplanificada.VisibleIndex = 6;
+            this.colfechaInicioReplanificada.VisibleIndex = 7;
             // 
             // colfechaFinReplanificada
             // 
@@ -578,7 +580,7 @@ namespace CapaNegocio
             this.colfechaFinReplanificada.Name = "colfechaFinReplanificada";
             this.colfechaFinReplanificada.OptionsColumn.AllowEdit = false;
             this.colfechaFinReplanificada.Visible = true;
-            this.colfechaFinReplanificada.VisibleIndex = 7;
+            this.colfechaFinReplanificada.VisibleIndex = 8;
             // 
             // labelControl11
             // 
@@ -833,6 +835,14 @@ namespace CapaNegocio
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // colidPublicoDestino
+            // 
+            this.colidPublicoDestino.Caption = "Publico destino";
+            this.colidPublicoDestino.FieldName = "idPublicoDestino";
+            this.colidPublicoDestino.Name = "colidPublicoDestino";
+            this.colidPublicoDestino.Visible = true;
+            this.colidPublicoDestino.VisibleIndex = 4;
+            // 
             // ucReservaVisitaGuiada
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -948,5 +958,6 @@ namespace CapaNegocio
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ComboBox cmbHorario;
         private System.Windows.Forms.Label lblFechaSel;
+        private DevExpress.XtraGrid.Columns.GridColumn colidPublicoDestino;
     }
 }
