@@ -78,10 +78,10 @@ namespace CapaNegocio
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.tabNav4_DiaVisita = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.txtFecha = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.checkedComboBoxEdit2 = new DevExpress.XtraEditors.CheckedComboBoxEdit();
             this.calendarControl1 = new DevExpress.XtraEditors.Controls.CalendarControl();
             this.tabNav5_Guia = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.btn_Quitar = new DevExpress.XtraEditors.SimpleButton();
@@ -97,6 +97,8 @@ namespace CapaNegocio
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.tabNav6_DetalleReserva = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cmbHorario = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
@@ -117,7 +119,6 @@ namespace CapaNegocio
             ((System.ComponentModel.ISupportInitialize)(this.exposicionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridExposiciones)).BeginInit();
             this.tabNav4_DiaVisita.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.checkedComboBoxEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.calendarControl1.CalendarTimeProperties)).BeginInit();
             this.tabNav5_Guia.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl5)).BeginInit();
@@ -601,33 +602,41 @@ namespace CapaNegocio
             // tabNav4_DiaVisita
             // 
             this.tabNav4_DiaVisita.Caption = "Día y Horario de Visita";
+            this.tabNav4_DiaVisita.Controls.Add(this.cmbHorario);
+            this.tabNav4_DiaVisita.Controls.Add(this.txtFecha);
+            this.tabNav4_DiaVisita.Controls.Add(this.label2);
             this.tabNav4_DiaVisita.Controls.Add(this.labelControl8);
-            this.tabNav4_DiaVisita.Controls.Add(this.labelControl7);
             this.tabNav4_DiaVisita.Controls.Add(this.labelControl6);
-            this.tabNav4_DiaVisita.Controls.Add(this.checkedComboBoxEdit2);
             this.tabNav4_DiaVisita.Controls.Add(this.calendarControl1);
             this.tabNav4_DiaVisita.Name = "tabNav4_DiaVisita";
             this.tabNav4_DiaVisita.Size = new System.Drawing.Size(1174, 544);
+            // 
+            // txtFecha
+            // 
+            this.txtFecha.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtFecha.Location = new System.Drawing.Point(170, 504);
+            this.txtFecha.Name = "txtFecha";
+            this.txtFecha.Size = new System.Drawing.Size(200, 14);
+            this.txtFecha.TabIndex = 8;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(51, 504);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(104, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Fecha seleccionada:";
             // 
             // labelControl8
             // 
             this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.labelControl8.Appearance.Options.UseFont = true;
-            this.labelControl8.Location = new System.Drawing.Point(59, 446);
+            this.labelControl8.Location = new System.Drawing.Point(854, 65);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(30, 13);
             this.labelControl8.TabIndex = 4;
             this.labelControl8.Text = "Hora:";
-            // 
-            // labelControl7
-            // 
-            this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.Location = new System.Drawing.Point(54, 70);
-            this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(21, 13);
-            this.labelControl7.TabIndex = 3;
-            this.labelControl7.Text = "Dia:";
             // 
             // labelControl6
             // 
@@ -637,25 +646,22 @@ namespace CapaNegocio
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(167, 16);
             this.labelControl6.TabIndex = 2;
-            this.labelControl6.Text = "Seleccione el dia y la hora";
-            // 
-            // checkedComboBoxEdit2
-            // 
-            this.checkedComboBoxEdit2.Location = new System.Drawing.Point(59, 480);
-            this.checkedComboBoxEdit2.Name = "checkedComboBoxEdit2";
-            this.checkedComboBoxEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.checkedComboBoxEdit2.Size = new System.Drawing.Size(100, 20);
-            this.checkedComboBoxEdit2.TabIndex = 1;
+            this.labelControl6.Text = "Seleccione el día y la hora";
             // 
             // calendarControl1
             // 
+            this.calendarControl1.AutoSize = false;
+            this.calendarControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.calendarControl1.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.calendarControl1.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.calendarControl1.Location = new System.Drawing.Point(59, 144);
+            this.calendarControl1.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Fluent;
+            this.calendarControl1.Location = new System.Drawing.Point(54, 65);
             this.calendarControl1.Name = "calendarControl1";
-            this.calendarControl1.Size = new System.Drawing.Size(255, 235);
+            this.calendarControl1.RowCount = 1;
+            this.calendarControl1.Size = new System.Drawing.Size(615, 403);
             this.calendarControl1.TabIndex = 0;
+            this.calendarControl1.Click += new System.EventHandler(this.calendarControl1_Click);
             // 
             // tabNav5_Guia
             // 
@@ -774,6 +780,50 @@ namespace CapaNegocio
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Detalle de la Reserva";
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // cmbHorario
+            // 
+            this.cmbHorario.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmbHorario.FormattingEnabled = true;
+            this.cmbHorario.Items.AddRange(new object[] {
+            "08:00",
+            "08:30",
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30",
+            "17:00",
+            "17:30",
+            "18:00",
+            "18:30",
+            "19:00",
+            "19:30",
+            "20:00",
+            "20:30",
+            "21:00",
+            "21:30",
+            "22:00"});
+            this.cmbHorario.Location = new System.Drawing.Point(854, 85);
+            this.cmbHorario.Name = "cmbHorario";
+            this.cmbHorario.Size = new System.Drawing.Size(96, 21);
+            this.cmbHorario.TabIndex = 9;
+            // 
             // ucReservaVisitaGuiada
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -805,7 +855,6 @@ namespace CapaNegocio
             ((System.ComponentModel.ISupportInitialize)(this.gridExposiciones)).EndInit();
             this.tabNav4_DiaVisita.ResumeLayout(false);
             this.tabNav4_DiaVisita.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.checkedComboBoxEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.calendarControl1.CalendarTimeProperties)).EndInit();
             this.tabNav5_Guia.ResumeLayout(false);
             this.tabNav5_Guia.PerformLayout();
@@ -838,8 +887,6 @@ namespace CapaNegocio
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.LabelControl labelControl4;
-        private DevExpress.XtraEditors.CheckedComboBoxEdit checkedComboBoxEdit2;
-        private DevExpress.XtraEditors.Controls.CalendarControl calendarControl1;
         private DevExpress.XtraGrid.GridControl gridControl4;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
         private DevExpress.XtraEditors.GroupControl groupControl1;
@@ -847,7 +894,6 @@ namespace CapaNegocio
         private DevExpress.XtraGrid.Views.Grid.GridView gridView5;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.LabelControl labelControl8;
-        private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.LabelControl labelControl11;
         private DevExpress.XtraEditors.SimpleButton btn_Quitar;
         private DevExpress.XtraEditors.SimpleButton btn_QuitarTodos;
@@ -888,5 +934,10 @@ namespace CapaNegocio
         private DevExpress.XtraEditors.LabelControl lblSedeSel;
         private DevExpress.XtraEditors.LabelControl lblSedeText;
         private DevExpress.XtraEditors.LabelControl lvlTV;
+        private DevExpress.XtraEditors.Controls.CalendarControl calendarControl1;
+        private System.Windows.Forms.TextBox txtFecha;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ComboBox cmbHorario;
     }
 }

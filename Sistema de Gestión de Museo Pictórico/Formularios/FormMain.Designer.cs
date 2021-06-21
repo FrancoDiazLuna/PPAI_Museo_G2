@@ -42,6 +42,7 @@ namespace CapaNegocio
             this.btn_RegistrarEscuela = new DevExpress.XtraEditors.SimpleButton();
             this.btn_BuscarReserva = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.lblTime = new DevExpress.XtraEditors.LabelControl();
             this.lblDate = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.svgImageBox1 = new DevExpress.XtraEditors.SvgImageBox();
@@ -54,7 +55,6 @@ namespace CapaNegocio
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.timer = new System.Windows.Forms.Timer(this.components);
-            this.lblTime = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
@@ -102,7 +102,7 @@ namespace CapaNegocio
             this.panelControl2.Controls.Add(this.btn_BuscarReserva);
             this.panelControl2.Location = new System.Drawing.Point(0, 30);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(282, 566);
+            this.panelControl2.Size = new System.Drawing.Size(168, 566);
             this.panelControl2.TabIndex = 0;
             // 
             // btnRegistrarReserva
@@ -110,7 +110,7 @@ namespace CapaNegocio
             this.btnRegistrarReserva.Location = new System.Drawing.Point(7, 76);
             this.btnRegistrarReserva.Name = "btnRegistrarReserva";
             this.btnRegistrarReserva.Size = new System.Drawing.Size(263, 54);
-            this.btnRegistrarReserva.TabIndex = 4;
+            this.btnRegistrarReserva.TabIndex = 1;
             this.btnRegistrarReserva.Text = "Registrar Reserva de Visita Guiada";
             this.btnRegistrarReserva.Click += new System.EventHandler(this.btnRegistrarReserva_Click);
             // 
@@ -121,7 +121,7 @@ namespace CapaNegocio
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelControl5.Location = new System.Drawing.Point(2, 389);
             this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(280, 177);
+            this.panelControl5.Size = new System.Drawing.Size(166, 177);
             this.panelControl5.TabIndex = 1;
             this.panelControl5.Click += new System.EventHandler(this.panelControl5_Click);
             // 
@@ -132,7 +132,7 @@ namespace CapaNegocio
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelControl4.Location = new System.Drawing.Point(2, 0);
             this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(280, 70);
+            this.panelControl4.Size = new System.Drawing.Size(166, 70);
             this.panelControl4.TabIndex = 0;
             this.panelControl4.Click += new System.EventHandler(this.panelControl4_Click);
             // 
@@ -157,7 +157,7 @@ namespace CapaNegocio
             this.btn_BuscarReserva.Location = new System.Drawing.Point(12, 159);
             this.btn_BuscarReserva.Name = "btn_BuscarReserva";
             this.btn_BuscarReserva.Size = new System.Drawing.Size(263, 54);
-            this.btn_BuscarReserva.TabIndex = 1;
+            this.btn_BuscarReserva.TabIndex = 2;
             this.btn_BuscarReserva.Text = "Buscar Reservas";
             // 
             // panelControl3
@@ -170,6 +170,14 @@ namespace CapaNegocio
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Size = new System.Drawing.Size(280, 114);
             this.panelControl3.TabIndex = 1;
+            // 
+            // lblTime
+            // 
+            this.lblTime.Location = new System.Drawing.Point(137, 68);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(20, 13);
+            this.lblTime.TabIndex = 3;
+            this.lblTime.Text = "time";
             // 
             // lblDate
             // 
@@ -202,7 +210,7 @@ namespace CapaNegocio
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelControlMain.Location = new System.Drawing.Point(281, 30);
             this.panelControlMain.Name = "panelControlMain";
-            this.panelControlMain.Size = new System.Drawing.Size(1203, 681);
+            this.panelControlMain.Size = new System.Drawing.Size(1089, 681);
             this.panelControlMain.TabIndex = 2;
             // 
             // tileNavCategory1
@@ -228,7 +236,7 @@ namespace CapaNegocio
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1484, 711);
+            this.panelControl1.Size = new System.Drawing.Size(1370, 711);
             this.panelControl1.TabIndex = 0;
             // 
             // toolStripFormMain
@@ -238,7 +246,7 @@ namespace CapaNegocio
             this.toolStripLabel1});
             this.toolStripFormMain.Location = new System.Drawing.Point(2, 2);
             this.toolStripFormMain.Name = "toolStripFormMain";
-            this.toolStripFormMain.Size = new System.Drawing.Size(1480, 25);
+            this.toolStripFormMain.Size = new System.Drawing.Size(1366, 25);
             this.toolStripFormMain.TabIndex = 3;
             this.toolStripFormMain.Text = "toolStripFormMain";
             // 
@@ -272,19 +280,11 @@ namespace CapaNegocio
             this.timer.Enabled = true;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
-            // lblTime
-            // 
-            this.lblTime.Location = new System.Drawing.Point(137, 68);
-            this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(20, 13);
-            this.lblTime.TabIndex = 3;
-            this.lblTime.Text = "time";
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1484, 711);
+            this.ClientSize = new System.Drawing.Size(1370, 711);
             this.Controls.Add(this.panelControl1);
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
