@@ -9,11 +9,14 @@ namespace CapaDatos
     class Conexion
     {
         // CC FrancoDL
-        public static string Cn = @"Data Source=DESKTOP-FEDL\MSSQLSDEVELOPER;Initial Catalog=MuseoPictorico;Integrated Security=True";
+        //public static string Cn = @"Data Source=DESKTOP-FEDL\MSSQLSDEVELOPER;Initial Catalog=MuseoPictorico;Integrated Security=True";
 
         //LucasConexion
         //public static string Cn = @"Data Source=LUCAS-PC\SQLEXPRESS;Initial Catalog=MuseoPictorico;Integrated Security=True";
-        
+
+        //Nahir
+        //public static string Cn = "Data Source=DESKTOP-KH9IQDS\\SQLEXPRESS;Initial Catalog=MuseoPictorico;Integrated Security=True";
+
         // Aca deben agregar sus cadenas de conexion, y comentar las otras para poder probar contra la db local de cada uno.
 
     }
