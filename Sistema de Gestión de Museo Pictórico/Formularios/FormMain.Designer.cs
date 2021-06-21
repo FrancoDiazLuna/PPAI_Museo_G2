@@ -107,7 +107,7 @@ namespace CapaNegocio
             // 
             // btnRegistrarReserva
             // 
-            this.btnRegistrarReserva.Location = new System.Drawing.Point(7, 76);
+            this.btnRegistrarReserva.Location = new System.Drawing.Point(12, 76);
             this.btnRegistrarReserva.Name = "btnRegistrarReserva";
             this.btnRegistrarReserva.Size = new System.Drawing.Size(263, 54);
             this.btnRegistrarReserva.TabIndex = 1;
@@ -121,18 +121,20 @@ namespace CapaNegocio
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelControl5.Location = new System.Drawing.Point(2, 389);
             this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(394, 177);
+            this.panelControl5.Size = new System.Drawing.Size(280, 177);
             this.panelControl5.TabIndex = 1;
-            this.panelControl5.Click += new System.EventHandler(this.panelControl5_Click);
+            this.panelControl5.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControl5_Paint);
             // 
             // panelControl4
             // 
             this.panelControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelControl4.Appearance.BackColor = System.Drawing.Color.White;
+            this.panelControl4.Appearance.Options.UseBackColor = true;
             this.panelControl4.Location = new System.Drawing.Point(2, 0);
             this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(394, 70);
+            this.panelControl4.Size = new System.Drawing.Size(280, 70);
             this.panelControl4.TabIndex = 0;
             this.panelControl4.Click += new System.EventHandler(this.panelControl4_Click);
             // 
@@ -178,6 +180,7 @@ namespace CapaNegocio
             this.lblTime.Size = new System.Drawing.Size(20, 13);
             this.lblTime.TabIndex = 3;
             this.lblTime.Text = "time";
+            this.lblTime.ToolTip = "Hora actual";
             // 
             // lblDate
             // 
@@ -186,14 +189,16 @@ namespace CapaNegocio
             this.lblDate.Size = new System.Drawing.Size(22, 13);
             this.lblDate.TabIndex = 2;
             this.lblDate.Text = "date";
+            this.lblDate.ToolTip = "Fecha actual";
             // 
             // labelControl1
             // 
             this.labelControl1.Location = new System.Drawing.Point(137, 20);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(47, 13);
+            this.labelControl1.Size = new System.Drawing.Size(69, 13);
             this.labelControl1.TabIndex = 1;
-            this.labelControl1.Text = "username";
+            this.labelControl1.Text = "usernameUser";
+            this.labelControl1.ToolTip = "Nombre del usuario con la sesion iniciada";
             // 
             // svgImageBox1
             // 
@@ -203,6 +208,7 @@ namespace CapaNegocio
             this.svgImageBox1.Location = new System.Drawing.Point(5, 5);
             this.svgImageBox1.Name = "svgImageBox1";
             this.svgImageBox1.Size = new System.Drawing.Size(111, 100);
+            this.svgImageBox1.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Zoom;
             this.svgImageBox1.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageBox1.SvgImage")));
             this.svgImageBox1.TabIndex = 0;
             this.svgImageBox1.Text = "svgImageBox1";
@@ -278,6 +284,8 @@ namespace CapaNegocio
             this.toolStripLabel1.Name = "toolStripLabel1";
             this.toolStripLabel1.Size = new System.Drawing.Size(41, 22);
             this.toolStripLabel1.Text = "Ayuda";
+            this.toolStripLabel1.ToolTipText = "Acerca de";
+            this.toolStripLabel1.Click += new System.EventHandler(this.toolStripLabel1_Click);
             // 
             // timer
             // 
@@ -288,8 +296,12 @@ namespace CapaNegocio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1484, 711);
             this.Controls.Add(this.panelControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema de Gestión de Museo Pictórico";

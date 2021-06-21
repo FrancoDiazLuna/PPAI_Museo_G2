@@ -158,6 +158,7 @@ namespace CapaNegocio
             this.btn_confirmarReserva.TabIndex = 3;
             this.btn_confirmarReserva.Text = "Confirmar Reserva";
             this.btn_confirmarReserva.Visible = false;
+            this.btn_confirmarReserva.Click += new System.EventHandler(this.btn_confirmarReserva_Click);
             // 
             // btn_anterior
             // 

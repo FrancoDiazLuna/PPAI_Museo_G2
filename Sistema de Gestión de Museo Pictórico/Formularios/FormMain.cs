@@ -26,7 +26,7 @@ namespace CapaNegocio
 
         public void showControl(Control control)
         {
-            panelControlMain.Controls.Clear();
+            limpiarPanelPrincipal();
 
             control.Dock = DockStyle.Fill;
             control.BringToFront();
@@ -35,12 +35,7 @@ namespace CapaNegocio
             panelControlMain.Controls.Add(control);
         }
 
-        private void panelControl5_Click(object sender, EventArgs e)
-        {
-            panelControlMain.Controls.Clear();
-        }
-
-        private void panelControl4_Click(object sender, EventArgs e)
+        private void limpiarPanelPrincipal()
         {
             panelControlMain.Controls.Clear();
         }
@@ -54,6 +49,23 @@ namespace CapaNegocio
         {
             lblDate.Text = DateTime.Now.ToShortDateString();
             lblTime.Text = DateTime.Now.ToLongTimeString();
+        }
+
+        private void panelControl4_Click(object sender, EventArgs e)
+        {
+            limpiarPanelPrincipal();
+        }
+
+        private void panelControl5_Paint(object sender, PaintEventArgs e)
+        {
+            limpiarPanelPrincipal();
+        }
+
+        private void toolStripLabel1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("UTN FRC - Cátedra de Diseño de Sistemas \n PPAI: Museo Pictórico " +
+                "\n\n\t Grupo Nº 2 (Bazinga) \n\n 1° Entrega - Implementación del caso de uso modelado" +
+                "\n Caso de Uso 92: Registrar Reserva de Visita Guiada", "Acerca del Sitema", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

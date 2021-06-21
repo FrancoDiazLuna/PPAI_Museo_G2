@@ -168,7 +168,12 @@ namespace CapaNegocio
                 lblFechaSel.Text = "";
             }
         }
-        
+
+        private void btn_confirmarReserva_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("La reserva se registró con exito. \nEl estado actual de la misma es ahora Pendiente de Confirmación", "Confirmación de reserva de visita guiada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            tabPane1.Visible = false;
+        }
     }
     
 }
