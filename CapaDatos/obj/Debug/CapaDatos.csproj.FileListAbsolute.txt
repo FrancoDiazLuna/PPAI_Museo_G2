@@ -16,9 +16,9 @@ D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEnt
 D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
 D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\CapaDatos\obj\Debug\CapaDatos.dll
 D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\CapaDatos\obj\Debug\CapaDatos.pdb
-C:\Users\Nahir\source\repos\PPAI_Museo_G2\CapaDatos\bin\Debug\CapaDatos.dll
-C:\Users\Nahir\source\repos\PPAI_Museo_G2\CapaDatos\bin\Debug\CapaDatos.pdb
-C:\Users\Nahir\source\repos\PPAI_Museo_G2\CapaDatos\obj\Debug\CapaDatos.csproj.AssemblyReference.cache
-C:\Users\Nahir\source\repos\PPAI_Museo_G2\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
-C:\Users\Nahir\source\repos\PPAI_Museo_G2\CapaDatos\obj\Debug\CapaDatos.dll
-C:\Users\Nahir\source\repos\PPAI_Museo_G2\CapaDatos\obj\Debug\CapaDatos.pdb
+E:\UTN-FRC\Tercer Año\Diseño de Sistemas\2021\PPAI_Museo_G2\CapaDatos\bin\Debug\CapaDatos.dll
+E:\UTN-FRC\Tercer Año\Diseño de Sistemas\2021\PPAI_Museo_G2\CapaDatos\bin\Debug\CapaDatos.pdb
+E:\UTN-FRC\Tercer Año\Diseño de Sistemas\2021\PPAI_Museo_G2\CapaDatos\obj\Debug\CapaDatos.csproj.AssemblyReference.cache
+E:\UTN-FRC\Tercer Año\Diseño de Sistemas\2021\PPAI_Museo_G2\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
+E:\UTN-FRC\Tercer Año\Diseño de Sistemas\2021\PPAI_Museo_G2\CapaDatos\obj\Debug\CapaDatos.dll
+E:\UTN-FRC\Tercer Año\Diseño de Sistemas\2021\PPAI_Museo_G2\CapaDatos\obj\Debug\CapaDatos.pdb

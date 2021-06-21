@@ -25,12 +25,12 @@ D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEnt
 D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\CapaNegocio\obj\Debug\CapaNegocio.dll
 D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\CapaNegocio\obj\Debug\CapaNegocio.pdb
 D:\OneDrive - frc.utn.edu.ar\Facultad\3. Tercer Año\DSI\2021\PPAI\2. SegundaEntrega\PPAI_Museo_G2\CapaNegocio\bin\Debug\CapaNegocio.pdb
-C:\Users\Nahir\source\repos\PPAI_Museo_G2\CapaNegocio\bin\Debug\CapaNegocio.dll
-C:\Users\Nahir\source\repos\PPAI_Museo_G2\CapaNegocio\bin\Debug\CapaNegocio.pdb
-C:\Users\Nahir\source\repos\PPAI_Museo_G2\CapaNegocio\bin\Debug\CapaDatos.dll
-C:\Users\Nahir\source\repos\PPAI_Museo_G2\CapaNegocio\bin\Debug\CapaDatos.pdb
-C:\Users\Nahir\source\repos\PPAI_Museo_G2\CapaNegocio\obj\Debug\CapaNegocio.csproj.AssemblyReference.cache
-C:\Users\Nahir\source\repos\PPAI_Museo_G2\CapaNegocio\obj\Debug\CapaNegocio.csproj.CoreCompileInputs.cache
-C:\Users\Nahir\source\repos\PPAI_Museo_G2\CapaNegocio\obj\Debug\CapaNegocio.csproj.CopyComplete
-C:\Users\Nahir\source\repos\PPAI_Museo_G2\CapaNegocio\obj\Debug\CapaNegocio.dll
-C:\Users\Nahir\source\repos\PPAI_Museo_G2\CapaNegocio\obj\Debug\CapaNegocio.pdb
+E:\UTN-FRC\Tercer Año\Diseño de Sistemas\2021\PPAI_Museo_G2\CapaNegocio\bin\Debug\CapaNegocio.dll
+E:\UTN-FRC\Tercer Año\Diseño de Sistemas\2021\PPAI_Museo_G2\CapaNegocio\bin\Debug\CapaNegocio.pdb
+E:\UTN-FRC\Tercer Año\Diseño de Sistemas\2021\PPAI_Museo_G2\CapaNegocio\bin\Debug\CapaDatos.dll
+E:\UTN-FRC\Tercer Año\Diseño de Sistemas\2021\PPAI_Museo_G2\CapaNegocio\bin\Debug\CapaDatos.pdb
+E:\UTN-FRC\Tercer Año\Diseño de Sistemas\2021\PPAI_Museo_G2\CapaNegocio\obj\Debug\CapaNegocio.csproj.AssemblyReference.cache
+E:\UTN-FRC\Tercer Año\Diseño de Sistemas\2021\PPAI_Museo_G2\CapaNegocio\obj\Debug\CapaNegocio.csproj.CoreCompileInputs.cache
+E:\UTN-FRC\Tercer Año\Diseño de Sistemas\2021\PPAI_Museo_G2\CapaNegocio\obj\Debug\CapaNegocio.csproj.CopyComplete
+E:\UTN-FRC\Tercer Año\Diseño de Sistemas\2021\PPAI_Museo_G2\CapaNegocio\obj\Debug\CapaNegocio.dll
+E:\UTN-FRC\Tercer Año\Diseño de Sistemas\2021\PPAI_Museo_G2\CapaNegocio\obj\Debug\CapaNegocio.pdb
