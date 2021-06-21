@@ -137,6 +137,21 @@ namespace CapaNegocio
             GestorDeReserva.obtenerSedeSeleccionada(sede);
         }
 
+        private void calendarControl1_Click(object sender, EventArgs e)
+        {
+            DateTime fecha = DateTime.Parse(calendarControl1.SelectionStart.ToLongDateString());
+            DateTime actual = DateTime.Now;
+            if (fecha.CompareTo(actual) >= 0) 
+            {
+                txtFecha.Enabled = false;
+                txtFecha.Text = calendarControl1.SelectionStart.ToLongDateString();
+            }
+            else
+            {
+                txtFecha.Text = "";
+            }
+        }
+        
     }
     
 }
