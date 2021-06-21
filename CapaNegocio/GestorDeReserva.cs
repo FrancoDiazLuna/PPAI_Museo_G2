@@ -102,6 +102,7 @@ namespace CapaNegocio
         {
             DataTable tiposDeVisita = new DTipoVisita().buscar();
 
+
             tiposDeVisitaTodasList = (from DataRow dr in tiposDeVisita.Rows
                                       select new TipoVisita()
                                       {
@@ -113,10 +114,56 @@ namespace CapaNegocio
             return tiposDeVisitaTodasList;
         }
 
-        public static List<Exposicion> buscarExposicionesPorSede()
+        public static List<Exposicion> buscarExposicionesTemporalesVigentes()
         {
+            //Busca el DT de la BD
+            DataTable exposPorSede = new DExposicionesPorSede().buscar();
+
+            //lista de exposiciones si estan vigentes y si son temporales
+            List<Exposicion> expoTemporalesVigentes = Sede.buscarExposicionesTemporalesVigentes();
+
+            //lista para los objetos de ExS, que voy a filtrar para hacer una lista de solo Expos con el id de Sede selecc
+            List<ExposicionPorSede> listExposPorSede = new List<ExposicionPorSede>();
+
+            //lista con id de las expo que cumplieron la condicion anterior
+            List<int> listExposPorSedeSeleccionada = new List<int>();
+
+            //Pasa a lista el DT
+            listExposPorSede = (from DataRow dr in exposPorSede.Rows
+                                select new ExposicionPorSede()
+                                {
+                                    idExposicionPorSede = Convert.ToInt32(dr["idExposicionPorSede"]),
+                                    idSede = Convert.ToInt32(dr["idSede"]),
+                                    idExposicion = Convert.ToInt32(dr["idExposicion"])
+                                }
+
+                            ).ToList();
+
+            var filtrado = listExposPorSede.Where(expo => expo.idSede == sedeSeleccionada.idSede );
+            foreach (ExposicionPorSede expo in filtrado)
+            {
+                listExposPorSedeSeleccionada.Add(expo.idExposicion);
+            }
 
 
+            //Estos de aca abajo hacen lo mismo, no los probe. Pero creo q funcionan
+
+            var filtradoDos = expoTemporalesVigentes.Where(expo => listExposPorSedeSeleccionada.Contains(expo.idExposicion));
+            foreach (Exposicion expo in filtradoDos)
+            {
+                exposicionesSedeList.Add(expo);
+            }
+
+            //foreach (Exposicion expo in expoTemporalesVigentes)
+            //{
+            //    foreach (var item in listExposPorSedeSeleccionada)
+            //    {
+            //        if (expo.idExposicion == item)
+            //        {
+            //            exposicionesSedeList.Add(expo);
+            //        }
+            //    }
+            //}
 
             return exposicionesSedeList;
         }

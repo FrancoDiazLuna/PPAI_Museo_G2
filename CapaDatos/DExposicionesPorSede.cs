@@ -8,16 +8,19 @@ using System.Data.SqlClient;
 
 namespace CapaDatos
 {
-    public class DExposicionesxSede
+    public class DExposicionesPorSede
     {
-
         private int _idExposicionxSede;
         private int _idSede;
         private int _idExposicion;
 
-        public DExposicionesxSede()
+        public DExposicionesPorSede()
         {
         }
+
+        public int IdExposicion { get => _idExposicion; set => _idExposicion = value; }
+        public int IdSede { get => _idSede; set => _idSede = value; }
+        public int IdExposicionxSede { get => _idExposicionxSede; set => _idExposicionxSede = value; }
 
         public DataTable buscar()
         {
@@ -42,8 +45,5 @@ namespace CapaDatos
 
             return dataTable;
         }
-
     }
-
-   
 }

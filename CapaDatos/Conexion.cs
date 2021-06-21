@@ -12,7 +12,7 @@ namespace CapaDatos
         //public static string Cn = @"Data Source=DESKTOP-FEDL\MSSQLSDEVELOPER;Initial Catalog=MuseoPictorico;Integrated Security=True";
 
         //LucasConexion
-        //public static string Cn = @"Data Source=LUCAS-PC\SQLEXPRESS;Initial Catalog=MuseoPictorico;Integrated Security=True";
+        public static string Cn = @"Data Source=LUCAS-PC\SQLEXPRESS;Initial Catalog=MuseoPictorico;Integrated Security=True";
 
         //Nahir
         //public static string Cn = "Data Source=DESKTOP-KH9IQDS\\SQLEXPRESS;Initial Catalog=MuseoPictorico;Integrated Security=True";
