@@ -24,47 +24,21 @@ namespace CapaNegocio
         public int idEmpleadoCreo { get; set; }
 
 
+        //(List<int> idExposiciones)
 
 
-
-
-        public static List<Exposicion> buscarExposicionesTemporalesVigentes(List<int> idExposiciones)
+        public static List<Exposicion> esVigente(List<Exposicion> expoTodas)
         {
-            DataTable exposicionesTodas = new DExposicion().buscar();
+            List<Exposicion> expoVigente = new List<Exposicion>();
 
-            List<Exposicion> exposicionesTodasList = new List<Exposicion>();
-
-            List<Exposicion> expoFiltradaSede = new List<Exposicion>();
-
-            exposicionesTodasList = (from DataRow dr in exposicionesTodas.Rows
-                                 select new Exposicion()
-                                 {
-                                     idExposicion = Convert.ToInt32(dr["idExposicion"]),
-                                     fechaFin = Convert.ToDateTime(dr["fechaFin"]),
-                                     fechaFinReplanificada = Convert.ToDateTime(dr["fechaFinReplanificada"]),
-                                     fechaInicio = Convert.ToDateTime(dr["fechaInicio"]),
-                                     fechaInicioReplanificada = Convert.ToDateTime(dr["fechaInicioReplanificada"]),
-                                     horaApertura = Convert.ToDateTime(dr["horaApertura"]),
-                                     horaCierre = Convert.ToDateTime(dr["horaCierre"]),
-                                     nombre = dr["nombre"].ToString(),
-                                     idTipoExposicion = Convert.ToInt32(dr["idTipoExposicion"]),
-                                     idPublicoDestino = Convert.ToInt32(dr["idPublicoDestino"]),
-                                     idEmpleadoCreo = Convert.ToInt32(dr["idEmpleadoCreo"])
-                                 }
-                                    ).ToList();
-
-
-            foreach (int idE in idExposiciones)
+            var filtrado = expoTodas.Where(expo => expo.fechaInicio <= DateTime.Now | expo.fechaInicioReplanificada <= DateTime.Now);
+            foreach (Exposicion expo in filtrado)
             {
-                
-
+                //if (expo.fechaInicio <= DateTime.Now | expo.fechaInicioReplanificada <= DateTime.Now)
+                    expoVigente.Add(expo);
             }
 
-            
-
-
-
-            return expoFiltradaSede;
+            return expoVigente;
         }
 
     }

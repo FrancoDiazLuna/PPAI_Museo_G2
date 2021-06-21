@@ -22,12 +22,21 @@ namespace CapaDatos
         private int _idPublicoDestino;
         private int _idEmpleadoCreo;
 
-
+        public int IdExposicion { get => _idExposicion; set => _idExposicion = value; }
+        public DateTime FechaFin { get => _fechaFin; set => _fechaFin = value; }
+        public DateTime FechaFinReplanificada { get => _fechaFinReplanificada; set => _fechaFinReplanificada = value; }
+        public DateTime FechaInicio { get => _fechaInicio; set => _fechaInicio = value; }
+        public DateTime FechaInicioReplanificada { get => _fechaInicioReplanificada; set => _fechaInicioReplanificada = value; }
+        public DateTime HoraApertura { get => _horaApertura; set => _horaApertura = value; }
+        public DateTime HoraCierre { get => _horaCierre; set => _horaCierre = value; }
+        public string Nombre { get => _nombre; set => _nombre = value; }
+        public int IdTipoExposicion { get => _idTipoExposicion; set => _idTipoExposicion = value; }
+        public int IdPublicoDestino { get => _idPublicoDestino; set => _idPublicoDestino = value; }
+        public int IdEmpleadoCreo { get => _idEmpleadoCreo; set => _idEmpleadoCreo = value; }
 
         public DExposicion()
         {
         }
-
 
         public DataTable buscar()
         {
