@@ -17,7 +17,7 @@ namespace CapaNegocio
         public int duracionResumida { get; set; }
         public DateTime fechaCreacion { get; set; }
         public DateTime fechaPrimerIngreso { get; set; }
-        public string nombraObra { get; set; }
+        public string nombreObra { get; set; }
         public int peso { get; set; }
         public int valuacion { get; set; }
         public int idDonacion { get; set; }
@@ -48,7 +48,7 @@ namespace CapaNegocio
             this.duracionResumida = duracionResumida;
             this.fechaCreacion = fechaCreacion;
             this.fechaPrimerIngreso = fechaPrimerIngreso;
-            this.nombraObra = nombraObra;
+            this.nombreObra = nombraObra;
             this.peso = peso;
             this.valuacion = valuacion;
             this.idDonacion = idDonacion;
@@ -64,6 +64,10 @@ namespace CapaNegocio
             this.idEstilo = idEstilo;
             this.idTipoIngreso = idTipoIngreso;
             this.idTematica = idTematica;
+        }
+
+        public Obra()
+        {
         }
     }
 }

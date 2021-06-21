@@ -48,6 +48,7 @@
     <Compile Include="DEscuela.cs" />
     <Compile Include="DExposicion.cs" />
     <Compile Include="DExposicionesPorSede.cs" />
+    <Compile Include="DObra.cs" />
     <Compile Include="DSede.cs" />
     <Compile Include="DTipoVisita.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -28,3 +28,9 @@ C:\Users\Nahir\source\repos\PPAI_Museo_G2\CapaDatos\obj\Debug\CapaDatos.csproj.A
 C:\Users\Nahir\source\repos\PPAI_Museo_G2\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
 C:\Users\Nahir\source\repos\PPAI_Museo_G2\CapaDatos\obj\Debug\CapaDatos.dll
 C:\Users\Nahir\source\repos\PPAI_Museo_G2\CapaDatos\obj\Debug\CapaDatos.pdb
+C:\Users\Axel\Desktop\DISEÑO\PPAIVisual\CapaDatos\bin\Debug\CapaDatos.dll
+C:\Users\Axel\Desktop\DISEÑO\PPAIVisual\CapaDatos\bin\Debug\CapaDatos.pdb
+C:\Users\Axel\Desktop\DISEÑO\PPAIVisual\CapaDatos\obj\Debug\CapaDatos.csprojAssemblyReference.cache
+C:\Users\Axel\Desktop\DISEÑO\PPAIVisual\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
+C:\Users\Axel\Desktop\DISEÑO\PPAIVisual\CapaDatos\obj\Debug\CapaDatos.dll
+C:\Users\Axel\Desktop\DISEÑO\PPAIVisual\CapaDatos\obj\Debug\CapaDatos.pdb

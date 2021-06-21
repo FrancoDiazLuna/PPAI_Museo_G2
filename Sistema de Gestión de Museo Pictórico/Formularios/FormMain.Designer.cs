@@ -102,7 +102,7 @@ namespace CapaNegocio
             this.panelControl2.Controls.Add(this.btn_BuscarReserva);
             this.panelControl2.Location = new System.Drawing.Point(0, 30);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(356, 566);
+            this.panelControl2.Size = new System.Drawing.Size(396, 566);
             this.panelControl2.TabIndex = 0;
             // 
             // btnRegistrarReserva
@@ -121,7 +121,7 @@ namespace CapaNegocio
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelControl5.Location = new System.Drawing.Point(2, 389);
             this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(240, 177);
+            this.panelControl5.Size = new System.Drawing.Size(280, 177);
             this.panelControl5.TabIndex = 1;
             this.panelControl5.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControl5_Paint);
             // 
@@ -134,7 +134,7 @@ namespace CapaNegocio
             this.panelControl4.Appearance.Options.UseBackColor = true;
             this.panelControl4.Location = new System.Drawing.Point(2, 0);
             this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(240, 70);
+            this.panelControl4.Size = new System.Drawing.Size(280, 70);
             this.panelControl4.TabIndex = 0;
             this.panelControl4.Click += new System.EventHandler(this.panelControl4_Click);
             // 
@@ -220,7 +220,7 @@ namespace CapaNegocio
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelControlMain.Location = new System.Drawing.Point(281, 30);
             this.panelControlMain.Name = "panelControlMain";
-            this.panelControlMain.Size = new System.Drawing.Size(1163, 681);
+            this.panelControlMain.Size = new System.Drawing.Size(1203, 681);
             this.panelControlMain.TabIndex = 2;
             // 
             // tileNavCategory1
@@ -246,7 +246,7 @@ namespace CapaNegocio
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1444, 711);
+            this.panelControl1.Size = new System.Drawing.Size(1484, 711);
             this.panelControl1.TabIndex = 0;
             // 
             // toolStripFormMain
@@ -256,7 +256,7 @@ namespace CapaNegocio
             this.toolStripLabel1});
             this.toolStripFormMain.Location = new System.Drawing.Point(2, 2);
             this.toolStripFormMain.Name = "toolStripFormMain";
-            this.toolStripFormMain.Size = new System.Drawing.Size(1440, 25);
+            this.toolStripFormMain.Size = new System.Drawing.Size(1480, 25);
             this.toolStripFormMain.TabIndex = 3;
             this.toolStripFormMain.Text = "toolStripFormMain";
             // 
@@ -298,7 +298,7 @@ namespace CapaNegocio
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1444, 711);
+            this.ClientSize = new System.Drawing.Size(1484, 711);
             this.Controls.Add(this.panelControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
