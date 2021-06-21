@@ -38,7 +38,9 @@ namespace CapaNegocio
             this.btn_cancelar = new DevExpress.XtraEditors.SimpleButton();
             this.tabPane1 = new DevExpress.XtraBars.Navigation.TabPane();
             this.tabNav1_Escuelas = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.spinEdit1 = new DevExpress.XtraEditors.SpinEdit();
+            this.lblEscSel = new DevExpress.XtraEditors.LabelControl();
+            this.lblEscuelaText = new DevExpress.XtraEditors.LabelControl();
+            this.spinCantVisitantes = new DevExpress.XtraEditors.SpinEdit();
             this.dgvEscuelas = new DevExpress.XtraGrid.GridControl();
             this.escuelaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridEscuelas = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -50,18 +52,21 @@ namespace CapaNegocio
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.tabNav2_Sedes = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.lblSedeSel = new DevExpress.XtraEditors.LabelControl();
+            this.lblSedeText = new DevExpress.XtraEditors.LabelControl();
             this.dgvSede = new DevExpress.XtraGrid.GridControl();
             this.sedeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridSedes = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colnombre1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcantidadMaximaVisitantes = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcantidadMaxPorGuia = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.tabNav3_Visita_Exposiciones = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.lvlTV = new DevExpress.XtraEditors.LabelControl();
+            this.cmbTipoVisita = new System.Windows.Forms.ComboBox();
             this.gridControl3 = new DevExpress.XtraGrid.GridControl();
             this.exposicionBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridExposiciones = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colnombre2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colfechaInicio = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colfechaFin = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -92,8 +97,6 @@ namespace CapaNegocio
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.tabNav6_DetalleReserva = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.lblEscuelaText = new DevExpress.XtraEditors.LabelControl();
-            this.lblEscSel = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
@@ -101,18 +104,18 @@ namespace CapaNegocio
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
             this.tabPane1.SuspendLayout();
             this.tabNav1_Escuelas.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.spinEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinCantVisitantes.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEscuelas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.escuelaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridEscuelas)).BeginInit();
             this.tabNav2_Sedes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSede)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sedeBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridSedes)).BeginInit();
             this.tabNav3_Visita_Exposiciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.exposicionBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridExposiciones)).BeginInit();
             this.tabNav4_DiaVisita.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkedComboBoxEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.calendarControl1.CalendarTimeProperties)).BeginInit();
@@ -215,7 +218,7 @@ namespace CapaNegocio
             this.tabNav1_Escuelas.Caption = "Escuelas";
             this.tabNav1_Escuelas.Controls.Add(this.lblEscSel);
             this.tabNav1_Escuelas.Controls.Add(this.lblEscuelaText);
-            this.tabNav1_Escuelas.Controls.Add(this.spinEdit1);
+            this.tabNav1_Escuelas.Controls.Add(this.spinCantVisitantes);
             this.tabNav1_Escuelas.Controls.Add(this.dgvEscuelas);
             this.tabNav1_Escuelas.Controls.Add(this.labelControl2);
             this.tabNav1_Escuelas.Controls.Add(this.labelControl1);
@@ -223,39 +226,54 @@ namespace CapaNegocio
             this.tabNav1_Escuelas.Size = new System.Drawing.Size(1174, 544);
             this.tabNav1_Escuelas.Paint += new System.Windows.Forms.PaintEventHandler(this.tabNavigationPage1_Paint);
             // 
-            // spinEdit1
+            // lblEscSel
             // 
-            this.spinEdit1.EditValue = new decimal(new int[] {
-            1,
+            this.lblEscSel.Location = new System.Drawing.Point(266, 66);
+            this.lblEscSel.Name = "lblEscSel";
+            this.lblEscSel.Size = new System.Drawing.Size(0, 13);
+            this.lblEscSel.TabIndex = 8;
+            // 
+            // lblEscuelaText
+            // 
+            this.lblEscuelaText.Location = new System.Drawing.Point(132, 66);
+            this.lblEscuelaText.Name = "lblEscuelaText";
+            this.lblEscuelaText.Size = new System.Drawing.Size(104, 13);
+            this.lblEscuelaText.TabIndex = 7;
+            this.lblEscuelaText.Text = "Escuela seleccionada:";
+            // 
+            // spinCantVisitantes
+            // 
+            this.spinCantVisitantes.EditValue = new decimal(new int[] {
+            0,
             0,
             0,
             0});
-            this.spinEdit1.Location = new System.Drawing.Point(207, 502);
-            this.spinEdit1.Name = "spinEdit1";
-            this.spinEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.spinCantVisitantes.Location = new System.Drawing.Point(207, 502);
+            this.spinCantVisitantes.Name = "spinCantVisitantes";
+            this.spinCantVisitantes.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.spinEdit1.Properties.IsFloatValue = false;
-            this.spinEdit1.Properties.Mask.EditMask = "N00";
-            this.spinEdit1.Properties.MaxValue = new decimal(new int[] {
+            this.spinCantVisitantes.Properties.IsFloatValue = false;
+            this.spinCantVisitantes.Properties.Mask.EditMask = "N00";
+            this.spinCantVisitantes.Properties.MaxValue = new decimal(new int[] {
             500,
             0,
             0,
             0});
-            this.spinEdit1.Properties.MinValue = new decimal(new int[] {
+            this.spinCantVisitantes.Properties.MinValue = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.spinEdit1.Size = new System.Drawing.Size(100, 20);
-            this.spinEdit1.TabIndex = 6;
+            this.spinCantVisitantes.Size = new System.Drawing.Size(100, 20);
+            this.spinCantVisitantes.TabIndex = 6;
             // 
             // dgvEscuelas
             // 
             this.dgvEscuelas.DataSource = this.escuelaBindingSource;
-            this.dgvEscuelas.Location = new System.Drawing.Point(27, 67);
+            this.dgvEscuelas.Location = new System.Drawing.Point(27, 116);
             this.dgvEscuelas.MainView = this.gridEscuelas;
             this.dgvEscuelas.Name = "dgvEscuelas";
-            this.dgvEscuelas.Size = new System.Drawing.Size(1120, 411);
+            this.dgvEscuelas.Size = new System.Drawing.Size(1120, 365);
             this.dgvEscuelas.TabIndex = 5;
             this.dgvEscuelas.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridEscuelas});
@@ -279,7 +297,7 @@ namespace CapaNegocio
             this.gridEscuelas.OptionsBehavior.Editable = false;
             this.gridEscuelas.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridEscuelas.OptionsSelection.ShowCheckBoxSelectorInColumnHeader = DevExpress.Utils.DefaultBoolean.False;
-            this.gridEscuelas.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_RowClick);
+            this.gridEscuelas.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.seleccionDeEscuela);
             // 
             // colnombre
             // 
@@ -347,34 +365,52 @@ namespace CapaNegocio
             // tabNav2_Sedes
             // 
             this.tabNav2_Sedes.Caption = "Sede";
+            this.tabNav2_Sedes.Controls.Add(this.lblSedeSel);
+            this.tabNav2_Sedes.Controls.Add(this.lblSedeText);
             this.tabNav2_Sedes.Controls.Add(this.dgvSede);
             this.tabNav2_Sedes.Controls.Add(this.labelControl3);
             this.tabNav2_Sedes.Name = "tabNav2_Sedes";
             this.tabNav2_Sedes.Size = new System.Drawing.Size(1174, 544);
             // 
+            // lblSedeSel
+            // 
+            this.lblSedeSel.Location = new System.Drawing.Point(249, 72);
+            this.lblSedeSel.Name = "lblSedeSel";
+            this.lblSedeSel.Size = new System.Drawing.Size(0, 13);
+            this.lblSedeSel.TabIndex = 9;
+            // 
+            // lblSedeText
+            // 
+            this.lblSedeText.Location = new System.Drawing.Point(128, 72);
+            this.lblSedeText.Name = "lblSedeText";
+            this.lblSedeText.Size = new System.Drawing.Size(92, 13);
+            this.lblSedeText.TabIndex = 8;
+            this.lblSedeText.Text = "Sede seleccionada:";
+            // 
             // dgvSede
             // 
             this.dgvSede.DataSource = this.sedeBindingSource;
-            this.dgvSede.Location = new System.Drawing.Point(27, 67);
-            this.dgvSede.MainView = this.gridView2;
+            this.dgvSede.Location = new System.Drawing.Point(27, 116);
+            this.dgvSede.MainView = this.gridSedes;
             this.dgvSede.Name = "dgvSede";
-            this.dgvSede.Size = new System.Drawing.Size(1120, 452);
+            this.dgvSede.Size = new System.Drawing.Size(1120, 403);
             this.dgvSede.TabIndex = 4;
             this.dgvSede.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView2});
+            this.gridSedes});
             // 
             // sedeBindingSource
             // 
             this.sedeBindingSource.DataSource = typeof(CapaNegocio.Sede);
             // 
-            // gridView2
+            // gridSedes
             // 
-            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridSedes.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colnombre1,
             this.colcantidadMaximaVisitantes,
             this.colcantidadMaxPorGuia});
-            this.gridView2.GridControl = this.dgvSede;
-            this.gridView2.Name = "gridView2";
+            this.gridSedes.GridControl = this.dgvSede;
+            this.gridSedes.Name = "gridSedes";
+            this.gridSedes.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.seleccionDeSede);
             // 
             // colnombre1
             // 
@@ -416,7 +452,8 @@ namespace CapaNegocio
             // tabNav3_Visita_Exposiciones
             // 
             this.tabNav3_Visita_Exposiciones.Caption = "Visita y Exposiciones";
-            this.tabNav3_Visita_Exposiciones.Controls.Add(this.comboBox1);
+            this.tabNav3_Visita_Exposiciones.Controls.Add(this.lvlTV);
+            this.tabNav3_Visita_Exposiciones.Controls.Add(this.cmbTipoVisita);
             this.tabNav3_Visita_Exposiciones.Controls.Add(this.gridControl3);
             this.tabNav3_Visita_Exposiciones.Controls.Add(this.labelControl11);
             this.tabNav3_Visita_Exposiciones.Controls.Add(this.labelControl5);
@@ -424,35 +461,42 @@ namespace CapaNegocio
             this.tabNav3_Visita_Exposiciones.Name = "tabNav3_Visita_Exposiciones";
             this.tabNav3_Visita_Exposiciones.Size = new System.Drawing.Size(1174, 544);
             // 
-            // comboBox1
+            // lvlTV
             // 
-            this.comboBox1.DisplayMember = "idTipoVisita";
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(213, 56);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 8;
-            this.comboBox1.ValueMember = "idTipoVisita";
+            this.lvlTV.Location = new System.Drawing.Point(379, 59);
+            this.lvlTV.Name = "lvlTV";
+            this.lvlTV.Size = new System.Drawing.Size(0, 13);
+            this.lvlTV.TabIndex = 9;
+            // 
+            // cmbTipoVisita
+            // 
+            this.cmbTipoVisita.DisplayMember = "idTipoVisita";
+            this.cmbTipoVisita.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTipoVisita.FormattingEnabled = true;
+            this.cmbTipoVisita.Location = new System.Drawing.Point(213, 56);
+            this.cmbTipoVisita.Name = "cmbTipoVisita";
+            this.cmbTipoVisita.Size = new System.Drawing.Size(121, 21);
+            this.cmbTipoVisita.TabIndex = 8;
+            this.cmbTipoVisita.ValueMember = "idTipoVisita";
             // 
             // gridControl3
             // 
             this.gridControl3.DataSource = this.exposicionBindingSource;
             this.gridControl3.Location = new System.Drawing.Point(27, 116);
-            this.gridControl3.MainView = this.gridView3;
+            this.gridControl3.MainView = this.gridExposiciones;
             this.gridControl3.Name = "gridControl3";
             this.gridControl3.Size = new System.Drawing.Size(1120, 403);
             this.gridControl3.TabIndex = 7;
             this.gridControl3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView3});
+            this.gridExposiciones});
             // 
             // exposicionBindingSource
             // 
             this.exposicionBindingSource.DataSource = typeof(CapaNegocio.Exposicion);
             // 
-            // gridView3
+            // gridExposiciones
             // 
-            this.gridView3.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridExposiciones.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colnombre2,
             this.colfechaInicio,
             this.colfechaFin,
@@ -460,10 +504,10 @@ namespace CapaNegocio
             this.colhoraCierre,
             this.colfechaInicioReplanificada,
             this.colfechaFinReplanificada});
-            this.gridView3.GridControl = this.gridControl3;
-            this.gridView3.Name = "gridView3";
-            this.gridView3.OptionsSelection.MultiSelect = true;
-            this.gridView3.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
+            this.gridExposiciones.GridControl = this.gridControl3;
+            this.gridExposiciones.Name = "gridExposiciones";
+            this.gridExposiciones.OptionsSelection.MultiSelect = true;
+            this.gridExposiciones.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
             // 
             // colnombre2
             // 
@@ -730,21 +774,6 @@ namespace CapaNegocio
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Detalle de la Reserva";
             // 
-            // lblEscuelaText
-            // 
-            this.lblEscuelaText.Location = new System.Drawing.Point(316, 34);
-            this.lblEscuelaText.Name = "lblEscuelaText";
-            this.lblEscuelaText.Size = new System.Drawing.Size(104, 13);
-            this.lblEscuelaText.TabIndex = 7;
-            this.lblEscuelaText.Text = "Escuela seleccionada:";
-            // 
-            // lblEscSel
-            // 
-            this.lblEscSel.Location = new System.Drawing.Point(439, 34);
-            this.lblEscSel.Name = "lblEscSel";
-            this.lblEscSel.Size = new System.Drawing.Size(0, 13);
-            this.lblEscSel.TabIndex = 8;
-            // 
             // ucReservaVisitaGuiada
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -760,7 +789,7 @@ namespace CapaNegocio
             this.tabPane1.ResumeLayout(false);
             this.tabNav1_Escuelas.ResumeLayout(false);
             this.tabNav1_Escuelas.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.spinEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinCantVisitantes.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEscuelas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.escuelaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridEscuelas)).EndInit();
@@ -768,12 +797,12 @@ namespace CapaNegocio
             this.tabNav2_Sedes.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSede)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sedeBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridSedes)).EndInit();
             this.tabNav3_Visita_Exposiciones.ResumeLayout(false);
             this.tabNav3_Visita_Exposiciones.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.exposicionBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridExposiciones)).EndInit();
             this.tabNav4_DiaVisita.ResumeLayout(false);
             this.tabNav4_DiaVisita.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkedComboBoxEdit2.Properties)).EndInit();
@@ -831,10 +860,10 @@ namespace CapaNegocio
         private DevExpress.XtraGrid.GridControl dgvEscuelas;
         private DevExpress.XtraGrid.Views.Grid.GridView gridEscuelas;
         private DevExpress.XtraGrid.GridControl dgvSede;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridSedes;
         private DevExpress.XtraGrid.GridControl gridControl3;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridExposiciones;
+        private System.Windows.Forms.ComboBox cmbTipoVisita;
         private System.Windows.Forms.BindingSource escuelaBindingSource;
         private DevExpress.XtraGrid.Columns.GridColumn colnombre;
         private DevExpress.XtraGrid.Columns.GridColumn coldomicilio;
@@ -853,8 +882,11 @@ namespace CapaNegocio
         private DevExpress.XtraGrid.Columns.GridColumn colhoraCierre;
         private DevExpress.XtraGrid.Columns.GridColumn colfechaInicioReplanificada;
         private DevExpress.XtraGrid.Columns.GridColumn colfechaFinReplanificada;
-        private DevExpress.XtraEditors.SpinEdit spinEdit1;
+        private DevExpress.XtraEditors.SpinEdit spinCantVisitantes;
         private DevExpress.XtraEditors.LabelControl lblEscSel;
         private DevExpress.XtraEditors.LabelControl lblEscuelaText;
+        private DevExpress.XtraEditors.LabelControl lblSedeSel;
+        private DevExpress.XtraEditors.LabelControl lblSedeText;
+        private DevExpress.XtraEditors.LabelControl lvlTV;
     }
 }

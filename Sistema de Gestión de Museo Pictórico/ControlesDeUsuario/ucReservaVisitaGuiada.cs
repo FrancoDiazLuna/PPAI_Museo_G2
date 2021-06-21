@@ -52,7 +52,7 @@ namespace CapaNegocio
             List<TipoVisita> vi = GestorDeReserva.buscarVisitas();
             foreach (TipoVisita item in vi)
             {
-                this.comboBox1.Items.Add(item.nombre);
+                this.cmbTipoVisita.Items.Add(item.nombre);
             }
             
         }
@@ -78,37 +78,65 @@ namespace CapaNegocio
 
             if (pag == tabNav6_DetalleReserva)
             {
-                //btn_siguiente.Text = "Confirmar Reserva";
-                //btn_siguiente.Size = new Size(150, 23);
                 btn_siguiente.Visible = false;
                 btn_confirmarReserva.Visible = true;
             }
-            else{
-                //btn_siguiente.Text = "Siguiente";
-                //btn_siguiente.Width = 75;
+            else
+            {
                 btn_siguiente.Visible = true;
                 btn_confirmarReserva.Visible = false;
             }
-                
         }
 
         private void btn_siguiente_Click(object sender, EventArgs e)
         {
-            tabPane1.SelectNextPage();
+            var pag = tabPane1.SelectedPage;
+            if (pag == tabNav1_Escuelas)
+            {
+                if (lblEscSel.Text == "" )
+                {
+                    MessageBox.Show("Debe seleccionar la escuela que realizará la visita guiada.", "Importante", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                } else if (spinCantVisitantes.Value <= 0) {
+                    MessageBox.Show("Debe ingresar una cantidad de visitantes valida.", "Importante", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                } else {
+                    tabPane1.SelectNextPage();
+                }
+            } else if (pag == tabNav2_Sedes) {
+                if (lblSedeSel.Text == "")
+                {
+                    MessageBox.Show("Debe seleccionar una sede a visitar.", "Importante", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                } else
+                {
+                    tabPane1.SelectNextPage();
+                }
+            }
+            else
+            {
+                tabPane1.SelectNextPage();
+            }
+
         }
 
         private void spinEdit1_EditValueChanged(object sender, EventArgs e)
         {
-            int valor = int.Parse(spinEdit1.Text);
+            int valor = int.Parse(spinCantVisitantes.Text);
             GestorDeReserva.obtenerCantidadAlumnos(valor);
         }
 
-        private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+        private void seleccionDeEscuela(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
             Escuela esc = (Escuela)gridEscuelas.GetFocusedRow();
             lblEscSel.Text = esc.nombre;
             GestorDeReserva.obtenerEscuelaSeleccionada(esc);
         }
+
+        private void seleccionDeSede(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+        {
+            Sede sede = (Sede)gridSedes.GetFocusedRow();
+            lblSedeSel.Text = sede.nombre;
+            GestorDeReserva.obtenerSedeSeleccionada(sede);
+        }
+
     }
     
 }

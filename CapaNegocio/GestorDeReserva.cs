@@ -72,9 +72,6 @@ namespace CapaNegocio
             cantidadVisitantes = valor;
         }
 
-
-        //buscar la escuela a paartir de id?¿
-
         public static List<Sede> buscarSedes()
         {
             DataTable sedes = new DSede().buscar();
@@ -94,6 +91,11 @@ namespace CapaNegocio
             ).ToList();
 
             return sedesTodasList;
+        }
+
+        public static void obtenerSedeSeleccionada(Sede sede)
+        {
+            sedeSeleccionada = sede;
         }
 
         public static List<TipoVisita> buscarVisitas()
