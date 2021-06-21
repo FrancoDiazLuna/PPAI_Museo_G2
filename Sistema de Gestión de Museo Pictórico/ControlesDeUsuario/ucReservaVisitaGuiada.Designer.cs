@@ -412,6 +412,8 @@ namespace CapaNegocio
             this.colcantidadMaxPorGuia});
             this.gridSedes.GridControl = this.dgvSede;
             this.gridSedes.Name = "gridSedes";
+            this.gridSedes.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridSedes.OptionsSelection.ShowCheckBoxSelectorInColumnHeader = DevExpress.Utils.DefaultBoolean.False;
             this.gridSedes.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.seleccionDeSede);
             // 
             // colnombre1

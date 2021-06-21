@@ -153,6 +153,7 @@ namespace CapaNegocio
             Sede sede = (Sede)gridSedes.GetFocusedRow();
             lblSedeSel.Text = sede.nombre;
             GestorDeReserva.obtenerSedeSeleccionada(sede);
+            exposicionBindingSource.DataSource = GestorDeReserva.buscarExposicionesTemporalesVigentes();
         }
 
         private void calendarControl1_Click(object sender, EventArgs e)

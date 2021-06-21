@@ -139,7 +139,9 @@ namespace CapaNegocio
 
                             ).ToList();
 
-            var filtrado = listExposPorSede.Where(expo => expo.idSede == sedeSeleccionada.idSede );
+
+
+            var filtrado = listExposPorSede.Where(expo => expo.idSede == sedeSeleccionada.idSede);
             foreach (ExposicionPorSede expo in filtrado)
             {
                 listExposPorSedeSeleccionada.Add(expo.idExposicion);
@@ -148,24 +150,29 @@ namespace CapaNegocio
 
             //Estos de aca abajo hacen lo mismo, no los probe. Pero creo q funcionan
 
-            var filtradoDos = expoTemporalesVigentes.Where(expo => listExposPorSedeSeleccionada.Contains(expo.idExposicion));
-            foreach (Exposicion expo in filtradoDos)
-            {
-                exposicionesSedeList.Add(expo);
-            }
-
-            //foreach (Exposicion expo in expoTemporalesVigentes)
+            //var filtradoDos = expoTemporalesVigentes.Where(expo => listExposPorSedeSeleccionada.Contains(expo.idExposicion));
+            //foreach (Exposicion expo in filtradoDos)
             //{
-            //    foreach (var item in listExposPorSedeSeleccionada)
-            //    {
-            //        if (expo.idExposicion == item)
-            //        {
-            //            exposicionesSedeList.Add(expo);
-            //        }
-            //    }
+            //    exposicionesSedeList.Add(expo);
             //}
 
-            return exposicionesSedeList;
+
+
+
+            List<Exposicion> test = new List<Exposicion>();
+
+            foreach (Exposicion expo in expoTemporalesVigentes)
+            {
+                foreach (var item in listExposPorSedeSeleccionada)
+                {
+                    if (expo.idExposicion == item)
+                    {
+                        test.Add(expo);
+                    }
+                }
+            }
+
+            return test;
         }
 
 
