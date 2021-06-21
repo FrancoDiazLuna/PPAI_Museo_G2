@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
+using CapaDatos;
 
 namespace CapaNegocio
 {
@@ -12,11 +14,17 @@ namespace CapaNegocio
         public string descripcion { get; set; }
         public string nombre { get; set; }
 
-        public TipoExposicion(int idTipoExposicion, string descripcion, string nombre)
+        public static List<Exposicion> tipoExpoEs(List<Exposicion> expoTodas, int num)
         {
-            this.idTipoExposicion = idTipoExposicion;
-            this.descripcion = descripcion;
-            this.nombre = nombre;
+            List<Exposicion> listaDeExpos = new List<Exposicion>();
+
+            var filtrado = expoTodas.Where(expo => expo.idTipoExposicion == num );
+            foreach (Exposicion expo in filtrado)
+            {
+                listaDeExpos.Add(expo);
+            }
+
+            return listaDeExpos;
         }
     }
 }

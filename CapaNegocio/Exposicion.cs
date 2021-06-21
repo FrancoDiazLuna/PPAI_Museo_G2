@@ -42,5 +42,20 @@ namespace CapaNegocio
             return expoVigente;
         }
 
+
+        public static List<Exposicion> esTemporal(List<Exposicion> lista)
+        {
+            List<Exposicion> listaTemporales = new List<Exposicion>();
+
+            listaTemporales = TipoExposicion.tipoExpoEs(lista, 1);
+
+            return listaTemporales;
+        } 
+
+
+
+
+
+
     }
 }

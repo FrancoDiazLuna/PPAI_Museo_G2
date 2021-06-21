@@ -12,11 +12,6 @@ namespace CapaNegocio
         public string caracteristicas { get; set; }
         public string nombre { get; set; }
 
-        public PublicoDestino(int idPublicoDestino, string caracteristicas, string nombre)
-        {
-            this.idPublicoDestino = idPublicoDestino;
-            this.caracteristicas = caracteristicas;
-            this.nombre = nombre;
-        }
+
     }
 }

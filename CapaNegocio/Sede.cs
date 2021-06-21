@@ -50,6 +50,10 @@ namespace CapaNegocio
 
             expoVigente = Exposicion.esVigente(exposicionesTodasList);
 
+            expoVigente = Exposicion.esTemporal(expoVigente);
+
+
+
             return expoVigente;
             //return expoFiltradaSede;
         }
