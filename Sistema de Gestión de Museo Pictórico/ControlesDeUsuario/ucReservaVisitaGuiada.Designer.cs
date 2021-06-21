@@ -78,7 +78,7 @@ namespace CapaNegocio
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.tabNav4_DiaVisita = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.txtFecha = new System.Windows.Forms.TextBox();
+            this.cmbHorario = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
@@ -98,7 +98,7 @@ namespace CapaNegocio
             this.tabNav6_DetalleReserva = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.cmbHorario = new System.Windows.Forms.ComboBox();
+            this.lblFechaSel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
@@ -602,8 +602,8 @@ namespace CapaNegocio
             // tabNav4_DiaVisita
             // 
             this.tabNav4_DiaVisita.Caption = "Día y Horario de Visita";
+            this.tabNav4_DiaVisita.Controls.Add(this.lblFechaSel);
             this.tabNav4_DiaVisita.Controls.Add(this.cmbHorario);
-            this.tabNav4_DiaVisita.Controls.Add(this.txtFecha);
             this.tabNav4_DiaVisita.Controls.Add(this.label2);
             this.tabNav4_DiaVisita.Controls.Add(this.labelControl8);
             this.tabNav4_DiaVisita.Controls.Add(this.labelControl6);
@@ -611,13 +611,44 @@ namespace CapaNegocio
             this.tabNav4_DiaVisita.Name = "tabNav4_DiaVisita";
             this.tabNav4_DiaVisita.Size = new System.Drawing.Size(1174, 544);
             // 
-            // txtFecha
+            // cmbHorario
             // 
-            this.txtFecha.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtFecha.Location = new System.Drawing.Point(170, 504);
-            this.txtFecha.Name = "txtFecha";
-            this.txtFecha.Size = new System.Drawing.Size(200, 14);
-            this.txtFecha.TabIndex = 8;
+            this.cmbHorario.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmbHorario.FormattingEnabled = true;
+            this.cmbHorario.Items.AddRange(new object[] {
+            "08:00",
+            "08:30",
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30",
+            "17:00",
+            "17:30",
+            "18:00",
+            "18:30",
+            "19:00",
+            "19:30",
+            "20:00",
+            "20:30",
+            "21:00",
+            "21:30",
+            "22:00"});
+            this.cmbHorario.Location = new System.Drawing.Point(854, 85);
+            this.cmbHorario.Name = "cmbHorario";
+            this.cmbHorario.Size = new System.Drawing.Size(96, 21);
+            this.cmbHorario.TabIndex = 9;
             // 
             // label2
             // 
@@ -650,6 +681,8 @@ namespace CapaNegocio
             // 
             // calendarControl1
             // 
+            this.calendarControl1.Appearance.BackColor = System.Drawing.Color.Gray;
+            this.calendarControl1.Appearance.Options.UseBackColor = true;
             this.calendarControl1.AutoSize = false;
             this.calendarControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.calendarControl1.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
@@ -785,44 +818,13 @@ namespace CapaNegocio
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // cmbHorario
+            // lblFechaSel
             // 
-            this.cmbHorario.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cmbHorario.FormattingEnabled = true;
-            this.cmbHorario.Items.AddRange(new object[] {
-            "08:00",
-            "08:30",
-            "09:00",
-            "09:30",
-            "10:00",
-            "10:30",
-            "11:00",
-            "11:30",
-            "12:00",
-            "12:30",
-            "13:00",
-            "13:30",
-            "14:00",
-            "14:30",
-            "15:00",
-            "15:30",
-            "16:00",
-            "16:30",
-            "17:00",
-            "17:30",
-            "18:00",
-            "18:30",
-            "19:00",
-            "19:30",
-            "20:00",
-            "20:30",
-            "21:00",
-            "21:30",
-            "22:00"});
-            this.cmbHorario.Location = new System.Drawing.Point(854, 85);
-            this.cmbHorario.Name = "cmbHorario";
-            this.cmbHorario.Size = new System.Drawing.Size(96, 21);
-            this.cmbHorario.TabIndex = 9;
+            this.lblFechaSel.AutoSize = true;
+            this.lblFechaSel.Location = new System.Drawing.Point(177, 504);
+            this.lblFechaSel.Name = "lblFechaSel";
+            this.lblFechaSel.Size = new System.Drawing.Size(0, 13);
+            this.lblFechaSel.TabIndex = 10;
             // 
             // ucReservaVisitaGuiada
             // 
@@ -935,9 +937,9 @@ namespace CapaNegocio
         private DevExpress.XtraEditors.LabelControl lblSedeText;
         private DevExpress.XtraEditors.LabelControl lvlTV;
         private DevExpress.XtraEditors.Controls.CalendarControl calendarControl1;
-        private System.Windows.Forms.TextBox txtFecha;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ComboBox cmbHorario;
+        private System.Windows.Forms.Label lblFechaSel;
     }
 }

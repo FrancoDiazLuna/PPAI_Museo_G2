@@ -93,19 +93,37 @@ namespace CapaNegocio
             var pag = tabPane1.SelectedPage;
             if (pag == tabNav1_Escuelas)
             {
-                if (lblEscSel.Text == "" )
+                if (lblEscSel.Text == "")
                 {
                     MessageBox.Show("Debe seleccionar la escuela que realizará la visita guiada.", "Importante", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-                } else if (spinCantVisitantes.Value <= 0) {
+                }
+                else if (spinCantVisitantes.Value <= 0)
+                {
                     MessageBox.Show("Debe ingresar una cantidad de visitantes valida.", "Importante", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-                } else {
+                }
+                else
+                {
                     tabPane1.SelectNextPage();
                 }
-            } else if (pag == tabNav2_Sedes) {
+            }
+            else if (pag == tabNav2_Sedes)
+            {
                 if (lblSedeSel.Text == "")
                 {
                     MessageBox.Show("Debe seleccionar una sede a visitar.", "Importante", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-                } else
+                }
+                else
+                {
+                    tabPane1.SelectNextPage();
+                }
+            }
+            else if (pag == tabNav4_DiaVisita)
+            {
+                if (lblFechaSel.Text == "")
+                {
+                    MessageBox.Show("Debe seleccionar una fecha para realizar la visitar.", "Importante", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                }
+                else
                 {
                     tabPane1.SelectNextPage();
                 }
@@ -143,12 +161,11 @@ namespace CapaNegocio
             DateTime actual = DateTime.Now;
             if (fecha.CompareTo(actual) >= 0) 
             {
-                txtFecha.Enabled = false;
-                txtFecha.Text = calendarControl1.SelectionStart.ToLongDateString();
-            }
-            else
+                lblFechaSel.Enabled = false;
+                lblFechaSel.Text = calendarControl1.SelectionStart.ToLongDateString();
+            } else
             {
-                txtFecha.Text = "";
+                lblFechaSel.Text = "";
             }
         }
         

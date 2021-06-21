@@ -102,7 +102,7 @@ namespace CapaNegocio
             this.panelControl2.Controls.Add(this.btn_BuscarReserva);
             this.panelControl2.Location = new System.Drawing.Point(0, 30);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(168, 566);
+            this.panelControl2.Size = new System.Drawing.Size(396, 566);
             this.panelControl2.TabIndex = 0;
             // 
             // btnRegistrarReserva
@@ -121,7 +121,7 @@ namespace CapaNegocio
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelControl5.Location = new System.Drawing.Point(2, 389);
             this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(166, 177);
+            this.panelControl5.Size = new System.Drawing.Size(394, 177);
             this.panelControl5.TabIndex = 1;
             this.panelControl5.Click += new System.EventHandler(this.panelControl5_Click);
             // 
@@ -132,7 +132,7 @@ namespace CapaNegocio
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelControl4.Location = new System.Drawing.Point(2, 0);
             this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(166, 70);
+            this.panelControl4.Size = new System.Drawing.Size(394, 70);
             this.panelControl4.TabIndex = 0;
             this.panelControl4.Click += new System.EventHandler(this.panelControl4_Click);
             // 
@@ -197,9 +197,13 @@ namespace CapaNegocio
             // 
             // svgImageBox1
             // 
+            this.svgImageBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.svgImageBox1.Location = new System.Drawing.Point(5, 5);
             this.svgImageBox1.Name = "svgImageBox1";
             this.svgImageBox1.Size = new System.Drawing.Size(111, 100);
+            this.svgImageBox1.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageBox1.SvgImage")));
             this.svgImageBox1.TabIndex = 0;
             this.svgImageBox1.Text = "svgImageBox1";
             // 
@@ -210,7 +214,7 @@ namespace CapaNegocio
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelControlMain.Location = new System.Drawing.Point(281, 30);
             this.panelControlMain.Name = "panelControlMain";
-            this.panelControlMain.Size = new System.Drawing.Size(1089, 681);
+            this.panelControlMain.Size = new System.Drawing.Size(1203, 681);
             this.panelControlMain.TabIndex = 2;
             // 
             // tileNavCategory1
@@ -236,7 +240,7 @@ namespace CapaNegocio
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1370, 711);
+            this.panelControl1.Size = new System.Drawing.Size(1484, 711);
             this.panelControl1.TabIndex = 0;
             // 
             // toolStripFormMain
@@ -246,7 +250,7 @@ namespace CapaNegocio
             this.toolStripLabel1});
             this.toolStripFormMain.Location = new System.Drawing.Point(2, 2);
             this.toolStripFormMain.Name = "toolStripFormMain";
-            this.toolStripFormMain.Size = new System.Drawing.Size(1366, 25);
+            this.toolStripFormMain.Size = new System.Drawing.Size(1480, 25);
             this.toolStripFormMain.TabIndex = 3;
             this.toolStripFormMain.Text = "toolStripFormMain";
             // 
@@ -284,7 +288,7 @@ namespace CapaNegocio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1370, 711);
+            this.ClientSize = new System.Drawing.Size(1484, 711);
             this.Controls.Add(this.panelControl1);
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
