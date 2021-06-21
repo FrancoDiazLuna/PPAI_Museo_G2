@@ -78,6 +78,7 @@ namespace CapaNegocio
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.tabNav4_DiaVisita = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.lblFechaSel = new System.Windows.Forms.Label();
             this.cmbHorario = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
@@ -98,7 +99,6 @@ namespace CapaNegocio
             this.tabNav6_DetalleReserva = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.lblFechaSel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
@@ -526,7 +526,7 @@ namespace CapaNegocio
             this.colfechaInicio.Name = "colfechaInicio";
             this.colfechaInicio.OptionsColumn.AllowEdit = false;
             this.colfechaInicio.Visible = true;
-            this.colfechaInicio.VisibleIndex = 2;
+            this.colfechaInicio.VisibleIndex = 4;
             // 
             // colfechaFin
             // 
@@ -535,25 +535,29 @@ namespace CapaNegocio
             this.colfechaFin.Name = "colfechaFin";
             this.colfechaFin.OptionsColumn.AllowEdit = false;
             this.colfechaFin.Visible = true;
-            this.colfechaFin.VisibleIndex = 3;
+            this.colfechaFin.VisibleIndex = 5;
             // 
             // colhoraApertura
             // 
-            this.colhoraApertura.Caption = "Hora cpertura";
+            this.colhoraApertura.Caption = "Hora apertura";
+            this.colhoraApertura.DisplayFormat.FormatString = "HH:mm";
+            this.colhoraApertura.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.colhoraApertura.FieldName = "horaApertura";
             this.colhoraApertura.Name = "colhoraApertura";
             this.colhoraApertura.OptionsColumn.AllowEdit = false;
             this.colhoraApertura.Visible = true;
-            this.colhoraApertura.VisibleIndex = 4;
+            this.colhoraApertura.VisibleIndex = 2;
             // 
             // colhoraCierre
             // 
             this.colhoraCierre.Caption = "Hora cierre";
+            this.colhoraCierre.DisplayFormat.FormatString = "HH:mm";
+            this.colhoraCierre.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.colhoraCierre.FieldName = "horaCierre";
             this.colhoraCierre.Name = "colhoraCierre";
             this.colhoraCierre.OptionsColumn.AllowEdit = false;
             this.colhoraCierre.Visible = true;
-            this.colhoraCierre.VisibleIndex = 5;
+            this.colhoraCierre.VisibleIndex = 3;
             // 
             // colfechaInicioReplanificada
             // 
@@ -610,6 +614,14 @@ namespace CapaNegocio
             this.tabNav4_DiaVisita.Controls.Add(this.calendarControl1);
             this.tabNav4_DiaVisita.Name = "tabNav4_DiaVisita";
             this.tabNav4_DiaVisita.Size = new System.Drawing.Size(1174, 544);
+            // 
+            // lblFechaSel
+            // 
+            this.lblFechaSel.AutoSize = true;
+            this.lblFechaSel.Location = new System.Drawing.Point(177, 504);
+            this.lblFechaSel.Name = "lblFechaSel";
+            this.lblFechaSel.Size = new System.Drawing.Size(0, 13);
+            this.lblFechaSel.TabIndex = 10;
             // 
             // cmbHorario
             // 
@@ -817,14 +829,6 @@ namespace CapaNegocio
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // lblFechaSel
-            // 
-            this.lblFechaSel.AutoSize = true;
-            this.lblFechaSel.Location = new System.Drawing.Point(177, 504);
-            this.lblFechaSel.Name = "lblFechaSel";
-            this.lblFechaSel.Size = new System.Drawing.Size(0, 13);
-            this.lblFechaSel.TabIndex = 10;
             // 
             // ucReservaVisitaGuiada
             // 

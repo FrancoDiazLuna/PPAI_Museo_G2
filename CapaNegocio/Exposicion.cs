@@ -31,7 +31,8 @@ namespace CapaNegocio
         {
             List<Exposicion> expoVigente = new List<Exposicion>();
 
-            var filtrado = expoTodas.Where(expo => expo.fechaInicio <= DateTime.Now | expo.fechaInicioReplanificada <= DateTime.Now);
+            var filtrado = expoTodas.Where(expo => expo.fechaInicio <= DateTime.Now | expo.fechaInicioReplanificada <= DateTime.Now 
+                                                && expo.fechaFin >= DateTime.Now | expo.fechaFinReplanificada >= DateTime.Now);
             foreach (Exposicion expo in filtrado)
             {
                 //if (expo.fechaInicio <= DateTime.Now | expo.fechaInicioReplanificada <= DateTime.Now)
