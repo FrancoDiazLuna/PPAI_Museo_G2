@@ -95,11 +95,11 @@ namespace CapaNegocio
             {
                 if (lblEscSel.Text == "")
                 {
-                    MessageBox.Show("Debe seleccionar la escuela que realizará la visita guiada.", "Importante", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                    MessageBox.Show("Debe seleccionar la escuela que realizará la visita.", "Importante", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else if (spinCantVisitantes.Value <= 0)
                 {
-                    MessageBox.Show("Debe ingresar una cantidad de visitantes valida.", "Importante", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                    MessageBox.Show("Debe ingresar una cantidad de visitantes válida.", "Importante", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
@@ -110,7 +110,7 @@ namespace CapaNegocio
             {
                 if (lblSedeSel.Text == "")
                 {
-                    MessageBox.Show("Debe seleccionar una sede a visitar.", "Importante", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                    MessageBox.Show("Debe seleccionar una sede a visitar.", "Importante", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
@@ -121,7 +121,7 @@ namespace CapaNegocio
             {
                 if (lblFechaSel.Text == "")
                 {
-                    MessageBox.Show("Debe seleccionar una fecha para realizar la visitar.", "Importante", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                    MessageBox.Show("Debe seleccionar una fecha para realizar la visita.", "Importante", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
