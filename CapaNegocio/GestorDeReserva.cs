@@ -69,6 +69,12 @@ namespace CapaNegocio
             fechaHoraReserva = valor;
         }
 
+        public static void seleccionExposicionesTemporalesVigentes(List<Exposicion> lista)
+        {
+            exposicionSeleccionada = lista;
+        }
+        
+
         public static List<Sede> buscarSedes()
         {
             DataTable sedes = new DSede().buscar();

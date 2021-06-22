@@ -181,6 +181,22 @@ namespace CapaNegocio
             {
                 btn_siguiente.Visible = false;
                 btn_confirmarReserva.Visible = true;
+
+                //cargo labels de confirmacion
+                lblConfEscSel.Text = lblEscSel.Text;
+                lblConfSedeSel.Text = lblSedeSel.Text;
+                lblConfTipoVisitaSel.Text = cmbTipoVisita.SelectedItem.ToString();
+                var lista = GestorDeReserva.exposicionSeleccionada;
+                string expoSel = "";
+                foreach (var item in lista)
+                {
+                    expoSel += item.nombre;
+                    expoSel += "; ";
+                }
+                lblConfExposicionesSel.Text = expoSel;//"exposiciones listado (agregar)";
+                lblConfDiaSel.Text = lblFechaSel.Text;
+                lblConfHoraSel.Text = cmbHorarioSel.Text;
+                lblConfGuiasSel.Text = "guias listado (agregar)";
             }
             else
             {
@@ -235,6 +251,7 @@ namespace CapaNegocio
                 else
                 {
                     tabPane1.SelectNextPage();
+                    tomarSeleccionExposicionesTemporalesVigentes();
                 }
             }
             else if (pag == tabNav4_DiaVisita)
@@ -300,6 +317,10 @@ namespace CapaNegocio
         {
             MessageBox.Show("La reserva se registró con exito. \nEl estado actual de la misma es ahora Pendiente de Confirmación", "Confirmación de reserva de visita guiada", MessageBoxButtons.OK, MessageBoxIcon.Information);
             tabPane1.Visible = false;
+            btn_cancelar.Visible = false;
+            btn_anterior.Visible = false;
+            btn_siguiente.Visible = false;
+            btn_confirmarReserva.Visible = false;
         }
 
         public List<Exposicion> exposicionesSeleccionadas()
@@ -317,18 +338,18 @@ namespace CapaNegocio
                 if (indices.Contains(bandera))
                 {
                     exposicionesSeleccionadas.Add(item);
-                    MessageBox.Show("Si");
+                    //MessageBox.Show("Si");
                 }
                 bandera = bandera + 1;
             }
             return exposicionesSeleccionadas;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+        private void tomarSeleccionExposicionesTemporalesVigentes()
         {
-
-
-
+            List<Exposicion> exposSeleccionadas = exposicionesSeleccionadas();
+            GestorDeReserva.seleccionExposicionesTemporalesVigentes(exposSeleccionadas);
         }
     }
 }

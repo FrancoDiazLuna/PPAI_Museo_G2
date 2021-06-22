@@ -79,7 +79,6 @@ namespace CapaNegocio
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.tabNav4_DiaVisita = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.button1 = new System.Windows.Forms.Button();
             this.lblFechaSel = new System.Windows.Forms.Label();
             this.cmbHorarioSel = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -98,7 +97,21 @@ namespace CapaNegocio
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.tabNav6_DetalleReserva = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.groupCtrConfirmacion = new DevExpress.XtraEditors.GroupControl();
+            this.lblConfGuiasSel = new DevExpress.XtraEditors.LabelControl();
+            this.lblConfGuias = new DevExpress.XtraEditors.LabelControl();
+            this.lblConfHoraSel = new DevExpress.XtraEditors.LabelControl();
+            this.lblConfHora = new DevExpress.XtraEditors.LabelControl();
+            this.lblConfDiaSel = new DevExpress.XtraEditors.LabelControl();
+            this.lblConfDiaVisita = new DevExpress.XtraEditors.LabelControl();
+            this.lblConfExposicionesSel = new DevExpress.XtraEditors.LabelControl();
+            this.lblConfExpo = new DevExpress.XtraEditors.LabelControl();
+            this.lblConfTipoVisitaSel = new DevExpress.XtraEditors.LabelControl();
+            this.lblTipoVisita = new DevExpress.XtraEditors.LabelControl();
+            this.lblConfSedeSel = new DevExpress.XtraEditors.LabelControl();
+            this.lblSede = new DevExpress.XtraEditors.LabelControl();
+            this.lblConfEscSel = new DevExpress.XtraEditors.LabelControl();
+            this.lblEsc = new DevExpress.XtraEditors.LabelControl();
             this.exposicionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -127,7 +140,8 @@ namespace CapaNegocio
             ((System.ComponentModel.ISupportInitialize)(this.empleadoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridGuias)).BeginInit();
             this.tabNav6_DetalleReserva.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupCtrConfirmacion)).BeginInit();
+            this.groupCtrConfirmacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.exposicionBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -610,7 +624,6 @@ namespace CapaNegocio
             // tabNav4_DiaVisita
             // 
             this.tabNav4_DiaVisita.Caption = "Día y Horario de Visita";
-            this.tabNav4_DiaVisita.Controls.Add(this.button1);
             this.tabNav4_DiaVisita.Controls.Add(this.lblFechaSel);
             this.tabNav4_DiaVisita.Controls.Add(this.cmbHorarioSel);
             this.tabNav4_DiaVisita.Controls.Add(this.label2);
@@ -619,16 +632,6 @@ namespace CapaNegocio
             this.tabNav4_DiaVisita.Controls.Add(this.calendarControl1);
             this.tabNav4_DiaVisita.Name = "tabNav4_DiaVisita";
             this.tabNav4_DiaVisita.Size = new System.Drawing.Size(1174, 544);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(1077, 49);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // lblFechaSel
             // 
@@ -640,6 +643,7 @@ namespace CapaNegocio
             // 
             // cmbHorarioSel
             // 
+            this.cmbHorarioSel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbHorarioSel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cmbHorarioSel.FormattingEnabled = true;
             this.cmbHorarioSel.Items.AddRange(new object[] {
@@ -826,17 +830,173 @@ namespace CapaNegocio
             // tabNav6_DetalleReserva
             // 
             this.tabNav6_DetalleReserva.Caption = "Confirmación";
-            this.tabNav6_DetalleReserva.Controls.Add(this.groupControl1);
+            this.tabNav6_DetalleReserva.Controls.Add(this.groupCtrConfirmacion);
             this.tabNav6_DetalleReserva.Name = "tabNav6_DetalleReserva";
             this.tabNav6_DetalleReserva.Size = new System.Drawing.Size(1174, 544);
             // 
-            // groupControl1
+            // groupCtrConfirmacion
             // 
-            this.groupControl1.Location = new System.Drawing.Point(26, 28);
-            this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1126, 509);
-            this.groupControl1.TabIndex = 0;
-            this.groupControl1.Text = "Detalle de la Reserva";
+            this.groupCtrConfirmacion.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupCtrConfirmacion.AppearanceCaption.Options.UseFont = true;
+            this.groupCtrConfirmacion.Controls.Add(this.lblConfGuiasSel);
+            this.groupCtrConfirmacion.Controls.Add(this.lblConfGuias);
+            this.groupCtrConfirmacion.Controls.Add(this.lblConfHoraSel);
+            this.groupCtrConfirmacion.Controls.Add(this.lblConfHora);
+            this.groupCtrConfirmacion.Controls.Add(this.lblConfDiaSel);
+            this.groupCtrConfirmacion.Controls.Add(this.lblConfDiaVisita);
+            this.groupCtrConfirmacion.Controls.Add(this.lblConfExposicionesSel);
+            this.groupCtrConfirmacion.Controls.Add(this.lblConfExpo);
+            this.groupCtrConfirmacion.Controls.Add(this.lblConfTipoVisitaSel);
+            this.groupCtrConfirmacion.Controls.Add(this.lblTipoVisita);
+            this.groupCtrConfirmacion.Controls.Add(this.lblConfSedeSel);
+            this.groupCtrConfirmacion.Controls.Add(this.lblSede);
+            this.groupCtrConfirmacion.Controls.Add(this.lblConfEscSel);
+            this.groupCtrConfirmacion.Controls.Add(this.lblEsc);
+            this.groupCtrConfirmacion.Location = new System.Drawing.Point(26, 28);
+            this.groupCtrConfirmacion.Name = "groupCtrConfirmacion";
+            this.groupCtrConfirmacion.Size = new System.Drawing.Size(1126, 509);
+            this.groupCtrConfirmacion.TabIndex = 0;
+            this.groupCtrConfirmacion.Text = "Detalle de la Reserva";
+            // 
+            // lblConfGuiasSel
+            // 
+            this.lblConfGuiasSel.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblConfGuiasSel.Appearance.Options.UseFont = true;
+            this.lblConfGuiasSel.Location = new System.Drawing.Point(168, 273);
+            this.lblConfGuiasSel.Name = "lblConfGuiasSel";
+            this.lblConfGuiasSel.Size = new System.Drawing.Size(37, 19);
+            this.lblConfGuiasSel.TabIndex = 13;
+            this.lblConfGuiasSel.Text = "guías";
+            // 
+            // lblConfGuias
+            // 
+            this.lblConfGuias.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblConfGuias.Appearance.Options.UseFont = true;
+            this.lblConfGuias.Location = new System.Drawing.Point(99, 273);
+            this.lblConfGuias.Name = "lblConfGuias";
+            this.lblConfGuias.Size = new System.Drawing.Size(51, 19);
+            this.lblConfGuias.TabIndex = 12;
+            this.lblConfGuias.Text = "Guías:";
+            // 
+            // lblConfHoraSel
+            // 
+            this.lblConfHoraSel.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblConfHoraSel.Appearance.Options.UseFont = true;
+            this.lblConfHoraSel.Location = new System.Drawing.Point(704, 213);
+            this.lblConfHoraSel.Name = "lblConfHoraSel";
+            this.lblConfHoraSel.Size = new System.Drawing.Size(32, 19);
+            this.lblConfHoraSel.TabIndex = 11;
+            this.lblConfHoraSel.Text = "hora";
+            // 
+            // lblConfHora
+            // 
+            this.lblConfHora.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblConfHora.Appearance.Options.UseFont = true;
+            this.lblConfHora.Location = new System.Drawing.Point(555, 213);
+            this.lblConfHora.Name = "lblConfHora";
+            this.lblConfHora.Size = new System.Drawing.Size(139, 19);
+            this.lblConfHora.TabIndex = 10;
+            this.lblConfHora.Text = "Hora de la visita:";
+            // 
+            // lblConfDiaSel
+            // 
+            this.lblConfDiaSel.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblConfDiaSel.Appearance.Options.UseFont = true;
+            this.lblConfDiaSel.Location = new System.Drawing.Point(168, 213);
+            this.lblConfDiaSel.Name = "lblConfDiaSel";
+            this.lblConfDiaSel.Size = new System.Drawing.Size(21, 19);
+            this.lblConfDiaSel.TabIndex = 9;
+            this.lblConfDiaSel.Text = "dia";
+            // 
+            // lblConfDiaVisita
+            // 
+            this.lblConfDiaVisita.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblConfDiaVisita.Appearance.Options.UseFont = true;
+            this.lblConfDiaVisita.Location = new System.Drawing.Point(23, 213);
+            this.lblConfDiaVisita.Name = "lblConfDiaVisita";
+            this.lblConfDiaVisita.Size = new System.Drawing.Size(127, 19);
+            this.lblConfDiaVisita.TabIndex = 8;
+            this.lblConfDiaVisita.Text = "Día de la visita:";
+            // 
+            // lblConfExposicionesSel
+            // 
+            this.lblConfExposicionesSel.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblConfExposicionesSel.Appearance.Options.UseFont = true;
+            this.lblConfExposicionesSel.Location = new System.Drawing.Point(168, 148);
+            this.lblConfExposicionesSel.Name = "lblConfExposicionesSel";
+            this.lblConfExposicionesSel.Size = new System.Drawing.Size(89, 19);
+            this.lblConfExposicionesSel.TabIndex = 7;
+            this.lblConfExposicionesSel.Text = "exposiciones";
+            // 
+            // lblConfExpo
+            // 
+            this.lblConfExpo.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblConfExpo.Appearance.Options.UseFont = true;
+            this.lblConfExpo.Location = new System.Drawing.Point(40, 148);
+            this.lblConfExpo.Name = "lblConfExpo";
+            this.lblConfExpo.Size = new System.Drawing.Size(110, 19);
+            this.lblConfExpo.TabIndex = 6;
+            this.lblConfExpo.Text = "Exposiciones:";
+            // 
+            // lblConfTipoVisitaSel
+            // 
+            this.lblConfTipoVisitaSel.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblConfTipoVisitaSel.Appearance.Options.UseFont = true;
+            this.lblConfTipoVisitaSel.Location = new System.Drawing.Point(168, 89);
+            this.lblConfTipoVisitaSel.Name = "lblConfTipoVisitaSel";
+            this.lblConfTipoVisitaSel.Size = new System.Drawing.Size(63, 19);
+            this.lblConfTipoVisitaSel.TabIndex = 5;
+            this.lblConfTipoVisitaSel.Text = "tipovisita";
+            // 
+            // lblTipoVisita
+            // 
+            this.lblTipoVisita.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTipoVisita.Appearance.Options.UseFont = true;
+            this.lblTipoVisita.Location = new System.Drawing.Point(32, 89);
+            this.lblTipoVisita.Name = "lblTipoVisita";
+            this.lblTipoVisita.Size = new System.Drawing.Size(118, 19);
+            this.lblTipoVisita.TabIndex = 4;
+            this.lblTipoVisita.Text = "Tipo de Visita:";
+            // 
+            // lblConfSedeSel
+            // 
+            this.lblConfSedeSel.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblConfSedeSel.Appearance.Options.UseFont = true;
+            this.lblConfSedeSel.Location = new System.Drawing.Point(704, 39);
+            this.lblConfSedeSel.Name = "lblConfSedeSel";
+            this.lblConfSedeSel.Size = new System.Drawing.Size(32, 19);
+            this.lblConfSedeSel.TabIndex = 3;
+            this.lblConfSedeSel.Text = "sede";
+            // 
+            // lblSede
+            // 
+            this.lblSede.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSede.Appearance.Options.UseFont = true;
+            this.lblSede.Location = new System.Drawing.Point(648, 39);
+            this.lblSede.Name = "lblSede";
+            this.lblSede.Size = new System.Drawing.Size(46, 19);
+            this.lblSede.TabIndex = 2;
+            this.lblSede.Text = "Sede:";
+            // 
+            // lblConfEscSel
+            // 
+            this.lblConfEscSel.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblConfEscSel.Appearance.Options.UseFont = true;
+            this.lblConfEscSel.Location = new System.Drawing.Point(168, 39);
+            this.lblConfEscSel.Name = "lblConfEscSel";
+            this.lblConfEscSel.Size = new System.Drawing.Size(51, 19);
+            this.lblConfEscSel.TabIndex = 1;
+            this.lblConfEscSel.Text = "escuela";
+            // 
+            // lblEsc
+            // 
+            this.lblEsc.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEsc.Appearance.Options.UseFont = true;
+            this.lblEsc.Location = new System.Drawing.Point(83, 39);
+            this.lblEsc.Name = "lblEsc";
+            this.lblEsc.Size = new System.Drawing.Size(67, 19);
+            this.lblEsc.TabIndex = 0;
+            this.lblEsc.Text = "Escuela:";
             // 
             // exposicionBindingSource
             // 
@@ -885,7 +1045,9 @@ namespace CapaNegocio
             ((System.ComponentModel.ISupportInitialize)(this.empleadoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridGuias)).EndInit();
             this.tabNav6_DetalleReserva.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupCtrConfirmacion)).EndInit();
+            this.groupCtrConfirmacion.ResumeLayout(false);
+            this.groupCtrConfirmacion.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.exposicionBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -910,7 +1072,7 @@ namespace CapaNegocio
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.LabelControl labelControl4;
-        private DevExpress.XtraEditors.GroupControl groupControl1;
+        private DevExpress.XtraEditors.GroupControl groupCtrConfirmacion;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.LabelControl labelControl11;
@@ -963,6 +1125,19 @@ namespace CapaNegocio
         private DevExpress.XtraGrid.Columns.GridColumn colApellido;
         private DevExpress.XtraGrid.Columns.GridColumn colNombreGuia;
         private DevExpress.XtraGrid.Columns.GridColumn colHorarioEmpleado;
-        private System.Windows.Forms.Button button1;
+        private DevExpress.XtraEditors.LabelControl lblConfGuiasSel;
+        private DevExpress.XtraEditors.LabelControl lblConfGuias;
+        private DevExpress.XtraEditors.LabelControl lblConfHoraSel;
+        private DevExpress.XtraEditors.LabelControl lblConfHora;
+        private DevExpress.XtraEditors.LabelControl lblConfDiaSel;
+        private DevExpress.XtraEditors.LabelControl lblConfDiaVisita;
+        private DevExpress.XtraEditors.LabelControl lblConfExposicionesSel;
+        private DevExpress.XtraEditors.LabelControl lblConfExpo;
+        private DevExpress.XtraEditors.LabelControl lblConfTipoVisitaSel;
+        private DevExpress.XtraEditors.LabelControl lblTipoVisita;
+        private DevExpress.XtraEditors.LabelControl lblConfSedeSel;
+        private DevExpress.XtraEditors.LabelControl lblSede;
+        private DevExpress.XtraEditors.LabelControl lblConfEscSel;
+        private DevExpress.XtraEditors.LabelControl lblEsc;
     }
 }
