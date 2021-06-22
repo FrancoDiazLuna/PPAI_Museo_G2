@@ -74,6 +74,7 @@ namespace CapaNegocio
             this.colhoraCierre = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colfechaInicioReplanificada = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colfechaFinReplanificada = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colidPublicoDestino = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
@@ -99,7 +100,6 @@ namespace CapaNegocio
             this.tabNav6_DetalleReserva = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.colidPublicoDestino = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
@@ -269,6 +269,7 @@ namespace CapaNegocio
             0});
             this.spinCantVisitantes.Size = new System.Drawing.Size(100, 20);
             this.spinCantVisitantes.TabIndex = 6;
+            this.spinCantVisitantes.EditValueChanged += new System.EventHandler(this.spinCantVisitantes_EditValueChanged);
             // 
             // dgvEscuelas
             // 
@@ -300,7 +301,7 @@ namespace CapaNegocio
             this.gridEscuelas.OptionsBehavior.Editable = false;
             this.gridEscuelas.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridEscuelas.OptionsSelection.ShowCheckBoxSelectorInColumnHeader = DevExpress.Utils.DefaultBoolean.False;
-            this.gridEscuelas.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.seleccionDeEscuela);
+            this.gridEscuelas.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.tomarSeleccionDeEscuela);
             // 
             // colnombre
             // 
@@ -415,7 +416,7 @@ namespace CapaNegocio
             this.gridSedes.Name = "gridSedes";
             this.gridSedes.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridSedes.OptionsSelection.ShowCheckBoxSelectorInColumnHeader = DevExpress.Utils.DefaultBoolean.False;
-            this.gridSedes.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.seleccionDeSede);
+            this.gridSedes.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.tomarSeleccionDeSede);
             // 
             // colnombre1
             // 
@@ -483,6 +484,7 @@ namespace CapaNegocio
             this.cmbTipoVisita.Size = new System.Drawing.Size(121, 21);
             this.cmbTipoVisita.TabIndex = 8;
             this.cmbTipoVisita.ValueMember = "idTipoVisita";
+            this.cmbTipoVisita.SelectedIndexChanged += new System.EventHandler(this.cmbTipoVisita_SelectedIndexChanged);
             // 
             // gridControl3
             // 
@@ -581,6 +583,14 @@ namespace CapaNegocio
             this.colfechaFinReplanificada.OptionsColumn.AllowEdit = false;
             this.colfechaFinReplanificada.Visible = true;
             this.colfechaFinReplanificada.VisibleIndex = 8;
+            // 
+            // colidPublicoDestino
+            // 
+            this.colidPublicoDestino.Caption = "Publico destino";
+            this.colidPublicoDestino.FieldName = "idPublicoDestino";
+            this.colidPublicoDestino.Name = "colidPublicoDestino";
+            this.colidPublicoDestino.Visible = true;
+            this.colidPublicoDestino.VisibleIndex = 4;
             // 
             // labelControl11
             // 
@@ -834,14 +844,6 @@ namespace CapaNegocio
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // colidPublicoDestino
-            // 
-            this.colidPublicoDestino.Caption = "Publico destino";
-            this.colidPublicoDestino.FieldName = "idPublicoDestino";
-            this.colidPublicoDestino.Name = "colidPublicoDestino";
-            this.colidPublicoDestino.Visible = true;
-            this.colidPublicoDestino.VisibleIndex = 4;
             // 
             // ucReservaVisitaGuiada
             // 

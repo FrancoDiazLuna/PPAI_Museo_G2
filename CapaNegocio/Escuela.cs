@@ -19,7 +19,26 @@ namespace CapaNegocio
         public int telefFijo { get; set; }
 
 
+        public List<Escuela> getEscuelas()
+        {
+            DataTable escuelas = new DEscuela().buscar();
 
+            List<Escuela> escuelasTodasList = new List<Escuela>();
+
+            escuelasTodasList = (from DataRow dr in escuelas.Rows
+                                 select new Escuela()
+                                 {
+                                     idEscuela = Convert.ToInt32(dr["idEscuela"]),
+                                     domicilio = dr["domicilio"].ToString(),
+                                     mail = dr["mail"].ToString(),
+                                     nombre = dr["nombre"].ToString(),
+                                     telefCelular = Convert.ToInt32(dr["telefCelular"]),
+                                     telefFijo = Convert.ToInt32(dr["telefFijo"]),
+                                 }
+            ).ToList();
+
+            return escuelasTodasList;
+        }
 
 
 

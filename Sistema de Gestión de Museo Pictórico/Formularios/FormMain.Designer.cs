@@ -44,7 +44,7 @@ namespace CapaNegocio
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.lblTime = new DevExpress.XtraEditors.LabelControl();
             this.lblDate = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.lblUsuario = new DevExpress.XtraEditors.LabelControl();
             this.svgImageBox1 = new DevExpress.XtraEditors.SvgImageBox();
             this.panelControlMain = new DevExpress.XtraEditors.PanelControl();
             this.tileNavCategory1 = new DevExpress.XtraBars.Navigation.TileNavCategory();
@@ -55,6 +55,7 @@ namespace CapaNegocio
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
@@ -164,9 +165,10 @@ namespace CapaNegocio
             // 
             // panelControl3
             // 
+            this.panelControl3.Controls.Add(this.label1);
             this.panelControl3.Controls.Add(this.lblTime);
             this.panelControl3.Controls.Add(this.lblDate);
-            this.panelControl3.Controls.Add(this.labelControl1);
+            this.panelControl3.Controls.Add(this.lblUsuario);
             this.panelControl3.Controls.Add(this.svgImageBox1);
             this.panelControl3.Location = new System.Drawing.Point(2, 597);
             this.panelControl3.Name = "panelControl3";
@@ -191,14 +193,16 @@ namespace CapaNegocio
             this.lblDate.Text = "date";
             this.lblDate.ToolTip = "Fecha actual";
             // 
-            // labelControl1
+            // lblUsuario
             // 
-            this.labelControl1.Location = new System.Drawing.Point(137, 20);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(69, 13);
-            this.labelControl1.TabIndex = 1;
-            this.labelControl1.Text = "usernameUser";
-            this.labelControl1.ToolTip = "Nombre del usuario con la sesion iniciada";
+            this.lblUsuario.Location = new System.Drawing.Point(137, 20);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(69, 13);
+            this.lblUsuario.TabIndex = 1;
+            this.lblUsuario.Text = "usernameUser";
+            this.lblUsuario.ToolTip = "Nombre del usuario con la sesion iniciada";
+            this.lblUsuario.UseMnemonic = false;
+
             // 
             // svgImageBox1
             // 
@@ -292,6 +296,15 @@ namespace CapaNegocio
             this.timer.Enabled = true;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(176, 40);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "label1";
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -335,7 +348,7 @@ namespace CapaNegocio
         private DevExpress.XtraEditors.SimpleButton btn_BuscarReserva;
         private DevExpress.XtraEditors.PanelControl panelControl3;
         private DevExpress.XtraEditors.LabelControl lblDate;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.LabelControl lblUsuario;
         private DevExpress.XtraEditors.SvgImageBox svgImageBox1;
         private DevExpress.XtraEditors.PanelControl panelControlMain;
         private DevExpress.XtraBars.Navigation.TileNavCategory tileNavCategory1;
@@ -348,5 +361,6 @@ namespace CapaNegocio
         private DevExpress.XtraEditors.SimpleButton btnRegistrarReserva;
         private DevExpress.XtraEditors.LabelControl lblTime;
         private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.Label label1;
     }
 }

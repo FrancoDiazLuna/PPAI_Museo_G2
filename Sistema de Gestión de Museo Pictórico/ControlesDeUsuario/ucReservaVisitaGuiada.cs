@@ -21,7 +21,6 @@ namespace CapaNegocio
 
         private void tabNavigationPage1_Paint(object sender, PaintEventArgs e)
         {
-            
             ucReservaVisitaGuiada uc = new ucReservaVisitaGuiada();
             showControl(uc);
         }
@@ -45,10 +44,44 @@ namespace CapaNegocio
             }
         }
         
-        public void mostrar()
+        
+
+
+        
+        public void mostrarEscuela()
         {
             escuelaBindingSource.DataSource = GestorDeReserva.buscarEscuelas();
+        }
+
+        private void tomarSeleccionDeEscuela(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+        {
+            Escuela esc = (Escuela)gridEscuelas.GetFocusedRow();
+            lblEscSel.Text = esc.nombre;
+            GestorDeReserva.seleccionDeEscuela(esc);
+        }
+
+        //tomarCantidadDeVisitantes
+        private void spinCantVisitantes_EditValueChanged(object sender, EventArgs e)
+        {
+            int valor = int.Parse(spinCantVisitantes.Text);
+            GestorDeReserva.obtenerCantidadAlumnos(valor);
+        }
+
+        public void mostrarSede()
+        {
             sedeBindingSource.DataSource = GestorDeReserva.buscarSedes();
+        }
+
+        private void tomarSeleccionDeSede(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+        {
+            Sede sede = (Sede)gridSedes.GetFocusedRow();
+            lblSedeSel.Text = sede.nombre;
+            GestorDeReserva.obtenerSedeSeleccionada(sede);
+            exposicionBindingSource.DataSource = GestorDeReserva.buscarExposicionesTemporalesVigentes();
+        }
+
+        public void mostrarTipoDeVisita()
+        {
             List<TipoVisita> vi = GestorDeReserva.buscarVisitas();
             foreach (TipoVisita item in vi)
             {
@@ -56,6 +89,15 @@ namespace CapaNegocio
             }
             exposicionBindingSource.DataSource = Sede.buscarExposicionesTemporalesVigentes();
         }
+
+        //tomarSeleccionTipoDeVisita
+        private void cmbTipoVisita_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string valorSeleccionado = cmbTipoVisita.Text;
+        }
+
+
+
 
         private void btn_anterior_Click(object sender, EventArgs e)
         {
@@ -135,26 +177,10 @@ namespace CapaNegocio
 
         }
 
-        private void spinEdit1_EditValueChanged(object sender, EventArgs e)
-        {
-            int valor = int.Parse(spinCantVisitantes.Text);
-            GestorDeReserva.obtenerCantidadAlumnos(valor);
-        }
 
-        private void seleccionDeEscuela(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
-        {
-            Escuela esc = (Escuela)gridEscuelas.GetFocusedRow();
-            lblEscSel.Text = esc.nombre;
-            GestorDeReserva.obtenerEscuelaSeleccionada(esc);
-        }
 
-        private void seleccionDeSede(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
-        {
-            Sede sede = (Sede)gridSedes.GetFocusedRow();
-            lblSedeSel.Text = sede.nombre;
-            GestorDeReserva.obtenerSedeSeleccionada(sede);
-            exposicionBindingSource.DataSource = GestorDeReserva.buscarExposicionesTemporalesVigentes();
-        }
+
+
 
         private void calendarControl1_Click(object sender, EventArgs e)
         {
@@ -175,6 +201,8 @@ namespace CapaNegocio
             MessageBox.Show("La reserva se registró con exito. \nEl estado actual de la misma es ahora Pendiente de Confirmación", "Confirmación de reserva de visita guiada", MessageBoxButtons.OK, MessageBoxIcon.Information);
             tabPane1.Visible = false;
         }
+
+
     }
     
 }

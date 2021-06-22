@@ -20,7 +20,7 @@ namespace CapaNegocio
         public static Sede sedeSeleccionada { get; set; }
 
         public static List<TipoVisita> tiposDeVisitaTodasList { get; set; }
-        public static TipoVisita tipoDeVisitaSeleccionada { get; set; }
+        public static string tipoDeVisitaSeleccionada { get; set; }
 
         public static List<Exposicion> exposicionesTodasList { get; set; }
 
@@ -47,22 +47,12 @@ namespace CapaNegocio
         {
             DataTable escuelas = new DEscuela().buscar();
 
-            escuelasTodasList = (from DataRow dr in escuelas.Rows
-                         select new Escuela()
-                         {
-                             idEscuela = Convert.ToInt32(dr["idEscuela"]),
-                             domicilio = dr["domicilio"].ToString(),
-                             mail = dr["mail"].ToString(),
-                             nombre = dr["nombre"].ToString(),
-                             telefCelular = Convert.ToInt32(dr["telefCelular"]),
-                             telefFijo = Convert.ToInt32(dr["telefFijo"]),
-                         }
-            ).ToList();
+            escuelasTodasList = new Escuela().getEscuelas();
 
             return escuelasTodasList;
         }
 
-        public static void obtenerEscuelaSeleccionada(Escuela escuela)
+        public static void seleccionDeEscuela(Escuela escuela)
         {
             escuelaSeleccionada = escuela;
         }
@@ -76,19 +66,7 @@ namespace CapaNegocio
         {
             DataTable sedes = new DSede().buscar();
 
-            sedesTodasList = (from DataRow dr in sedes.Rows
-                              select new Sede()
-                              {
-                                  idSede = Convert.ToInt32(dr["idSede"]),
-                                  cantidadMaximaVisitantes = Convert.ToInt32(dr["cantidadMaximaVisitantes"]),
-                                  cantidadMaxPorGuia = Convert.ToInt32(dr["cantidadMaxPorGuia"]),
-                                  nombre = dr["nombre"].ToString(),
-                                  idDeposito = Convert.ToInt32(dr["idDeposito"]),
-                                  idHorario = Convert.ToInt32(dr["idHorario"]),
-                                  idColeccion = Convert.ToInt32(dr["idColeccion"]),
-                                  idTarifa = Convert.ToInt32(dr["idTarifa"]),
-                              }                              
-            ).ToList();
+            sedesTodasList = new Sede().getSedes();
 
             return sedesTodasList;
         }
@@ -175,6 +153,32 @@ namespace CapaNegocio
             return test;
         }
 
+        public static string usuarioEnSesion()
+        {
+            DataTable sesion = new DSesion().buscar();
 
+            List<Sesion> sesionList = new List<Sesion>();
+            sesionList = (from DataRow dr in sesion.Rows
+                                select new Sesion()
+                                {
+                                    idSesion = Convert.ToInt32(dr["idSesion"]),
+                                    fechaFin = Convert.ToDateTime(dr["fechaFin"]),
+                                    fechaInicio = Convert.ToDateTime(dr["fechaInicio"]),
+                                    horaFin = Convert.ToDateTime(dr["horaFin"]),
+                                    horaInicio = Convert.ToDateTime(dr["horaInicio"]),
+                                    idUsuario = Convert.ToInt32(dr["idUsuario"])
+                                }
+
+                            ).ToList();
+            foreach (var item in sesionList)
+            {
+
+            }
+
+            string usrSesion = "Admin";
+
+
+            return usrSesion;
+        }
     }
 }

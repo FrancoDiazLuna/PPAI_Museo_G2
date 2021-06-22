@@ -20,6 +20,31 @@ namespace CapaNegocio
         public int idColeccion { get; set; }
         public int idTarifa { get; set; }
 
+        public List<Sede> getSedes()
+        {
+            DataTable sedes = new DSede().buscar();
+
+            List<Sede> sedesTodasList = new List<Sede>();
+
+            sedesTodasList = (from DataRow dr in sedes.Rows
+                              select new Sede()
+                              {
+                                  idSede = Convert.ToInt32(dr["idSede"]),
+                                  cantidadMaximaVisitantes = Convert.ToInt32(dr["cantidadMaximaVisitantes"]),
+                                  cantidadMaxPorGuia = Convert.ToInt32(dr["cantidadMaxPorGuia"]),
+                                  nombre = dr["nombre"].ToString(),
+                                  idDeposito = Convert.ToInt32(dr["idDeposito"]),
+                                  idHorario = Convert.ToInt32(dr["idHorario"]),
+                                  idColeccion = Convert.ToInt32(dr["idColeccion"]),
+                                  idTarifa = Convert.ToInt32(dr["idTarifa"]),
+                              }
+            ).ToList();
+
+            return sedesTodasList;
+        }
+
+
+
         public static List<Exposicion> buscarExposicionesTemporalesVigentes()
         {
             DataTable exposicionesTodas = new DExposicion().buscar();

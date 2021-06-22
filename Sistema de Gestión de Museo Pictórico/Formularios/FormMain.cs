@@ -21,7 +21,9 @@ namespace CapaNegocio
         {
             ucReservaVisitaGuiada uc = new ucReservaVisitaGuiada();
             showControl(uc);
-            uc.mostrar();
+            uc.mostrarEscuela();
+            uc.mostrarSede();
+            uc.mostrarTipoDeVisita();
         }
 
         public void showControl(Control control)
@@ -47,8 +49,12 @@ namespace CapaNegocio
 
         private void timer_Tick(object sender, EventArgs e)
         {
+
+            string usr = GestorDeReserva.usuarioEnSesion();
+            label1.Text = "hola";
             lblDate.Text = DateTime.Now.ToShortDateString();
             lblTime.Text = DateTime.Now.ToLongTimeString();
+            
         }
 
         private void panelControl4_Click(object sender, EventArgs e)
@@ -67,5 +73,6 @@ namespace CapaNegocio
                 "\n\n\t Grupo Nº 2 (Bazinga) \n\n 1° Entrega - Implementación del caso de uso modelado" +
                 "\n Caso de Uso 92: Registrar Reserva de Visita Guiada", "Acerca del Sitema", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
     }
 }

@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
+using System.Data.SqlClient;
+using CapaDatos;
 
 namespace CapaNegocio
 {
@@ -23,23 +26,14 @@ namespace CapaNegocio
         public int idCargo { get; set; }
         public int idHorarioEmpleado { get; set; }
 
-        public Empleado(int idEmpleado, string apellido, int codigoValidacion, string cuit, int dni, string domicilio, 
-            DateTime fechaIngreso, DateTime fechaNacimiento, string mail, string nombre, string sexo, string telefono, int idCargo, int idHorarioEmpleado)
-        {
-            this.idEmpleado = idEmpleado;
-            this.apellido = apellido;
-            this.codigoValidacion = codigoValidacion;
-            this.cuit = cuit;
-            this.dni = dni;
-            this.domicilio = domicilio;
-            this.fechaIngreso = fechaIngreso;
-            this.fechaNacimiento = fechaNacimiento;
-            this.mail = mail;
-            this.nombre = nombre;
-            this.sexo = sexo;
-            this.telefono = telefono;
-            this.idCargo = idCargo;
-            this.idHorarioEmpleado = idHorarioEmpleado;
-        }
+        //public List<Empleado> GetEmpleados()
+        //{
+        //    DataTable empleadosDT = new DEmpleado().buscar();
+
+        //    List<Empleado> empleadosList = 
+
+
+        //    return 
+        //}
     }
 }
