@@ -98,6 +98,7 @@
     <EmbeddedResource Include="ControlesDeUsuario\ucReservaVisitaGuiada.resx">
       <DependentUpon>ucReservaVisitaGuiada.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\CapaNegocio.Empleado.datasource" />
     <None Include="Properties\DataSources\CapaNegocio.Escuela2.datasource" />
     <None Include="Properties\DataSources\CapaNegocio.Exposicion.datasource" />
     <None Include="Properties\DataSources\CapaNegocio.Sede1.datasource" />

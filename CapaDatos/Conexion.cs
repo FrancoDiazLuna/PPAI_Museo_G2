@@ -24,5 +24,7 @@ namespace CapaDatos
         // MauriData 
         //public static string Cn = @"Data Source=DESKTOP-3OTH51R;Initial Catalog=MuseoPictorico;Integrated Security=True";
 
+        //LucasCana
+        public static string Cn = @"Data Source = DESKTOP-ROE6GCV\SQLEXPRESS;Initial Catalog = MuseoPictorico; Integrated Security = True";
     }
 }
