@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
+using CapaDatos;
 
 namespace CapaNegocio
 {
@@ -14,8 +16,8 @@ namespace CapaNegocio
         public int duracionEstimada { get; set; }
         public DateTime fechaHoraCreacion { get; set; }
         public DateTime fechaHoraReserva { get; set; }
-        public string horaFinReal { get; set; }
-        public string horaInicioReal { get; set; }
+        public DateTime horaFinReal { get; set; }
+        public DateTime horaInicioReal { get; set; }
         public int idEscuela { get; set; }
         public int idSede { get; set; }
         public int idExposicion { get; set; }
@@ -23,24 +25,34 @@ namespace CapaNegocio
         public int idAsignacionGuia { get; set; }
         public int idEmpleadoCreo { get; set; }
 
-        public ReservaVisita(int idReservaVisita, int cantidadAlumno, int cantidadAlumnoConfirmada, int duracionEstimada, DateTime fechaHoraCreacion, 
-            DateTime fechaHoraReserva, string horaFinReal, string horaInicioReal, int idEscuela, int idSede, int idExposicion, int idCambioEstado, 
-            int idAsignacionGuia, int idEmpleadoCreo)
+        public List<ReservaVisita> getReservaVisitas()
         {
-            this.idReservaVisita = idReservaVisita;
-            this.cantidadAlumno = cantidadAlumno;
-            this.cantidadAlumnoConfirmada = cantidadAlumnoConfirmada;
-            this.duracionEstimada = duracionEstimada;
-            this.fechaHoraCreacion = fechaHoraCreacion;
-            this.fechaHoraReserva = fechaHoraReserva;
-            this.horaFinReal = horaFinReal;
-            this.horaInicioReal = horaInicioReal;
-            this.idEscuela = idEscuela;
-            this.idSede = idSede;
-            this.idExposicion = idExposicion;
-            this.idCambioEstado = idCambioEstado;
-            this.idAsignacionGuia = idAsignacionGuia;
-            this.idEmpleadoCreo = idEmpleadoCreo;
+            DataTable reservasDT = new DReservaVisita().buscar();
+
+            List<ReservaVisita> reservaVisitaTodasList = new List<ReservaVisita>();
+
+            reservaVisitaTodasList = (from DataRow dr in reservasDT.Rows
+                              select new ReservaVisita()
+                              {
+                                  idReservaVisita = Convert.ToInt32(dr["idReservaVisita"]),
+                                  cantidadAlumno = Convert.ToInt32(dr["cantidadAlumno"]),
+                                  cantidadAlumnoConfirmada = Convert.ToInt32(dr["cantidadAlumnoConfirmada"]),
+                                  duracionEstimada = Convert.ToInt32(dr["duracionEstimada"]),
+                                  fechaHoraCreacion = Convert.ToDateTime(dr["fechaHoraCreacion"]),
+                                  fechaHoraReserva = Convert.ToDateTime(dr["fechaHoraReserva"]),
+                                  horaFinReal = Convert.ToDateTime(dr["horaFinReal"]),
+                                  horaInicioReal = Convert.ToDateTime(dr["horaInicioReal"]),
+                                  idEscuela = Convert.ToInt32(dr["idEscuela"]),
+                                  idSede = Convert.ToInt32(dr["idSede"]),
+                                  idExposicion = Convert.ToInt32(dr["idExposicion"]),
+                                  idCambioEstado = Convert.ToInt32(dr["idCambioEstado"]),
+                                  idAsignacionGuia = Convert.ToInt32(dr["idAsignacionGuia"]),
+                                  idEmpleadoCreo = Convert.ToInt32(dr["idEmpleadoCreo"])
+                              }
+            ).ToList();
+
+
+            return reservaVisitaTodasList;
         }
     }
 }

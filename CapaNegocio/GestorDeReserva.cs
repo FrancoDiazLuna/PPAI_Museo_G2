@@ -221,5 +221,21 @@ namespace CapaNegocio
         }
 
 
+        public void buscarVisitantesSimultaneosEnSede()
+        {
+            visitantesSimultaneos = new Sede().buscarVisitantesSimultaneos();
+        }
+
+        public bool verificarCapacidadMaxima()
+        {
+            if (visitantesSimultaneos + cantidadVisitantes > sedeSeleccionada.cantidadMaximaVisitantes)
+            {
+                return false;
+            }
+            return true;
+        }
+
+
+
     }
 }

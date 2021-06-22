@@ -50,6 +50,7 @@
     <Compile Include="DExposicionesPorSede.cs" />
     <Compile Include="DObra.cs" />
     <Compile Include="DPublicoDestino.cs" />
+    <Compile Include="DReservaVisita.cs" />
     <Compile Include="DSede.cs" />
     <Compile Include="DSesion.cs" />
     <Compile Include="DTipoVisita.cs" />

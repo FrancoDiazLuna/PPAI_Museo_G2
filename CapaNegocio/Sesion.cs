@@ -31,7 +31,7 @@ namespace CapaNegocio
 
             foreach (Usuario item in usuarios)
             {
-                if (item.idUsuario == 5)
+                if (item.idUsuario == 1)
                 {
                     empSesion = item.nombre;
                 }

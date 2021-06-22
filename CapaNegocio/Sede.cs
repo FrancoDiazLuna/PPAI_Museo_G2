@@ -43,8 +43,6 @@ namespace CapaNegocio
             return sedesTodasList;
         }
 
-
-
         public static List<Exposicion> buscarExposicionesTemporalesVigentes()
         {
             DataTable exposicionesTodas = new DExposicion().buscar();
@@ -81,6 +79,29 @@ namespace CapaNegocio
 
             return expoVigente;
             //return expoFiltradaSede;
+        }
+
+
+        public int buscarVisitantesSimultaneos()
+        {
+            int visitantes = 0;
+            Sede sede = GestorDeReserva.sedeSeleccionada;
+
+            int idSede = sede.idSede;
+
+            List<ReservaVisita> reservasTodas = new ReservaVisita().getReservaVisitas();
+
+
+            foreach (ReservaVisita item in reservasTodas)
+            {
+                if (item.idSede == idSede)
+                {
+                    visitantes = visitantes + item.cantidadAlumno;
+                }
+            }
+
+
+            return visitantes;
         }
 
     }
