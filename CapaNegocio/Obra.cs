@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
+using CapaDatos;
+using CapaNegocio;
 
 namespace CapaNegocio
 {
@@ -34,40 +37,46 @@ namespace CapaNegocio
         public int idTipoIngreso { get; set; }
         public int idTematica { get; set; }
 
-        public Obra(int idObra, int alto, int ancho, int codigoSensor, string descripcion, int duracionExtendida, int duracionResumida, 
-            DateTime fechaCreacion, DateTime fechaPrimerIngreso, string nombraObra, int peso, int valuacion, int idDonacion, int idPrestamoMuseo, 
-            int idSectorDeposito, int idArchivo, int idCambioEstado, int idEmpleadoCreo, int idArtistaQuePinto, int idCompra, int idRestauracionRealizada, 
-            int idTecnica, int idEstilo, int idTipoIngreso, int idTematica)
+
+        public List<Obra> getObras()
         {
-            this.idObra = idObra;
-            this.alto = alto;
-            this.ancho = ancho;
-            this.codigoSensor = codigoSensor;
-            this.descripcion = descripcion;
-            this.duracionExtendida = duracionExtendida;
-            this.duracionResumida = duracionResumida;
-            this.fechaCreacion = fechaCreacion;
-            this.fechaPrimerIngreso = fechaPrimerIngreso;
-            this.nombreObra = nombraObra;
-            this.peso = peso;
-            this.valuacion = valuacion;
-            this.idDonacion = idDonacion;
-            this.idPrestamoMuseo = idPrestamoMuseo;
-            this.idSectorDeposito = idSectorDeposito;
-            this.idArchivo = idArchivo;
-            this.idCambioEstado = idCambioEstado;
-            this.idEmpleadoCreo = idEmpleadoCreo;
-            this.idArtistaQuePinto = idArtistaQuePinto;
-            this.idCompra = idCompra;
-            this.idRestauracionRealizada = idRestauracionRealizada;
-            this.idTecnica = idTecnica;
-            this.idEstilo = idEstilo;
-            this.idTipoIngreso = idTipoIngreso;
-            this.idTematica = idTematica;
+            DataTable obras = new DObra().buscar();
+            List<Obra> obrasTodasList = new List<Obra>();
+
+            obrasTodasList = (from DataRow dr in obras.Rows
+                              select new Obra()
+                              {
+                                  idObra = Convert.ToInt32(dr["idObra"]),
+                                  alto = Convert.ToInt32(dr["alto"]),
+                                  ancho = Convert.ToInt32(dr["ancho"]),
+                                  codigoSensor = Convert.ToInt32(dr["codigoSensor"]),
+                                  descripcion = dr["descripcion"].ToString(),
+                                  duracionExtendida = Convert.ToInt32(dr["duracionExtendida"]),
+                                  duracionResumida = Convert.ToInt32(dr["duracionResumida"]),
+                                  fechaCreacion = Convert.ToDateTime(dr["fechaCreacion"]),
+                                  fechaPrimerIngreso = Convert.ToDateTime(dr["fechaPrimerIngreso"]),
+                                  nombreObra = dr["nombreObra"].ToString(),
+                                  peso = Convert.ToInt32(dr["peso"]),
+                                  valuacion = Convert.ToInt32(dr["valuacion"]),
+                                  idDonacion = Convert.ToInt32(dr["idDonacion"]),
+                                  idPrestamoMuseo = Convert.ToInt32(dr["idPrestamoMuseo"]),
+                                  idSectorDeposito = Convert.ToInt32(dr["idSectorDeposito"]),
+                                  idArchivo = Convert.ToInt32(dr["idArchivo"]),
+                                  idCambioEstado = Convert.ToInt32(dr["idCambioEstado"]),
+                                  idEmpleadoCreo = Convert.ToInt32(dr["idEmpleadoCreo"]),
+                                  idArtistaQuePinto = Convert.ToInt32(dr["idArtistaQuePinto"]),
+                                  idCompra = Convert.ToInt32(dr["idCompra"]),
+                                  idRestauracionRealizada = Convert.ToInt32(dr["idRestauracionRealizada"]),
+                                  idTecnica = Convert.ToInt32(dr["idTecnica"]),
+                                  idEstilo = Convert.ToInt32(dr["idEstilo"]),
+                                  idTipoIngreso = Convert.ToInt32(dr["idTipoIngreso"]),
+                                  idTematica = Convert.ToInt32(dr["idTematica"]),
+                              }
+            ).ToList();
+
+            return obrasTodasList;
         }
 
-        public Obra()
-        {
-        }
     }
 }
+

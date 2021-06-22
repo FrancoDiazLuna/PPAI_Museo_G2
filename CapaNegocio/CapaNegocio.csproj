@@ -48,6 +48,7 @@
     <Compile Include="Empleado.cs" />
     <Compile Include="Estado.cs" />
     <Compile Include="Exposicion.cs" />
+    <Compile Include="DetalleExposicionPorExposicion.cs" />
     <Compile Include="ExposicionPorSede.cs" />
     <Compile Include="GestorDeReserva.cs" />
     <Compile Include="HorarioEmpleado.cs" />

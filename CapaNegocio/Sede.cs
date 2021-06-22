@@ -108,5 +108,12 @@ namespace CapaNegocio
             return visitantes;
         }
 
+
+        public static int calcularDuracionEstimada()
+        {
+            int duracion = Exposicion.calcularDuracionObrasExpuestas();
+            return duracion;
+        }
+
     }
 }

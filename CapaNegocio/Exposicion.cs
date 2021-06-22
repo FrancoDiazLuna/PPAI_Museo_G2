@@ -53,7 +53,43 @@ namespace CapaNegocio
         } 
 
 
+        public static int calcularDuracionObrasExpuestas()
+        {
+            List<Obra> obras = new DetalleExposicion().buscarObras();
 
+            List<DetalleExposicionPorExposicion> obrasEnExpo = new DetalleExposicionPorExposicion().getDetalleExE();
+
+            List<Exposicion> exposicionesSeleccionadas = GestorDeReserva.exposicionSeleccionada;
+
+            List<Obra> obrasDeExposSelecc = new List<Obra>();
+
+            foreach (Exposicion item in exposicionesSeleccionadas)
+            {
+                foreach (var item2 in obrasEnExpo)
+                {
+                    if (item.idExposicion == item2.idExposicion)
+                    {
+                        foreach (var item3 in obras)
+                        {
+                            if (item3.idObra == item2.idDetalleExposicion)
+                            {
+                                obrasDeExposSelecc.Add(item3);
+                            }
+                        }
+                    }
+                }
+            }
+
+            int duracionMinutos = 0;
+
+            foreach (var item in obrasDeExposSelecc)
+            {
+                duracionMinutos = duracionMinutos + item.duracionExtendida;
+            }
+
+            return duracionMinutos;
+
+        }
 
 
 

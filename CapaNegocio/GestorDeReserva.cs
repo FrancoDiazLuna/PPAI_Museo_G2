@@ -164,6 +164,12 @@ namespace CapaNegocio
         }
 
 
+        public void  calcularDuracionEstimada()
+        {
+            duracionEstimada = Sede.calcularDuracionEstimada();
+
+        }
+
         //calcularDuracionestimada
 
         public static void buscarVisitantesSimultaneosEnSede()
