@@ -244,10 +244,7 @@ namespace CapaNegocio
         {
 
             guiaSeleccionado = lista;
-            foreach (var item in lista)
-            {
-
-            }
+           
         }
 
         public static int calcularGuiasNecesarios()
@@ -264,8 +261,6 @@ namespace CapaNegocio
 
         public static void registrarReserva()
         {
-
-
             //DateTime hoy = DateTime.ParseExact(fechaHoraActual, "dd/MM/yyyy", null);
 
             DReservaVisita actual = new DReservaVisita(numeroUnico, cantidadVisitantes, cantidadVisitantes, duracionEstimada, fechaHoraActual, fechaHoraReserva, "08:00", "12:00", escuelaSeleccionada.idEscuela, sedeSeleccionada.idSede, 1, 1, 1, 1);
@@ -303,7 +298,7 @@ namespace CapaNegocio
             }
 
 
-            numeroUnico = cont;
+            numeroUnico = cont+1;
         }
 
 

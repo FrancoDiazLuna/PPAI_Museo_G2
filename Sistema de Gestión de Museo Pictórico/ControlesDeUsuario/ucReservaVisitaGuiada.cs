@@ -240,7 +240,7 @@ namespace CapaNegocio
 
                 if (test)
                 {
-                    tomarSeleccionGuias();
+                    //tomarSeleccionGuias();
                     tabPane1.SelectNextPage();
                 }
                 else
@@ -363,6 +363,19 @@ namespace CapaNegocio
             else if (pag == tabNav4_DiaVisita)
             {
                 solicitarFechaHora();
+            }
+            else if (pag == tabNav5_Guia)
+            {
+                
+                if (gridGuias.SelectedRowsCount == 0)
+                {
+                    MessageBox.Show("Debe seleccionar al menos un guía para realizar la visita.", "Importante", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    tomarSeleccionGuias();
+                    tabPane1.SelectNextPage();
+                }
             }
             else
             {
