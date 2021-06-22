@@ -510,8 +510,6 @@ namespace CapaNegocio
             // 
             this.colidExposicion.FieldName = "Id Exposicion";
             this.colidExposicion.Name = "colidExposicion";
-            this.colidExposicion.Visible = true;
-            this.colidExposicion.VisibleIndex = 1;
             // 
             // colfechaFin
             // 

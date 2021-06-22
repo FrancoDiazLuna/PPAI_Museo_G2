@@ -64,6 +64,11 @@ namespace CapaNegocio
             cantidadVisitantes = valor;
         }
 
+        public static void seleccionFechaHora(DateTime valor)
+        {
+            fechaHoraReserva = valor;
+        }
+
         public static List<Sede> buscarSedes()
         {
             DataTable sedes = new DSede().buscar();
@@ -153,11 +158,6 @@ namespace CapaNegocio
             //{
             //    exposicionesSedeList.Add(expo);
             //}
-
-
-
-
-
 
             List<Exposicion> test = new List<Exposicion>();
 
