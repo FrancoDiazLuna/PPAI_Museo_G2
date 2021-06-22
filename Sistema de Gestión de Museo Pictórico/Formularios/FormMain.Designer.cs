@@ -55,7 +55,6 @@ namespace CapaNegocio
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.timer = new System.Windows.Forms.Timer(this.components);
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
@@ -165,7 +164,6 @@ namespace CapaNegocio
             // 
             // panelControl3
             // 
-            this.panelControl3.Controls.Add(this.label1);
             this.panelControl3.Controls.Add(this.lblTime);
             this.panelControl3.Controls.Add(this.lblDate);
             this.panelControl3.Controls.Add(this.lblUsuario);
@@ -202,7 +200,6 @@ namespace CapaNegocio
             this.lblUsuario.Text = "usernameUser";
             this.lblUsuario.ToolTip = "Nombre del usuario con la sesion iniciada";
             this.lblUsuario.UseMnemonic = false;
-
             // 
             // svgImageBox1
             // 
@@ -296,15 +293,6 @@ namespace CapaNegocio
             this.timer.Enabled = true;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(176, 40);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "label1";
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -361,6 +349,5 @@ namespace CapaNegocio
         private DevExpress.XtraEditors.SimpleButton btnRegistrarReserva;
         private DevExpress.XtraEditors.LabelControl lblTime;
         private System.Windows.Forms.Timer timer;
-        private System.Windows.Forms.Label label1;
     }
 }

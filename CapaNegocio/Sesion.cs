@@ -18,13 +18,29 @@ namespace CapaNegocio
         public int idUsuario { get; set; }
 
 
-        //public List<Usuario> getEmpleado()
-        //{
 
-        //    List<Usuario> listaEmpleados
+        public string getEmpleadoEnSesion()
+        {
 
-        //    return listaEmpleados;
-        //}
+            string empSesion = "Administrador";
+
+            
+
+            List<Usuario> usuarios = new Usuario().getUsuarios();
+
+
+            foreach (Usuario item in usuarios)
+            {
+                if (item.idUsuario == 1)
+                {
+                    empSesion = item.nombre;
+                }
+            }
+
+            return empSesion;
+        }
+
+
 
 
 

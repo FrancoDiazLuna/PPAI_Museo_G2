@@ -24,6 +24,7 @@ namespace CapaNegocio
             uc.mostrarEscuela();
             uc.mostrarSede();
             uc.mostrarTipoDeVisita();
+            
         }
 
         public void showControl(Control control)
@@ -50,8 +51,7 @@ namespace CapaNegocio
         private void timer_Tick(object sender, EventArgs e)
         {
 
-            string usr = GestorDeReserva.usuarioEnSesion();
-            label1.Text = "hola";
+            lblUsuario.Text = "Hola";
             lblDate.Text = DateTime.Now.ToShortDateString();
             lblTime.Text = DateTime.Now.ToLongTimeString();
             

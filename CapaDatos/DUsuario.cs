@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace CapaDatos
 {
-    class DUsuario
+    public class DUsuario
     {
         public int _idUsuario;
         public DateTime _caducidad;

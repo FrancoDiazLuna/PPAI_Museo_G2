@@ -39,7 +39,7 @@ namespace CapaNegocio
 
         public static int numeroUnico { get; set; }
 
-        public static Sesion sesionActual { get; set; }
+        public static string sesionActual { get; set; }
 
 
 
@@ -155,28 +155,8 @@ namespace CapaNegocio
 
         public static string usuarioEnSesion()
         {
-            DataTable sesion = new DSesion().buscar();
 
-            List<Sesion> sesionList = new List<Sesion>();
-            sesionList = (from DataRow dr in sesion.Rows
-                                select new Sesion()
-                                {
-                                    idSesion = Convert.ToInt32(dr["idSesion"]),
-                                    fechaFin = Convert.ToDateTime(dr["fechaFin"]),
-                                    fechaInicio = Convert.ToDateTime(dr["fechaInicio"]),
-                                    horaFin = Convert.ToDateTime(dr["horaFin"]),
-                                    horaInicio = Convert.ToDateTime(dr["horaInicio"]),
-                                    idUsuario = Convert.ToInt32(dr["idUsuario"])
-                                }
-
-                            ).ToList();
-            foreach (var item in sesionList)
-            {
-
-            }
-
-            string usrSesion = "Admin";
-
+            string usrSesion = new Sesion().getEmpleadoEnSesion();
 
             return usrSesion;
         }
