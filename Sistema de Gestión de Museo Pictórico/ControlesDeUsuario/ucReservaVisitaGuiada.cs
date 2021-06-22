@@ -44,10 +44,6 @@ namespace CapaNegocio
             }
         }
         
-        
-
-
-        
         public void mostrarEscuela()
         {
             escuelaBindingSource.DataSource = GestorDeReserva.buscarEscuelas();
@@ -122,7 +118,7 @@ namespace CapaNegocio
             lblSedeSel.Text = sede.nombre;
             GestorDeReserva.obtenerSedeSeleccionada(sede);
             //exposicionBindingSource.DataSource = GestorDeReserva.buscarExposicionesTemporalesVigentes();
-            bindingSourceExpoPorSede.DataSource = llenarGridExpoPublico();
+            //bindingSourceExpoPorSede.DataSource = llenarGridExpoPublico();
         }
 
         public void mostrarTipoDeVisita()
@@ -139,7 +135,15 @@ namespace CapaNegocio
         //tomarSeleccionTipoDeVisita
         private void cmbTipoVisita_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string valorSeleccionado = cmbTipoVisita.Text;
+            if (cmbTipoVisita.SelectedIndex == 0)
+            {
+                bindingSourceExpoPorSede.DataSource = null;
+                MessageBox.Show("No existen exposiciones para el tipo de visita seleccionado.", "Importante", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                bindingSourceExpoPorSede.DataSource = llenarGridExpoPublico();
+            }
         }
 
         public void mostrarGuias()
@@ -208,11 +212,26 @@ namespace CapaNegocio
                     tabPane1.SelectNextPage();
                 }
             }
+            else if (pag == tabNav3_Visita_Exposiciones)
+            {
+                if (cmbTipoVisita.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Debe seleccionar un tipo de visita a realizar.", "Importante", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    tabPane1.SelectNextPage();
+                }
+            }
             else if (pag == tabNav4_DiaVisita)
             {
                 if (lblFechaSel.Text == "")
                 {
                     MessageBox.Show("Debe seleccionar una fecha para realizar la visita.", "Importante", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (cmbHorarioSel.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Debe ingresar un horario para realizar la visita.", "Importante", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
@@ -225,11 +244,6 @@ namespace CapaNegocio
             }
 
         }
-
-
-
-
-
 
         private void calendarControl1_Click(object sender, EventArgs e)
         {
@@ -250,8 +264,6 @@ namespace CapaNegocio
             MessageBox.Show("La reserva se registró con exito. \nEl estado actual de la misma es ahora Pendiente de Confirmación", "Confirmación de reserva de visita guiada", MessageBoxButtons.OK, MessageBoxIcon.Information);
             tabPane1.Visible = false;
         }
-
-
 
         public List<Exposicion> exposicionesSeleccionadas()
         {
@@ -280,5 +292,4 @@ namespace CapaNegocio
             exposicionesSeleccionadas();
         }
     }
-    
 }

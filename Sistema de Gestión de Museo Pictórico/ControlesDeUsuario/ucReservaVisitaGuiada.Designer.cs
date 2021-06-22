@@ -62,7 +62,6 @@ namespace CapaNegocio
             this.colcantidadMaxPorGuia = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.tabNav3_Visita_Exposiciones = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.lvlTV = new DevExpress.XtraEditors.LabelControl();
             this.cmbTipoVisita = new System.Windows.Forms.ComboBox();
             this.gridControl3 = new DevExpress.XtraGrid.GridControl();
             this.bindingSourceExpoPorSede = new System.Windows.Forms.BindingSource(this.components);
@@ -81,7 +80,7 @@ namespace CapaNegocio
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.tabNav4_DiaVisita = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.lblFechaSel = new System.Windows.Forms.Label();
-            this.cmbHorario = new System.Windows.Forms.ComboBox();
+            this.cmbHorarioSel = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
@@ -101,7 +100,6 @@ namespace CapaNegocio
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.exposicionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
@@ -460,8 +458,6 @@ namespace CapaNegocio
             // tabNav3_Visita_Exposiciones
             // 
             this.tabNav3_Visita_Exposiciones.Caption = "Visita y Exposiciones";
-            this.tabNav3_Visita_Exposiciones.Controls.Add(this.button1);
-            this.tabNav3_Visita_Exposiciones.Controls.Add(this.lvlTV);
             this.tabNav3_Visita_Exposiciones.Controls.Add(this.cmbTipoVisita);
             this.tabNav3_Visita_Exposiciones.Controls.Add(this.gridControl3);
             this.tabNav3_Visita_Exposiciones.Controls.Add(this.labelControl11);
@@ -469,13 +465,6 @@ namespace CapaNegocio
             this.tabNav3_Visita_Exposiciones.Controls.Add(this.labelControl4);
             this.tabNav3_Visita_Exposiciones.Name = "tabNav3_Visita_Exposiciones";
             this.tabNav3_Visita_Exposiciones.Size = new System.Drawing.Size(1174, 544);
-            // 
-            // lvlTV
-            // 
-            this.lvlTV.Location = new System.Drawing.Point(379, 59);
-            this.lvlTV.Name = "lvlTV";
-            this.lvlTV.Size = new System.Drawing.Size(0, 13);
-            this.lvlTV.TabIndex = 9;
             // 
             // cmbTipoVisita
             // 
@@ -614,7 +603,7 @@ namespace CapaNegocio
             // 
             this.tabNav4_DiaVisita.Caption = "Día y Horario de Visita";
             this.tabNav4_DiaVisita.Controls.Add(this.lblFechaSel);
-            this.tabNav4_DiaVisita.Controls.Add(this.cmbHorario);
+            this.tabNav4_DiaVisita.Controls.Add(this.cmbHorarioSel);
             this.tabNav4_DiaVisita.Controls.Add(this.label2);
             this.tabNav4_DiaVisita.Controls.Add(this.labelControl8);
             this.tabNav4_DiaVisita.Controls.Add(this.labelControl6);
@@ -630,11 +619,11 @@ namespace CapaNegocio
             this.lblFechaSel.Size = new System.Drawing.Size(0, 13);
             this.lblFechaSel.TabIndex = 10;
             // 
-            // cmbHorario
+            // cmbHorarioSel
             // 
-            this.cmbHorario.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cmbHorario.FormattingEnabled = true;
-            this.cmbHorario.Items.AddRange(new object[] {
+            this.cmbHorarioSel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmbHorarioSel.FormattingEnabled = true;
+            this.cmbHorarioSel.Items.AddRange(new object[] {
             "08:00",
             "08:30",
             "09:00",
@@ -664,10 +653,10 @@ namespace CapaNegocio
             "21:00",
             "21:30",
             "22:00"});
-            this.cmbHorario.Location = new System.Drawing.Point(854, 85);
-            this.cmbHorario.Name = "cmbHorario";
-            this.cmbHorario.Size = new System.Drawing.Size(96, 21);
-            this.cmbHorario.TabIndex = 9;
+            this.cmbHorarioSel.Location = new System.Drawing.Point(854, 85);
+            this.cmbHorarioSel.Name = "cmbHorarioSel";
+            this.cmbHorarioSel.Size = new System.Drawing.Size(96, 21);
+            this.cmbHorarioSel.TabIndex = 9;
             // 
             // label2
             // 
@@ -837,16 +826,6 @@ namespace CapaNegocio
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(775, 53);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // ucReservaVisitaGuiada
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -941,11 +920,10 @@ namespace CapaNegocio
         private DevExpress.XtraEditors.LabelControl lblEscuelaText;
         private DevExpress.XtraEditors.LabelControl lblSedeSel;
         private DevExpress.XtraEditors.LabelControl lblSedeText;
-        private DevExpress.XtraEditors.LabelControl lvlTV;
         private DevExpress.XtraEditors.Controls.CalendarControl calendarControl1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ComboBox cmbHorario;
+        private System.Windows.Forms.ComboBox cmbHorarioSel;
         private System.Windows.Forms.Label lblFechaSel;
         private System.Windows.Forms.BindingSource bindingSourceExpoPorSede;
         private DevExpress.XtraGrid.Columns.GridColumn colidExposicion;
@@ -964,6 +942,5 @@ namespace CapaNegocio
         private DevExpress.XtraGrid.Columns.GridColumn colApellido;
         private DevExpress.XtraGrid.Columns.GridColumn colNombreGuia;
         private DevExpress.XtraGrid.Columns.GridColumn colHorarioEmpleado;
-        private System.Windows.Forms.Button button1;
     }
 }
