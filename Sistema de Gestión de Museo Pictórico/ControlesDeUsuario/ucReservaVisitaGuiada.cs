@@ -18,7 +18,7 @@ namespace CapaNegocio
         {
             InitializeComponent();
         }
-
+        public DataTable dt;
         private void tabNavigationPage1_Paint(object sender, PaintEventArgs e)
         {
             ucReservaVisitaGuiada uc = new ucReservaVisitaGuiada();
@@ -43,6 +43,12 @@ namespace CapaNegocio
                 this.Dispose();
             }
         }
+
+
+
+
+
+
         
         public void mostrarEscuela()
         {
@@ -60,7 +66,7 @@ namespace CapaNegocio
         private void spinCantVisitantes_EditValueChanged(object sender, EventArgs e)
         {
             int valor = int.Parse(spinCantVisitantes.Text);
-            GestorDeReserva.obtenerCantidadAlumnos(valor);
+            GestorDeReserva.cantidadDeVisitantes(valor);
         }
 
         public void mostrarSede()
@@ -68,8 +74,44 @@ namespace CapaNegocio
             sedeBindingSource.DataSource = GestorDeReserva.buscarSedes();
         }
 
-        public DataTable dt;
-        public DataTable llenarGridExpoPublico()
+        private void tomarSeleccionDeSede(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+        {
+            Sede sede = (Sede)gridSedes.GetFocusedRow();
+            lblSedeSel.Text = sede.nombre;
+            GestorDeReserva.seleccionDeSede(sede);
+            //exposicionBindingSource.DataSource = GestorDeReserva.buscarExposicionesTemporalesVigentes();
+            //bindingSourceExpoPorSede.DataSource = mostrarExposicionesEemporalesVigentes();
+        }
+
+        public void mostrarTipoDeVisita()
+        {
+            List<TipoVisita> vi = GestorDeReserva.buscarTipoDeVisitas();
+            foreach (TipoVisita item in vi)
+            {
+                this.cmbTipoVisita.Items.Add(item.nombre);
+            }
+            //exposicionBindingSource.DataSource = Sede.buscarExposicionesTemporalesVigentes();
+            //empleadoBindingSource.DataSource = GestorDeReserva.buscarGuias();
+        }
+
+        //tomarSeleccionTipoDeVisita
+        private void cmbTipoVisita_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbTipoVisita.SelectedIndex == 0)
+            {
+                bindingSourceExpoPorSede.DataSource = null;
+                MessageBox.Show("No existen exposiciones para el tipo de visita seleccionado.", "Importante", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                //bindingSourceExpoPorSede.DataSource = mostrarExposicionesEemporalesVigentes();
+                refrescarGridExposiciones();
+                GestorDeReserva.seleccionTipoVisita("Por exposición");
+            }
+        }
+
+
+        public DataTable mostrarExposicionesEemporalesVigentes()
         {
             dt = new DataTable();
 
@@ -112,44 +154,72 @@ namespace CapaNegocio
             return dt;
         }
 
-        private void tomarSeleccionDeSede(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+        public List<Exposicion> exposicionesSeleccionadas()
         {
-            Sede sede = (Sede)gridSedes.GetFocusedRow();
-            lblSedeSel.Text = sede.nombre;
-            GestorDeReserva.obtenerSedeSeleccionada(sede);
-            //exposicionBindingSource.DataSource = GestorDeReserva.buscarExposicionesTemporalesVigentes();
-            //bindingSourceExpoPorSede.DataSource = llenarGridExpoPublico();
-        }
+            int bandera = 0;
 
-        public void mostrarTipoDeVisita()
-        {
-            List<TipoVisita> vi = GestorDeReserva.buscarVisitas();
-            foreach (TipoVisita item in vi)
+            List<Exposicion> exposicionesSeleccionadas = new List<Exposicion>();
+
+            List<Exposicion> expoDeGrid = GestorDeReserva.exposicionesSedeList;
+
+            List<int> indices = gridExposiciones.GetSelectedRows().ToList();
+
+            foreach (var item in expoDeGrid)
             {
-                this.cmbTipoVisita.Items.Add(item.nombre);
+                if (indices.Contains(bandera))
+                {
+                    exposicionesSeleccionadas.Add(item);
+                    //MessageBox.Show("Si");
+                }
+                bandera = bandera + 1;
             }
-            //exposicionBindingSource.DataSource = Sede.buscarExposicionesTemporalesVigentes();
-            //empleadoBindingSource.DataSource = GestorDeReserva.buscarGuias();
+            return exposicionesSeleccionadas;
         }
 
-        //tomarSeleccionTipoDeVisita
-        private void cmbTipoVisita_SelectedIndexChanged(object sender, EventArgs e)
+        private void tomarSeleccionExposicionesTemporalesVigentes()
         {
-            if (cmbTipoVisita.SelectedIndex == 0)
+            List<Exposicion> exposSeleccionadas = exposicionesSeleccionadas();
+            GestorDeReserva.seleccionExposicionesTemporalesVigentes(exposSeleccionadas);
+        }
+
+        private void solicitarFechaHora()
+        {
+            if (lblFechaSel.Text == "")
             {
-                bindingSourceExpoPorSede.DataSource = null;
-                MessageBox.Show("No existen exposiciones para el tipo de visita seleccionado.", "Importante", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Debe seleccionar una fecha para realizar la visita.", "Importante", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (cmbHorarioSel.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe ingresar un horario para realizar la visita.", "Importante", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                //bindingSourceExpoPorSede.DataSource = llenarGridExpoPublico();
-                refrescarGridExposiciones();
+                //tabPane1.SelectNextPage();
+                //aca manda la fecha y hora
+                var fechaHora = DateTime.Parse(lblFechaSel.Text + " " + cmbHorarioSel.Text);
+                GestorDeReserva.seleccionFechaHora(fechaHora);
+                txt_CantGuias.Text = GestorDeReserva.calcularGuiasNecesarios().ToString();
+
+                bool test = new GestorDeReserva().verificarCapacidadMaxima();
+                int test1 = GestorDeReserva.visitantesSimultaneos;
+                //MessageBox.Show(test1.ToString());
+                //MessageBox.Show(test.ToString());
+
+                if (test)
+                {
+                    tabPane1.SelectNextPage();
+                }
+                else
+                {
+                    MessageBox.Show("Debe seleccionar una fecha u horario distinto ya que la capacidad de la sede se excede.", "Importante", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
         }
 
+
         public void refrescarGridExposiciones()
         {
-            bindingSourceExpoPorSede.DataSource = llenarGridExpoPublico();
+            bindingSourceExpoPorSede.DataSource = mostrarExposicionesEemporalesVigentes();
         }
 
         public void mostrarGuias()
@@ -265,39 +335,7 @@ namespace CapaNegocio
 
         }
 
-        private void solicitarFechaHora()
-        {
-            if (lblFechaSel.Text == "")
-            {
-                MessageBox.Show("Debe seleccionar una fecha para realizar la visita.", "Importante", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else if (cmbHorarioSel.SelectedIndex == -1)
-            {
-                MessageBox.Show("Debe ingresar un horario para realizar la visita.", "Importante", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else
-            {
-                //tabPane1.SelectNextPage();
-                //aca manda la fecha y hora
-                var fechaHora = DateTime.Parse(lblFechaSel.Text + " " + cmbHorarioSel.Text);
-                GestorDeReserva.seleccionFechaHora(fechaHora);
-                txt_CantGuias.Text = GestorDeReserva.cantidadGuiasRecomendados().ToString();
 
-                bool test = new GestorDeReserva().verificarCapacidadMaxima();
-                int test1 = GestorDeReserva.visitantesSimultaneos;
-                //MessageBox.Show(test1.ToString());
-                //MessageBox.Show(test.ToString());
-
-                if (test)
-                {
-                    tabPane1.SelectNextPage();
-                }
-                else
-                {
-                    MessageBox.Show("Debe seleccionar una fecha u horario distinto ya que la capacidad de la sede se excede.", "Importante", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-            }
-        }
 
         private void calendarControl1_Click(object sender, EventArgs e)
         {
@@ -323,33 +361,6 @@ namespace CapaNegocio
             btn_confirmarReserva.Visible = false;
         }
 
-        public List<Exposicion> exposicionesSeleccionadas()
-        {
-            int bandera = 0;
 
-            List<Exposicion> exposicionesSeleccionadas = new List<Exposicion>();
-
-            List<Exposicion> expoDeGrid = GestorDeReserva.exposicionesSedeList;
-
-            List<int> indices = gridExposiciones.GetSelectedRows().ToList();
-
-            foreach (var item in expoDeGrid)
-            {
-                if (indices.Contains(bandera))
-                {
-                    exposicionesSeleccionadas.Add(item);
-                    //MessageBox.Show("Si");
-                }
-                bandera = bandera + 1;
-            }
-            return exposicionesSeleccionadas;
-        }
-
-
-        private void tomarSeleccionExposicionesTemporalesVigentes()
-        {
-            List<Exposicion> exposSeleccionadas = exposicionesSeleccionadas();
-            GestorDeReserva.seleccionExposicionesTemporalesVigentes(exposSeleccionadas);
-        }
     }
 }

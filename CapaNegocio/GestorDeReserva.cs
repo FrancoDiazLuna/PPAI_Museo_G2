@@ -59,22 +59,10 @@ namespace CapaNegocio
             escuelaSeleccionada = escuela;
         }
 
-        public static void obtenerCantidadAlumnos(int valor)
+        public static void cantidadDeVisitantes(int valor)
         {
             cantidadVisitantes = valor;
         }
-
-        public static void seleccionFechaHora(DateTime valor)
-        {
-            fechaHoraReserva = valor;
-        }
-
-        public static void seleccionExposicionesTemporalesVigentes(List<Exposicion> lista)
-        {
-            exposicionSeleccionada = lista;
-        }
-        
-
         public static List<Sede> buscarSedes()
         {
             DataTable sedes = new DSede().buscar();
@@ -83,44 +71,25 @@ namespace CapaNegocio
 
             return sedesTodasList;
         }
-
-        public static void obtenerSedeSeleccionada(Sede sede)
+        public static void seleccionDeSede(Sede sede)
         {
             sedeSeleccionada = sede;
         }
 
-        public static List<TipoVisita> buscarVisitas()
+        public static List<TipoVisita> buscarTipoDeVisitas()
         {
             DataTable tiposDeVisita = new DTipoVisita().buscar();
 
-
-            tiposDeVisitaTodasList = (from DataRow dr in tiposDeVisita.Rows
-                                      select new TipoVisita()
-                                      {
-                                          idTipoVisita = Convert.ToInt32(dr["idTipoVisita"]),
-                                          nombre = dr["nombre"].ToString()
-                                      }
-            ).ToList();
+            tiposDeVisitaTodasList = new TipoVisita().getTipoVisitas();
 
             return tiposDeVisitaTodasList;
         }
 
-        public static List<PublicoDestino> buscarPublicoDestino()
+        public static void seleccionTipoVisita(string tipoVdisita)
         {
-            DataTable publicoDestino = new DPublicoDestino().buscar();
 
-            List<PublicoDestino> publicoDestinoList = new List<PublicoDestino>();
 
-            publicoDestinoList = (from DataRow dr in publicoDestino.Rows
-                                  select new PublicoDestino()
-                                  {
-                                      idPublicoDestino = Convert.ToInt32(dr["idPublicoDestino"]),
-                                      caracteristicas = dr["caracteristicas"].ToString(),
-                                      nombre = dr["nombre"].ToString()
-                                  }
-                        ).ToList();
-
-            return publicoDestinoList;
+            tipoDeVisitaSeleccionada = tipoVdisita;
         }
 
         public static List<Exposicion> buscarExposicionesTemporalesVigentes()
@@ -184,6 +153,52 @@ namespace CapaNegocio
             return test;
         }
 
+        public static void seleccionExposicionesTemporalesVigentes(List<Exposicion> lista)
+        {
+            exposicionSeleccionada = lista;
+        }
+
+        public static void seleccionFechaHora(DateTime valor)
+        {
+            fechaHoraReserva = valor;
+        }
+
+
+        //calcularDuracionestimada
+
+        public static void buscarVisitantesSimultaneosEnSede()
+        {
+            visitantesSimultaneos = new Sede().buscarVisitantesSimultaneos(fechaHoraReserva);
+        }
+
+        public bool verificarCapacidadMaxima()
+        {
+            buscarVisitantesSimultaneosEnSede();
+
+            if (visitantesSimultaneos + cantidadVisitantes > sedeSeleccionada.cantidadMaximaVisitantes)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        //buscarGuiasDisponibles
+
+        public static int calcularGuiasNecesarios()
+        {
+            int resto = (cantidadVisitantes % sedeSeleccionada.cantidadMaxPorGuia);
+            int cantidad = (cantidadVisitantes / sedeSeleccionada.cantidadMaxPorGuia);
+            if (resto != 0)
+            {
+                cantidad += 1;
+            }
+            return cantidad;
+        }
+
+
+        //registrarReserva
+
+
         public static string usuarioEnSesion()
         {
 
@@ -191,6 +206,32 @@ namespace CapaNegocio
 
             return usrSesion;
         }
+
+
+
+
+        //este metodo no va aca XD
+        public static List<PublicoDestino> buscarPublicoDestino()
+        {
+            DataTable publicoDestino = new DPublicoDestino().buscar();
+
+            List<PublicoDestino> publicoDestinoList = new List<PublicoDestino>();
+
+            publicoDestinoList = (from DataRow dr in publicoDestino.Rows
+                                  select new PublicoDestino()
+                                  {
+                                      idPublicoDestino = Convert.ToInt32(dr["idPublicoDestino"]),
+                                      caracteristicas = dr["caracteristicas"].ToString(),
+                                      nombre = dr["nombre"].ToString()
+                                  }
+                        ).ToList();
+
+            return publicoDestinoList;
+        }
+
+
+
+
 
         public static List<Empleado> buscarGuias()
         {
@@ -229,32 +270,11 @@ namespace CapaNegocio
 
 
 
-        public static void buscarVisitantesSimultaneosEnSede()
-        {
-            visitantesSimultaneos = new Sede().buscarVisitantesSimultaneos(fechaHoraReserva);
-        }
 
-        public bool verificarCapacidadMaxima()
-        {
-            buscarVisitantesSimultaneosEnSede();
 
-            if (visitantesSimultaneos + cantidadVisitantes > sedeSeleccionada.cantidadMaximaVisitantes)
-            {
-                return false;
-            }
-            return true;
-        }
 
-        public static int cantidadGuiasRecomendados()
-        {
-            int resto = (cantidadVisitantes % sedeSeleccionada.cantidadMaxPorGuia);
-            int cantidad = (cantidadVisitantes / sedeSeleccionada.cantidadMaxPorGuia);
-            if (resto != 0)
-            {
-                cantidad += 1;
-            }
-            return cantidad;
-        }
+
+
 
 
     }
