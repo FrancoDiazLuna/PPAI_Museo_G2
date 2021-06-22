@@ -172,6 +172,9 @@ namespace CapaNegocio
                 }
             }
 
+
+            exposicionesSedeList = test;
+
             return test;
         }
 

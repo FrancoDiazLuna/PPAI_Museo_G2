@@ -252,6 +252,33 @@ namespace CapaNegocio
         }
 
 
+
+        public List<Exposicion> exposicionesSeleccionadas()
+        {
+            int bandera = 0;
+
+            List<Exposicion> exposicionesSeleccionadas = new List<Exposicion>();
+
+            List<Exposicion> expoDeGrid = GestorDeReserva.exposicionesSedeList;
+
+            List<int> indices = gridExposiciones.GetSelectedRows().ToList();
+
+            foreach (var item in expoDeGrid)
+            {
+                if (indices.Contains(bandera))
+                {
+                    exposicionesSeleccionadas.Add(item);
+                    MessageBox.Show("Si");
+                }
+                bandera = bandera + 1;
+            }
+            return exposicionesSeleccionadas;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            exposicionesSeleccionadas();
+        }
     }
     
 }

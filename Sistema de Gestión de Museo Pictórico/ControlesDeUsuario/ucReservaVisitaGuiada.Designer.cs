@@ -87,6 +87,13 @@ namespace CapaNegocio
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.calendarControl1 = new DevExpress.XtraEditors.Controls.CalendarControl();
             this.tabNav5_Guia = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.Dgv_Guias = new DevExpress.XtraGrid.GridControl();
+            this.empleadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.GridGuias = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.coIIdEmpleado = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colApellido = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNombreGuia = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colHorarioEmpleado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txt_CantGuias = new System.Windows.Forms.TextBox();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
@@ -94,13 +101,7 @@ namespace CapaNegocio
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.exposicionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.empleadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.Dgv_Guias = new DevExpress.XtraGrid.GridControl();
-            this.GridGuias = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.coIIdEmpleado = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colApellido = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colNombreGuia = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colHorarioEmpleado = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
@@ -123,12 +124,12 @@ namespace CapaNegocio
             this.tabNav4_DiaVisita.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.calendarControl1.CalendarTimeProperties)).BeginInit();
             this.tabNav5_Guia.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_Guias)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empleadoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridGuias)).BeginInit();
             this.tabNav6_DetalleReserva.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.exposicionBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.empleadoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Dgv_Guias)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GridGuias)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -459,6 +460,7 @@ namespace CapaNegocio
             // tabNav3_Visita_Exposiciones
             // 
             this.tabNav3_Visita_Exposiciones.Caption = "Visita y Exposiciones";
+            this.tabNav3_Visita_Exposiciones.Controls.Add(this.button1);
             this.tabNav3_Visita_Exposiciones.Controls.Add(this.lvlTV);
             this.tabNav3_Visita_Exposiciones.Controls.Add(this.cmbTipoVisita);
             this.tabNav3_Visita_Exposiciones.Controls.Add(this.gridControl3);
@@ -723,59 +725,6 @@ namespace CapaNegocio
             this.tabNav5_Guia.Name = "tabNav5_Guia";
             this.tabNav5_Guia.Size = new System.Drawing.Size(1174, 544);
             // 
-            // txt_CantGuias
-            // 
-            this.txt_CantGuias.Location = new System.Drawing.Point(224, 62);
-            this.txt_CantGuias.Name = "txt_CantGuias";
-            this.txt_CantGuias.Size = new System.Drawing.Size(32, 21);
-            this.txt_CantGuias.TabIndex = 5;
-            // 
-            // labelControl10
-            // 
-            this.labelControl10.Location = new System.Drawing.Point(43, 65);
-            this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(159, 13);
-            this.labelControl10.TabIndex = 4;
-            this.labelControl10.Text = "Cantidad de guias recomendados";
-            // 
-            // labelControl9
-            // 
-            this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.labelControl9.Appearance.Options.UseFont = true;
-            this.labelControl9.Location = new System.Drawing.Point(34, 22);
-            this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(128, 16);
-            this.labelControl9.TabIndex = 3;
-            this.labelControl9.Text = "Seleccione los guias";
-            // 
-            // tabNav6_DetalleReserva
-            // 
-            this.tabNav6_DetalleReserva.Caption = "Confirmación";
-            this.tabNav6_DetalleReserva.Controls.Add(this.groupControl1);
-            this.tabNav6_DetalleReserva.Name = "tabNav6_DetalleReserva";
-            this.tabNav6_DetalleReserva.Size = new System.Drawing.Size(1174, 544);
-            // 
-            // groupControl1
-            // 
-            this.groupControl1.Location = new System.Drawing.Point(26, 28);
-            this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1126, 509);
-            this.groupControl1.TabIndex = 0;
-            this.groupControl1.Text = "Detalle de la Reserva";
-            // 
-            // exposicionBindingSource
-            // 
-            this.exposicionBindingSource.DataSource = typeof(CapaNegocio.Exposicion);
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // empleadoBindingSource
-            // 
-            this.empleadoBindingSource.DataSource = typeof(CapaNegocio.Empleado);
-            // 
             // Dgv_Guias
             // 
             this.Dgv_Guias.DataSource = this.empleadoBindingSource;
@@ -786,6 +735,10 @@ namespace CapaNegocio
             this.Dgv_Guias.TabIndex = 7;
             this.Dgv_Guias.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GridGuias});
+            // 
+            // empleadoBindingSource
+            // 
+            this.empleadoBindingSource.DataSource = typeof(CapaNegocio.Empleado);
             // 
             // GridGuias
             // 
@@ -835,6 +788,65 @@ namespace CapaNegocio
             this.colHorarioEmpleado.VisibleIndex = 4;
             this.colHorarioEmpleado.Width = 332;
             // 
+            // txt_CantGuias
+            // 
+            this.txt_CantGuias.Location = new System.Drawing.Point(224, 62);
+            this.txt_CantGuias.Name = "txt_CantGuias";
+            this.txt_CantGuias.Size = new System.Drawing.Size(32, 21);
+            this.txt_CantGuias.TabIndex = 5;
+            // 
+            // labelControl10
+            // 
+            this.labelControl10.Location = new System.Drawing.Point(43, 65);
+            this.labelControl10.Name = "labelControl10";
+            this.labelControl10.Size = new System.Drawing.Size(159, 13);
+            this.labelControl10.TabIndex = 4;
+            this.labelControl10.Text = "Cantidad de guias recomendados";
+            // 
+            // labelControl9
+            // 
+            this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.labelControl9.Appearance.Options.UseFont = true;
+            this.labelControl9.Location = new System.Drawing.Point(34, 22);
+            this.labelControl9.Name = "labelControl9";
+            this.labelControl9.Size = new System.Drawing.Size(128, 16);
+            this.labelControl9.TabIndex = 3;
+            this.labelControl9.Text = "Seleccione los guias";
+            // 
+            // tabNav6_DetalleReserva
+            // 
+            this.tabNav6_DetalleReserva.Caption = "Confirmación";
+            this.tabNav6_DetalleReserva.Controls.Add(this.groupControl1);
+            this.tabNav6_DetalleReserva.Name = "tabNav6_DetalleReserva";
+            this.tabNav6_DetalleReserva.Size = new System.Drawing.Size(1174, 544);
+            // 
+            // groupControl1
+            // 
+            this.groupControl1.Location = new System.Drawing.Point(26, 28);
+            this.groupControl1.Name = "groupControl1";
+            this.groupControl1.Size = new System.Drawing.Size(1126, 509);
+            this.groupControl1.TabIndex = 0;
+            this.groupControl1.Text = "Detalle de la Reserva";
+            // 
+            // exposicionBindingSource
+            // 
+            this.exposicionBindingSource.DataSource = typeof(CapaNegocio.Exposicion);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(775, 53);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // ucReservaVisitaGuiada
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -869,12 +881,12 @@ namespace CapaNegocio
             ((System.ComponentModel.ISupportInitialize)(this.calendarControl1.CalendarTimeProperties)).EndInit();
             this.tabNav5_Guia.ResumeLayout(false);
             this.tabNav5_Guia.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_Guias)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empleadoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridGuias)).EndInit();
             this.tabNav6_DetalleReserva.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.exposicionBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.empleadoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Dgv_Guias)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GridGuias)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -952,5 +964,6 @@ namespace CapaNegocio
         private DevExpress.XtraGrid.Columns.GridColumn colApellido;
         private DevExpress.XtraGrid.Columns.GridColumn colNombreGuia;
         private DevExpress.XtraGrid.Columns.GridColumn colHorarioEmpleado;
+        private System.Windows.Forms.Button button1;
     }
 }
