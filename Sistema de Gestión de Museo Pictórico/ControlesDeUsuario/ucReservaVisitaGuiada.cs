@@ -354,6 +354,10 @@ namespace CapaNegocio
                 {
                     MessageBox.Show("Debe seleccionar un tipo de visita a realizar.", "Importante", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
+                else if (gridExposiciones.SelectedRowsCount == 0)
+                {
+                    MessageBox.Show("Debe ingresar al menos una exposicion.", "Importante", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
                 else
                 {
                     tabPane1.SelectNextPage();
