@@ -40,3 +40,9 @@ C:\Users\Lucas\Desktop\Programacion\Programas desarrollados\Programa DSI\21-6\PP
 C:\Users\Lucas\Desktop\Programacion\Programas desarrollados\Programa DSI\21-6\PPAI_Museo_G2\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
 C:\Users\Lucas\Desktop\Programacion\Programas desarrollados\Programa DSI\21-6\PPAI_Museo_G2\CapaDatos\obj\Debug\CapaDatos.dll
 C:\Users\Lucas\Desktop\Programacion\Programas desarrollados\Programa DSI\21-6\PPAI_Museo_G2\CapaDatos\obj\Debug\CapaDatos.pdb
+C:\Users\Lucas\Desktop\Programacion\Programas desarrollados\Programa DSI\PPAI - 11.30\PPAI_Museo_G2\CapaDatos\bin\Debug\CapaDatos.dll
+C:\Users\Lucas\Desktop\Programacion\Programas desarrollados\Programa DSI\PPAI - 11.30\PPAI_Museo_G2\CapaDatos\bin\Debug\CapaDatos.pdb
+C:\Users\Lucas\Desktop\Programacion\Programas desarrollados\Programa DSI\PPAI - 11.30\PPAI_Museo_G2\CapaDatos\obj\Debug\CapaDatos.csproj.AssemblyReference.cache
+C:\Users\Lucas\Desktop\Programacion\Programas desarrollados\Programa DSI\PPAI - 11.30\PPAI_Museo_G2\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
+C:\Users\Lucas\Desktop\Programacion\Programas desarrollados\Programa DSI\PPAI - 11.30\PPAI_Museo_G2\CapaDatos\obj\Debug\CapaDatos.dll
+C:\Users\Lucas\Desktop\Programacion\Programas desarrollados\Programa DSI\PPAI - 11.30\PPAI_Museo_G2\CapaDatos\obj\Debug\CapaDatos.pdb

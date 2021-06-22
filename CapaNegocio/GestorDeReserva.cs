@@ -33,7 +33,9 @@ namespace CapaNegocio
 
         public static int visitantesSimultaneos { get; set; }
 
-        public static List<Cargo> guias { get; set; }
+        public static List<Empleado> guiasTodosList { get; set; }
+
+        public static List<Empleado> guiaSeleccionado { get; set; }
 
         public static DateTime fechaHoraActual { get; set; }
 
@@ -155,6 +157,8 @@ namespace CapaNegocio
 
 
 
+
+
             List<Exposicion> test = new List<Exposicion>();
 
             foreach (Exposicion expo in expoTemporalesVigentes)
@@ -178,5 +182,41 @@ namespace CapaNegocio
 
             return usrSesion;
         }
+
+        public static List<Empleado> buscarGuias()
+        {
+            DataTable empleados = new DEmpleado().buscar();
+
+            List<Empleado> guiasDisponibles = new List<Empleado>();
+
+            guiasTodosList = (from DataRow dr in empleados.Rows
+                              select new Empleado()
+                              {
+                                  idEmpleado = Convert.ToInt32(dr["idEmpleado"]),
+                                  apellido = dr["apellido"].ToString(),
+                                  codigoValidacion = Convert.ToInt32(dr["codigoValidacion"]),
+                                  cuit = dr["cuit"].ToString(),
+                                  dni = Convert.ToInt32(dr["dni"]),
+                                  domicilio = dr["domicilio"].ToString(),
+                                  fechaIngreso = Convert.ToDateTime(dr["fechaIngreso"]),
+                                  fechaNacimiento = Convert.ToDateTime(dr["fechaNacimiento"]),
+                                  mail = dr["mail"].ToString(),
+                                  nombre = dr["nombre"].ToString(),
+                                  sexo = dr["sexo"].ToString(),
+                                  telefono = dr["telefono"].ToString(),
+                                  idCargo = Convert.ToInt32(dr["idCargo"]),
+                                  idHorarioEmpleado = Convert.ToInt32(dr["idHorarioEmpleado"]),
+
+                              }
+                                ).ToList();
+
+            guiasDisponibles = Empleado.conocerCargo(guiasTodosList);
+
+            //guiasDisponibles = Empleado.trabajaEnDiaYHorario(guiasDisponibles);
+
+            return guiasDisponibles;
+        }
+
+
     }
 }

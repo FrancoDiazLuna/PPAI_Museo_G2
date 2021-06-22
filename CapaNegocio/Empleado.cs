@@ -26,14 +26,22 @@ namespace CapaNegocio
         public int idCargo { get; set; }
         public int idHorarioEmpleado { get; set; }
 
-        //public List<Empleado> GetEmpleados()
+        public static List<Empleado> conocerCargo(List<Empleado> lista)
+        {
+            List<Empleado> listaTemporales = new List<Empleado>();
+
+            listaTemporales = Cargo.esGuia(lista, 2);
+
+            return listaTemporales;
+        }
+
+        //public static List<Empleado> trabajaEnDiaYHorarios(List<Empleado> lista)
         //{
-        //    DataTable empleadosDT = new DEmpleado().buscar();
+        //    List<Empleado> listaTemporales = new List<Empleado>();
 
-        //    List<Empleado> empleadosList = 
+        //    listaTemporales = HorarioEmpleado.trabajaEnDiaYHorarios(lista, fechaInicio, );
 
-
-        //    return 
+        //    return listaTemporales;
         //}
     }
 }

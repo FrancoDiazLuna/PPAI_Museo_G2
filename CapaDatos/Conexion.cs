@@ -10,7 +10,7 @@ namespace CapaDatos
     {
         // > Aca deben agregar sus cadenas de conexion, y comentar las otras para poder probar contra la db local de cada uno.
         // CC FrancoDL
-        public static string Cn = @"Data Source=DESKTOP-FEDL\MSSQLSDEVELOPER;Initial Catalog=MuseoPictorico;Integrated Security=True";
+        //public static string Cn = @"Data Source=DESKTOP-FEDL\MSSQLSDEVELOPER;Initial Catalog=MuseoPictorico;Integrated Security=True";
 
         //LucasConexion
         //public static string Cn = @"Data Source=LUCAS-PC\SQLEXPRESS;Initial Catalog=MuseoPictorico;Integrated Security=True";
@@ -25,6 +25,6 @@ namespace CapaDatos
         //public static string Cn = @"Data Source=DESKTOP-3OTH51R;Initial Catalog=MuseoPictorico;Integrated Security=True";
 
         //LucasCana
-        //public static string Cn = @"Data Source = DESKTOP-ROE6GCV\SQLEXPRESS;Initial Catalog = MuseoPictorico; Integrated Security = True";
+        public static string Cn = @"Data Source = DESKTOP-ROE6GCV\SQLEXPRESS;Initial Catalog = MuseoPictorico; Integrated Security = True";
     }
 }

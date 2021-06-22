@@ -142,7 +142,10 @@ namespace CapaNegocio
             string valorSeleccionado = cmbTipoVisita.Text;
         }
 
-
+        public void mostrarGuias()
+        {
+            empleadoBindingSource.DataSource = GestorDeReserva.buscarGuias();
+        }
 
 
         private void btn_anterior_Click(object sender, EventArgs e)
