@@ -74,6 +74,7 @@ namespace CapaNegocio
             this.colhoraCierre = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colfechaInicioReplanificada = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colfechaFinReplanificada = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colidPublicoDestino = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
@@ -85,21 +86,19 @@ namespace CapaNegocio
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.calendarControl1 = new DevExpress.XtraEditors.Controls.CalendarControl();
             this.tabNav5_Guia = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.btn_Quitar = new DevExpress.XtraEditors.SimpleButton();
-            this.btn_QuitarTodos = new DevExpress.XtraEditors.SimpleButton();
-            this.btn_AgregarTodos = new DevExpress.XtraEditors.SimpleButton();
-            this.btn_Agregar = new DevExpress.XtraEditors.SimpleButton();
+            this.Dgv_Guias = new DevExpress.XtraGrid.GridControl();
+            this.GridGuias = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.coIIdEmpleado = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colApellido = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNombreGuia = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colHorarioEmpleado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txt_CantGuias = new System.Windows.Forms.TextBox();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
-            this.gridControl5 = new DevExpress.XtraGrid.GridControl();
-            this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridControl4 = new DevExpress.XtraGrid.GridControl();
-            this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.tabNav6_DetalleReserva = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.colidPublicoDestino = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.empleadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
@@ -122,12 +121,11 @@ namespace CapaNegocio
             this.tabNav4_DiaVisita.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.calendarControl1.CalendarTimeProperties)).BeginInit();
             this.tabNav5_Guia.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_Guias)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridGuias)).BeginInit();
             this.tabNav6_DetalleReserva.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empleadoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -582,6 +580,14 @@ namespace CapaNegocio
             this.colfechaFinReplanificada.Visible = true;
             this.colfechaFinReplanificada.VisibleIndex = 8;
             // 
+            // colidPublicoDestino
+            // 
+            this.colidPublicoDestino.Caption = "Publico destino";
+            this.colidPublicoDestino.FieldName = "idPublicoDestino";
+            this.colidPublicoDestino.Name = "colidPublicoDestino";
+            this.colidPublicoDestino.Visible = true;
+            this.colidPublicoDestino.VisibleIndex = 4;
+            // 
             // labelControl11
             // 
             this.labelControl11.Location = new System.Drawing.Point(63, 59);
@@ -716,49 +722,71 @@ namespace CapaNegocio
             // tabNav5_Guia
             // 
             this.tabNav5_Guia.Caption = "Guía";
-            this.tabNav5_Guia.Controls.Add(this.btn_Quitar);
-            this.tabNav5_Guia.Controls.Add(this.btn_QuitarTodos);
-            this.tabNav5_Guia.Controls.Add(this.btn_AgregarTodos);
-            this.tabNav5_Guia.Controls.Add(this.btn_Agregar);
+            this.tabNav5_Guia.Controls.Add(this.Dgv_Guias);
             this.tabNav5_Guia.Controls.Add(this.txt_CantGuias);
             this.tabNav5_Guia.Controls.Add(this.labelControl10);
             this.tabNav5_Guia.Controls.Add(this.labelControl9);
-            this.tabNav5_Guia.Controls.Add(this.gridControl5);
-            this.tabNav5_Guia.Controls.Add(this.gridControl4);
             this.tabNav5_Guia.Name = "tabNav5_Guia";
             this.tabNav5_Guia.Size = new System.Drawing.Size(1174, 544);
             // 
-            // btn_Quitar
+            // Dgv_Guias
             // 
-            this.btn_Quitar.Location = new System.Drawing.Point(550, 233);
-            this.btn_Quitar.Name = "btn_Quitar";
-            this.btn_Quitar.Size = new System.Drawing.Size(75, 23);
-            this.btn_Quitar.TabIndex = 8;
-            this.btn_Quitar.Text = "< Quitar";
+            this.Dgv_Guias.DataSource = this.empleadoBindingSource;
+            this.Dgv_Guias.Location = new System.Drawing.Point(27, 116);
+            this.Dgv_Guias.MainView = this.GridGuias;
+            this.Dgv_Guias.Name = "Dgv_Guias";
+            this.Dgv_Guias.Size = new System.Drawing.Size(1120, 403);
+            this.Dgv_Guias.TabIndex = 6;
+            this.Dgv_Guias.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.GridGuias});
             // 
-            // btn_QuitarTodos
+            // GridGuias
             // 
-            this.btn_QuitarTodos.Location = new System.Drawing.Point(535, 441);
-            this.btn_QuitarTodos.Name = "btn_QuitarTodos";
-            this.btn_QuitarTodos.Size = new System.Drawing.Size(109, 23);
-            this.btn_QuitarTodos.TabIndex = 7;
-            this.btn_QuitarTodos.Text = "<< Quitar Todos";
+            this.GridGuias.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.coIIdEmpleado,
+            this.colApellido,
+            this.colNombreGuia,
+            this.colHorarioEmpleado});
+            this.GridGuias.GridControl = this.Dgv_Guias;
+            this.GridGuias.Name = "GridGuias";
+            this.GridGuias.OptionsSelection.MultiSelect = true;
+            this.GridGuias.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
             // 
-            // btn_AgregarTodos
+            // coIIdEmpleado
             // 
-            this.btn_AgregarTodos.Location = new System.Drawing.Point(535, 398);
-            this.btn_AgregarTodos.Name = "btn_AgregarTodos";
-            this.btn_AgregarTodos.Size = new System.Drawing.Size(109, 23);
-            this.btn_AgregarTodos.TabIndex = 6;
-            this.btn_AgregarTodos.Text = "Agregar Todos >>";
+            this.coIIdEmpleado.Caption = "idEmpleado";
+            this.coIIdEmpleado.FieldName = "idEmpleado";
+            this.coIIdEmpleado.Name = "coIIdEmpleado";
+            this.coIIdEmpleado.Visible = true;
+            this.coIIdEmpleado.VisibleIndex = 1;
+            this.coIIdEmpleado.Width = 94;
             // 
-            // btn_Agregar
+            // colApellido
             // 
-            this.btn_Agregar.Location = new System.Drawing.Point(550, 193);
-            this.btn_Agregar.Name = "btn_Agregar";
-            this.btn_Agregar.Size = new System.Drawing.Size(75, 23);
-            this.btn_Agregar.TabIndex = 3;
-            this.btn_Agregar.Text = "Agregar >";
+            this.colApellido.Caption = "Apellido";
+            this.colApellido.FieldName = "apellido";
+            this.colApellido.Name = "colApellido";
+            this.colApellido.Visible = true;
+            this.colApellido.VisibleIndex = 2;
+            this.colApellido.Width = 280;
+            // 
+            // colNombreGuia
+            // 
+            this.colNombreGuia.Caption = "Nombre";
+            this.colNombreGuia.FieldName = "nombre";
+            this.colNombreGuia.Name = "colNombreGuia";
+            this.colNombreGuia.Visible = true;
+            this.colNombreGuia.VisibleIndex = 3;
+            this.colNombreGuia.Width = 314;
+            // 
+            // colHorarioEmpleado
+            // 
+            this.colHorarioEmpleado.Caption = "Horario Empleado";
+            this.colHorarioEmpleado.FieldName = "idHorarioEmpleado";
+            this.colHorarioEmpleado.Name = "colHorarioEmpleado";
+            this.colHorarioEmpleado.Visible = true;
+            this.colHorarioEmpleado.VisibleIndex = 4;
+            this.colHorarioEmpleado.Width = 332;
             // 
             // txt_CantGuias
             // 
@@ -785,36 +813,6 @@ namespace CapaNegocio
             this.labelControl9.TabIndex = 3;
             this.labelControl9.Text = "Seleccione los guias";
             // 
-            // gridControl5
-            // 
-            this.gridControl5.Location = new System.Drawing.Point(790, 116);
-            this.gridControl5.MainView = this.gridView5;
-            this.gridControl5.Name = "gridControl5";
-            this.gridControl5.Size = new System.Drawing.Size(357, 406);
-            this.gridControl5.TabIndex = 1;
-            this.gridControl5.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView5});
-            // 
-            // gridView5
-            // 
-            this.gridView5.GridControl = this.gridControl5;
-            this.gridView5.Name = "gridView5";
-            // 
-            // gridControl4
-            // 
-            this.gridControl4.Location = new System.Drawing.Point(27, 116);
-            this.gridControl4.MainView = this.gridView4;
-            this.gridControl4.Name = "gridControl4";
-            this.gridControl4.Size = new System.Drawing.Size(357, 406);
-            this.gridControl4.TabIndex = 0;
-            this.gridControl4.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView4});
-            // 
-            // gridView4
-            // 
-            this.gridView4.GridControl = this.gridControl4;
-            this.gridView4.Name = "gridView4";
-            // 
             // tabNav6_DetalleReserva
             // 
             this.tabNav6_DetalleReserva.Caption = "Confirmación";
@@ -835,13 +833,9 @@ namespace CapaNegocio
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // colidPublicoDestino
+            // empleadoBindingSource
             // 
-            this.colidPublicoDestino.Caption = "Publico destino";
-            this.colidPublicoDestino.FieldName = "idPublicoDestino";
-            this.colidPublicoDestino.Name = "colidPublicoDestino";
-            this.colidPublicoDestino.Visible = true;
-            this.colidPublicoDestino.VisibleIndex = 4;
+            this.empleadoBindingSource.DataSource = typeof(CapaNegocio.Empleado);
             // 
             // ucReservaVisitaGuiada
             // 
@@ -877,12 +871,11 @@ namespace CapaNegocio
             ((System.ComponentModel.ISupportInitialize)(this.calendarControl1.CalendarTimeProperties)).EndInit();
             this.tabNav5_Guia.ResumeLayout(false);
             this.tabNav5_Guia.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_Guias)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridGuias)).EndInit();
             this.tabNav6_DetalleReserva.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empleadoBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -906,18 +899,10 @@ namespace CapaNegocio
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.LabelControl labelControl4;
-        private DevExpress.XtraGrid.GridControl gridControl4;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraGrid.GridControl gridControl5;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView5;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.LabelControl labelControl11;
-        private DevExpress.XtraEditors.SimpleButton btn_Quitar;
-        private DevExpress.XtraEditors.SimpleButton btn_QuitarTodos;
-        private DevExpress.XtraEditors.SimpleButton btn_AgregarTodos;
-        private DevExpress.XtraEditors.SimpleButton btn_Agregar;
         private System.Windows.Forms.TextBox txt_CantGuias;
         private DevExpress.XtraEditors.LabelControl labelControl10;
         private DevExpress.XtraEditors.LabelControl labelControl9;
@@ -959,5 +944,12 @@ namespace CapaNegocio
         private System.Windows.Forms.ComboBox cmbHorario;
         private System.Windows.Forms.Label lblFechaSel;
         private DevExpress.XtraGrid.Columns.GridColumn colidPublicoDestino;
+        private DevExpress.XtraGrid.GridControl Dgv_Guias;
+        private DevExpress.XtraGrid.Views.Grid.GridView GridGuias;
+        private DevExpress.XtraGrid.Columns.GridColumn coIIdEmpleado;
+        private DevExpress.XtraGrid.Columns.GridColumn colApellido;
+        private DevExpress.XtraGrid.Columns.GridColumn colNombreGuia;
+        private DevExpress.XtraGrid.Columns.GridColumn colHorarioEmpleado;
+        private System.Windows.Forms.BindingSource empleadoBindingSource;
     }
 }

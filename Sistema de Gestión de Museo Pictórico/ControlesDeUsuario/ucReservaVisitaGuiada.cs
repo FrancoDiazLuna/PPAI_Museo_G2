@@ -55,6 +55,7 @@ namespace CapaNegocio
                 this.cmbTipoVisita.Items.Add(item.nombre);
             }
             exposicionBindingSource.DataSource = Sede.buscarExposicionesTemporalesVigentes();
+            empleadoBindingSource.DataSource = GestorDeReserva.buscarGuias();
         }
 
         private void btn_anterior_Click(object sender, EventArgs e)
