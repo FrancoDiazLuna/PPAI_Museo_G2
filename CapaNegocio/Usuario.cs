@@ -19,9 +19,21 @@ namespace CapaDatos
 
         public List<Usuario> getUsuarios()
         {
-            DataTable sedes = new DUsuario().buscar();
+            DataTable usr = new DUsuario().buscar();
 
             List<Usuario> usuariosList = new List<Usuario>();
+
+            usuariosList = (from DataRow dr in usr.Rows
+                            select new Usuario()
+                            {
+                                idUsuario = Convert.ToInt32(dr["idUsuario"]),
+                                caducidad = Convert.ToDateTime(dr["caducidad"]),
+                                contraseña = dr["contraseña"].ToString(),
+                                nombre = dr["nombre"].ToString(),
+                                idEmpleado = Convert.ToInt32(dr["idEmpleado"])
+                            }
+
+            ).ToList();
 
             return usuariosList;
         }

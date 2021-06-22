@@ -92,6 +92,24 @@ namespace CapaNegocio
             return tiposDeVisitaTodasList;
         }
 
+        public static List<PublicoDestino> buscarPublicoDestino()
+        {
+            DataTable publicoDestino = new DPublicoDestino().buscar();
+
+            List<PublicoDestino> publicoDestinoList = new List<PublicoDestino>();
+
+            publicoDestinoList = (from DataRow dr in publicoDestino.Rows
+                                  select new PublicoDestino()
+                                  {
+                                      idPublicoDestino = Convert.ToInt32(dr["idPublicoDestino"]),
+                                      caracteristicas = dr["caracteristicas"].ToString(),
+                                      nombre = dr["nombre"].ToString()
+                                  }
+                        ).ToList();
+
+            return publicoDestinoList;
+        }
+
         public static List<Exposicion> buscarExposicionesTemporalesVigentes()
         {
             //Busca el DT de la BD

@@ -72,12 +72,57 @@ namespace CapaNegocio
             sedeBindingSource.DataSource = GestorDeReserva.buscarSedes();
         }
 
+        public DataTable dt;
+        public DataTable llenarGridExpoPublico()
+        {
+            dt = new DataTable();
+
+            dt.Columns.Add("Id Exposicion");
+            dt.Columns.Add("Fecha Fin", typeof(DateTime));
+            dt.Columns.Add("Fecha Fin Replanificada", typeof(DateTime));
+            dt.Columns.Add("Fecha Inicio", typeof(DateTime));
+            dt.Columns.Add("Fecha Inicio Replanificada", typeof(DateTime));
+            dt.Columns.Add("Hora Apertura", typeof(DateTime));
+            dt.Columns.Add("Hora Cierre", typeof(DateTime));
+            dt.Columns.Add("Nombre");
+            dt.Columns.Add("Publico Destino");
+
+            List<Exposicion> exposicionesList = GestorDeReserva.buscarExposicionesTemporalesVigentes();
+            List<PublicoDestino> publicoDestinoList = GestorDeReserva.buscarPublicoDestino();
+
+            foreach (Exposicion exposicion in exposicionesList)
+            {
+                DataRow row = dt.NewRow();
+
+                row["Id Exposicion"] = exposicion.idExposicion;
+                row["Fecha Fin"] = exposicion.fechaFin;
+                row["Fecha Fin Replanificada"] = exposicion.fechaFinReplanificada;
+                row["Fecha Inicio"] = exposicion.fechaInicio;
+                row["Fecha Inicio Replanificada"] = exposicion.fechaInicioReplanificada;
+                row["Hora Apertura"] = exposicion.horaApertura;
+                row["Hora Cierre"] = exposicion.horaCierre;
+                row["Nombre"] = exposicion.nombre;
+                foreach (PublicoDestino publicoDestino in publicoDestinoList)
+                {
+                    if (publicoDestino.idPublicoDestino == exposicion.idPublicoDestino)
+                    {
+                        row["Publico Destino"] = publicoDestino.nombre;
+                    }
+                }
+
+                dt.Rows.Add(row);
+            }
+
+            return dt;
+        }
+
         private void tomarSeleccionDeSede(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
             Sede sede = (Sede)gridSedes.GetFocusedRow();
             lblSedeSel.Text = sede.nombre;
             GestorDeReserva.obtenerSedeSeleccionada(sede);
-            exposicionBindingSource.DataSource = GestorDeReserva.buscarExposicionesTemporalesVigentes();
+            //exposicionBindingSource.DataSource = GestorDeReserva.buscarExposicionesTemporalesVigentes();
+            bindingSourceExpoPorSede.DataSource = llenarGridExpoPublico();
         }
 
         public void mostrarTipoDeVisita()
@@ -88,7 +133,7 @@ namespace CapaNegocio
                 this.cmbTipoVisita.Items.Add(item.nombre);
             }
             exposicionBindingSource.DataSource = Sede.buscarExposicionesTemporalesVigentes();
-            empleadoBindingSource.DataSource = GestorDeReserva.buscarGuias();
+            //empleadoBindingSource.DataSource = GestorDeReserva.buscarGuias();
         }
 
         //tomarSeleccionTipoDeVisita

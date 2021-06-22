@@ -65,15 +65,16 @@ namespace CapaNegocio
             this.lvlTV = new DevExpress.XtraEditors.LabelControl();
             this.cmbTipoVisita = new System.Windows.Forms.ComboBox();
             this.gridControl3 = new DevExpress.XtraGrid.GridControl();
-            this.exposicionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSourceExpoPorSede = new System.Windows.Forms.BindingSource(this.components);
             this.gridExposiciones = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colnombre2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colfechaInicio = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colidExposicion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colfechaFin = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfechaFinReplanificada = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfechaInicio = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfechaInicioReplanificada = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colhoraApertura = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colhoraCierre = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colfechaInicioReplanificada = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colfechaFinReplanificada = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colnombre2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colidPublicoDestino = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
@@ -99,6 +100,7 @@ namespace CapaNegocio
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.tabNav6_DetalleReserva = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.exposicionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -117,7 +119,7 @@ namespace CapaNegocio
             ((System.ComponentModel.ISupportInitialize)(this.gridSedes)).BeginInit();
             this.tabNav3_Visita_Exposiciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.exposicionBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceExpoPorSede)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridExposiciones)).BeginInit();
             this.tabNav4_DiaVisita.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.calendarControl1.CalendarTimeProperties)).BeginInit();
@@ -128,6 +130,7 @@ namespace CapaNegocio
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             this.tabNav6_DetalleReserva.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.exposicionBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -488,7 +491,7 @@ namespace CapaNegocio
             // 
             // gridControl3
             // 
-            this.gridControl3.DataSource = this.exposicionBindingSource;
+            this.gridControl3.DataSource = this.bindingSourceExpoPorSede;
             this.gridControl3.Location = new System.Drawing.Point(27, 116);
             this.gridControl3.MainView = this.gridExposiciones;
             this.gridControl3.Name = "gridControl3";
@@ -497,100 +500,89 @@ namespace CapaNegocio
             this.gridControl3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridExposiciones});
             // 
-            // exposicionBindingSource
-            // 
-            this.exposicionBindingSource.DataSource = typeof(CapaNegocio.Exposicion);
-            // 
             // gridExposiciones
             // 
             this.gridExposiciones.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colnombre2,
-            this.colfechaInicio,
+            this.colidExposicion,
             this.colfechaFin,
+            this.colfechaFinReplanificada,
+            this.colfechaInicio,
+            this.colfechaInicioReplanificada,
             this.colhoraApertura,
             this.colhoraCierre,
-            this.colfechaInicioReplanificada,
-            this.colfechaFinReplanificada,
+            this.colnombre2,
             this.colidPublicoDestino});
             this.gridExposiciones.GridControl = this.gridControl3;
             this.gridExposiciones.Name = "gridExposiciones";
             this.gridExposiciones.OptionsSelection.MultiSelect = true;
             this.gridExposiciones.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
             // 
-            // colnombre2
+            // colidExposicion
             // 
-            this.colnombre2.Caption = "Nombre";
-            this.colnombre2.FieldName = "nombre";
-            this.colnombre2.Name = "colnombre2";
-            this.colnombre2.OptionsColumn.AllowEdit = false;
-            this.colnombre2.Visible = true;
-            this.colnombre2.VisibleIndex = 1;
-            // 
-            // colfechaInicio
-            // 
-            this.colfechaInicio.Caption = "Fecha inicio";
-            this.colfechaInicio.FieldName = "fechaInicio";
-            this.colfechaInicio.Name = "colfechaInicio";
-            this.colfechaInicio.OptionsColumn.AllowEdit = false;
-            this.colfechaInicio.Visible = true;
-            this.colfechaInicio.VisibleIndex = 5;
+            this.colidExposicion.FieldName = "Id Exposicion";
+            this.colidExposicion.Name = "colidExposicion";
+            this.colidExposicion.Visible = true;
+            this.colidExposicion.VisibleIndex = 1;
             // 
             // colfechaFin
             // 
-            this.colfechaFin.Caption = "Fecha fin";
-            this.colfechaFin.FieldName = "fechaFin";
+            this.colfechaFin.FieldName = "Fecha Fin";
             this.colfechaFin.Name = "colfechaFin";
-            this.colfechaFin.OptionsColumn.AllowEdit = false;
             this.colfechaFin.Visible = true;
-            this.colfechaFin.VisibleIndex = 6;
-            // 
-            // colhoraApertura
-            // 
-            this.colhoraApertura.Caption = "Hora apertura";
-            this.colhoraApertura.DisplayFormat.FormatString = "HH:mm";
-            this.colhoraApertura.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.colhoraApertura.FieldName = "horaApertura";
-            this.colhoraApertura.Name = "colhoraApertura";
-            this.colhoraApertura.OptionsColumn.AllowEdit = false;
-            this.colhoraApertura.Visible = true;
-            this.colhoraApertura.VisibleIndex = 2;
-            // 
-            // colhoraCierre
-            // 
-            this.colhoraCierre.Caption = "Hora cierre";
-            this.colhoraCierre.DisplayFormat.FormatString = "HH:mm";
-            this.colhoraCierre.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.colhoraCierre.FieldName = "horaCierre";
-            this.colhoraCierre.Name = "colhoraCierre";
-            this.colhoraCierre.OptionsColumn.AllowEdit = false;
-            this.colhoraCierre.Visible = true;
-            this.colhoraCierre.VisibleIndex = 3;
-            // 
-            // colfechaInicioReplanificada
-            // 
-            this.colfechaInicioReplanificada.Caption = "Fecha inicio replanificada";
-            this.colfechaInicioReplanificada.FieldName = "fechaInicioReplanificada";
-            this.colfechaInicioReplanificada.Name = "colfechaInicioReplanificada";
-            this.colfechaInicioReplanificada.OptionsColumn.AllowEdit = false;
-            this.colfechaInicioReplanificada.Visible = true;
-            this.colfechaInicioReplanificada.VisibleIndex = 7;
+            this.colfechaFin.VisibleIndex = 2;
             // 
             // colfechaFinReplanificada
             // 
-            this.colfechaFinReplanificada.Caption = "Fecha fin replanificada";
-            this.colfechaFinReplanificada.FieldName = "fechaFinReplanificada";
+            this.colfechaFinReplanificada.FieldName = "Fecha Fin Replanificada";
             this.colfechaFinReplanificada.Name = "colfechaFinReplanificada";
-            this.colfechaFinReplanificada.OptionsColumn.AllowEdit = false;
             this.colfechaFinReplanificada.Visible = true;
-            this.colfechaFinReplanificada.VisibleIndex = 8;
+            this.colfechaFinReplanificada.VisibleIndex = 3;
+            // 
+            // colfechaInicio
+            // 
+            this.colfechaInicio.FieldName = "Fecha Inicio";
+            this.colfechaInicio.Name = "colfechaInicio";
+            this.colfechaInicio.Visible = true;
+            this.colfechaInicio.VisibleIndex = 4;
+            // 
+            // colfechaInicioReplanificada
+            // 
+            this.colfechaInicioReplanificada.FieldName = "Fecha Inicio Replanificada";
+            this.colfechaInicioReplanificada.Name = "colfechaInicioReplanificada";
+            this.colfechaInicioReplanificada.Visible = true;
+            this.colfechaInicioReplanificada.VisibleIndex = 5;
+            // 
+            // colhoraApertura
+            // 
+            this.colhoraApertura.DisplayFormat.FormatString = "HH:mm";
+            this.colhoraApertura.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.colhoraApertura.FieldName = "Hora Apertura";
+            this.colhoraApertura.Name = "colhoraApertura";
+            this.colhoraApertura.Visible = true;
+            this.colhoraApertura.VisibleIndex = 6;
+            // 
+            // colhoraCierre
+            // 
+            this.colhoraCierre.DisplayFormat.FormatString = "HH:mm";
+            this.colhoraCierre.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.colhoraCierre.FieldName = "Hora Cierre";
+            this.colhoraCierre.Name = "colhoraCierre";
+            this.colhoraCierre.Visible = true;
+            this.colhoraCierre.VisibleIndex = 7;
+            // 
+            // colnombre2
+            // 
+            this.colnombre2.FieldName = "Nombre";
+            this.colnombre2.Name = "colnombre2";
+            this.colnombre2.Visible = true;
+            this.colnombre2.VisibleIndex = 8;
             // 
             // colidPublicoDestino
             // 
-            this.colidPublicoDestino.Caption = "Publico destino";
-            this.colidPublicoDestino.FieldName = "idPublicoDestino";
+            this.colidPublicoDestino.FieldName = "Publico Destino";
             this.colidPublicoDestino.Name = "colidPublicoDestino";
             this.colidPublicoDestino.Visible = true;
-            this.colidPublicoDestino.VisibleIndex = 4;
+            this.colidPublicoDestino.VisibleIndex = 9;
             // 
             // labelControl11
             // 
@@ -840,6 +832,10 @@ namespace CapaNegocio
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Detalle de la Reserva";
             // 
+            // exposicionBindingSource
+            // 
+            this.exposicionBindingSource.DataSource = typeof(CapaNegocio.Exposicion);
+            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
@@ -872,7 +868,7 @@ namespace CapaNegocio
             this.tabNav3_Visita_Exposiciones.ResumeLayout(false);
             this.tabNav3_Visita_Exposiciones.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.exposicionBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceExpoPorSede)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridExposiciones)).EndInit();
             this.tabNav4_DiaVisita.ResumeLayout(false);
             this.tabNav4_DiaVisita.PerformLayout();
@@ -885,6 +881,7 @@ namespace CapaNegocio
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             this.tabNav6_DetalleReserva.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.exposicionBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -942,13 +939,6 @@ namespace CapaNegocio
         private DevExpress.XtraGrid.Columns.GridColumn colcantidadMaximaVisitantes;
         private DevExpress.XtraGrid.Columns.GridColumn colcantidadMaxPorGuia;
         private System.Windows.Forms.BindingSource exposicionBindingSource;
-        private DevExpress.XtraGrid.Columns.GridColumn colnombre2;
-        private DevExpress.XtraGrid.Columns.GridColumn colfechaInicio;
-        private DevExpress.XtraGrid.Columns.GridColumn colfechaFin;
-        private DevExpress.XtraGrid.Columns.GridColumn colhoraApertura;
-        private DevExpress.XtraGrid.Columns.GridColumn colhoraCierre;
-        private DevExpress.XtraGrid.Columns.GridColumn colfechaInicioReplanificada;
-        private DevExpress.XtraGrid.Columns.GridColumn colfechaFinReplanificada;
         private DevExpress.XtraEditors.SpinEdit spinCantVisitantes;
         private DevExpress.XtraEditors.LabelControl lblEscSel;
         private DevExpress.XtraEditors.LabelControl lblEscuelaText;
@@ -960,6 +950,15 @@ namespace CapaNegocio
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ComboBox cmbHorario;
         private System.Windows.Forms.Label lblFechaSel;
+        private System.Windows.Forms.BindingSource bindingSourceExpoPorSede;
+        private DevExpress.XtraGrid.Columns.GridColumn colidExposicion;
+        private DevExpress.XtraGrid.Columns.GridColumn colfechaFin;
+        private DevExpress.XtraGrid.Columns.GridColumn colfechaFinReplanificada;
+        private DevExpress.XtraGrid.Columns.GridColumn colfechaInicio;
+        private DevExpress.XtraGrid.Columns.GridColumn colfechaInicioReplanificada;
+        private DevExpress.XtraGrid.Columns.GridColumn colhoraApertura;
+        private DevExpress.XtraGrid.Columns.GridColumn colhoraCierre;
+        private DevExpress.XtraGrid.Columns.GridColumn colnombre2;
         private DevExpress.XtraGrid.Columns.GridColumn colidPublicoDestino;
     }
 }
