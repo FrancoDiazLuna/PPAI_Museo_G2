@@ -128,7 +128,7 @@ namespace CapaNegocio
             {
                 this.cmbTipoVisita.Items.Add(item.nombre);
             }
-            exposicionBindingSource.DataSource = Sede.buscarExposicionesTemporalesVigentes();
+            //exposicionBindingSource.DataSource = Sede.buscarExposicionesTemporalesVigentes();
             //empleadoBindingSource.DataSource = GestorDeReserva.buscarGuias();
         }
 
@@ -142,20 +142,19 @@ namespace CapaNegocio
             }
             else
             {
-                bindingSourceExpoPorSede.DataSource = llenarGridExpoPublico();
+                //bindingSourceExpoPorSede.DataSource = llenarGridExpoPublico();
+                refrescarGridExposiciones();
             }
+        }
+
+        public void refrescarGridExposiciones()
+        {
+            bindingSourceExpoPorSede.DataSource = llenarGridExpoPublico();
         }
 
         public void mostrarGuias()
         {
             empleadoBindingSource.DataSource = GestorDeReserva.buscarGuias();
-        }
-
-
-        private void btn_anterior_Click(object sender, EventArgs e)
-        {
-            tabPane1.SelectPrevPage() ;
-            
         }
 
         private void tabPane1_SelectedPageChanged(object sender, DevExpress.XtraBars.Navigation.SelectedPageChangedEventArgs e)
@@ -169,7 +168,14 @@ namespace CapaNegocio
             {
                 btn_anterior.Visible = true;
             }
-                
+
+            if (pag == tabNav3_Visita_Exposiciones)
+            {
+                if (sedeFlag && expoFlag)
+                    refrescarGridExposiciones();
+                sedeFlag = false;
+                expoFlag = true;
+            }
 
             if (pag == tabNav6_DetalleReserva)
             {
@@ -181,6 +187,13 @@ namespace CapaNegocio
                 btn_siguiente.Visible = true;
                 btn_confirmarReserva.Visible = false;
             }
+        }
+
+        bool sedeFlag = false;
+        bool expoFlag = false;
+        private void btn_anterior_Click(object sender, EventArgs e)
+        {
+            tabPane1.SelectPrevPage();
         }
 
         private void btn_siguiente_Click(object sender, EventArgs e)
@@ -209,6 +222,7 @@ namespace CapaNegocio
                 }
                 else
                 {
+                    sedeFlag = true;
                     tabPane1.SelectNextPage();
                 }
             }
@@ -225,24 +239,32 @@ namespace CapaNegocio
             }
             else if (pag == tabNav4_DiaVisita)
             {
-                if (lblFechaSel.Text == "")
-                {
-                    MessageBox.Show("Debe seleccionar una fecha para realizar la visita.", "Importante", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                else if (cmbHorarioSel.SelectedIndex == -1)
-                {
-                    MessageBox.Show("Debe ingresar un horario para realizar la visita.", "Importante", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                else
-                {
-                    tabPane1.SelectNextPage();
-                }
+                solicitarFechaHora();
             }
             else
             {
                 tabPane1.SelectNextPage();
             }
 
+        }
+
+        private void solicitarFechaHora()
+        {
+            if (lblFechaSel.Text == "")
+            {
+                MessageBox.Show("Debe seleccionar una fecha para realizar la visita.", "Importante", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (cmbHorarioSel.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe ingresar un horario para realizar la visita.", "Importante", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                tabPane1.SelectNextPage();
+                //aca manda la fecha y hora
+                var fechaHora = DateTime.Parse(lblFechaSel.Text + " " + cmbHorarioSel.Text);
+                GestorDeReserva.seleccionFechaHora(fechaHora);
+            }
         }
 
         private void calendarControl1_Click(object sender, EventArgs e)
