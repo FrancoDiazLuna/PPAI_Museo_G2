@@ -11,8 +11,8 @@ namespace CapaNegocio
     public class ReservaVisita
     {
         public int idReservaVisita { get; set; }
-        public int cantidadAlumno { get; set; }
-        public int cantidadAlumnoConfirmada { get; set; }
+        public int cantidadAlumnos { get; set; }
+        public int cantidadAlumnosConfirmada { get; set; }
         public int duracionEstimada { get; set; }
         public DateTime fechaHoraCreacion { get; set; }
         public DateTime fechaHoraReserva { get; set; }
@@ -35,8 +35,8 @@ namespace CapaNegocio
                               select new ReservaVisita()
                               {
                                   idReservaVisita = Convert.ToInt32(dr["idReservaVisita"]),
-                                  cantidadAlumno = Convert.ToInt32(dr["cantidadAlumno"]),
-                                  cantidadAlumnoConfirmada = Convert.ToInt32(dr["cantidadAlumnoConfirmada"]),
+                                  cantidadAlumnos = Convert.ToInt32(dr["cantidadAlumnos"]),
+                                  cantidadAlumnosConfirmada = Convert.ToInt32(dr["cantidadAlumnosConfirmada"]),
                                   duracionEstimada = Convert.ToInt32(dr["duracionEstimada"]),
                                   fechaHoraCreacion = Convert.ToDateTime(dr["fechaHoraCreacion"]),
                                   fechaHoraReserva = Convert.ToDateTime(dr["fechaHoraReserva"]),

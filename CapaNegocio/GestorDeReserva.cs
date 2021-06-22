@@ -221,13 +221,17 @@ namespace CapaNegocio
         }
 
 
-        public void buscarVisitantesSimultaneosEnSede()
+
+
+        public static void buscarVisitantesSimultaneosEnSede()
         {
-            visitantesSimultaneos = new Sede().buscarVisitantesSimultaneos();
+            visitantesSimultaneos = new Sede().buscarVisitantesSimultaneos(fechaHoraReserva);
         }
 
         public bool verificarCapacidadMaxima()
         {
+            buscarVisitantesSimultaneosEnSede();
+
             if (visitantesSimultaneos + cantidadVisitantes > sedeSeleccionada.cantidadMaximaVisitantes)
             {
                 return false;
@@ -235,6 +239,16 @@ namespace CapaNegocio
             return true;
         }
 
+        public static int cantidadGuiasRecomendados()
+        {
+            int resto = (cantidadVisitantes % sedeSeleccionada.cantidadMaxPorGuia);
+            int cantidad = (cantidadVisitantes / sedeSeleccionada.cantidadMaxPorGuia);
+            if (resto != 0)
+            {
+                cantidad += 1;
+            }
+            return cantidad;
+        }
 
 
     }

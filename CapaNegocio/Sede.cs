@@ -82,7 +82,7 @@ namespace CapaNegocio
         }
 
 
-        public int buscarVisitantesSimultaneos()
+        public int buscarVisitantesSimultaneos(DateTime fechaReservaNueva)
         {
             int visitantes = 0;
             Sede sede = GestorDeReserva.sedeSeleccionada;
@@ -94,10 +94,14 @@ namespace CapaNegocio
 
             foreach (ReservaVisita item in reservasTodas)
             {
-                if (item.idSede == idSede)
+                if (fechaReservaNueva.CompareTo(item.fechaHoraReserva) >= 0 & fechaReservaNueva.CompareTo(item.horaFinReal) <= 0)
                 {
-                    visitantes = visitantes + item.cantidadAlumno;
+                    if (item.idSede == idSede)
+                    {
+                        visitantes = visitantes + item.cantidadAlumnos;
+                    }
                 }
+
             }
 
 

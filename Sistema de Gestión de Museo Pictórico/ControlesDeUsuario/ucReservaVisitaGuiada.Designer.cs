@@ -79,6 +79,7 @@ namespace CapaNegocio
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.tabNav4_DiaVisita = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.lblFechaSel = new System.Windows.Forms.Label();
             this.cmbHorarioSel = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -510,34 +511,39 @@ namespace CapaNegocio
             // 
             this.colidExposicion.FieldName = "Id Exposicion";
             this.colidExposicion.Name = "colidExposicion";
+            this.colidExposicion.OptionsColumn.AllowEdit = false;
             // 
             // colfechaFin
             // 
             this.colfechaFin.FieldName = "Fecha Fin";
             this.colfechaFin.Name = "colfechaFin";
+            this.colfechaFin.OptionsColumn.AllowEdit = false;
             this.colfechaFin.Visible = true;
-            this.colfechaFin.VisibleIndex = 2;
+            this.colfechaFin.VisibleIndex = 1;
             // 
             // colfechaFinReplanificada
             // 
             this.colfechaFinReplanificada.FieldName = "Fecha Fin Replanificada";
             this.colfechaFinReplanificada.Name = "colfechaFinReplanificada";
+            this.colfechaFinReplanificada.OptionsColumn.AllowEdit = false;
             this.colfechaFinReplanificada.Visible = true;
-            this.colfechaFinReplanificada.VisibleIndex = 3;
+            this.colfechaFinReplanificada.VisibleIndex = 2;
             // 
             // colfechaInicio
             // 
             this.colfechaInicio.FieldName = "Fecha Inicio";
             this.colfechaInicio.Name = "colfechaInicio";
+            this.colfechaInicio.OptionsColumn.AllowEdit = false;
             this.colfechaInicio.Visible = true;
-            this.colfechaInicio.VisibleIndex = 4;
+            this.colfechaInicio.VisibleIndex = 3;
             // 
             // colfechaInicioReplanificada
             // 
             this.colfechaInicioReplanificada.FieldName = "Fecha Inicio Replanificada";
             this.colfechaInicioReplanificada.Name = "colfechaInicioReplanificada";
+            this.colfechaInicioReplanificada.OptionsColumn.AllowEdit = false;
             this.colfechaInicioReplanificada.Visible = true;
-            this.colfechaInicioReplanificada.VisibleIndex = 5;
+            this.colfechaInicioReplanificada.VisibleIndex = 4;
             // 
             // colhoraApertura
             // 
@@ -545,8 +551,9 @@ namespace CapaNegocio
             this.colhoraApertura.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.colhoraApertura.FieldName = "Hora Apertura";
             this.colhoraApertura.Name = "colhoraApertura";
+            this.colhoraApertura.OptionsColumn.AllowEdit = false;
             this.colhoraApertura.Visible = true;
-            this.colhoraApertura.VisibleIndex = 6;
+            this.colhoraApertura.VisibleIndex = 5;
             // 
             // colhoraCierre
             // 
@@ -554,22 +561,25 @@ namespace CapaNegocio
             this.colhoraCierre.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.colhoraCierre.FieldName = "Hora Cierre";
             this.colhoraCierre.Name = "colhoraCierre";
+            this.colhoraCierre.OptionsColumn.AllowEdit = false;
             this.colhoraCierre.Visible = true;
-            this.colhoraCierre.VisibleIndex = 7;
+            this.colhoraCierre.VisibleIndex = 6;
             // 
             // colnombre2
             // 
             this.colnombre2.FieldName = "Nombre";
             this.colnombre2.Name = "colnombre2";
+            this.colnombre2.OptionsColumn.AllowEdit = false;
             this.colnombre2.Visible = true;
-            this.colnombre2.VisibleIndex = 8;
+            this.colnombre2.VisibleIndex = 7;
             // 
             // colidPublicoDestino
             // 
             this.colidPublicoDestino.FieldName = "Publico Destino";
             this.colidPublicoDestino.Name = "colidPublicoDestino";
+            this.colidPublicoDestino.OptionsColumn.AllowEdit = false;
             this.colidPublicoDestino.Visible = true;
-            this.colidPublicoDestino.VisibleIndex = 9;
+            this.colidPublicoDestino.VisibleIndex = 8;
             // 
             // labelControl11
             // 
@@ -600,6 +610,7 @@ namespace CapaNegocio
             // tabNav4_DiaVisita
             // 
             this.tabNav4_DiaVisita.Caption = "Día y Horario de Visita";
+            this.tabNav4_DiaVisita.Controls.Add(this.button1);
             this.tabNav4_DiaVisita.Controls.Add(this.lblFechaSel);
             this.tabNav4_DiaVisita.Controls.Add(this.cmbHorarioSel);
             this.tabNav4_DiaVisita.Controls.Add(this.label2);
@@ -608,6 +619,16 @@ namespace CapaNegocio
             this.tabNav4_DiaVisita.Controls.Add(this.calendarControl1);
             this.tabNav4_DiaVisita.Name = "tabNav4_DiaVisita";
             this.tabNav4_DiaVisita.Size = new System.Drawing.Size(1174, 544);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1077, 49);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // lblFechaSel
             // 
@@ -777,8 +798,10 @@ namespace CapaNegocio
             // 
             // txt_CantGuias
             // 
+            this.txt_CantGuias.Enabled = false;
             this.txt_CantGuias.Location = new System.Drawing.Point(224, 62);
             this.txt_CantGuias.Name = "txt_CantGuias";
+            this.txt_CantGuias.ReadOnly = true;
             this.txt_CantGuias.Size = new System.Drawing.Size(32, 21);
             this.txt_CantGuias.TabIndex = 5;
             // 
@@ -940,5 +963,6 @@ namespace CapaNegocio
         private DevExpress.XtraGrid.Columns.GridColumn colApellido;
         private DevExpress.XtraGrid.Columns.GridColumn colNombreGuia;
         private DevExpress.XtraGrid.Columns.GridColumn colHorarioEmpleado;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -260,10 +260,25 @@ namespace CapaNegocio
             }
             else
             {
-                tabPane1.SelectNextPage();
+                //tabPane1.SelectNextPage();
                 //aca manda la fecha y hora
                 var fechaHora = DateTime.Parse(lblFechaSel.Text + " " + cmbHorarioSel.Text);
                 GestorDeReserva.seleccionFechaHora(fechaHora);
+                txt_CantGuias.Text = GestorDeReserva.cantidadGuiasRecomendados().ToString();
+
+                bool test = new GestorDeReserva().verificarCapacidadMaxima();
+                int test1 = GestorDeReserva.visitantesSimultaneos;
+                //MessageBox.Show(test1.ToString());
+                //MessageBox.Show(test.ToString());
+
+                if (test)
+                {
+                    tabPane1.SelectNextPage();
+                }
+                else
+                {
+                    MessageBox.Show("Debe seleccionar una fecha u horario distinto ya que la capacidad de la sede se excede.", "Importante", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
         }
 
@@ -311,7 +326,9 @@ namespace CapaNegocio
 
         private void button1_Click(object sender, EventArgs e)
         {
-            exposicionesSeleccionadas();
+
+
+
         }
     }
 }
