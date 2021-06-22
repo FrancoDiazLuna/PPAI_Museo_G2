@@ -24,7 +24,7 @@ namespace CapaNegocio
             uc.mostrarEscuela();
             uc.mostrarSede();
             uc.mostrarTipoDeVisita();
-            uc.mostrarGuias();
+
             
         }
 

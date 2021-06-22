@@ -88,7 +88,7 @@ namespace CapaNegocio
             this.tabNav5_Guia = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.Dgv_Guias = new DevExpress.XtraGrid.GridControl();
             this.empleadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.GridGuias = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridGuias = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.coIIdEmpleado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colApellido = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNombreGuia = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -138,7 +138,7 @@ namespace CapaNegocio
             this.tabNav5_Guia.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Guias)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.empleadoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GridGuias)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridGuias)).BeginInit();
             this.tabNav6_DetalleReserva.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupCtrConfirmacion)).BeginInit();
             this.groupCtrConfirmacion.SuspendLayout();
@@ -741,36 +741,34 @@ namespace CapaNegocio
             // 
             this.Dgv_Guias.DataSource = this.empleadoBindingSource;
             this.Dgv_Guias.Location = new System.Drawing.Point(27, 116);
-            this.Dgv_Guias.MainView = this.GridGuias;
+            this.Dgv_Guias.MainView = this.gridGuias;
             this.Dgv_Guias.Name = "Dgv_Guias";
             this.Dgv_Guias.Size = new System.Drawing.Size(1120, 403);
             this.Dgv_Guias.TabIndex = 7;
             this.Dgv_Guias.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.GridGuias});
+            this.gridGuias});
             // 
             // empleadoBindingSource
             // 
             this.empleadoBindingSource.DataSource = typeof(CapaNegocio.Empleado);
             // 
-            // GridGuias
+            // gridGuias
             // 
-            this.GridGuias.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridGuias.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.coIIdEmpleado,
             this.colApellido,
             this.colNombreGuia,
             this.colHorarioEmpleado});
-            this.GridGuias.GridControl = this.Dgv_Guias;
-            this.GridGuias.Name = "GridGuias";
-            this.GridGuias.OptionsSelection.MultiSelect = true;
-            this.GridGuias.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
+            this.gridGuias.GridControl = this.Dgv_Guias;
+            this.gridGuias.Name = "gridGuias";
+            this.gridGuias.OptionsSelection.MultiSelect = true;
+            this.gridGuias.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
             // 
             // coIIdEmpleado
             // 
             this.coIIdEmpleado.Caption = "idEmpleado";
             this.coIIdEmpleado.FieldName = "idEmpleado";
             this.coIIdEmpleado.Name = "coIIdEmpleado";
-            this.coIIdEmpleado.Visible = true;
-            this.coIIdEmpleado.VisibleIndex = 1;
             this.coIIdEmpleado.Width = 94;
             // 
             // colApellido
@@ -779,7 +777,7 @@ namespace CapaNegocio
             this.colApellido.FieldName = "apellido";
             this.colApellido.Name = "colApellido";
             this.colApellido.Visible = true;
-            this.colApellido.VisibleIndex = 2;
+            this.colApellido.VisibleIndex = 1;
             this.colApellido.Width = 280;
             // 
             // colNombreGuia
@@ -788,7 +786,7 @@ namespace CapaNegocio
             this.colNombreGuia.FieldName = "nombre";
             this.colNombreGuia.Name = "colNombreGuia";
             this.colNombreGuia.Visible = true;
-            this.colNombreGuia.VisibleIndex = 3;
+            this.colNombreGuia.VisibleIndex = 2;
             this.colNombreGuia.Width = 314;
             // 
             // colHorarioEmpleado
@@ -797,7 +795,7 @@ namespace CapaNegocio
             this.colHorarioEmpleado.FieldName = "idHorarioEmpleado";
             this.colHorarioEmpleado.Name = "colHorarioEmpleado";
             this.colHorarioEmpleado.Visible = true;
-            this.colHorarioEmpleado.VisibleIndex = 4;
+            this.colHorarioEmpleado.VisibleIndex = 3;
             this.colHorarioEmpleado.Width = 332;
             // 
             // txt_CantGuias
@@ -1043,7 +1041,7 @@ namespace CapaNegocio
             this.tabNav5_Guia.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Guias)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.empleadoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GridGuias)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridGuias)).EndInit();
             this.tabNav6_DetalleReserva.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupCtrConfirmacion)).EndInit();
             this.groupCtrConfirmacion.ResumeLayout(false);
@@ -1120,7 +1118,7 @@ namespace CapaNegocio
         private DevExpress.XtraGrid.Columns.GridColumn colidPublicoDestino;
         private DevExpress.XtraGrid.GridControl Dgv_Guias;
         private System.Windows.Forms.BindingSource empleadoBindingSource;
-        private DevExpress.XtraGrid.Views.Grid.GridView GridGuias;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridGuias;
         private DevExpress.XtraGrid.Columns.GridColumn coIIdEmpleado;
         private DevExpress.XtraGrid.Columns.GridColumn colApellido;
         private DevExpress.XtraGrid.Columns.GridColumn colNombreGuia;

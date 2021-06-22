@@ -25,6 +25,8 @@ namespace CapaNegocio
         public int idAsignacionGuia { get; set; }
         public int idEmpleadoCreo { get; set; }
 
+
+
         public List<ReservaVisita> getReservaVisitas()
         {
             DataTable reservasDT = new DReservaVisita().buscar();

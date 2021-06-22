@@ -176,11 +176,43 @@ namespace CapaNegocio
             return exposicionesSeleccionadas;
         }
 
+        public List<Empleado> guiasSeleccionados()
+        {
+            int bandera = 0;
+
+            List<Empleado> empleadoSeleccionadas = new List<Empleado>();
+
+            List<Empleado> expoDeEmp = GestorDeReserva.buscarGuiasDisponibles();
+
+            List<int> indices = gridGuias.GetSelectedRows().ToList();
+
+            foreach (var item in expoDeEmp)
+            {
+                if (indices.Contains(bandera))
+                {
+                    empleadoSeleccionadas.Add(item);
+                    //MessageBox.Show("Si");
+                }
+                bandera = bandera + 1;
+            }
+            return empleadoSeleccionadas;
+        }
+
+
         private void tomarSeleccionExposicionesTemporalesVigentes()
         {
             List<Exposicion> exposSeleccionadas = exposicionesSeleccionadas();
             GestorDeReserva.seleccionExposicionesTemporalesVigentes(exposSeleccionadas);
         }
+
+        private void tomarSeleccionGuias()
+        {
+            List<Empleado> empSeleccionadas = guiasSeleccionados();
+            //MessageBox.Show(empSeleccionadas.Count.ToString());
+            GestorDeReserva.seleccionGuiasDisponiles(empSeleccionadas);
+        }
+
+
 
         private void solicitarFechaHora()
         {
@@ -204,9 +236,11 @@ namespace CapaNegocio
                 int test1 = GestorDeReserva.visitantesSimultaneos;
                 //MessageBox.Show(test1.ToString());
                 //MessageBox.Show(test.ToString());
+                mostrarGuias();
 
                 if (test)
                 {
+                    tomarSeleccionGuias();
                     tabPane1.SelectNextPage();
                 }
                 else
@@ -224,7 +258,7 @@ namespace CapaNegocio
 
         public void mostrarGuias()
         {
-            empleadoBindingSource.DataSource = GestorDeReserva.buscarGuias();
+            empleadoBindingSource.DataSource = GestorDeReserva.buscarGuiasDisponibles();
         }
 
         private void tabPane1_SelectedPageChanged(object sender, DevExpress.XtraBars.Navigation.SelectedPageChangedEventArgs e)
@@ -266,7 +300,9 @@ namespace CapaNegocio
                 lblConfExposicionesSel.Text = expoSel;//"exposiciones listado (agregar)";
                 lblConfDiaSel.Text = lblFechaSel.Text;
                 lblConfHoraSel.Text = cmbHorarioSel.Text;
-                lblConfGuiasSel.Text = "guias listado (agregar)";
+                var lista2 = GestorDeReserva.guiaSeleccionado; string guiasSel = ""; foreach (var item in lista2) { guiasSel += item.nombre; guiasSel += "; "; }
+                lblConfGuiasSel.Text = guiasSel;
+
             }
             else
             {
@@ -353,6 +389,7 @@ namespace CapaNegocio
 
         private void btn_confirmarReserva_Click(object sender, EventArgs e)
         {
+            GestorDeReserva.registrarReserva();
             MessageBox.Show("La reserva se registró con exito. \nEl estado actual de la misma es ahora Pendiente de Confirmación", "Confirmación de reserva de visita guiada", MessageBoxButtons.OK, MessageBoxIcon.Information);
             tabPane1.Visible = false;
             btn_cancelar.Visible = false;

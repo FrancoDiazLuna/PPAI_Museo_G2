@@ -32,6 +32,23 @@ namespace CapaDatos
         {
         }
 
+        public DReservaVisita(int idReservaVisita, int cantidadAlumno, int cantidadAlumnoConfirmada, int duracionEstimada, DateTime fechaHoraCreacion, DateTime fechaHoraReserva, string horaFinReal, string horaInicioReal, int idEscuela, int idSede, int idExposicion, int idCambioEstado, int idAsignacionGuia, int idEmpleadoCreo)
+        {
+            this.idReservaVisita = idReservaVisita;
+            this.cantidadAlumno = cantidadAlumno;
+            this.cantidadAlumnoConfirmada = cantidadAlumnoConfirmada;
+            this.duracionEstimada = duracionEstimada;
+            this.fechaHoraCreacion = fechaHoraCreacion;
+            this.fechaHoraReserva = fechaHoraReserva;
+            this.horaFinReal = horaFinReal;
+            this.horaInicioReal = horaInicioReal;
+            this.idEscuela = idEscuela;
+            this.idSede = idSede;
+            this.idExposicion = idExposicion;
+            this.idCambioEstado = idCambioEstado;
+            this.idAsignacionGuia = idAsignacionGuia;
+            this.idEmpleadoCreo = idEmpleadoCreo;
+        }
 
         public DataTable buscar()
         {
