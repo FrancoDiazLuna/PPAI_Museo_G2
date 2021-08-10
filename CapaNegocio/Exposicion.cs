@@ -53,42 +53,39 @@ namespace CapaNegocio
         } 
 
 
-        public static int calcularDuracionObrasExpuestas()
+        public static int calcularDuracionObrasExpuestas(int item)
+
         {
-            List<Obra> obras = new DetalleExposicion().buscarObras();
+            DataTable detalleExpo = new DDetalleExposicion().buscar();
+            List<DetalleExposicion> detalleExpoList = new List<DetalleExposicion>();
 
-            List<DetalleExposicionPorExposicion> obrasEnExpo = new DetalleExposicionPorExposicion().getDetalleExE();
+            int duracionObra = 0;
 
-            List<Exposicion> exposicionesSeleccionadas = GestorDeReserva.exposicionSeleccionada;
+            detalleExpoList = (from DataRow dr in detalleExpo.Rows
+                               select new DetalleExposicion()
+                               {
+                                   idDetalleExposicion = Convert.ToInt32(dr["idDetalleExposicion"]),
+                                   lugarAsignado = Convert.ToInt32(dr["lugarAsignado"]),
+                                   idPared = Convert.ToInt32(dr["idPared"]),
+                                   idObra = Convert.ToInt32(dr["idObra"])
+                               }
+                                    ).ToList();
 
-            List<Obra> obrasDeExposSelecc = new List<Obra>();
+            List<DetalleExposicionPorExposicion> detalleExpoEnExpo = new DetalleExposicionPorExposicion().getDetalleExE();
 
-            foreach (Exposicion item in exposicionesSeleccionadas)
+            foreach (var item2 in detalleExpoEnExpo)
             {
-                foreach (var item2 in obrasEnExpo)
+                foreach (var item3 in detalleExpoList)
                 {
-                    if (item.idExposicion == item2.idExposicion)
+                    if (item == item2.idExposicion && item3.idDetalleExposicion == item2.idDetalleExposicion)
                     {
-                        foreach (var item3 in obras)
-                        {
-                            if (item3.idObra == item2.idDetalleExposicion)
-                            {
-                                obrasDeExposSelecc.Add(item3);
-                            }
-                        }
+                        duracionObra = duracionObra + DetalleExposicion.buscarDuracExtObra(item2.idDetalleExposicion);
                     }
                 }
+
             }
 
-            int duracionMinutos = 0;
-
-            foreach (var item in obrasDeExposSelecc)
-            {
-                duracionMinutos = duracionMinutos + item.duracionExtendida;
-            }
-
-            return duracionMinutos;
-
+            return duracionObra;
         }
 
 

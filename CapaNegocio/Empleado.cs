@@ -43,29 +43,5 @@ namespace CapaNegocio
             this.idCargo = idCargo;
             this.idHorarioEmpleado = idHorarioEmpleado;
         }
-
-
-
-        
-
-        
-
-        //public static List<Empleado> conocerCargo(List<Empleado> lista)
-        //{
-        //    List<Empleado> listaTemporales = new List<Empleado>();
-
-        //    listaTemporales = Cargo.esGuia(lista, 2);
-
-        //    return listaTemporales;
-        //}
-
-        //public static List<Empleado> trabajaEnDiaYHorarios(List<Empleado> lista)
-        //{
-        //    List<Empleado> listaTemporales = new List<Empleado>();
-
-        //    listaTemporales = HorarioEmpleado.trabajaEnDiaYHorarios(lista, fechaInicio, );
-
-        //    return listaTemporales;
-        //}
     }
 }

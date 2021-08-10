@@ -15,21 +15,7 @@ namespace CapaNegocio
 
 
 
-        public  List<TipoVisita> getTipoVisitas()
-        {
-            DataTable tiposDeVisita = new DTipoVisita().buscar();
-            List<TipoVisita> tiposDeVisitaTodasList = new List<TipoVisita>();
 
-            tiposDeVisitaTodasList = (from DataRow dr in tiposDeVisita.Rows
-                                      select new TipoVisita()
-                                      {
-                                          idTipoVisita = Convert.ToInt32(dr["idTipoVisita"]),
-                                          nombre = dr["nombre"].ToString()
-                                      }
-            ).ToList();
-
-            return tiposDeVisitaTodasList;
-        }
 
     }
 }

@@ -20,28 +20,8 @@ namespace CapaNegocio
         public int idColeccion { get; set; }
         public int idTarifa { get; set; }
 
-        public List<Sede> getSedes()
-        {
-            DataTable sedes = new DSede().buscar();
 
-            List<Sede> sedesTodasList = new List<Sede>();
 
-            sedesTodasList = (from DataRow dr in sedes.Rows
-                              select new Sede()
-                              {
-                                  idSede = Convert.ToInt32(dr["idSede"]),
-                                  cantidadMaximaVisitantes = Convert.ToInt32(dr["cantidadMaximaVisitantes"]),
-                                  cantidadMaxPorGuia = Convert.ToInt32(dr["cantidadMaxPorGuia"]),
-                                  nombre = dr["nombre"].ToString(),
-                                  idDeposito = Convert.ToInt32(dr["idDeposito"]),
-                                  idHorario = Convert.ToInt32(dr["idHorario"]),
-                                  idColeccion = Convert.ToInt32(dr["idColeccion"]),
-                                  idTarifa = Convert.ToInt32(dr["idTarifa"]),
-                              }
-            ).ToList();
-
-            return sedesTodasList;
-        }
 
         public static List<Exposicion> buscarExposicionesTemporalesVigentes()
         {
@@ -51,7 +31,6 @@ namespace CapaNegocio
 
             List<Exposicion> expoVigente = new List<Exposicion>();
 
-            //List<Exposicion> expoFiltradaSede = new List<Exposicion>();
 
             exposicionesTodasList = (from DataRow dr in exposicionesTodas.Rows
                                      select new Exposicion()
@@ -78,7 +57,7 @@ namespace CapaNegocio
 
 
             return expoVigente;
-            //return expoFiltradaSede;
+
         }
 
 
@@ -109,9 +88,17 @@ namespace CapaNegocio
         }
 
 
-        public static int calcularDuracionEstimada()
+        public static int calcularDuracionEstimada(List<Exposicion> exposicionSeleccionada)
         {
-            int duracion = Exposicion.calcularDuracionObrasExpuestas();
+
+            int duracion = 0;
+
+
+            foreach (Exposicion item in exposicionSeleccionada)
+            {
+                duracion = duracion + Exposicion.calcularDuracionObrasExpuestas(item.idExposicion);
+            }
+
             return duracion;
         }
 

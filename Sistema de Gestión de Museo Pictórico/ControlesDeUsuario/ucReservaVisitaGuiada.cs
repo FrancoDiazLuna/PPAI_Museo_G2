@@ -49,6 +49,7 @@ namespace CapaNegocio
 
 
 
+
         
         public void mostrarEscuela()
         {
@@ -79,8 +80,7 @@ namespace CapaNegocio
             Sede sede = (Sede)gridSedes.GetFocusedRow();
             lblSedeSel.Text = sede.nombre;
             GestorDeReserva.seleccionDeSede(sede);
-            //exposicionBindingSource.DataSource = GestorDeReserva.buscarExposicionesTemporalesVigentes();
-            //bindingSourceExpoPorSede.DataSource = mostrarExposicionesEemporalesVigentes();
+
         }
 
         public void mostrarTipoDeVisita()
@@ -169,12 +169,19 @@ namespace CapaNegocio
                 if (indices.Contains(bandera))
                 {
                     exposicionesSeleccionadas.Add(item);
-                    //MessageBox.Show("Si");
                 }
                 bandera = bandera + 1;
             }
             return exposicionesSeleccionadas;
         }
+
+
+        private void tomarSeleccionExposicionesTemporalesVigentes()
+        {
+            List<Exposicion> exposSeleccionadas = exposicionesSeleccionadas();
+            GestorDeReserva.seleccionExposicionesTemporalesVigentes(exposSeleccionadas);
+        }
+
 
         public List<Empleado> guiasSeleccionados()
         {
@@ -196,13 +203,6 @@ namespace CapaNegocio
                 bandera = bandera + 1;
             }
             return empleadoSeleccionadas;
-        }
-
-
-        private void tomarSeleccionExposicionesTemporalesVigentes()
-        {
-            List<Exposicion> exposSeleccionadas = exposicionesSeleccionadas();
-            GestorDeReserva.seleccionExposicionesTemporalesVigentes(exposSeleccionadas);
         }
 
         private void tomarSeleccionGuias()

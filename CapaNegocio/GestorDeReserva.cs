@@ -22,8 +22,6 @@ namespace CapaNegocio
         public static List<TipoVisita> tiposDeVisitaTodasList { get; set; }
         public static string tipoDeVisitaSeleccionada { get; set; }
 
-        public static List<Exposicion> exposicionesTodasList { get; set; }
-
         public static List<Exposicion> exposicionesSedeList { get; set; }
         public static List<Exposicion> exposicionSeleccionada { get; set; }
 
@@ -45,13 +43,40 @@ namespace CapaNegocio
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
         public static List<Escuela> buscarEscuelas()
         {
-            DataTable escuelas = new DEscuela().buscar();
 
-            escuelasTodasList = new Escuela().getEscuelas();
+                DataTable escuelas = new DEscuela().buscar();
 
-            return escuelasTodasList;
+                List<Escuela> escuelasTodasLista = new List<Escuela>();
+
+                escuelasTodasLista = (from DataRow dr in escuelas.Rows
+                                     select new Escuela()
+                                     {
+                                         idEscuela = Convert.ToInt32(dr["idEscuela"]),
+                                         domicilio = dr["domicilio"].ToString(),
+                                         mail = dr["mail"].ToString(),
+                                         nombre = dr["nombre"].ToString(),
+                                         telefCelular = Convert.ToInt32(dr["telefCelular"]),
+                                         telefFijo = Convert.ToInt32(dr["telefFijo"]),
+                                     }
+                ).ToList();
+
+                escuelasTodasList = escuelasTodasLista;
+                return escuelasTodasLista;
+            
         }
 
         public static void seleccionDeEscuela(Escuela escuela)
@@ -63,13 +88,30 @@ namespace CapaNegocio
         {
             cantidadVisitantes = valor;
         }
+
         public static List<Sede> buscarSedes()
         {
             DataTable sedes = new DSede().buscar();
 
-            sedesTodasList = new Sede().getSedes();
+            List<Sede> sedesTodasLista = new List<Sede>();
 
-            return sedesTodasList;
+            sedesTodasLista = (from DataRow dr in sedes.Rows
+                              select new Sede()
+                              {
+                                  idSede = Convert.ToInt32(dr["idSede"]),
+                                  cantidadMaximaVisitantes = Convert.ToInt32(dr["cantidadMaximaVisitantes"]),
+                                  cantidadMaxPorGuia = Convert.ToInt32(dr["cantidadMaxPorGuia"]),
+                                  nombre = dr["nombre"].ToString(),
+                                  idDeposito = Convert.ToInt32(dr["idDeposito"]),
+                                  idHorario = Convert.ToInt32(dr["idHorario"]),
+                                  idColeccion = Convert.ToInt32(dr["idColeccion"]),
+                                  idTarifa = Convert.ToInt32(dr["idTarifa"]),
+                              }
+            ).ToList();
+
+
+            sedesTodasList = sedesTodasLista;
+            return sedesTodasLista;
         }
         public static void seleccionDeSede(Sede sede)
         {
@@ -79,16 +121,23 @@ namespace CapaNegocio
         public static List<TipoVisita> buscarTipoDeVisitas()
         {
             DataTable tiposDeVisita = new DTipoVisita().buscar();
+            List<TipoVisita> tiposDeVisitaTodasLista = new List<TipoVisita>();
 
-            tiposDeVisitaTodasList = new TipoVisita().getTipoVisitas();
+            tiposDeVisitaTodasLista = (from DataRow dr in tiposDeVisita.Rows
+                                      select new TipoVisita()
+                                      {
+                                          idTipoVisita = Convert.ToInt32(dr["idTipoVisita"]),
+                                          nombre = dr["nombre"].ToString()
+                                      }
+            ).ToList();
 
-            return tiposDeVisitaTodasList;
+
+            tiposDeVisitaTodasList = tiposDeVisitaTodasLista;
+            return tiposDeVisitaTodasLista;
         }
 
         public static void seleccionTipoVisita(string tipoVdisita)
         {
-
-
             tipoDeVisitaSeleccionada = tipoVdisita;
         }
 
@@ -126,15 +175,7 @@ namespace CapaNegocio
             }
 
 
-            //Estos de aca abajo hacen lo mismo, no los probe. Pero creo q funcionan
-
-            //var filtradoDos = expoTemporalesVigentes.Where(expo => listExposPorSedeSeleccionada.Contains(expo.idExposicion));
-            //foreach (Exposicion expo in filtradoDos)
-            //{
-            //    exposicionesSedeList.Add(expo);
-            //}
-
-            List<Exposicion> test = new List<Exposicion>();
+            List<Exposicion> exposicionesSedeLista = new List<Exposicion>();
 
             foreach (Exposicion expo in expoTemporalesVigentes)
             {
@@ -142,15 +183,15 @@ namespace CapaNegocio
                 {
                     if (expo.idExposicion == item)
                     {
-                        test.Add(expo);
+                        exposicionesSedeLista.Add(expo);
                     }
                 }
             }
 
 
-            exposicionesSedeList = test;
+            exposicionesSedeList = exposicionesSedeLista;
 
-            return test;
+            return exposicionesSedeLista;
         }
 
         public static void seleccionExposicionesTemporalesVigentes(List<Exposicion> lista)
@@ -158,15 +199,26 @@ namespace CapaNegocio
             exposicionSeleccionada = lista;
         }
 
+
         public static void seleccionFechaHora(DateTime valor)
         {
             fechaHoraReserva = valor;
         }
 
 
+
+
+
+
+
+
+
+
+
+
         public void  calcularDuracionEstimada()
         {
-            duracionEstimada = Sede.calcularDuracionEstimada();
+            duracionEstimada = Sede.calcularDuracionEstimada(exposicionSeleccionada);
 
         }
 
@@ -271,6 +323,7 @@ namespace CapaNegocio
         {
 
             string usrSesion = new Sesion().getEmpleadoEnSesion();
+            sesionActual = usrSesion;
 
             return usrSesion;
         }

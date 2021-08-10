@@ -26,5 +26,9 @@ namespace CapaDatos
 
         //LucasCana
         //public static string Cn = @"Data Source = DESKTOP-ROE6GCV\SQLEXPRESS;Initial Catalog = MuseoPictorico; Integrated Security = True";
+
+
+        //public static string Cn = @"Data Source=lef75909.database.windows.net;Initial Catalog=PPAI;Persist Security Info=True;User ID=LEF75909;Password=Sist3mas";
+
     }
 }
