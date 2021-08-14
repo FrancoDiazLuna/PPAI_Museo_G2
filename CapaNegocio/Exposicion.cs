@@ -27,21 +27,6 @@ namespace CapaNegocio
 
 
 
-        //public static List<Exposicion> esVigente(List<Exposicion> expoTodas)
-        //{
-        //    List<Exposicion> expoVigente = new List<Exposicion>();
-
-        //    var filtrado = expoTodas.Where(expo => expo.fechaInicio <= DateTime.Now | expo.fechaInicioReplanificada <= DateTime.Now 
-        //                                        && expo.fechaFin >= DateTime.Now | expo.fechaFinReplanificada >= DateTime.Now);
-        //    foreach (Exposicion expo in filtrado)
-        //    {
-        //        //if (expo.fechaInicio <= DateTime.Now | expo.fechaInicioReplanificada <= DateTime.Now)
-        //            expoVigente.Add(expo);
-        //    }
-
-        //    return expoVigente;
-        //}
-
         public static bool esVigente(Exposicion expo)
         {
             if (expo.fechaInicio <= DateTime.Now | expo.fechaInicioReplanificada <= DateTime.Now
@@ -69,14 +54,40 @@ namespace CapaNegocio
         }
 
 
-        //public static List<Exposicion> esTemporal(List<Exposicion> lista)
-        //{
-        //    List<Exposicion> listaTemporales = new List<Exposicion>();
+        public static DataRow getPublicoDestino(Exposicion exposicion, DataTable dt)
+        {
+            DataTable publicoDestino = new DPublicoDestino().buscar();
 
-        //    listaTemporales = TipoExposicion.tipoExpoEs(lista, 1);
+            List<PublicoDestino> publicoDestinoList = new List<PublicoDestino>();
 
-        //    return listaTemporales;
-        //} 
+            publicoDestinoList = (from DataRow dr in publicoDestino.Rows
+                                  select new PublicoDestino()
+                                  {
+                                      idPublicoDestino = Convert.ToInt32(dr["idPublicoDestino"]),
+                                      caracteristicas = dr["caracteristicas"].ToString(),
+                                      nombre = dr["nombre"].ToString()
+                                  }
+                        ).ToList();
+
+            DataRow row = dt.NewRow();
+
+            row["Id Exposicion"] = exposicion.idExposicion;
+            row["Fecha Fin"] = exposicion.fechaFin;
+            row["Fecha Fin Replanificada"] = exposicion.fechaFinReplanificada;
+            row["Fecha Inicio"] = exposicion.fechaInicio;
+            row["Fecha Inicio Replanificada"] = exposicion.fechaInicioReplanificada;
+            row["Hora Apertura"] = exposicion.horaApertura;
+            row["Hora Cierre"] = exposicion.horaCierre;
+            row["Nombre"] = exposicion.nombre;
+            foreach (PublicoDestino publicoDestino1 in publicoDestinoList)
+            {
+                if (publicoDestino1.idPublicoDestino == exposicion.idPublicoDestino)
+                {
+                    row["Publico Destino"] = publicoDestino1.nombre;
+                }
+            }
+            return row;
+        }
 
 
         public static int calcularDuracionObrasExpuestas(int item)

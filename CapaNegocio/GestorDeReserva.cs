@@ -21,8 +21,8 @@ namespace CapaNegocio
 
         public static List<TipoVisita> tiposDeVisitaTodasList { get; set; }
         public static string tipoDeVisitaSeleccionada { get; set; }
-
         public static List<Exposicion> exposicionesSedeList { get; set; }
+        public static DataTable exposicionesSedePublicoDT { get; set; }
         public static List<Exposicion> exposicionSeleccionada { get; set; }
 
         public static DateTime fechaHoraReserva { get; set; }
@@ -78,7 +78,6 @@ namespace CapaNegocio
                 return escuelasTodasLista;
             
         }
-
         public static void seleccionDeEscuela(Escuela escuela)
         {
             escuelaSeleccionada = escuela;
@@ -135,63 +134,20 @@ namespace CapaNegocio
             tiposDeVisitaTodasList = tiposDeVisitaTodasLista;
             return tiposDeVisitaTodasLista;
         }
-
         public static void seleccionTipoVisita(string tipoVdisita)
         {
             tipoDeVisitaSeleccionada = tipoVdisita;
         }
 
-        public static List<Exposicion> buscarExposicionesTemporalesVigentes()
+        public static DataTable buscarExposicionesTemporalesVigentes()
         {
-            //Busca el DT de la BD
-            DataTable exposPorSede = new DExposicionesPorSede().buscar();
-
-            //lista de exposiciones si estan vigentes y si son temporales
-            List<Exposicion> expoTemporalesVigentes = Sede.buscarExposicionesTemporalesVigentes();
-
-            //lista para los objetos de ExS, que voy a filtrar para hacer una lista de solo Expos con el id de Sede selecc
-            List<ExposicionPorSede> listExposPorSede = new List<ExposicionPorSede>();
-
-            //lista con id de las expo que cumplieron la condicion anterior
-            List<int> listExposPorSedeSeleccionada = new List<int>();
-
-            //Pasa a lista el DT
-            listExposPorSede = (from DataRow dr in exposPorSede.Rows
-                                select new ExposicionPorSede()
-                                {
-                                    idExposicionPorSede = Convert.ToInt32(dr["idExposicionPorSede"]),
-                                    idSede = Convert.ToInt32(dr["idSede"]),
-                                    idExposicion = Convert.ToInt32(dr["idExposicion"])
-                                }
-
-                            ).ToList();
-
-
-
-            var filtrado = listExposPorSede.Where(expo => expo.idSede == sedeSeleccionada.idSede);
-            foreach (ExposicionPorSede expo in filtrado)
-            {
-                listExposPorSedeSeleccionada.Add(expo.idExposicion);
-            }
-
-
-            List<Exposicion> exposicionesSedeLista = new List<Exposicion>();
-
-            foreach (Exposicion expo in expoTemporalesVigentes)
-            {
-                foreach (var item in listExposPorSedeSeleccionada)
-                {
-                    if (expo.idExposicion == item)
-                    {
-                        exposicionesSedeLista.Add(expo);
-                    }
-                }
-            }
-
-
-            exposicionesSedeList = exposicionesSedeLista;
-
-            return exposicionesSedeLista;
+            
+            exposicionesSedeList = Sede.buscarExposicionTemporalVigente(sedeSeleccionada);
+            
+            DataTable dt = Sede.obtenerPublicoDestino(exposicionesSedeList);
+            exposicionesSedePublicoDT = dt;
+            
+            return dt;
         }
 
         public static void seleccionExposicionesTemporalesVigentes(List<Exposicion> lista)
@@ -206,21 +162,11 @@ namespace CapaNegocio
 
 
 
-
-
-
-
-
-
-
-
-
         public void  calcularDuracionEstimada()
         {
             duracionEstimada = Sede.calcularDuracionEstimada(exposicionSeleccionada);
 
         }
-
 
         public static void buscarVisitantesSimultaneosEnSede()
         {
@@ -283,9 +229,7 @@ namespace CapaNegocio
 
         public static void registrarReserva()
         {
-            //DateTime hoy = DateTime.ParseExact(fechaHoraActual, "dd/MM/yyyy", null);
-
-            DReservaVisita actual = new DReservaVisita(numeroUnico, cantidadVisitantes, cantidadVisitantes, duracionEstimada, fechaHoraActual, fechaHoraReserva, "08:00", "12:00", escuelaSeleccionada.idEscuela, sedeSeleccionada.idSede, 1, 1, 1, 1);
+            
         }
 
 
@@ -325,24 +269,8 @@ namespace CapaNegocio
         }
 
 
-        //este metodo no va aca XD
-        public static List<PublicoDestino> buscarPublicoDestino()
-        {
-            DataTable publicoDestino = new DPublicoDestino().buscar();
 
-            List<PublicoDestino> publicoDestinoList = new List<PublicoDestino>();
-
-            publicoDestinoList = (from DataRow dr in publicoDestino.Rows
-                                  select new PublicoDestino()
-                                  {
-                                      idPublicoDestino = Convert.ToInt32(dr["idPublicoDestino"]),
-                                      caracteristicas = dr["caracteristicas"].ToString(),
-                                      nombre = dr["nombre"].ToString()
-                                  }
-                        ).ToList();
-
-            return publicoDestinoList;
-        }
+        
 
 
 

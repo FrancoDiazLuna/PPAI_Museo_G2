@@ -55,13 +55,15 @@ namespace CapaNegocio
         {
             escuelaBindingSource.DataSource = GestorDeReserva.buscarEscuelas();
         }
-
         private void tomarSeleccionDeEscuela(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
             Escuela esc = (Escuela)gridEscuelas.GetFocusedRow();
             lblEscSel.Text = esc.nombre;
             GestorDeReserva.seleccionDeEscuela(esc);
         }
+
+
+
 
         //tomarCantidadDeVisitantes
         private void spinCantVisitantes_EditValueChanged(object sender, EventArgs e)
@@ -111,47 +113,9 @@ namespace CapaNegocio
         }
 
 
-        public DataTable mostrarExposicionesEemporalesVigentes()
+        public void mostrarExposicionesEemporalesVigentes()
         {
-            dt = new DataTable();
-
-            dt.Columns.Add("Id Exposicion");
-            dt.Columns.Add("Fecha Fin", typeof(DateTime));
-            dt.Columns.Add("Fecha Fin Replanificada", typeof(DateTime));
-            dt.Columns.Add("Fecha Inicio", typeof(DateTime));
-            dt.Columns.Add("Fecha Inicio Replanificada", typeof(DateTime));
-            dt.Columns.Add("Hora Apertura", typeof(DateTime));
-            dt.Columns.Add("Hora Cierre", typeof(DateTime));
-            dt.Columns.Add("Nombre");
-            dt.Columns.Add("Publico Destino");
-
-            List<Exposicion> exposicionesList = GestorDeReserva.buscarExposicionesTemporalesVigentes();
-            List<PublicoDestino> publicoDestinoList = GestorDeReserva.buscarPublicoDestino();
-
-            foreach (Exposicion exposicion in exposicionesList)
-            {
-                DataRow row = dt.NewRow();
-
-                row["Id Exposicion"] = exposicion.idExposicion;
-                row["Fecha Fin"] = exposicion.fechaFin;
-                row["Fecha Fin Replanificada"] = exposicion.fechaFinReplanificada;
-                row["Fecha Inicio"] = exposicion.fechaInicio;
-                row["Fecha Inicio Replanificada"] = exposicion.fechaInicioReplanificada;
-                row["Hora Apertura"] = exposicion.horaApertura;
-                row["Hora Cierre"] = exposicion.horaCierre;
-                row["Nombre"] = exposicion.nombre;
-                foreach (PublicoDestino publicoDestino in publicoDestinoList)
-                {
-                    if (publicoDestino.idPublicoDestino == exposicion.idPublicoDestino)
-                    {
-                        row["Publico Destino"] = publicoDestino.nombre;
-                    }
-                }
-
-                dt.Rows.Add(row);
-            }
-
-            return dt;
+            // acomodar
         }
 
         public List<Exposicion> exposicionesSeleccionadas()
@@ -253,7 +217,7 @@ namespace CapaNegocio
 
         public void refrescarGridExposiciones()
         {
-            bindingSourceExpoPorSede.DataSource = mostrarExposicionesEemporalesVigentes();
+            bindingSourceExpoPorSede.DataSource = GestorDeReserva.buscarExposicionesTemporalesVigentes();
         }
 
         public void mostrarGuias()

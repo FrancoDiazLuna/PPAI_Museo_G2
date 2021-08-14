@@ -23,14 +23,24 @@ namespace CapaNegocio
 
 
 
-        public static List<Exposicion> buscarExposicionesTemporalesVigentes()
+        public static List<Exposicion> buscarExposicionTemporalVigente(Sede sedeSelecc)
         {
             DataTable exposicionesTodas = new DExposicion().buscar();
+            DataTable exposPorSede = new DExposicionesPorSede().buscar();
+
 
             List<Exposicion> exposicionesTodasList = new List<Exposicion>();
 
-            List<Exposicion> expoVigente = new List<Exposicion>();
 
+            //lista de exposiciones si estan vigentes y si son temporales
+            List<Exposicion> expoVigenteYTemporal = new List<Exposicion>();
+
+
+            //lista para los objetos de ExS, que voy a filtrar para hacer una lista de solo Expos con el id de Sede selecc
+            List<ExposicionPorSede> listExposPorSede = new List<ExposicionPorSede>();
+
+            //lista con id de las expo que cumplieron la condicion anterior
+            List<int> listExposPorSedeSeleccionada = new List<int>();
 
             exposicionesTodasList = (from DataRow dr in exposicionesTodas.Rows
                                      select new Exposicion()
@@ -56,11 +66,68 @@ namespace CapaNegocio
             {
                 if (Exposicion.esVigente(item) && Exposicion.esTemporal(item))
                 {
-                    expoVigente.Add(item);
+                    expoVigenteYTemporal.Add(item);
                 }
             }
 
-            return expoVigente;
+
+            listExposPorSede = (from DataRow dr in exposPorSede.Rows
+                                select new ExposicionPorSede()
+                                {
+                                    idExposicionPorSede = Convert.ToInt32(dr["idExposicionPorSede"]),
+                                    idSede = Convert.ToInt32(dr["idSede"]),
+                                    idExposicion = Convert.ToInt32(dr["idExposicion"])
+                                }
+
+                            ).ToList();
+
+
+
+            var filtrado = listExposPorSede.Where(expo => expo.idSede == sedeSelecc.idSede);
+            foreach (ExposicionPorSede expo in filtrado)
+            {
+                listExposPorSedeSeleccionada.Add(expo.idExposicion);
+            }
+
+
+            List<Exposicion> exposicionesSedeLista = new List<Exposicion>();
+
+            foreach (Exposicion expo in expoVigenteYTemporal)
+            {
+                foreach (var item in listExposPorSedeSeleccionada)
+                {
+                    if (expo.idExposicion == item)
+                    {
+                        exposicionesSedeLista.Add(expo);
+                    }
+                }
+            }
+
+            return exposicionesSedeLista;
+
+        }
+
+
+        public static DataTable obtenerPublicoDestino(List<Exposicion> exposicionesSedeList)
+        {
+            DataTable dt = new DataTable();
+
+            dt.Columns.Add("Id Exposicion");
+            dt.Columns.Add("Fecha Fin", typeof(DateTime));
+            dt.Columns.Add("Fecha Fin Replanificada", typeof(DateTime));
+            dt.Columns.Add("Fecha Inicio", typeof(DateTime));
+            dt.Columns.Add("Fecha Inicio Replanificada", typeof(DateTime));
+            dt.Columns.Add("Hora Apertura", typeof(DateTime));
+            dt.Columns.Add("Hora Cierre", typeof(DateTime));
+            dt.Columns.Add("Nombre");
+            dt.Columns.Add("Publico Destino");
+
+            foreach (Exposicion exposicion in exposicionesSedeList)
+            {
+                dt.Rows.Add(Exposicion.getPublicoDestino(exposicion, dt));
+            }
+
+            return dt;
 
         }
 
@@ -140,7 +207,9 @@ namespace CapaNegocio
 
             foreach (Empleado item in empleadosTodosList)
             {
-                if (Empleado.conocerCargo(item)==1 && Empleado.trabajaEnDiaYHorario(item) == false && Empleado.tieneAsignacionParaDiaYHora(item) == false)//si es guia - si trabaja en dia y horario - si no tiene asignacion
+                if (Empleado.conocerCargo(item)==1 && 
+                    Empleado.trabajaEnDiaYHorario(item) == false 
+                    && Empleado.tieneAsignacionParaDiaYHora(item) == false)   //si es guia - si trabaja en dia y horario - si no tiene asignacion
                 {
                     guiasDisponibles.Add(item);
                 }
