@@ -46,15 +46,19 @@ namespace CapaNegocio
                                          idTipoExposicion = Convert.ToInt32(dr["idTipoExposicion"]),
                                          idPublicoDestino = Convert.ToInt32(dr["idPublicoDestino"]),
                                          idEmpleadoCreo = Convert.ToInt32(dr["idEmpleadoCreo"])
+                                         
                                      }
                                     ).ToList();
 
 
-            expoVigente = Exposicion.esVigente(exposicionesTodasList);
 
-            expoVigente = Exposicion.esTemporal(expoVigente);
-
-
+            foreach (Exposicion item in exposicionesTodasList)
+            {
+                if (Exposicion.esVigente(item) && Exposicion.esTemporal(item))
+                {
+                    expoVigente.Add(item);
+                }
+            }
 
             return expoVigente;
 
@@ -101,6 +105,53 @@ namespace CapaNegocio
 
             return duracion;
         }
+
+        public static List<Empleado> guiasDisponibles()
+        {
+            DataTable empleadosTodos = new DEmpleado().buscar();
+
+            List<Empleado> empleadosTodosList = new List<Empleado>();
+
+            empleadosTodosList = (from DataRow dr in empleadosTodos.Rows
+                                  select new Empleado()
+                                  {
+                                      idEmpleado = Convert.ToInt32(dr["idEmpleado"]),
+                                      apellido = dr["apellido"].ToString(),
+                                      codigoValidacion = Convert.ToInt32(dr["codigoValidacion"]),
+                                      cuit = dr["cuit"].ToString(),
+                                      dni = Convert.ToInt32(dr["dni"]),
+                                      domicilio = dr["domicilio"].ToString(),
+                                      fechaIngreso = Convert.ToDateTime(dr["fechaIngreso"]),
+                                      fechaNacimiento = Convert.ToDateTime(dr["fechaNacimiento"]),
+                                      mail = dr["mail"].ToString(),
+                                      nombre = dr["nombre"].ToString(),
+                                      sexo = dr["sexo"].ToString(),
+                                      telefono = dr["telefono"].ToString(),
+                                      idCargo = Convert.ToInt32(dr["idCargo"]),
+                                      idHorarioEmpleado = Convert.ToInt32(dr["idHorarioEmpleado"]),
+                                      idSede = Convert.ToInt32(dr["idEmpleadoCreo"])
+
+                                  }
+                                    ).ToList();
+
+
+
+            List<Empleado> guiasDisponibles = new List<Empleado>();
+
+            foreach (Empleado item in empleadosTodosList)
+            {
+                if (Empleado.conocerCargo(item)==1 && Empleado.trabajaEnDiaYHorario(item) == false && Empleado.tieneAsignacionParaDiaYHora(item) == false)//si es guia - si trabaja en dia y horario - si no tiene asignacion
+                {
+                    guiasDisponibles.Add(item);
+                }
+                
+            }
+
+            return guiasDisponibles;
+
+        }
+
+
 
     }
 }

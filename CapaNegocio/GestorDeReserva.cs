@@ -31,7 +31,7 @@ namespace CapaNegocio
 
         public static int visitantesSimultaneos { get; set; }
 
-        public static List<Empleado> guiasTodosList { get; set; }
+        public static List<Empleado> guiasDeLaSede { get; set; }
 
         public static List<Empleado> guiaSeleccionado { get; set; }
 
@@ -199,7 +199,6 @@ namespace CapaNegocio
             exposicionSeleccionada = lista;
         }
 
-
         public static void seleccionFechaHora(DateTime valor)
         {
             fechaHoraReserva = valor;
@@ -243,52 +242,23 @@ namespace CapaNegocio
 
         public static List<Empleado> buscarGuiasDisponibles()
         {
+            List<Empleado> guiasTodos = Sede.guiasDisponibles();
 
-            List<Empleado> empSede1 = new List<Empleado>();
-            Empleado emp1 = new Empleado(1, "Ramirez", 2234, "35467898787", "5467", "Mitre 10", "22-05-2021", "31-12-1987", "robert@gmail.com", "Roberto", "Masculino", "3467567", "Guia", "08:00 - 20:00");
-            Empleado emp2 = new Empleado(2, "Pereyra", 2234, "239487423423", "5467", "Mitre 10", "22-05-2021", "31-12-1987", "pereyra@gmail.com", "Tomas", "Masculino", "3467567", "Guia", "08:00 - 20:00");
-            Empleado emp3 = new Empleado(3, "Sanchez", 2234, "2342374234", "5467", "Mitre 10", "22-05-2021", "31-12-1987", "sanchez@gmail.com", "Arnold", "Femenino", "3467567", "Guia", "08:00 - 20:00");
-            Empleado emp4 = new Empleado(4, "Juna", 2234, "4593882343", "5467", "Mitre 10", "22-05-2021", "31-12-1987", "juna@gmail.com", "Roberto", "Masculino", "3467567", "Guia", "08:00 - 20:00");
-            Empleado emp5 = new Empleado(5, "Arnold", 2234, "35467898787", "5467", "Calle 130", "22-05-2021", "31-12-1987", "arnold@gmail.com", "Josefa", "Femenino", "3467567", "Guia", "08:00 - 20:00");
-
-            empSede1.Add(emp1);
-            empSede1.Add(emp2);
-            empSede1.Add(emp3);
-            empSede1.Add(emp5);
-            empSede1.Add(emp4);
-
-            List<Empleado> empSede2 = new List<Empleado>();
-            Empleado emp6 = new Empleado(6, "Gomez", 34, "40234534564", "35462543", "Colon", "15/5/2020", "12/3/2000", "gomez@gmail.com", "Pedro", "M", "43215625", "Guia", "08:00 - 20:00");
-            Empleado emp7 = new Empleado(7, "Gimenez", 234, "452482424", "453434884", "Malvinas", "15/5/2020", "3/5/2019", "gimenez@gmail.com", "Maria", "F", "13245254", "Guia", "08:00 - 20:00");
-            Empleado emp8 = new Empleado(8, "Guzman", 45344, "44834154564", "12015205", "GralPaz", "15/5/2020", "8/6/2000", "guzman@gmail.com", "Jorge", "M", "862354", "Guia", "08:00 - 20:00");
-            Empleado emp9 = new Empleado(9, "Ramirez", 34566, "248245284", "45348323", "Rosario", "15/5/2020", "13/9/2001", "ramirez@gmail.com", "Martin", "M", "4125500", "Guia", "08:00 - 20:00");
-            Empleado emp10 = new Empleado(10, "Rondo", 23425, "021045045", "8452045", "Maral", "15/5/2020", "12/3/2000", "rondo@gmail.com", "Esteban", "M", "45348485", "Guia", "08:00 - 20:00");
-
-            empSede2.Add(emp6);
-            empSede2.Add(emp7);
-            empSede2.Add(emp8);
-            empSede2.Add(emp9);
-            empSede2.Add(emp10);
-            List<Empleado> empSede3 = new List<Empleado>();
-            Empleado emp11 = new Empleado(11, "Fernandez", 675567, "1235415342", "123543542", "Patria", "2/7/2019", "15/6/2021", "fernandez@gmail.com", "Maria", "F", "348354254", "Guia", "13:00");
-            Empleado emp12 = new Empleado(12, "Paredes", 4334534, "47582424", "453434884", "Malvinas", "15/5/2020", "3/5/2019", "paredes@gmail.com", "Esequiel", "M", "14585254", "Guia", "8:00");
-            Empleado emp13 = new Empleado(13, "Funes", 345346, "32154786", "12015205", "GralPaz", "15/5/2020", "8/6/2000", "funes@gmail.com", "Gaston", "M", "4384534", "Guia", "12:00");
-            Empleado emp14 = new Empleado(14, "Muñoz", 345345, "32568578", "45348323", "Rosario", "15/5/2020", "13/9/2001", "muñoz@gmail.com", "Facundo", "M", "3785421", "Guia", "20:00");
-            Empleado emp15 = new Empleado(15, "Rodriguez", 2342345, "38975425", "8452045", "Maral", "15/5/2020", "12/3/2000", "rodriguez@gmail.com", "Rafael", "M", "43853485", "Guia", "17:00");
+            List<Empleado> guiasDeSede = new List<Empleado>();
 
 
-            if (sedeSeleccionada.idSede == 1)
+            foreach (Empleado item in guiasTodos)
             {
-                return empSede1;
+                if (item.idSede == sedeSeleccionada.idSede)
+                {
+                    guiasDeSede.Add(item);
+                }
             }
-            else if (sedeSeleccionada.idSede == 2)
-            {
-                return empSede2;
-            }
-            else
-            {
-                return empSede3;
-            }
+
+
+            guiasDeLaSede = guiasDeSede;
+
+            return guiasDeSede;
 
         }
 

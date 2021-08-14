@@ -12,13 +12,6 @@ namespace CapaNegocio
         public string descripcion { get; set; }
         public string nombre { get; set; }
 
-        public Cargo(int idCargo, string descripcion, string nombre)
-        {
-            this.idCargo = idCargo;
-            this.descripcion = descripcion;
-            this.nombre = nombre;
-        }
-
 
     }
 }

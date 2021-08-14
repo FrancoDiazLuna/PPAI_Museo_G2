@@ -14,17 +14,5 @@ namespace CapaNegocio
         public string descripcion { get; set; }
         public string nombre { get; set; }
 
-        public static List<Exposicion> tipoExpoEs(List<Exposicion> expoTodas, int num)
-        {
-            List<Exposicion> listaDeExpos = new List<Exposicion>();
-
-            var filtrado = expoTodas.Where(expo => expo.idTipoExposicion == num );
-            foreach (Exposicion expo in filtrado)
-            {
-                listaDeExpos.Add(expo);
-            }
-
-            return listaDeExpos;
-        }
     }
 }

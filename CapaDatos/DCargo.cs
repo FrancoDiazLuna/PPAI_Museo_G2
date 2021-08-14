@@ -48,7 +48,27 @@ namespace CapaDatos
             return dataTable;
         }
 
+        public List<DCargo> dCargo()
+        {
+            DataTable cargosTodos = new DCargo().buscar();
 
+            List<DCargo> cargosTodosList = new List<DCargo>();
+
+
+
+
+            cargosTodosList = (from DataRow dr in cargosTodos.Rows
+                                  select new DCargo()
+                                  {
+                                      idCargo = Convert.ToInt32(dr["idCargo"]),
+                                      descripcion = dr["descripcion"].ToString(),
+                                      nombre = dr["nombre"].ToString(),
+
+                                  }
+                                    ).ToList();
+
+            return cargosTodosList;
+        }
 
 
 

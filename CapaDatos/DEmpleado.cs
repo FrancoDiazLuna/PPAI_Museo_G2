@@ -24,6 +24,7 @@ namespace CapaDatos
         public string _telefono;
         public int _idCargo;
         public int _idHorarioEmpleado;
+        public int _idSede;
 
 
 
@@ -47,24 +48,8 @@ namespace CapaDatos
         {
         }
 
-        public DEmpleado(int idEmpleado, string apellido, int codigoValidacion, string cuit, int dni, string domicilio,
-            DateTime fechaIngreso, DateTime fechaNacimiento, string mail, string nombre, string sexo, string telefono, int idCargo, int idHorarioEmpleado)
-        {
-            this.idEmpleado = idEmpleado;
-            this.apellido = apellido;
-            this.codigoValidacion = codigoValidacion;
-            this.cuit = cuit;
-            this.dni = dni;
-            this.domicilio = domicilio;
-            this.fechaIngreso = fechaIngreso;
-            this.fechaNacimiento = fechaNacimiento;
-            this.mail = mail;
-            this.nombre = nombre;
-            this.sexo = sexo;
-            this.telefono = telefono;
-            this.idCargo = idCargo;
-            this.idHorarioEmpleado = idHorarioEmpleado;
-        }
+
+
 
         public DataTable buscar()
         {
@@ -89,5 +74,11 @@ namespace CapaDatos
 
             return dataTable;
         }
+
+
+
+
+
+
     }
 }

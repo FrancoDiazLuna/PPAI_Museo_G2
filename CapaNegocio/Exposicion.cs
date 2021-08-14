@@ -24,33 +24,59 @@ namespace CapaNegocio
         public int idEmpleadoCreo { get; set; }
 
 
-        //(List<int> idExposiciones)
 
 
-        public static List<Exposicion> esVigente(List<Exposicion> expoTodas)
+
+        //public static List<Exposicion> esVigente(List<Exposicion> expoTodas)
+        //{
+        //    List<Exposicion> expoVigente = new List<Exposicion>();
+
+        //    var filtrado = expoTodas.Where(expo => expo.fechaInicio <= DateTime.Now | expo.fechaInicioReplanificada <= DateTime.Now 
+        //                                        && expo.fechaFin >= DateTime.Now | expo.fechaFinReplanificada >= DateTime.Now);
+        //    foreach (Exposicion expo in filtrado)
+        //    {
+        //        //if (expo.fechaInicio <= DateTime.Now | expo.fechaInicioReplanificada <= DateTime.Now)
+        //            expoVigente.Add(expo);
+        //    }
+
+        //    return expoVigente;
+        //}
+
+        public static bool esVigente(Exposicion expo)
         {
-            List<Exposicion> expoVigente = new List<Exposicion>();
-
-            var filtrado = expoTodas.Where(expo => expo.fechaInicio <= DateTime.Now | expo.fechaInicioReplanificada <= DateTime.Now 
-                                                && expo.fechaFin >= DateTime.Now | expo.fechaFinReplanificada >= DateTime.Now);
-            foreach (Exposicion expo in filtrado)
+            if (expo.fechaInicio <= DateTime.Now | expo.fechaInicioReplanificada <= DateTime.Now
+                   && expo.fechaFin >= DateTime.Now | expo.fechaFinReplanificada >= DateTime.Now)
             {
-                //if (expo.fechaInicio <= DateTime.Now | expo.fechaInicioReplanificada <= DateTime.Now)
-                    expoVigente.Add(expo);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public static bool esTemporal(Exposicion expo)
+        {
+            if (expo.idTipoExposicion == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
             }
 
-            return expoVigente;
         }
 
 
-        public static List<Exposicion> esTemporal(List<Exposicion> lista)
-        {
-            List<Exposicion> listaTemporales = new List<Exposicion>();
+        //public static List<Exposicion> esTemporal(List<Exposicion> lista)
+        //{
+        //    List<Exposicion> listaTemporales = new List<Exposicion>();
 
-            listaTemporales = TipoExposicion.tipoExpoEs(lista, 1);
+        //    listaTemporales = TipoExposicion.tipoExpoEs(lista, 1);
 
-            return listaTemporales;
-        } 
+        //    return listaTemporales;
+        //} 
 
 
         public static int calcularDuracionObrasExpuestas(int item)

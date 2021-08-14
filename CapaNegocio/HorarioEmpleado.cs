@@ -13,13 +13,7 @@ namespace CapaNegocio
         public string horaSalida { get; set; }
         public int idDiaSemana { get; set; }
 
-        public HorarioEmpleado(int idHorarioEmpleado, string horaIngreso, string horaSalida, int idDiaSemana)
-        {
-            this.idHorarioEmpleado = idHorarioEmpleado;
-            this.horaIngreso = horaIngreso;
-            this.horaSalida = horaSalida;
-            this.idDiaSemana = idDiaSemana;
-        }
+
 
 
     }
