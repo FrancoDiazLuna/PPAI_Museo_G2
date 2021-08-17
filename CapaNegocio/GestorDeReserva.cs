@@ -188,13 +188,50 @@ namespace CapaNegocio
 
         public static List<Empleado> buscarGuiasDisponibles()
         {
-            List<Empleado> guiasTodos = Sede.guiasDisponibles();
-
+            List<Empleado> guiasTodos = Sede.buscarGuiasDisponibles();
+            DataTable guiasHorarios = Sede.guiasDisponibles();
             List<Empleado> guiasDeSede = new List<Empleado>();
+
+            List<DataRow> guiasConHorarios = new List<DataRow>();
+
+            foreach (DataRow dr in guiasHorarios.Rows)
+            {
+                guiasConHorarios.Add(dr);
+            }
+
+
+
+
+
+
+
+
 
 
             foreach (Empleado item in guiasTodos)
             {
+                foreach (DataRow row in guiasHorarios.Rows)
+                {
+                    if (row["idSede"].Equals(sedeSeleccionada.idSede))
+                    {
+                        if (true)
+                        {
+
+                        }
+                        DateTime ingreso = Convert.ToDateTime(row["horaIngreso"].ToString());
+                        DateTime salida = Convert.ToDateTime(row["horaSalida"].ToString());
+
+
+                        if (ingreso.Hour < fechaHoraReserva.Hour && fechaHoraReserva.Hour < salida.Hour)
+                        {
+
+                        }
+                    }
+                }
+
+
+
+
                 if (item.idSede == sedeSeleccionada.idSede)
                 {
                     guiasDeSede.Add(item);

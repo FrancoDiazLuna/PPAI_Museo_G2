@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAsignacionVisita.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="DCargo.cs" />
     <Compile Include="DDetalleExposicion.cs" />
@@ -49,6 +50,7 @@
     <Compile Include="DEscuela.cs" />
     <Compile Include="DExposicion.cs" />
     <Compile Include="DExposicionesPorSede.cs" />
+    <Compile Include="DHorarioEmpleado.cs" />
     <Compile Include="DObra.cs" />
     <Compile Include="DPublicoDestino.cs" />
     <Compile Include="DReservaVisita.cs" />

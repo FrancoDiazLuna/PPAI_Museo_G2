@@ -28,24 +28,6 @@ namespace CapaNegocio
         public int idSede { get; set; }
 
 
-        //public Empleado(int idEmpleado, string apellido, int codigoValidacion, string cuit, int dni, string domicilio,
-        //    DateTime fechaIngreso, DateTime fechaNacimiento, string mail, string nombre, string sexo, string telefono, int idCargo, int idHorarioEmpleado)
-        //{
-        //    this.idEmpleado = idEmpleado;
-        //    this.apellido = apellido;
-        //    this.codigoValidacion = codigoValidacion;
-        //    this.cuit = cuit;
-        //    this.dni = dni;
-        //    this.domicilio = domicilio;
-        //    this.fechaIngreso = fechaIngreso;
-        //    this.fechaNacimiento = fechaNacimiento;
-        //    this.mail = mail;
-        //    this.nombre = nombre;
-        //    this.sexo = sexo;
-        //    this.telefono = telefono;
-        //    this.idCargo = idCargo;
-        //    this.idHorarioEmpleado = idHorarioEmpleado;
-        //}
 
 
         public static int conocerCargo(Empleado empleado)
@@ -53,17 +35,89 @@ namespace CapaNegocio
             return empleado.idCargo;
         }
 
-        public static bool trabajaEnDiaYHorario(Empleado empleado)
+        public static DataTable trabajaEnDiaYHorario(Empleado empleado)
         {
-            //crear clase de horario empleadoo
-            //Link de la solucion
-            //https://social.msdn.microsoft.com/Forums/es-ES/ae24003b-397d-48e0-8800-f96348056810/fecha-dentro-de-un-rango-de-fecha-en-c?forum=vcses 
-            return false;
+            DataTable horarios = new DHorarioEmpleado().buscar();
+
+
+            List<HorarioEmpleado> horariosLista = new List<HorarioEmpleado>();
+
+            horariosLista = (from DataRow dr in horarios.Rows
+                                  select new HorarioEmpleado()
+                                  {
+                                      idHorarioEmpleado = Convert.ToInt32(dr["idHorarioEmpleado"]),
+                                      horaIngreso = Convert.ToDateTime(dr["horaIngreso"]),
+                                      horaSalida = Convert.ToDateTime(dr["horaSalida"]),
+                                      idDiaSemana = Convert.ToInt32(dr["idDiaSemana"])
+
+                                  }
+            ).ToList();
+
+
+            DataTable dt = new DataTable();
+            dt.Columns.Add("idDiaSemana", typeof(int));
+            dt.Columns.Add("horaIngreso", typeof(string));
+            dt.Columns.Add("horaSalida", typeof(string));
+
+            DataRow row = dt.NewRow();
+
+
+            foreach (HorarioEmpleado item in horariosLista)
+            {
+
+                if (item.idHorarioEmpleado == empleado.idHorarioEmpleado)
+                {
+                    row["idDiaSemana"] = item.idDiaSemana;
+                    row["horaIngreso"] = item.horaIngreso;
+                    row["horaSalida"] = item.horaSalida;
+
+                    dt.Rows.Add(row);
+
+                }
+            }
+            return dt;
+
+
         }
 
-        public static bool tieneAsignacionParaDiaYHora(Empleado empleado)
+        public static DataTable tieneAsignacionParaDiaYHora(Empleado empleado)
         {
-            return false;
+            DataTable asignaciones = new DAsignacionVisita().buscar();
+
+            List<AsignacionVisita> asignacionesList = new List<AsignacionVisita>();
+
+            asignacionesList = (from DataRow dr in asignaciones.Rows
+                             select new AsignacionVisita()
+                             {
+                                 idAsignacionVisita = Convert.ToInt32(dr["idAsignacionVisita"]),
+                                 fechaHoraFin = Convert.ToDateTime(dr["fechaHoraFin"]),
+                                 fechaHoraInicio = Convert.ToDateTime(dr["fechaHoraInicio"]),
+                                 idGuiaAsignado = Convert.ToInt32(dr["idGuiaAsignado"])
+
+                             }
+                             ).ToList();
+
+            DataTable dt = new DataTable();
+            dt.Columns.Add("fechaHoraInicio", typeof(string));
+            dt.Columns.Add("fechaHoraFin", typeof(string));
+
+
+            foreach (AsignacionVisita item in asignacionesList)
+            {
+                if (item.idGuiaAsignado == empleado.idEmpleado)
+                {
+                    DataRow row = dt.NewRow();
+                    row["fechaHoraInicio"] = item.fechaHoraInicio;
+                    row["fechaHoraFin"] = item.fechaHoraFin;
+
+                    dt.Rows.Add(row);
+                }
+
+
+            }
+
+            return dt;
+
         }
 
 

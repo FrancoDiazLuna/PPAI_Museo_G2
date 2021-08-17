@@ -45,6 +45,7 @@
     <Compile Include="CambioEstado.cs" />
     <Compile Include="Cargo.cs" />
     <Compile Include="DetalleExposicion.cs" />
+    <Compile Include="DiasDeSemana.cs" />
     <Compile Include="Empleado.cs" />
     <Compile Include="Estado.cs" />
     <Compile Include="Exposicion.cs" />

@@ -23,6 +23,8 @@ namespace CapaNegocio
 
 
 
+
+
         public static List<Exposicion> buscarExposicionTemporalVigente(Sede sedeSelecc)
         {
             DataTable exposicionesTodas = new DExposicion().buscar();
@@ -173,11 +175,13 @@ namespace CapaNegocio
             return duracion;
         }
 
-        public static List<Empleado> guiasDisponibles()
+
+        public static List<Empleado> buscarGuiasDisponibles()
         {
             DataTable empleadosTodos = new DEmpleado().buscar();
 
             List<Empleado> empleadosTodosList = new List<Empleado>();
+            List<Empleado> guias = new List<Empleado>();
 
             empleadosTodosList = (from DataRow dr in empleadosTodos.Rows
                                   select new Empleado()
@@ -196,27 +200,63 @@ namespace CapaNegocio
                                       telefono = dr["telefono"].ToString(),
                                       idCargo = Convert.ToInt32(dr["idCargo"]),
                                       idHorarioEmpleado = Convert.ToInt32(dr["idHorarioEmpleado"]),
-                                      idSede = Convert.ToInt32(dr["idEmpleadoCreo"])
+                                      idSede = Convert.ToInt32(dr["idSede"])
 
                                   }
                                     ).ToList();
 
 
 
-            List<Empleado> guiasDisponibles = new List<Empleado>();
 
             foreach (Empleado item in empleadosTodosList)
             {
-                if (Empleado.conocerCargo(item)==1 && 
-                    Empleado.trabajaEnDiaYHorario(item) == false 
-                    && Empleado.tieneAsignacionParaDiaYHora(item) == false)   //si es guia - si trabaja en dia y horario - si no tiene asignacion
+                if (Empleado.conocerCargo(item) == 1)
                 {
-                    guiasDisponibles.Add(item);
+                    guias.Add(item);
                 }
-                
             }
 
-            return guiasDisponibles;
+                    return guias;
+
+        }
+
+        public static DataTable guiasDisponibles()
+        {
+            
+
+            List<Empleado> guias = buscarGuiasDisponibles();
+
+
+
+            DataTable dt1 = new DataTable();
+            dt1.Columns.Add("idEmpleado", typeof(int));
+            dt1.Columns.Add("idSede", typeof(int));
+            dt1.Columns.Add("apellido", typeof(string));
+            dt1.Columns.Add("nombre", typeof(string));
+            dt1.Columns.Add("idDiaSemana", typeof(int));
+            dt1.Columns.Add("horaIngreso", typeof(string));
+            dt1.Columns.Add("horaSalida", typeof(string));
+            dt1.Columns.Add("fechaHoraInicio", typeof(string));
+            dt1.Columns.Add("fechaHoraFin", typeof(string));
+
+
+            foreach (Empleado item in guias)
+            {
+                DataTable dt3 = Empleado.tieneAsignacionParaDiaYHora(item);
+
+                foreach (DataRow row1 in dt3.Rows)
+                {
+                    DataTable dt2 = Empleado.trabajaEnDiaYHorario(item);
+                    foreach (DataRow row2 in dt2.Rows)
+                    {
+                        dt1.Rows.Add(item.idEmpleado, item.idSede, item.apellido, item.nombre,row2["idDiaSemana"],
+                            row2["horaIngreso"],row2["horaSalida"],row1["fechaHoraInicio"],row1["fechaHoraFin"]);
+                    }
+                }
+            }
+
+
+            return dt1;
 
         }
 
