@@ -56,8 +56,8 @@ namespace CapaNegocio
 
             DataTable dt = new DataTable();
             dt.Columns.Add("idDiaSemana", typeof(int));
-            dt.Columns.Add("horaIngreso", typeof(string));
-            dt.Columns.Add("horaSalida", typeof(string));
+            dt.Columns.Add("horaIngreso", typeof(DateTime));
+            dt.Columns.Add("horaSalida", typeof(DateTime));
 
             DataRow row = dt.NewRow();
 
@@ -98,8 +98,8 @@ namespace CapaNegocio
                              ).ToList();
 
             DataTable dt = new DataTable();
-            dt.Columns.Add("fechaHoraInicio", typeof(string));
-            dt.Columns.Add("fechaHoraFin", typeof(string));
+            dt.Columns.Add("fechaHoraInicio", typeof(DateTime));
+            dt.Columns.Add("fechaHoraFin", typeof(DateTime));
 
 
             foreach (AsignacionVisita item in asignacionesList)

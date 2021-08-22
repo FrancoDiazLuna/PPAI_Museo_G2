@@ -190,7 +190,7 @@ namespace CapaNegocio
         {
             List<Empleado> guiasTodos = Sede.buscarGuiasDisponibles();
             DataTable guiasHorarios = Sede.guiasDisponibles();
-            List<Empleado> guiasDeSede = new List<Empleado>();
+            List<Empleado> guiasDeSedeDisponibles = new List<Empleado>();
 
             List<DataRow> guiasConHorarios = new List<DataRow>();
 
@@ -201,47 +201,64 @@ namespace CapaNegocio
 
 
 
-
-
-
-
-
-
-
             foreach (Empleado item in guiasTodos)
             {
+                int bandera = 0;
                 foreach (DataRow row in guiasHorarios.Rows)
                 {
                     if (row["idSede"].Equals(sedeSeleccionada.idSede))
                     {
-                        if (true)
-                        {
 
-                        }
                         DateTime ingreso = Convert.ToDateTime(row["horaIngreso"].ToString());
                         DateTime salida = Convert.ToDateTime(row["horaSalida"].ToString());
-
-
                         if (ingreso.Hour < fechaHoraReserva.Hour && fechaHoraReserva.Hour < salida.Hour)
                         {
+                            int dia = Convert.ToInt32(row["idDiaSemana"].ToString());
+                            if ((int)fechaHoraReserva.DayOfWeek <= 5 && dia == 1 || (int)fechaHoraReserva.DayOfWeek >= 5 && dia == 2)
+                            {
+                                DateTime inicio = Convert.ToDateTime(row["fechaHoraInicio"].ToString());
+                                DateTime fin = Convert.ToDateTime(row["fechaHoraFin"].ToString());
+                                if (inicio.Date == fechaHoraReserva.Date)
+                                {
 
+                                    DateTime dEst = fechaHoraReserva.AddMinutes(40); 
+                                    if (inicio.TimeOfDay < fechaHoraReserva.TimeOfDay && fechaHoraReserva.TimeOfDay < fin.TimeOfDay ||
+                                        inicio.TimeOfDay < dEst.TimeOfDay && dEst.TimeOfDay < fin.TimeOfDay)
+                                    {
+                                        bandera = bandera + 1;
+                                    }
+
+                                    if (guiasDeSedeDisponibles.Contains(item) && bandera == 0)
+                                    {
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        if (bandera == 0)
+                                        {
+                                            guiasDeSedeDisponibles.Add(item);
+                                        }
+                                        else
+                                        {
+                                            guiasDeSedeDisponibles.Remove(item);
+                                        }
+
+                                    }
+                                }
+                            }
                         }
                     }
                 }
-
-
-
-
-                if (item.idSede == sedeSeleccionada.idSede)
-                {
-                    guiasDeSede.Add(item);
-                }
+                //if (item.idSede == sedeSeleccionada.idSede)
+                //{
+                //    guiasDeSedeDisponibles.Add(item);
+                //}
             }
 
 
-            guiasDeLaSede = guiasDeSede;
+            guiasDeLaSede = guiasDeSedeDisponibles;
 
-            return guiasDeSede;
+            return guiasDeSedeDisponibles;
 
         }
 

@@ -234,10 +234,10 @@ namespace CapaNegocio
             dt1.Columns.Add("apellido", typeof(string));
             dt1.Columns.Add("nombre", typeof(string));
             dt1.Columns.Add("idDiaSemana", typeof(int));
-            dt1.Columns.Add("horaIngreso", typeof(string));
-            dt1.Columns.Add("horaSalida", typeof(string));
-            dt1.Columns.Add("fechaHoraInicio", typeof(string));
-            dt1.Columns.Add("fechaHoraFin", typeof(string));
+            dt1.Columns.Add("horaIngreso", typeof(DateTime));
+            dt1.Columns.Add("horaSalida", typeof(DateTime));
+            dt1.Columns.Add("fechaHoraInicio", typeof(DateTime));
+            dt1.Columns.Add("fechaHoraFin", typeof(DateTime));
 
 
             foreach (Empleado item in guias)
