@@ -161,11 +161,28 @@ namespace CapaNegocio
         }
 
 
-
-        public void  calcularDuracionEstimada()
+        // falta llamar a este metodo despues de que elige las exposiciones
+        public static void  calcularDuracionEstimada()
         {
-            duracionEstimada = Sede.calcularDuracionEstimada(exposicionSeleccionada);
+            int durEstimada = 0;
 
+            DataTable duracionExpos = Sede.calcularDuracionEstimada(sedeSeleccionada);
+
+            foreach (Exposicion item in exposicionSeleccionada)
+            {
+                foreach (DataRow row in duracionExpos.Rows)
+                {
+                    int idExpo = Convert.ToInt32(row["idExpo"]);
+                    if (item.idExposicion == idExpo)
+                    {
+                        int duracion = Convert.ToInt32(row["duracion"]);
+
+                        durEstimada = durEstimada + duracion;
+                    }
+                }
+            }
+
+            duracionEstimada = durEstimada;
         }
 
         public static void buscarVisitantesSimultaneosEnSede()
@@ -184,7 +201,7 @@ namespace CapaNegocio
             return true;
         }
 
-        //buscarGuiasDisponibles
+
 
         public static List<Empleado> buscarGuiasDisponibles()
         {
@@ -221,7 +238,7 @@ namespace CapaNegocio
                                 if (inicio.Date == fechaHoraReserva.Date)
                                 {
 
-                                    DateTime dEst = fechaHoraReserva.AddMinutes(40); 
+                                    DateTime dEst = fechaHoraReserva.AddMinutes(duracionEstimada); 
                                     if (inicio.TimeOfDay < fechaHoraReserva.TimeOfDay && fechaHoraReserva.TimeOfDay < fin.TimeOfDay ||
                                         inicio.TimeOfDay < dEst.TimeOfDay && dEst.TimeOfDay < fin.TimeOfDay)
                                     {
@@ -243,6 +260,18 @@ namespace CapaNegocio
                                             guiasDeSedeDisponibles.Remove(item);
                                         }
 
+                                    }
+                                }
+                                else
+                                {
+                                    if (bandera == 0)
+                                    {
+                                        guiasDeSedeDisponibles.Add(item);
+                                        bandera = bandera + 1;
+                                    }
+                                    else
+                                    {
+                                        break;
                                     }
                                 }
                             }

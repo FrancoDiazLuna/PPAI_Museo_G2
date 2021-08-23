@@ -90,8 +90,7 @@ namespace CapaNegocio
         }
 
 
-        public static int calcularDuracionObrasExpuestas(int item)
-
+        public static int calcularDuracionObrasExpuestas(Exposicion expo)
         {
             DataTable detalleExpo = new DDetalleExposicion().buscar();
             List<DetalleExposicion> detalleExpoList = new List<DetalleExposicion>();
@@ -108,18 +107,30 @@ namespace CapaNegocio
                                }
                                     ).ToList();
 
-            List<DetalleExposicionPorExposicion> detalleExpoEnExpo = new DetalleExposicionPorExposicion().getDetalleExE();
+            DataTable detalleExp = new DDetalleExposicionPorExposicion().buscar();
+            List<DetalleExposicionPorExposicion> expTodasList = new List<DetalleExposicionPorExposicion>();
 
-            foreach (var item2 in detalleExpoEnExpo)
+            expTodasList = (from DataRow dr in detalleExp.Rows
+                            select new DetalleExposicionPorExposicion()
+                            {
+                                idDetalleExposicioPorExposicion = Convert.ToInt32(dr["idDetalleExposicioPorExposicion"]),
+                                idExposicion = Convert.ToInt32(dr["idExposicion"]),
+                                idDetalleExposicion = Convert.ToInt32(dr["idDetalleExposicion"]),
+
+                            }
+             ).ToList();
+
+
+
+            foreach (DetalleExposicionPorExposicion item1 in expTodasList)
             {
-                foreach (var item3 in detalleExpoList)
+                foreach (DetalleExposicion item2 in detalleExpoList)
                 {
-                    if (item == item2.idExposicion && item3.idDetalleExposicion == item2.idDetalleExposicion)
+                    if (expo.idExposicion == item1.idExposicion && item2.idDetalleExposicion == item1.idDetalleExposicion)
                     {
-                        duracionObra = duracionObra + DetalleExposicion.buscarDuracExtObra(item2.idDetalleExposicion);
+                        duracionObra = duracionObra + DetalleExposicion.buscarDuracExtObra(item2);
                     }
                 }
-
             }
 
             return duracionObra;

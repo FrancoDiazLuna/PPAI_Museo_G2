@@ -18,7 +18,7 @@ namespace CapaNegocio
 
 
 
-        public static int buscarDuracExtObra(int item2)
+        public static int buscarDuracExtObra(DetalleExposicion detalle)
         {
             DataTable obras = new DObra().buscar();
             List<Obra> obrasTodasList = new List<Obra>();
@@ -55,15 +55,16 @@ namespace CapaNegocio
                               }
             ).ToList();
 
-            foreach (var item3 in obrasTodasList)
+            foreach (Obra item in obrasTodasList)
             {
-                if (item3.idObra == item2)
+                if (item.idObra == detalle.idObra)
                 {
-                    return item3.getDuracionExtendida();
+                    duracionObra = duracionObra + item.duracionExtendida;
                 }
             }
 
             return duracionObra;
+
         }
 
 

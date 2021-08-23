@@ -161,18 +161,22 @@ namespace CapaNegocio
         }
 
 
-        public static int calcularDuracionEstimada(List<Exposicion> exposicionSeleccionada)
+        public static DataTable calcularDuracionEstimada(Sede sedeSelecc)
         {
+            List<Exposicion> exposList = buscarExposicionTemporalVigente(sedeSelecc);
 
-            int duracion = 0;
 
+            DataTable dt1 = new DataTable();
+            dt1.Columns.Add("idExpo", typeof(int));
+            dt1.Columns.Add("duracion", typeof(int));
 
-            foreach (Exposicion item in exposicionSeleccionada)
+            foreach (Exposicion item in exposList)
             {
-                duracion = duracion + Exposicion.calcularDuracionObrasExpuestas(item.idExposicion);
+                dt1.Rows.Add(item.idExposicion,Exposicion.calcularDuracionObrasExpuestas(item));
             }
 
-            return duracion;
+            return dt1;
+
         }
 
 

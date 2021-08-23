@@ -17,22 +17,6 @@ namespace CapaNegocio
 
 
 
-        public List<DetalleExposicionPorExposicion> getDetalleExE()
-        {
-            DataTable detalleExp = new DDetalleExposicionPorExposicion().buscar();
-            List<DetalleExposicionPorExposicion> expTodasList = new List<DetalleExposicionPorExposicion>();
 
-            expTodasList = (from DataRow dr in detalleExp.Rows
-                            select new DetalleExposicionPorExposicion()
-                            {
-                                idDetalleExposicioPorExposicion = Convert.ToInt32(dr["idDetalleExposicioPorExposicion"]),
-                                idExposicion = Convert.ToInt32(dr["idExposicion"]),
-                                idDetalleExposicion = Convert.ToInt32(dr["idDetalleExposicion"]),
-
-                            }
-             ).ToList();
-
-            return expTodasList;
-        }
     }
 }
