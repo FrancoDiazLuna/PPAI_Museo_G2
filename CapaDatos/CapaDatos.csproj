@@ -48,6 +48,7 @@
     <Compile Include="DDetalleExposicionPorExposicion.cs" />
     <Compile Include="DEmpleado.cs" />
     <Compile Include="DEscuela.cs" />
+    <Compile Include="DEstado.cs" />
     <Compile Include="DExposicion.cs" />
     <Compile Include="DExposicionesPorSede.cs" />
     <Compile Include="DHorarioEmpleado.cs" />

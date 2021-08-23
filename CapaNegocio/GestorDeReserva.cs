@@ -312,7 +312,26 @@ namespace CapaNegocio
 
         public static void registrarReserva()
         {
-            
+            DReservaVisita nuevaReserva = new DReservaVisita();
+            Estado est = Estado.esAmbitoReserva();
+            fechaHoraActual = DateTime.Now;
+
+            nuevaReserva.cantidadAlumno = cantidadVisitantes;
+            nuevaReserva.cantidadAlumnoConfirmada = 0;
+            nuevaReserva.duracionEstimada = duracionEstimada;
+            nuevaReserva.fechaHoraCreacion = fechaHoraActual;
+            nuevaReserva.fechaHoraReserva = fechaHoraReserva;
+            //nuevaReserva.horaFinReal =;
+            //nuevaReserva.horaInicioReal =;
+            nuevaReserva.numeroReserva = numeroUnico;
+            nuevaReserva.idEscuela = escuelaSeleccionada.idEscuela;
+            nuevaReserva.idSede = sedeSeleccionada.idSede;
+            //nuevaReserva.idExposicion =exposicionSeleccionada.;
+            //nuevaReserva.idCambioEstado =;
+            //nuevaReserva.idAsignacionGuia = guiaSeleccionado;
+            //nuevaReserva.idEmpleadoCreo = ;
+
+            DReservaVisita.cargar2(nuevaReserva);
         }
 
 
@@ -328,7 +347,7 @@ namespace CapaNegocio
         public void getFechaActual()
         {
 
-            fechaHoraActual = DateTime.Today;
+            fechaHoraActual = DateTime.Now;
 
             //DateTime dateTime = DateTime.UtcNow.Date;
             //Console.WriteLine(dateTime.ToString("dd/MM/yyyy"));
@@ -352,14 +371,21 @@ namespace CapaNegocio
         }
 
 
+        //nuevo
+        public static Estado BuscarEstadoPendienteDeConfirmacion()
+        {
+            //Estado e = new Estado();
+            Estado e = Estado.esAmbitoReserva();
+            return e;
+        }
 
-        
 
 
 
 
 
- 
+
+
 
 
 
