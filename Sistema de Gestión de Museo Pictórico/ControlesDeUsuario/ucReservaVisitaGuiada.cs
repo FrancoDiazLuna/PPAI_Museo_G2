@@ -53,7 +53,25 @@ namespace CapaNegocio
         
         public void mostrarEscuela()
         {
-            escuelaBindingSource.DataSource = GestorDeReserva.buscarEscuelas();
+            //escuelaBindingSource.DataSource = GestorDeReserva.buscarEscuelas();
+
+            List<Escuela> lista = GestorDeReserva.buscarEscuelas();
+
+            foreach (var item in lista)
+            {
+                gridEscuelas.AddNewRow();
+
+                int rowHandle = gridEscuelas.GetRowHandle(gridEscuelas.DataRowCount);
+                if (gridEscuelas.IsNewItemRow(rowHandle))
+                {
+                    gridEscuelas.SetRowCellValue(rowHandle, gridEscuelas.Columns[0], item.nombre); // Nombre
+                    gridEscuelas.SetRowCellValue(rowHandle, gridEscuelas.Columns[1], item.domicilio); // Domicilio
+                    gridEscuelas.SetRowCellValue(rowHandle, gridEscuelas.Columns[2], item.mail); // Mail
+                    gridEscuelas.SetRowCellValue(rowHandle, gridEscuelas.Columns[3], item.telefFijo); // Teléfono
+                    gridEscuelas.SetRowCellValue(rowHandle, gridEscuelas.Columns[4], item.telefCelular); // Celular
+                    gridEscuelas.SetRowCellValue(rowHandle, gridEscuelas.Columns[5], item.idEscuela);
+                }
+            }
         }
         private void tomarSeleccionDeEscuela(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
@@ -144,6 +162,7 @@ namespace CapaNegocio
         {
             List<Exposicion> exposSeleccionadas = exposicionesSeleccionadas();
             GestorDeReserva.seleccionExposicionesTemporalesVigentes(exposSeleccionadas);
+            GestorDeReserva.calcularDuracionEstimada();
         }
 
 
@@ -193,11 +212,11 @@ namespace CapaNegocio
                 //tabPane1.SelectNextPage();
                 //aca manda la fecha y hora
                 var fechaHora = DateTime.Parse(lblFechaSel.Text + " " + cmbHorarioSel.Text);
-                GestorDeReserva.seleccionFechaHora(fechaHora);
+                GestorDeReserva.seleccionFechaHora(fechaHora); 
                 txt_CantGuias.Text = GestorDeReserva.calcularGuiasNecesarios().ToString();
 
                 bool test = new GestorDeReserva().verificarCapacidadMaxima();
-                int test1 = GestorDeReserva.visitantesSimultaneos;
+                
                 //MessageBox.Show(test1.ToString());
                 //MessageBox.Show(test.ToString());
                 mostrarGuias();
@@ -223,6 +242,21 @@ namespace CapaNegocio
         public void mostrarGuias()
         {
             empleadoBindingSource.DataSource = GestorDeReserva.buscarGuiasDisponibles();
+            //List<Empleado> lista = GestorDeReserva.buscarGuiasDisponibles();
+
+            //foreach (var item in lista)
+            //{
+            //    gridGuias.AddNewRow();
+
+            //    int rowHandle = gridGuias.GetRowHandle(gridGuias.DataRowCount);
+            //    if (gridGuias.IsNewItemRow(rowHandle))
+            //    {
+            //        gridGuias.SetRowCellValue(rowHandle, gridGuias.Columns[1], item.apellido);
+            //        gridGuias.SetRowCellValue(rowHandle, gridGuias.Columns[2], item.nombre);
+            //        gridGuias.SetRowCellValue(rowHandle, gridGuias.Columns[3], item.idHorarioEmpleado.ToString());
+            //    }
+            //}
+
         }
 
         private void tabPane1_SelectedPageChanged(object sender, DevExpress.XtraBars.Navigation.SelectedPageChangedEventArgs e)
@@ -370,6 +404,7 @@ namespace CapaNegocio
 
         private void btn_confirmarReserva_Click(object sender, EventArgs e)
         {
+            GestorDeReserva.getFechaActual();
             GestorDeReserva.registrarReserva();
             MessageBox.Show("La reserva se registró con exito. \nEl estado actual de la misma es ahora Pendiente de Confirmación", "Confirmación de reserva de visita guiada", MessageBoxButtons.OK, MessageBoxIcon.Information);
             tabPane1.Visible = false;

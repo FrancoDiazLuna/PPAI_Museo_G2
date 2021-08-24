@@ -19,12 +19,12 @@ namespace CapaNegocio
 
 
 
-        public string getEmpleadoEnSesion()
+        public static int getEmpleadoEnSesion()
         {
 
-            string empSesion = "Administrador";
 
-            
+
+            Usuario usr = null;
 
             List<Usuario> usuarios = new Usuario().getUsuarios();
 
@@ -33,11 +33,12 @@ namespace CapaNegocio
             {
                 if (item.idUsuario == 1)
                 {
-                    empSesion = item.nombre;
+                    usr = item;
+
                 }
             }
 
-            return empSesion;
+            return usr.idUsuario;
         }
 
 

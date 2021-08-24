@@ -48,11 +48,31 @@ namespace CapaDatos
             return dataTable;
         }
 
+        public static void cargar(DAsignacionVisita AsigEmp)
+        {
+            SqlConnection cnn = new SqlConnection(Conexion.Cn);
+            SqlCommand agregar = new SqlCommand("insert into AsignacionVisita values (@fechaHoraFin,@fechaHoraInicio,@idGuiaAsignado)", cnn);
+            
+            cnn.Open();
+            try
+            {
+                agregar.Parameters.Clear();
+
+                agregar.Parameters.AddWithValue("@fechaHoraFin", Convert.ToDateTime(AsigEmp._fechaHoraFin.ToString("yyyy/MM/dd HH:mm:ss")));
+                agregar.Parameters.AddWithValue("@fechaHoraInicio", Convert.ToDateTime(AsigEmp._fechaHoraInicio.ToString("yyyy/MM/dd HH:mm:ss")));
+                agregar.Parameters.AddWithValue("@idGuiaAsignado", Convert.ToInt32(AsigEmp._idGuiaAsignado));
+
+                agregar.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+            }
+            finally
+            {
+                cnn.Close();
+            }
+        }
 
 
-
-
-
-
-    }
+        }
 }

@@ -16,10 +16,10 @@ namespace CapaDatos
         //public static string Cn = @"Data Source=LUCAS-PC\SQLEXPRESS;Initial Catalog=MuseoPictorico;Integrated Security=True";
 
         //Nahir
-        public static string Cn = "Data Source=DESKTOP-KH9IQDS\\SQLEXPRESS;Initial Catalog=MuseoPictorico;Integrated Security=True";
+        //public static string Cn = "Data Source=DESKTOP-KH9IQDS\\SQLEXPRESS;Initial Catalog=MuseoPictorico;Integrated Security=True";
 
         //Axel
-        //public static string Cn = "Data Source=DESKTOP-AKSB92Q\\SQLEXPRESS;Initial Catalog=MuseoPictorico;Integrated Security=True";
+        public static string Cn = "Data Source=DESKTOP-AKSB92Q\\SQLEXPRESS;Initial Catalog=MuseoPictorico;Integrated Security=True";
 
         // MauriData 
         //public static string Cn = @"Data Source=DESKTOP-3OTH51R;Initial Catalog=MuseoPictorico;Integrated Security=True";

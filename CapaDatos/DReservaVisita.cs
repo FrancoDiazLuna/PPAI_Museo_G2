@@ -99,8 +99,6 @@ namespace CapaDatos
                 res.horaFinReal = DateTime.MaxValue;
             }
 
-
-
             try
             {
                 agregar.Parameters.Clear();

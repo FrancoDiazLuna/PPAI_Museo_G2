@@ -50,7 +50,9 @@
     <Compile Include="DEscuela.cs" />
     <Compile Include="DEstado.cs" />
     <Compile Include="DExposicion.cs" />
+    <Compile Include="DExposicionesPorReserva.cs" />
     <Compile Include="DExposicionesPorSede.cs" />
+    <Compile Include="DGuiasPorReserva.cs" />
     <Compile Include="DHorarioEmpleado.cs" />
     <Compile Include="DObra.cs" />
     <Compile Include="DPublicoDestino.cs" />

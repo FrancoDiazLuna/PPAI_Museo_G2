@@ -49,6 +49,7 @@ namespace CapaNegocio
             this.colmail = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltelefFijo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltelefCelular = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.idEscuela = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.tabNav2_Sedes = new DevExpress.XtraBars.Navigation.TabNavigationPage();
@@ -308,7 +309,8 @@ namespace CapaNegocio
             this.coldomicilio,
             this.colmail,
             this.coltelefFijo,
-            this.coltelefCelular});
+            this.coltelefCelular,
+            this.idEscuela});
             this.gridEscuelas.GridControl = this.dgvEscuelas;
             this.gridEscuelas.Name = "gridEscuelas";
             this.gridEscuelas.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
@@ -362,6 +364,12 @@ namespace CapaNegocio
             this.coltelefCelular.OptionsColumn.AllowEdit = false;
             this.coltelefCelular.Visible = true;
             this.coltelefCelular.VisibleIndex = 4;
+            // 
+            // idEscuela
+            // 
+            this.idEscuela.Caption = "idEscuela";
+            this.idEscuela.FieldName = "idEscuela";
+            this.idEscuela.Name = "idEscuela";
             // 
             // labelControl2
             // 
@@ -1137,5 +1145,6 @@ namespace CapaNegocio
         private DevExpress.XtraEditors.LabelControl lblSede;
         private DevExpress.XtraEditors.LabelControl lblConfEscSel;
         private DevExpress.XtraEditors.LabelControl lblEsc;
+        private DevExpress.XtraGrid.Columns.GridColumn idEscuela;
     }
 }

@@ -46,3 +46,9 @@ C:\Users\Lucas\Desktop\Programacion\Programas desarrollados\Programa DSI\PPAI - 
 C:\Users\Lucas\Desktop\Programacion\Programas desarrollados\Programa DSI\PPAI - 11.30\PPAI_Museo_G2\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
 C:\Users\Lucas\Desktop\Programacion\Programas desarrollados\Programa DSI\PPAI - 11.30\PPAI_Museo_G2\CapaDatos\obj\Debug\CapaDatos.dll
 C:\Users\Lucas\Desktop\Programacion\Programas desarrollados\Programa DSI\PPAI - 11.30\PPAI_Museo_G2\CapaDatos\obj\Debug\CapaDatos.pdb
+C:\Users\Axel\Desktop\DISEÑO\PPAIVisual2\CapaDatos\bin\Debug\CapaDatos.dll
+C:\Users\Axel\Desktop\DISEÑO\PPAIVisual2\CapaDatos\bin\Debug\CapaDatos.pdb
+C:\Users\Axel\Desktop\DISEÑO\PPAIVisual2\CapaDatos\obj\Debug\CapaDatos.csprojAssemblyReference.cache
+C:\Users\Axel\Desktop\DISEÑO\PPAIVisual2\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
+C:\Users\Axel\Desktop\DISEÑO\PPAIVisual2\CapaDatos\obj\Debug\CapaDatos.dll
+C:\Users\Axel\Desktop\DISEÑO\PPAIVisual2\CapaDatos\obj\Debug\CapaDatos.pdb

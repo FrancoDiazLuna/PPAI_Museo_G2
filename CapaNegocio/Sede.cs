@@ -110,8 +110,15 @@ namespace CapaNegocio
         }
 
 
-        public static DataTable obtenerPublicoDestino(List<Exposicion> exposicionesSedeList)
+        public static DataTable obtenerPublicoDestino(Sede sedeSelecc)
         {
+
+            List<PublicoDestino> publicoDestLista = Exposicion.getPublicoDestino();
+
+            List<Exposicion> ExposPorSedeList = buscarExposicionTemporalVigente(sedeSelecc);
+
+
+
             DataTable dt = new DataTable();
 
             dt.Columns.Add("Id Exposicion");
@@ -124,40 +131,74 @@ namespace CapaNegocio
             dt.Columns.Add("Nombre");
             dt.Columns.Add("Publico Destino");
 
-            foreach (Exposicion exposicion in exposicionesSedeList)
+            foreach (Exposicion exposicion in ExposPorSedeList)
             {
-                dt.Rows.Add(Exposicion.getPublicoDestino(exposicion, dt));
+                DataRow row = dt.NewRow();
+
+                row["Id Exposicion"] = exposicion.idExposicion;
+                row["Fecha Fin"] = exposicion.fechaFin;
+                row["Fecha Fin Replanificada"] = exposicion.fechaFinReplanificada;
+                row["Fecha Inicio"] = exposicion.fechaInicio;
+                row["Fecha Inicio Replanificada"] = exposicion.fechaInicioReplanificada;
+                row["Hora Apertura"] = exposicion.horaApertura;
+                row["Hora Cierre"] = exposicion.horaCierre;
+                row["Nombre"] = exposicion.nombre;
+                foreach (PublicoDestino publicoDestino1 in publicoDestLista)
+                {
+                    if (publicoDestino1.idPublicoDestino == exposicion.idPublicoDestino)
+                    {
+                        row["Publico Destino"] = publicoDestino1.nombre;
+                    }
+                }
+
+                dt.Rows.Add(row);
             }
+
 
             return dt;
 
         }
 
 
-        public int buscarVisitantesSimultaneos(DateTime fechaReservaNueva)
+        public static List<ReservaVisita> buscarVisitantesSimultaneos(Sede selecc)
         {
-            int visitantes = 0;
-            Sede sede = GestorDeReserva.sedeSeleccionada;
+            DataTable reservasDT = new DReservaVisita().buscar();
 
-            int idSede = sede.idSede;
+            List<ReservaVisita> reservaVisitaTodasList = new List<ReservaVisita>();
+            List<ReservaVisita> reservasDeLaSede = new List<ReservaVisita>();
+            reservaVisitaTodasList = (from DataRow dr in reservasDT.Rows
+                                      select new ReservaVisita()
+                                      {
+                                          idReservaVisita = Convert.ToInt32(dr["idReservaVisita"]),
+                                          cantidadAlumnos = Convert.ToInt32(dr["cantidadAlumnos"]),
+                                          cantidadAlumnosConfirmada = Convert.ToInt32(dr["cantidadAlumnosConfirmada"]),
+                                          duracionEstimada = Convert.ToInt32(dr["duracionEstimada"]),
+                                          fechaHoraCreacion = Convert.ToDateTime(dr["fechaHoraCreacion"]),
+                                          fechaHoraReserva = Convert.ToDateTime(dr["fechaHoraReserva"]),
+                                          horaFinReal = Convert.ToDateTime(dr["horaFinReal"]),
+                                          horaInicioReal = Convert.ToDateTime(dr["horaInicioReal"]),
+                                          idEscuela = Convert.ToInt32(dr["idEscuela"]),
+                                          idSede = Convert.ToInt32(dr["idSede"]),
+                                          idExposicion = Convert.ToInt32(dr["idExposicion"]),
+                                          idCambioEstado = Convert.ToInt32(dr["idCambioEstado"]),
+                                          idAsignacionGuia = Convert.ToInt32(dr["idAsignacionGuia"]),
+                                          idEmpleadoCreo = Convert.ToInt32(dr["idEmpleadoCreo"])
+                                      }
+            ).ToList();
 
-            List<ReservaVisita> reservasTodas = new ReservaVisita().getReservaVisitas();
 
-
-            foreach (ReservaVisita item in reservasTodas)
+            foreach (ReservaVisita item in reservaVisitaTodasList)
             {
-                if (fechaReservaNueva.CompareTo(item.fechaHoraReserva) >= 0 & fechaReservaNueva.CompareTo(item.horaFinReal) <= 0)
+                if (item.idSede == selecc.idSede)
                 {
-                    if (item.idSede == idSede)
-                    {
-                        visitantes = visitantes + item.cantidadAlumnos;
-                    }
+                    reservasDeLaSede.Add(item);
                 }
-
             }
 
 
-            return visitantes;
+            return reservasDeLaSede;
+
+
         }
 
 
@@ -172,7 +213,7 @@ namespace CapaNegocio
 
             foreach (Exposicion item in exposList)
             {
-                dt1.Rows.Add(item.idExposicion,Exposicion.calcularDuracionObrasExpuestas(item));
+                dt1.Rows.Add(item.idExposicion, Exposicion.calcularDuracionObrasExpuestas(item));
             }
 
             return dt1;
@@ -214,7 +255,7 @@ namespace CapaNegocio
 
             foreach (Empleado item in empleadosTodosList)
             {
-                if (Empleado.conocerCargo(item) == 1)
+                if (Empleado.conocerCargo(item) == 2)
                 {
                     guias.Add(item);
                 }
@@ -226,7 +267,7 @@ namespace CapaNegocio
 
         public static DataTable guiasDisponibles()
         {
-            
+
 
             List<Empleado> guias = buscarGuiasDisponibles();
 
@@ -242,6 +283,8 @@ namespace CapaNegocio
             dt1.Columns.Add("horaSalida", typeof(DateTime));
             dt1.Columns.Add("fechaHoraInicio", typeof(DateTime));
             dt1.Columns.Add("fechaHoraFin", typeof(DateTime));
+            dt1.Columns.Add("idGuiaAsignado", typeof(int));
+
 
 
             foreach (Empleado item in guias)
@@ -250,11 +293,28 @@ namespace CapaNegocio
 
                 foreach (DataRow row1 in dt3.Rows)
                 {
-                    DataTable dt2 = Empleado.trabajaEnDiaYHorario(item);
-                    foreach (DataRow row2 in dt2.Rows)
+                    int idEmp = Convert.ToInt32(row1["idGuiaAsignado"]);
+                    if (item.idEmpleado == idEmp)
                     {
-                        dt1.Rows.Add(item.idEmpleado, item.idSede, item.apellido, item.nombre,row2["idDiaSemana"],
-                            row2["horaIngreso"],row2["horaSalida"],row1["fechaHoraInicio"],row1["fechaHoraFin"]);
+
+                        DataTable dt2 = Empleado.trabajaEnDiaYHorario(item);
+                        foreach (DataRow row2 in dt2.Rows)
+                        {
+                            DataRow row = dt1.NewRow();
+                            row[0] = item.idEmpleado;
+                            row[1] = item.idSede;
+                            row[2] = item.apellido;
+                            row[3] = item.nombre;
+                            row[4] = row2[0];
+                            row[5] = row2[1];
+                            row[6] = row2[2];
+                            row[7] = row1[0];
+                            row[8] = row1[1];
+                            row[9] = row1[2];
+
+                            dt1.Rows.Add(row);
+                        }
+
                     }
                 }
             }

@@ -54,7 +54,7 @@ namespace CapaNegocio
         }
 
 
-        public static DataRow getPublicoDestino(Exposicion exposicion, DataTable dt)
+        public static List<PublicoDestino> getPublicoDestino()
         {
             DataTable publicoDestino = new DPublicoDestino().buscar();
 
@@ -69,24 +69,7 @@ namespace CapaNegocio
                                   }
                         ).ToList();
 
-            DataRow row = dt.NewRow();
-
-            row["Id Exposicion"] = exposicion.idExposicion;
-            row["Fecha Fin"] = exposicion.fechaFin;
-            row["Fecha Fin Replanificada"] = exposicion.fechaFinReplanificada;
-            row["Fecha Inicio"] = exposicion.fechaInicio;
-            row["Fecha Inicio Replanificada"] = exposicion.fechaInicioReplanificada;
-            row["Hora Apertura"] = exposicion.horaApertura;
-            row["Hora Cierre"] = exposicion.horaCierre;
-            row["Nombre"] = exposicion.nombre;
-            foreach (PublicoDestino publicoDestino1 in publicoDestinoList)
-            {
-                if (publicoDestino1.idPublicoDestino == exposicion.idPublicoDestino)
-                {
-                    row["Publico Destino"] = publicoDestino1.nombre;
-                }
-            }
-            return row;
+            return publicoDestinoList;
         }
 
 

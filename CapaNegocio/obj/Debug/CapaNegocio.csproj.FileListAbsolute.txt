@@ -70,3 +70,12 @@ C:\Users\Lucas\Desktop\Programacion\Programas desarrollados\Programa DSI\PPAI - 
 C:\Users\Lucas\Desktop\Programacion\Programas desarrollados\Programa DSI\PPAI - 11.30\PPAI_Museo_G2\CapaNegocio\obj\Debug\CapaNegocio.csproj.CopyComplete
 C:\Users\Lucas\Desktop\Programacion\Programas desarrollados\Programa DSI\PPAI - 11.30\PPAI_Museo_G2\CapaNegocio\obj\Debug\CapaNegocio.dll
 C:\Users\Lucas\Desktop\Programacion\Programas desarrollados\Programa DSI\PPAI - 11.30\PPAI_Museo_G2\CapaNegocio\obj\Debug\CapaNegocio.pdb
+C:\Users\Axel\Desktop\DISEÑO\PPAIVisual2\CapaNegocio\bin\Debug\CapaNegocio.dll
+C:\Users\Axel\Desktop\DISEÑO\PPAIVisual2\CapaNegocio\bin\Debug\CapaNegocio.pdb
+C:\Users\Axel\Desktop\DISEÑO\PPAIVisual2\CapaNegocio\bin\Debug\CapaDatos.dll
+C:\Users\Axel\Desktop\DISEÑO\PPAIVisual2\CapaNegocio\bin\Debug\CapaDatos.pdb
+C:\Users\Axel\Desktop\DISEÑO\PPAIVisual2\CapaNegocio\obj\Debug\CapaNegocio.csprojAssemblyReference.cache
+C:\Users\Axel\Desktop\DISEÑO\PPAIVisual2\CapaNegocio\obj\Debug\CapaNegocio.csproj.CoreCompileInputs.cache
+C:\Users\Axel\Desktop\DISEÑO\PPAIVisual2\CapaNegocio\obj\Debug\CapaNegocio.csproj.CopyComplete
+C:\Users\Axel\Desktop\DISEÑO\PPAIVisual2\CapaNegocio\obj\Debug\CapaNegocio.dll
+C:\Users\Axel\Desktop\DISEÑO\PPAIVisual2\CapaNegocio\obj\Debug\CapaNegocio.pdb

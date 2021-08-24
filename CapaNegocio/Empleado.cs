@@ -43,14 +43,14 @@ namespace CapaNegocio
             List<HorarioEmpleado> horariosLista = new List<HorarioEmpleado>();
 
             horariosLista = (from DataRow dr in horarios.Rows
-                                  select new HorarioEmpleado()
-                                  {
-                                      idHorarioEmpleado = Convert.ToInt32(dr["idHorarioEmpleado"]),
-                                      horaIngreso = Convert.ToDateTime(dr["horaIngreso"]),
-                                      horaSalida = Convert.ToDateTime(dr["horaSalida"]),
-                                      idDiaSemana = Convert.ToInt32(dr["idDiaSemana"])
+                             select new HorarioEmpleado()
+                             {
+                                 idHorarioEmpleado = Convert.ToInt32(dr["idHorarioEmpleado"]),
+                                 horaIngreso = Convert.ToDateTime(dr["horaIngreso"]),
+                                 horaSalida = Convert.ToDateTime(dr["horaSalida"]),
+                                 idDiaSemana = Convert.ToInt32(dr["idDiaSemana"])
 
-                                  }
+                             }
             ).ToList();
 
 
@@ -87,20 +87,20 @@ namespace CapaNegocio
             List<AsignacionVisita> asignacionesList = new List<AsignacionVisita>();
 
             asignacionesList = (from DataRow dr in asignaciones.Rows
-                             select new AsignacionVisita()
-                             {
-                                 idAsignacionVisita = Convert.ToInt32(dr["idAsignacionVisita"]),
-                                 fechaHoraFin = Convert.ToDateTime(dr["fechaHoraFin"]),
-                                 fechaHoraInicio = Convert.ToDateTime(dr["fechaHoraInicio"]),
-                                 idGuiaAsignado = Convert.ToInt32(dr["idGuiaAsignado"])
+                                select new AsignacionVisita()
+                                {
+                                    idAsignacionVisita = Convert.ToInt32(dr["idAsignacionVisita"]),
+                                    fechaHoraFin = Convert.ToDateTime(dr["fechaHoraFin"]),
+                                    fechaHoraInicio = Convert.ToDateTime(dr["fechaHoraInicio"]),
+                                    idGuiaAsignado = Convert.ToInt32(dr["idGuiaAsignado"])
 
-                             }
+                                }
                              ).ToList();
 
             DataTable dt = new DataTable();
             dt.Columns.Add("fechaHoraInicio", typeof(DateTime));
             dt.Columns.Add("fechaHoraFin", typeof(DateTime));
-
+            dt.Columns.Add("idGuiaAsignado", typeof(int));
 
             foreach (AsignacionVisita item in asignacionesList)
             {
@@ -109,6 +109,7 @@ namespace CapaNegocio
                     DataRow row = dt.NewRow();
                     row["fechaHoraInicio"] = item.fechaHoraInicio;
                     row["fechaHoraFin"] = item.fechaHoraFin;
+                    row["idGuiaAsignado"] = item.idGuiaAsignado;
 
                     dt.Rows.Add(row);
                 }

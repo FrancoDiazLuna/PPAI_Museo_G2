@@ -52,7 +52,8 @@ namespace CapaNegocio
         private void timer_Tick(object sender, EventArgs e)
         {
 
-            lblUsuario.Text = GestorDeReserva.usuarioEnSesion();
+            lblUsuario.Text = "LMessi";
+            GestorDeReserva.usuarioEnSesion();
             lblDate.Text = DateTime.Now.ToShortDateString();
             lblTime.Text = DateTime.Now.ToLongTimeString();
             

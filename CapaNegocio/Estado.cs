@@ -29,31 +29,23 @@ namespace CapaNegocio
         }
 
         //nuevo
-
-        public static Estado esAmbitoReserva()
+        public static bool esAmbitoReserva(Estado estado)
         {
-            DataTable estados = new DEstado().Buscar();
-            List<Estado> todosEstados = new List<Estado>();
-            Estado e = new Estado();
-            todosEstados = (from DataRow dr in estados.Rows
-                            select new Estado()
-                            {
-                                idEstado = Convert.ToInt32(dr["idEstado"]),
-                                ambito = dr["ambito"].ToString(),
-                                descripcion = dr["descripcion"].ToString(),
-                                nombre = dr["nombre"].ToString(),
-                            }).ToList();
-
-            foreach (Estado dt in todosEstados)
+            if (estado.ambito == "Reserva")
             {
-                if (dt.ambito == "Reserva" && dt.nombre == "Pendiente")
-                {
-                    e = new Estado(dt.idEstado, dt.ambito, dt.descripcion, dt.nombre);
-                    break;
-                }
+                return true;
             }
-
-            return e;
+            return false;
         }
+
+        public static bool esEstadoPendiente(Estado estado)
+        {
+            if (estado.nombre == "Pendiente")
+            {
+                return true;
+            }
+            return false;
+        }
+        
     }
 }

@@ -39,7 +39,7 @@ namespace CapaNegocio
 
         public static int numeroUnico { get; set; }
 
-        public static string sesionActual { get; set; }
+        public static int idUsuario { get; set; }
 
 
 
@@ -141,12 +141,13 @@ namespace CapaNegocio
 
         public static DataTable buscarExposicionesTemporalesVigentes()
         {
-            
+
+            DataTable dt = Sede.obtenerPublicoDestino(sedeSeleccionada);
+
             exposicionesSedeList = Sede.buscarExposicionTemporalVigente(sedeSeleccionada);
-            
-            DataTable dt = Sede.obtenerPublicoDestino(exposicionesSedeList);
+
             exposicionesSedePublicoDT = dt;
-            
+
             return dt;
         }
 
@@ -162,7 +163,7 @@ namespace CapaNegocio
 
 
         // falta llamar a este metodo despues de que elige las exposiciones
-        public static void  calcularDuracionEstimada()
+        public static void calcularDuracionEstimada()
         {
             int durEstimada = 0;
 
@@ -187,7 +188,27 @@ namespace CapaNegocio
 
         public static void buscarVisitantesSimultaneosEnSede()
         {
-            visitantesSimultaneos = new Sede().buscarVisitantesSimultaneos(fechaHoraReserva);
+            List<ReservaVisita> reservasDeSede = Sede.buscarVisitantesSimultaneos(sedeSeleccionada);
+
+            int visiSimul = 0;
+
+            foreach (ReservaVisita item in reservasDeSede)
+            {
+                if (fechaHoraReserva.Date == item.fechaHoraReserva.Date)
+                {
+                    DateTime dEst = item.fechaHoraReserva.AddMinutes(item.duracionEstimada);
+                    DateTime dEstNuevaRes = item.fechaHoraReserva.AddMinutes(duracionEstimada);
+
+                    if (fechaHoraReserva.TimeOfDay > item.fechaHoraReserva.TimeOfDay && fechaHoraReserva.TimeOfDay < dEst.TimeOfDay ||
+                        dEstNuevaRes.TimeOfDay > fechaHoraReserva.TimeOfDay && dEstNuevaRes.TimeOfDay < dEst.TimeOfDay)
+                    {
+                        visiSimul = visiSimul + item.cantidadAlumnos;
+                    }
+                }
+            }
+
+            visitantesSimultaneos = visiSimul;
+
         }
 
         public bool verificarCapacidadMaxima()
@@ -200,8 +221,6 @@ namespace CapaNegocio
             }
             return true;
         }
-
-
 
         public static List<Empleado> buscarGuiasDisponibles()
         {
@@ -217,79 +236,67 @@ namespace CapaNegocio
             }
 
 
-
-            foreach (Empleado item in guiasTodos)
+            foreach (Empleado emp in guiasTodos)
             {
-                int bandera = 0;
-                foreach (DataRow row in guiasHorarios.Rows)
+                bool bandera = false;
+                foreach (DataRow row in guiasConHorarios)
                 {
+
                     if (row["idSede"].Equals(sedeSeleccionada.idSede))
                     {
 
-                        DateTime ingreso = Convert.ToDateTime(row["horaIngreso"].ToString());
-                        DateTime salida = Convert.ToDateTime(row["horaSalida"].ToString());
-                        if (ingreso.Hour < fechaHoraReserva.Hour && fechaHoraReserva.Hour < salida.Hour)
+
+
+
+                        if (emp.idEmpleado == (int)row["idGuiaAsignado"])
                         {
-                            int dia = Convert.ToInt32(row["idDiaSemana"].ToString());
-                            if ((int)fechaHoraReserva.DayOfWeek <= 5 && dia == 1 || (int)fechaHoraReserva.DayOfWeek >= 5 && dia == 2)
+                            DateTime ingreso = Convert.ToDateTime(row["horaIngreso"].ToString());
+                            DateTime salida = Convert.ToDateTime(row["horaSalida"].ToString());
+                            if (ingreso.Hour <= fechaHoraReserva.Hour && fechaHoraReserva.Hour <= salida.Hour)
                             {
-                                DateTime inicio = Convert.ToDateTime(row["fechaHoraInicio"].ToString());
-                                DateTime fin = Convert.ToDateTime(row["fechaHoraFin"].ToString());
-                                if (inicio.Date == fechaHoraReserva.Date)
+                                int dia = Convert.ToInt32(row["idDiaSemana"].ToString());
+                                if ((int)fechaHoraReserva.DayOfWeek <= 5 && dia == 1 && (int)fechaHoraReserva.DayOfWeek >= 1 ||
+                                    (int)fechaHoraReserva.DayOfWeek > 5 && dia == 2 || (int)fechaHoraReserva.DayOfWeek == 0 && dia == 2)
                                 {
 
-                                    DateTime dEst = fechaHoraReserva.AddMinutes(duracionEstimada); 
-                                    if (inicio.TimeOfDay < fechaHoraReserva.TimeOfDay && fechaHoraReserva.TimeOfDay < fin.TimeOfDay ||
-                                        inicio.TimeOfDay < dEst.TimeOfDay && dEst.TimeOfDay < fin.TimeOfDay)
+                                    DateTime ingres0o = Convert.ToDateTime(row[7].ToString());
+                                    if (ingres0o.Date == fechaHoraReserva.Date)
                                     {
-                                        bandera = bandera + 1;
-                                    }
+                                        DateTime inicio = Convert.ToDateTime(row["fechaHoraInicio"].ToString());
+                                        DateTime fin = Convert.ToDateTime(row["fechaHoraFin"].ToString());
+                                        DateTime dEst = fechaHoraReserva.AddMinutes(duracionEstimada);
+                                        if (inicio.TimeOfDay <= fechaHoraReserva.TimeOfDay && fechaHoraReserva.TimeOfDay <= fin.TimeOfDay ||
+                                            inicio.TimeOfDay <= dEst.TimeOfDay && dEst.TimeOfDay <= fin.TimeOfDay)
+                                        {
+                                            bandera = true;
+                                            if (guiasDeSedeDisponibles.Contains(emp))
+                                            {
+                                                guiasDeSedeDisponibles.Remove(emp);
 
-                                    if (guiasDeSedeDisponibles.Contains(item) && bandera == 0)
-                                    {
-                                        break;
+                                            }
+                                        }
                                     }
                                     else
                                     {
-                                        if (bandera == 0)
+                                        if (guiasDeSedeDisponibles.Contains(emp) == false && bandera == false)
                                         {
-                                            guiasDeSedeDisponibles.Add(item);
+                                            guiasDeSedeDisponibles.Add(emp);
                                         }
-                                        else
-                                        {
-                                            guiasDeSedeDisponibles.Remove(item);
-                                        }
-
-                                    }
-                                }
-                                else
-                                {
-                                    if (bandera == 0)
-                                    {
-                                        guiasDeSedeDisponibles.Add(item);
-                                        bandera = bandera + 1;
-                                    }
-                                    else
-                                    {
-                                        break;
                                     }
                                 }
                             }
                         }
                     }
                 }
-                //if (item.idSede == sedeSeleccionada.idSede)
-                //{
-                //    guiasDeSedeDisponibles.Add(item);
-                //}
             }
-
 
             guiasDeLaSede = guiasDeSedeDisponibles;
 
             return guiasDeSedeDisponibles;
-
         }
+
+
+        
 
         public static void seleccionGuiasDisponiles(List<Empleado> lista)
         {
@@ -309,12 +316,13 @@ namespace CapaNegocio
             return cantidad;
         }
 
-
+        
         public static void registrarReserva()
         {
+            generarNumeroUnico();
             DReservaVisita nuevaReserva = new DReservaVisita();
-            Estado est = Estado.esAmbitoReserva();
-            fechaHoraActual = DateTime.Now;
+            Estado est = buscarEstadoPendienteDeConfirmacion();
+            //fechaHoraActual = DateTime.Now;
 
             nuevaReserva.cantidadAlumno = cantidadVisitantes;
             nuevaReserva.cantidadAlumnoConfirmada = 0;
@@ -326,25 +334,57 @@ namespace CapaNegocio
             nuevaReserva.numeroReserva = numeroUnico;
             nuevaReserva.idEscuela = escuelaSeleccionada.idEscuela;
             nuevaReserva.idSede = sedeSeleccionada.idSede;
-            //nuevaReserva.idExposicion =exposicionSeleccionada.;
-            //nuevaReserva.idCambioEstado =;
-            //nuevaReserva.idAsignacionGuia = guiaSeleccionado;
-            //nuevaReserva.idEmpleadoCreo = ;
+            nuevaReserva.idExposicion =numeroUnico;
+            nuevaReserva.idCambioEstado = est.idEstado;
+            nuevaReserva.idAsignacionGuia =numeroUnico;
+            nuevaReserva.idEmpleadoCreo = idUsuario;
 
             DReservaVisita.cargar2(nuevaReserva);
+
+            DExposicionesPorReserva expoXrese = new DExposicionesPorReserva();
+            foreach (Exposicion ex in exposicionSeleccionada)
+            {
+                expoXrese.reservasId = numeroUnico;
+                expoXrese.exposicionId = ex.idExposicion;
+
+                DExposicionesPorReserva.cargar(expoXrese);
+                
+            }
+
+            DAsignacionVisita nuevaAsig = new DAsignacionVisita();
+            foreach (Empleado guia in guiaSeleccionado)
+            {
+                nuevaAsig._fechaHoraInicio = fechaHoraReserva;
+                nuevaAsig._fechaHoraFin = nuevaAsig._fechaHoraInicio.AddMinutes(duracionEstimada); ;
+                nuevaAsig._idGuiaAsignado = guia.idEmpleado;
+
+                DAsignacionVisita.cargar(nuevaAsig);
+            }
+
+            DGuiasPorReserva guiaXres = new DGuiasPorReserva();
+            foreach (Empleado guia in guiaSeleccionado)
+            {
+                guiaXres.empleadoId = guia.idEmpleado;
+                guiaXres.reservaId = numeroUnico;
+
+                DGuiasPorReserva.cargar(guiaXres);
+            }
+            
+
         }
 
-
-        public static string usuarioEnSesion()
+        public static int usuarioEnSesion()
         {
 
-            string usrSesion = new Sesion().getEmpleadoEnSesion();
-            sesionActual = usrSesion;
+            int usr = Sesion.getEmpleadoEnSesion();
 
-            return usrSesion;
+            idUsuario = usr;
+
+            return usr;
         }
+        
 
-        public void getFechaActual()
+        public static void getFechaActual()
         {
 
             fechaHoraActual = DateTime.Now;
@@ -354,28 +394,45 @@ namespace CapaNegocio
 
         }
 
-        public void generarNumeroUnico()
+        public static void generarNumeroUnico()
         {
+            DataTable resVis = new DReservaVisita().buscar();
             List<ReservaVisita> reservas = new List<ReservaVisita>();
-
-            int cont = 0;
-
-
-            foreach (var item in reservas)
-            {
-                cont = cont + 1;
-            }
-
-
-            numeroUnico = cont+1;
+            reservas = (from DataRow dr in resVis.Rows
+                               select new ReservaVisita()
+                               {
+                                   idReservaVisita = Convert.ToInt32(dr["idReservaVisita"])
+                               }
+            ).ToList();
+            numeroUnico = reservas.Last().idReservaVisita + 1;
+            
         }
 
 
         //nuevo
-        public static Estado BuscarEstadoPendienteDeConfirmacion()
+        public static Estado buscarEstadoPendienteDeConfirmacion()
         {
-            //Estado e = new Estado();
-            Estado e = Estado.esAmbitoReserva();
+            DataTable estados = new DEstado().Buscar();
+            List<Estado> todosEstados = new List<Estado>();
+            Estado e = new Estado();
+            todosEstados = (from DataRow dr in estados.Rows
+                            select new Estado()
+                            {
+                                idEstado = Convert.ToInt32(dr["idEstado"]),
+                                ambito = dr["ambito"].ToString(),
+                                descripcion = dr["descripcion"].ToString(),
+                                nombre = dr["nombre"].ToString(),
+                            }).ToList();
+
+            foreach (Estado dt in todosEstados)
+            {
+                if (Estado.esAmbitoReserva(dt) && Estado.esEstadoPendiente(dt))
+                {
+                    e = new Estado(dt.idEstado, dt.ambito, dt.descripcion, dt.nombre);
+                    break;
+                }
+            }
+
             return e;
         }
 
